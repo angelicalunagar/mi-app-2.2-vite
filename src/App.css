@@ -1,0 +1,26 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+body{
+  background-color: #011627;
+}
+
+.App{
+  background-color: #011627;
+} 
+
+html {
+  scroll-behavior: smooth;
+}
+
+.contenido-pagina{
+  margin-top: 0;
+  padding-bottom: 0.1rem;
+}
+
+
+
