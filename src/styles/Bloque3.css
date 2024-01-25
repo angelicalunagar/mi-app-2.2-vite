@@ -5,3 +5,11 @@
   padding-top: 6.6rem;
   width: 100%;
 }
+
+.boton-cuestionario{
+  background-color: #011627;
+  color: #fff;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

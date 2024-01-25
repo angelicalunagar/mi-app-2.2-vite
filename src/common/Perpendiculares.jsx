@@ -19,7 +19,7 @@ import { JSXGraph } from 'jsxgraph';
         showcopyright: false,
       });
 
-      const slider = board.create('slider', [[0, 4], [3, 4], [-2, 4, 5]]);
+      const slider = board.create('slider', [[0, 4], [3, 4], [-2, 4, 5]], {name:"a"});
 
       const selectedFunction = (x, a) => {
         const expr = selectedFunc.replace("a", `(${a})`);
@@ -31,7 +31,7 @@ import { JSXGraph } from 'jsxgraph';
         x => selectedFunction(x, slider.Value())
       ]);
 
-      const glider = board.create('glider', [0.6, 1.2, curve]);
+      const glider = board.create('glider', [0.6, 1.2, curve], {name:"P"});
 
       const perpendicularToXAxis = board.create('segment', [
         [()=> glider.X(), 0], [()=>glider.X(), ()=>glider.Y()]

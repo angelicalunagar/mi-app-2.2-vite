@@ -9,21 +9,23 @@ const GraficoArrastrePuntos = () => {
 
     // Definir los puntos A, B, C
     const puntoA = board.create('point', [-2, -4], { name: 'A', size: 3, color: 'blue', fixed: true });
-    const puntoB = board.create('point', [-1, -2], { name: 'B', size: 3, color: 'blue', fixed: true });
-    const puntoC = board.create('point', [0, 0], { name: 'C', size: 3, color: 'blue', fixed: true});
-
-    // Definir las coordenadas objetivo de los puntos D, E, Fx
+    const puntoC = board.create('point', [-1, -2], { name: 'C', size: 3, color: 'blue', fixed: true });
+    const puntoD = board.create('point', [0, 0], { name: 'D', size: 3, color: 'blue', fixed: true});
+    const puntoG = board.create('point', [2.6, 5.2], { name: 'G', size: 3, color: 'blue', fixed: true});
+    // Definir las coordenadas objetivo de los puntos D, E, F
     const coordsObjetivo = {
-      D: { x: 1, y: 2 },
-      E: { x: 2, y: 4 },
-      F: { x: 3, y: 6 },
+      B: { x: -1.5, y: -3},
+      E: { x: 1, y: 2 },
+      F: { x: 2, y: 4 },
+      H: { x: 3, y: 6 },
     };
 
-    // Crear puntos D, E, F en la esquina superior izquierda
-    const puntoD = board.create('point', [-3, 5], { name: 'D', size: 3, color: 'orange' });
-    const puntoE = board.create('point', [-3, 4], { name: 'E', size: 3, color: 'orange' });
-    const puntoF = board.create('point', [-3, 3], { name: 'F', size: 3, color: 'orange' });
-
+    // Crear puntos E, F, G en la esquina superior izquierda
+    const puntoB = board.create('point', [-3, 6], { name: 'B', size: 3, color: 'orange' });
+    const puntoE = board.create('point', [-3, 5], { name: 'E', size: 3, color: 'orange' });
+    const puntoF = board.create('point', [-3, 4], { name: 'F', size: 3, color: 'orange' });
+    const puntoH = board.create('point', [-3, 3], { name: 'H', size: 3, color: 'orange' });
+    
     // Función para manejar el arrastre de puntos D, E, F
     const handleDragMove = (punto) => {
       const puntoArrastrado = punto.name;
@@ -37,7 +39,7 @@ const GraficoArrastrePuntos = () => {
       );
 
       // Si la distancia es menor que un umbral, acercar automáticamente el punto a las coordenadas objetivo
-      const umbral = 0.5;
+      const umbral = 0.3;
       if (distancia < umbral) {
         punto.moveTo([coordsObjetivo[puntoArrastrado].x, coordsObjetivo[puntoArrastrado].y], 0);
         //punto.setAttribute({ fixed: true });
@@ -63,13 +65,15 @@ const GraficoArrastrePuntos = () => {
     };
 
     // Agregar manejadores de eventos de arrastre para los puntos D, E, F
-    puntoD.on('drag', () => handleDragMove(puntoD));
+    puntoB.on('drag', () => handleDragMove(puntoB));
     puntoE.on('drag', () => handleDragMove(puntoE));
     puntoF.on('drag', () => handleDragMove(puntoF));
+    puntoH.on('drag', () => handleDragMove(puntoH));
 
-    puntoD.on('up', () => handleDragEnd(puntoD));
+    puntoB.on('up', () => handleDragEnd(puntoB));
     puntoE.on('up', () => handleDragEnd(puntoE));
     puntoF.on('up', () => handleDragEnd(puntoF));
+    puntoH.on('up', () => handleDragEnd(puntoH));
 
     // Limpiar al desmontar el componente
     return () => {

@@ -5,3 +5,10 @@
   padding-top: 6.6rem;
   width: 100%;
 }
+
+.bold{
+  font-size: x-large;
+  font-style: italic;
+  color: red;
+  font-weight:100; 
+}

@@ -5,7 +5,7 @@ import FuncionAGraficar from './FuncionAGraficar';
 import Perpendiculares from './Perpendiculares';
 import FuncionContextProvider from './FuncionContexto';
 
-const ContenedorGrafica = () => {
+const SlideCuestionario = () => {
   return (
     <Container>
       <Row>
@@ -43,4 +43,4 @@ const ContenedorGrafica = () => {
   );
 }
 
-export default ContenedorGrafica
+export default SlideCuestionario
