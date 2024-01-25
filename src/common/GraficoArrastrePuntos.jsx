@@ -20,7 +20,7 @@ const GraficoArrastrePuntos = () => {
       H: { x: 3, y: 6 },
     };
 
-    // Crear puntos E, F, G en la esquina superior izquierda
+    // Crear puntos E, F, G 
     const puntoB = board.create('point', [-3, 6], { name: 'B', size: 3, color: 'orange' });
     const puntoE = board.create('point', [-3, 5], { name: 'E', size: 3, color: 'orange' });
     const puntoF = board.create('point', [-3, 4], { name: 'F', size: 3, color: 'orange' });
