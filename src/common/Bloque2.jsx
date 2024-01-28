@@ -1,6 +1,7 @@
 import React from "react";
 import '../styles/Bloque2.css'
-import GraficoArrastrePuntos from "./GraficoArrastrePuntos";
+import VariacionFuncion from "./VariacionFuncion";
+
 
 
 
@@ -9,7 +10,7 @@ function Bloque2(){
     <div className="bloque2-contenedor">
       <h1>Bloque 2</h1>
       <h2>Funciones</h2>
-      <GraficoArrastrePuntos />
+      <VariacionFuncion />
     </div>
   );
 }

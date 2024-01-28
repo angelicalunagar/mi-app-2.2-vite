@@ -174,34 +174,85 @@ const Bloque1_1 = () => {
         <GraficoArrastrePuntos />
       </Col>
       <Col>
-      <p style={{ textAlign: 'justify'}}>
-        <b>Actividad 4:</b> Tomando en cuenta tus resultados de la
-        actividad 2, completa la siguiente información:
-        <ul>
-          <li style={{ marginBottom: '8px' }}><InlineMath>{'-2'}</InlineMath> y <InlineMath>{'f(-2)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'A( , )'}</InlineMath></li>
-          <li style={{ marginBottom: '8px' }}><InlineMath>{'-1.5'}</InlineMath> y <InlineMath>{'f(-1.5)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'B( , )'}</InlineMath></li>
-          <li style={{ marginBottom: '8px' }}><InlineMath>{'-1'}</InlineMath> y <InlineMath>{'f(-1)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'C( , )'}</InlineMath></li>
-          <li style={{ marginBottom: '8px' }}><InlineMath>{'0'}</InlineMath> y <InlineMath>{'f(0)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'D( , )'}</InlineMath></li>
-          <li style={{ marginBottom: '8px' }}><InlineMath>{'1'}</InlineMath> y <InlineMath>{'f(1)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'E( , )'}</InlineMath></li>
-          <li style={{ marginBottom: '8px' }}><InlineMath>{'2'}</InlineMath> y <InlineMath>{'f(2)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'F( , )'}</InlineMath></li>
-          <li style={{ marginBottom: '8px' }}><InlineMath>{'2.6'}</InlineMath> y <InlineMath>{'f(2.6)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'G( , )'}</InlineMath></li>
-          <li style={{ marginBottom: '8px' }}><InlineMath>{'3'}</InlineMath> y <InlineMath>{'f(3)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'H( , )'}</InlineMath></li>
-        
-         y en general:
-         <br/>
-         <li><InlineMath>{'x'}</InlineMath> y <InlineMath>{'f(x)'}</InlineMath> se puede graficar como el punto <InlineMath>{'P(x, y)'}</InlineMath>.</li>
-         </ul>
-         <br/>
-         <b>Actividad 5:</b> En la gráfica de la derecha, arrastra los puntos
-         amarillos a las coordenadas que les corresponden, según la actividad 4.   
-         <br/>
-         <br/>
-      </p>
+        <p style={{ textAlign: 'justify'}}>
+          <b>Actividad 4:</b> Tomando en cuenta tus resultados de la
+          actividad 2, completa la siguiente información:
+          <ul>
+            <li style={{ marginBottom: '8px' }}><InlineMath>{'-2'}</InlineMath> y <InlineMath>{'f(-2)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'A( , )'}</InlineMath></li>
+            <li style={{ marginBottom: '8px' }}><InlineMath>{'-1.5'}</InlineMath> y <InlineMath>{'f(-1.5)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'B( , )'}</InlineMath></li>
+            <li style={{ marginBottom: '8px' }}><InlineMath>{'-1'}</InlineMath> y <InlineMath>{'f(-1)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'C( , )'}</InlineMath></li>
+            <li style={{ marginBottom: '8px' }}><InlineMath>{'0'}</InlineMath> y <InlineMath>{'f(0)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'D( , )'}</InlineMath></li>
+            <li style={{ marginBottom: '8px' }}><InlineMath>{'1'}</InlineMath> y <InlineMath>{'f(1)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'E( , )'}</InlineMath></li>
+            <li style={{ marginBottom: '8px' }}><InlineMath>{'2'}</InlineMath> y <InlineMath>{'f(2)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'F( , )'}</InlineMath></li>
+            <li style={{ marginBottom: '8px' }}><InlineMath>{'2.6'}</InlineMath> y <InlineMath>{'f(2.6)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'G( , )'}</InlineMath></li>
+            <li style={{ marginBottom: '8px' }}><InlineMath>{'3'}</InlineMath> y <InlineMath>{'f(3)'}</InlineMath> se pueden graficar como el punto <InlineMath>{'H( , )'}</InlineMath></li>
+          
+          y en general:
+          <br/>
+          <li><InlineMath>{'x'}</InlineMath> y <InlineMath>{'f(x)'}</InlineMath> se puede graficar como el punto <InlineMath>{'P(x, y)'}</InlineMath>.</li>
+          </ul>
+          <br/>
+          <b>Actividad 5:</b> En la gráfica de la derecha, arrastra los puntos
+          amarillos a las coordenadas que les corresponden, según la actividad 4.   
+          <br/>
+          <br/>
+        </p>
       </Col>
-      
     </Row>
+    <Row>
+      <p style={{ textAlign: 'justify'}}>
+        Hasta aquí lo que hemos obtenido son sólo puntos aislados
+        que pertenecen a la gráfica de la función, mas no la gráfica
+        completa. ¿Qué se forma si unimos los puntos que graficamos?
+        <ul>
+          <li>a) Una recta</li>
+          <li>b) Una parábola</li>
+          <li>c) El segmento de recta AH</li>
+          <li>d) Una curva cúbica</li>
+        </ul>
       
-   
+        Ciertamente, cuando unimos los puntos lo que se forma es el 
+        segmento de recta AH, que es sólo una parte de la gráfica
+        de la función. Usa el siguiente botón para dibujar el segmento
+        en la cuadrícula de la actividad 5. 
+        <br/>
+        <br/>
+        BOTÓN PARA GRAFICAR EL SEGMENTO DE RECTA
+        <br/>
+        <br/>
+        De hecho, ni siquiera podemos dibujar la gráfica
+        completa, sino solamente la parte que cabe en nuestra cuadrícula.
+        Esto se debe a que la función f(x)=2x puede recibir cualquier
+        número de la recta real, desde números tan negativos como
+        -10 000 000 000, números irracionales como e y pi, números
+        racionales como 5/2 y 234/899, hasta números positivos tan grandes
+        como 999,999,999, y en general cualquier número de la recta real.
+        A la totalidad de valores que puede recibir una función se le llama dominio de
+        la función, y por ahora basta con saber que el dominio de 
+        f(x)=2x y de cualquier función polinomial es el conjunto de los
+        números reales, puesto que la función es capaz de devolver un valor para cada número 
+        real que ingresa. Similarmente, a la totalidad de valores que devuelve una función se le 
+        llama codomionio, que en el caso de las funciones polinomiales es 
+        igualmente el conjunto de los números reales:
+        <br/>
+        Dominio de f(x)=2x: R o (-inf, +inf)
+        <br/>
+        Dominio de f(x)=2x: R o (-inf, +inf)
+        <br/>
+        La consecuencia de esto es que las gráficas de las funciones
+        polinomiales son infinitas, por lo que nos limitaremos a dibujar 
+        únicamente la parte de la gráfica que cabe en la cuadrícula. 
+        Usa el siguiente botón para dibujar el segmento en la cuadrícula
+        de la actividad 5.
+        <br/>
+        <br/>
+        BOTÓN DIBUJAR LA RECTA
+        <br/>
+        <br/> 
+        <br/>
+        <br/>
+      </p>
+    </Row>
   </Container>
   )
 }
