@@ -6,9 +6,11 @@ import funcion_maquina from "../assets/funcion_maquina.png";
 import puntoG from "../assets/puntoG.png";
 import Table from "react-bootstrap/Table";
 import GraficoArrastrePuntos from "./GraficoArrastrePuntos";
+import VariacionFunciones from "./VariacionFunciones";
 import "katex/dist/katex.min.css";
 import { BlockMath, InlineMath } from "react-katex";
 import "../styles/Bloque1_1.css";
+
 
 const Bloque1_1 = () => {
   /* let mostrarElemento = 'none'; */
@@ -466,7 +468,7 @@ const Bloque1_1 = () => {
         </Col>
       </Row>
       <Row>
-        <Col className="actividad" style={{marginRight: '0.5rem'}} md={6} sm={12}>
+        <Col className="actividad col-act4y5">
           <p>
             <b>Actividad 4:</b> Tomando en cuenta tus resultados de la actividad
             2, completa la siguiente información:
@@ -663,14 +665,15 @@ const Bloque1_1 = () => {
                 punto <InlineMath>{"P(x, y)"}</InlineMath>.
               </li>
             </ul>
-            <br />
           </p>
         </Col>
-        <Col className="actividad" md={5} sm={12}>
+        <Col className="actividad col-act4y5">
           <p>
             <b>Actividad 5:</b> En la gráfica de la derecha, arrastra los puntos
             amarillos a las coordenadas que les corresponden, según la actividad
             4.
+            <br />
+            <br />
           </p>
           <GraficoArrastrePuntos />
         </Col>
@@ -699,7 +702,7 @@ const Bloque1_1 = () => {
           solamente la parte que cabe en nuestra cuadrícula. Esto se debe a que
           la función f(x)=2x puede recibir cualquier número de la recta real,
           desde números tan negativos como -10 000 000 000, números irracionales
-          como e y pi, números racionales como 5/2 y 234/899, hasta números
+          como e y pi, números racionales como 5/2 y 234/899, y números
           positivos tan grandes como 999,999,999, y en general cualquier número
           de la recta real. A la totalidad de valores que puede recibir una
           función se le llama dominio de la función, y por ahora basta con saber
@@ -712,13 +715,12 @@ const Bloque1_1 = () => {
           <br />
           Dominio de f(x)=2x: R o (-inf, +inf)
           <br />
-          Dominio de f(x)=2x: R o (-inf, +inf)
+          Codominio de f(x)=2x: R o (-inf, +inf)
           <br />
           La consecuencia de esto es que las gráficas de las funciones
           polinomiales son infinitas, por lo que nos limitaremos a dibujar
           únicamente la parte de la gráfica que cabe en la cuadrícula. Usa el
-          siguiente botón para dibujar el segmento en la cuadrícula de la
-          actividad 5.
+          siguiente botón para dibujar la gráfica de la función f(x)=2x. 
           <br />
           <br />
           BOTÓN DIBUJAR LA RECTA
@@ -728,6 +730,22 @@ const Bloque1_1 = () => {
           <br />
         </p>
       </Row>
+      <Row>
+        <Col>
+        <p>
+          <h4>Dominio y codominio puntuales</h4>
+          <h4>Dominio y codominio en rangos</h4>
+        </p>
+        </Col>
+        <Col className="border">
+        <VariacionFunciones />
+        </Col>
+      </Row>
+      <p>
+        <br />
+        <br />
+        <br />
+      </p>
     </Container>
   );
 };
