@@ -25,54 +25,60 @@ const VariacionFunciones = () => {
       return Function("x", `return ${selectedFunc}`)(x);
     };
 
-    const f = board.create('functiongraph', [
-      x => selectedFunction(x)
+    const curvef = board.create('functiongraph', [
+      x => selectedFunction(x),
     ]);
-/* 
-    // Actualizar la función cuando cambia la función seleccionada
-    f.updateCurve(() => [x => selectedFunction(x)]);
- */
+
     // Crear los puntos A y B
-    const gliderA = board.create('glider', [0.6, 1.2, f], { name: 'A'});
-    const gliderB = board.create('glider', [1.5, 3, f], { name: 'B' });
+    const gliderA = board.create('glider', [0.6, 1.2, curvef], { name: 'A'});
+    const gliderB = board.create('glider', [1.5, 3, curvef], { name: 'B' });
 
-    const areaX = board.create('polygon', [
-      function(){return [gliderA.X(), 0];},
-      function(){return [gliderA.X(), gliderA.Y()]},
-      function(){return [gliderB.X(), gliderB.Y()]},
-      function(){return [gliderB.X(), 0]},
-    ], { fillColor: 'rgba(0, 0, 255, 0.5)', fixed: true });
+    const curveF = board.create('functiongraph', [
+      x => selectedFunction(x), ()=>gliderA.X(), ()=>gliderB.X()
+    ]);
 
-    const areaY = board.create('polygon', [
-      function(){return[0, gliderA.Y()]},
-      function(){return[gliderA.X(), gliderA.Y()]},
-      function(){return[gliderB.X(), gliderB.Y()]},
-      function(){return[0, gliderB.Y()]}  
-    ], { fillColor: 'rgba(255, 165, 0, 0.5)', fixed: true });
+    const segmentPerpAToXAxis = board.create('segment', [
+      [()=> gliderA.X(), 0], [()=>gliderA.X(), ()=>gliderA.Y()]
+    ], {  strokeWidth: 1, dash: 2 });
 
-    // Ocultar los vértices de los polígonos
-    areaX.vertices.forEach(v => v.setAttribute({ visible: false }));
-    areaY.vertices.forEach(v => v.setAttribute({ visible: false }));
+    const segmentPerpBToXAxis = board.create('segment', [
+      [()=> gliderB.X(), 0], [()=>gliderB.X(), ()=>gliderB.Y()]
+    ], {  strokeWidth: 1, dash: 2 });
 
-        // Función para actualizar las áreas cuando los puntos A y B se mueven
-        const updateAreas = () => {
-          areaX.vertices[0].moveTo([gliderA.X(), 0]);
-          areaX.vertices[1].moveTo([gliderA.X(), gliderA.Y()]);
-          areaX.vertices[2].moveTo([gliderB.X(), gliderB.Y()]);
-          areaX.vertices[3].moveTo([gliderB.X(), 0]);
+    const segmentPerpAToYAxis = board.create('segment', [
+      [0, ()=> gliderA.Y()], [()=>gliderA.X(), ()=>gliderA.Y()]
+    ], {  strokeWidth: 1, dash: 2 });
+
+    const segmentPerpBToYAxis = board.create('segment', [
+      [0, ()=> gliderB.Y()], [()=>gliderB.X(), ()=>gliderB.Y()]
+    ], {  strokeWidth: 1, dash: 2 });
+
+
+    var curveABX = board.create('curve', [[], []], { strokeWidth: 3, fillColor: 'yellow', fillOpacity: 0.3 });
+    var curveABY = board.create('curve', [[], []], { strokeWidth: 3, fillColor: 'blue', fillOpacity: 0.3 });
+    curveABX.updateDataArray = function() {
+      this.dataX = [gliderA.X()];
+      this.dataY = [0];
+
+      this.dataX = this.dataX.concat(curveF.points.map(p => p.usrCoords[1]));
+      this.dataY = this.dataY.concat(curveF.points.map(p => p.usrCoords[2]));
+
+      
+      this.dataX.push(gliderB.X());
+      this.dataY.push(0);
+    };
+
+    curveABY.updateDataArray = function() {
+      this.dataX = [0];
+      this.dataY = [gliderA.Y()];
     
-          areaY.vertices[0].moveTo([0, gliderA.Y()]);
-          areaY.vertices[1].moveTo([gliderA.X(), gliderA.Y()]);
-          areaY.vertices[2].moveTo([gliderB.X(), gliderB.Y()]);
-          areaY.vertices[3].moveTo([0, gliderB.Y()]);
+      this.dataX = this.dataX.concat(curveF.points.map(p => p.usrCoords[1]));
+      this.dataY = this.dataY.concat(curveF.points.map(p => p.usrCoords[2]));
     
-          board.update();
-        };
+      this.dataX.push(0);
+      this.dataY.push(gliderB.Y());
+    };
     
-        // Actualizar las áreas cuando los puntos A y B se mueven
-        gliderA.on('drag', updateAreas);
-        gliderB.on('drag', updateAreas);
-
 
   }, [selectedFunc]);
 

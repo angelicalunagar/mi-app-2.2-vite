@@ -45,6 +45,12 @@
 
 .boton{
   margin: 0.5rem ;
+  color: #011627;
+  font-weight: 550;
+}
+
+.boton:hover {
+  color: #0074cc; /* Cambia el color al pasar el ratón */
 }
 
 @media screen and (min-width: 601px) and (max-width: 1025px ){

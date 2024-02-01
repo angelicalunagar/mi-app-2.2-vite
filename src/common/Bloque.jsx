@@ -27,7 +27,9 @@ function Bloque(props){
       <div className="img-bloque">
         <img src={imgMap[props.imagen]} alt={props.descripcionImagen} />
       </div>
-        <button className="boton"><Link to={props.bloque}>Estudiar</Link></button>   
+      <Link to={props.bloque}>
+        <button className="boton">Estudiar</button>
+      </Link>   
     </div>
     
   );

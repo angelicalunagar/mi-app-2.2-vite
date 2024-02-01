@@ -1,0 +1,82 @@
+p {
+  text-align: justify
+}
+
+h4 {
+  font-weight: bold;
+  text-align: left;
+}
+
+.custom-input {
+  border: none;
+  border-radius: 8px;
+  background-color: #fddfb9;
+  padding: 8px;
+  width: 90%; 
+  text-align: center;
+}
+
+.input-eval {
+  border: none;
+  border-radius: 8px;
+  background-color: #ffecd1;
+  padding: 8px;
+  width: 4rem; 
+  text-align: center;
+}
+
+.input-coord {
+  border: none;
+  border-radius: 8px;
+  background-color: #ffecd1;
+  padding: 8px;
+  width: 2rem; 
+  text-align: center;
+}
+
+.liAct-4 {
+  margin-bottom: 16px;
+}
+
+.row-grafDeFunc {
+  margin-bottom: 35px;
+}
+
+.actividad {
+  background-color: #ffc596; /* Naranja */
+  padding: 16px;
+  border-radius: 8px;
+  /* Otros estilos según sea necesario */
+}
+
+.act-width {
+  justify-content: center;
+}
+
+.cont-table {
+  width: 100%;
+  justify-content: center;
+}
+
+
+@media (min-width: 768px) {
+  .cont-table {
+    width: 50%;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 576px) {
+  .cont-table {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+

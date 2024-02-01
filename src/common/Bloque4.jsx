@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/Bloque4.css'
-import VariacionFunciones from "./VariacionFunciones2-2";
+import VariacionFunciones from "./VariacionFunciones";
 
 function Bloque4(){
   return(
