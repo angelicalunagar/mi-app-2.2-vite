@@ -1,70 +1,78 @@
 //GraficoArrastrePuntos.jsx
 import React, { useEffect } from "react";
-import JXG from "jsxgraph";
+import { JSXGraph } from "jsxgraph";
 
 const GraficoArrastrePuntos = () => {
   useEffect(() => {
     // Inicializar el tablero
-    const board = JXG.JSXGraph.initBoard("jsxgraph-container", {
-      boundingbox: [-4, 7, 4, -5],
+    const board = JSXGraph.initBoard("jsxgraph-container", {
+      boundingbox: [-2.5, 295, 32, -10],
       axis: true,
       showcopyright: false,
     });
 
-    // Definir los puntos A, B, C
-    const puntoA = board.create("point", [-2, -4], {
+    // Definir los puntos A, B, G
+    const puntoA = board.create("point", [0, 30], {
       name: "A",
       size: 3,
       color: "blue",
       fixed: true,
     });
-    const puntoC = board.create("point", [-1, -2], {
-      name: "C",
+    const puntoB = board.create("point", [5, 72.5], {
+      name: "B",
       size: 3,
       color: "blue",
       fixed: true,
     });
-    const puntoD = board.create("point", [0, 0], {
-      name: "D",
-      size: 3,
-      color: "blue",
-      fixed: true,
-    });
-    const puntoG = board.create("point", [2.6, 5.2], {
+
+    const puntoG = board.create("point", [30, 285], {
       name: "G",
       size: 3,
       color: "blue",
       fixed: true,
     });
-    // Definir las coordenadas objetivo de los puntos D, E, F
+    // Definir las coordenadas objetivo de los puntos C, D, E, F
     const coordsObjetivo = {
-      B: { x: -1.5, y: -3 },
-      E: { x: 1, y: 2 },
-      F: { x: 2, y: 4 },
-      H: { x: 3, y: 6 },
+      C: { x: 10, y: 115},
+      D: { x: 15, y: 157.5},
+      E: { x: 20, y: 200 },
+      F: { x: 25, y: 242.5 },
+      
     };
 
-    // Crear puntos E, F, G
-    const puntoB = board.create("point", [-3, 6], {
-      name: "B",
+      // Definir las coordenadas objetivo de los puntos C, D, E, F
+      const coordsInicio = {
+        C: { x: 5, y: 280},
+        D: { x: 5, y: 260},
+        E: { x: 5, y: 240},
+        F: { x: 5, y: 220},
+        
+      };
+
+    // Crear puntos C, D, E, F
+    const puntoC = board.create("point", [5, 280], {
+      name: "C",
       size: 3,
       color: "orange",
     });
-    const puntoE = board.create("point", [-3, 5], {
+
+    const puntoD = board.create("point", [5, 260], {
+      name: "D",
+      size: 3,
+      color: "orange",
+    });
+
+    const puntoE = board.create("point", [5, 240], {
       name: "E",
       size: 3,
       color: "orange",
     });
-    const puntoF = board.create("point", [-3, 4], {
+    const puntoF = board.create("point", [5, 220], {
       name: "F",
       size: 3,
       color: "orange",
     });
-    const puntoH = board.create("point", [-3, 3], {
-      name: "H",
-      size: 3,
-      color: "orange",
-    });
+    
 
     // Función para manejar el arrastre de puntos D, E, F
     const handleDragMove = (punto) => {
@@ -79,7 +87,7 @@ const GraficoArrastrePuntos = () => {
       );
 
       // Si la distancia es menor que un umbral, acercar automáticamente el punto a las coordenadas objetivo
-      const umbral = 0.3;
+      const umbral = 1;
       if (distancia < umbral) {
         punto.moveTo(
           [
@@ -107,22 +115,27 @@ const GraficoArrastrePuntos = () => {
       } else {
         // Si es incorrecto, devolver el punto a la esquina superior izquierda
         punto.moveTo(
-          [-3, 5 - Object.keys(coordsObjetivo).indexOf(puntoArrastrado)],
-          0
+          /* [5, 280 - Object.keys(coordsObjetivo).indexOf(puntoArrastrado)],
+          0 */
+            [coordsInicio[puntoArrastrado].x, coordsInicio[puntoArrastrado].y],
+            0
+          
         );
       }
     };
 
     // Agregar manejadores de eventos de arrastre para los puntos D, E, F
-    puntoB.on("drag", () => handleDragMove(puntoB));
+    puntoC.on("drag", () => handleDragMove(puntoC));
+    puntoD.on("drag", () => handleDragMove(puntoD));
     puntoE.on("drag", () => handleDragMove(puntoE));
     puntoF.on("drag", () => handleDragMove(puntoF));
-    puntoH.on("drag", () => handleDragMove(puntoH));
+   
 
-    puntoB.on("up", () => handleDragEnd(puntoB));
+    puntoC.on("up", () => handleDragEnd(puntoC));
+    puntoD.on("up", () => handleDragEnd(puntoD));
     puntoE.on("up", () => handleDragEnd(puntoE));
     puntoF.on("up", () => handleDragEnd(puntoF));
-    puntoH.on("up", () => handleDragEnd(puntoH));
+    
 
     // Limpiar al desmontar el componente
     return () => {
