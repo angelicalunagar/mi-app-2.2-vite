@@ -2,19 +2,18 @@ import { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import machine1 from "../assets/machine1.png";
-import machine2 from "../assets/machine2.png";
-import puntoG from "../assets/puntoG.png";
-import corral from "../assets/corral.png";
 import car from "../assets/car.jpg";
+import iceCreamMan from "../assets/iceCreamMan.jpg";
 import Table from "react-bootstrap/Table";
 import GraficoArrastrePuntos from "./GraficoArrastrePuntos";
-import VariacionFunciones from "./VariacionFunciones";
+import Rectangulo from "./Rectangulo";
+
 import "katex/dist/katex.min.css";
 import { BlockMath, InlineMath } from "react-katex";
 import "../styles/Bloque1_1.css";
 import { Button, Fade, Form, Image } from "react-bootstrap";
 import graficarPuntos from "../assets/graficarPuntos.gif";
+import VariacionFunciones from "./VariacionFunciones";
 
 const Bloque1_1 = () => {
   const [fullscreen, setFullscreen] = useState(false);
@@ -100,7 +99,30 @@ const Bloque1_1 = () => {
   });
 
   const [opcionSeleccionada, setOpcionSeleccionada] = useState(null);
+  const handleSeleccion = (opcion) => {
+    setOpcionSeleccionada(opcion);
+  };
+
   const [opcionSelecPreg1, setOpcionSelecPreg1] = useState(null);
+  const handleSelecPreg1 = (opcion) => {
+    setOpcionSelecPreg1(opcion);
+  };
+
+  const [opcionSelecPreg2, setOpcionSelecPreg2] = useState(null);
+  const handleSelecPreg2 = (opcion) => {
+    setOpcionSelecPreg2(opcion);
+  };
+
+  const [opcionSelecPreg3, setOpcionSelecPreg3] = useState(null);
+  const handleSelecPreg3 = (opcion) => {
+    setOpcionSelecPreg3(opcion);
+  };
+
+  const [opcionSelecPreg4, setOpcionSelecPreg4] = useState(null);
+  const handleSelecPreg4 = (opcion) => {
+    setOpcionSelecPreg4(opcion);
+  };
+
   const [valuesAct2, setValuesAct2] = useState({
     vd_1: "",
     vi_1: "",
@@ -172,6 +194,22 @@ const Bloque1_1 = () => {
     }));
   };
 
+  const [respuestasAct9, setRespuestasAct9] = useState({
+    preg1: "",
+    preg2: "",
+    preg3: "",
+    preg4: "",
+    preg5: "",
+  });
+
+  const handleRespChangeAct9 = (e, preg) => {
+    const { value } = e.target;
+    setRespuestasAct9((prevRespuestas) => ({
+      ...prevRespuestas,
+      [preg]: value,
+    }));
+  };
+
   const handleInputAct3 = (key, value) => {
     setValuesAct3((prevValues) => ({
       ...prevValues,
@@ -207,13 +245,6 @@ const Bloque1_1 = () => {
       [headerType]: value,
     }));
   };
-  const handleSelecPreg1 = (opcion) => {
-    setOpcionSelecPreg1(opcion);
-  };
-
-  const handleSeleccion = (opcion) => {
-    setOpcionSeleccionada(opcion);
-  };
 
   useEffect(() => {
     console.log("valuesEval:", valuesEval);
@@ -223,7 +254,11 @@ const Bloque1_1 = () => {
     console.log("Respuestas Act5", respuestasAct5);
     console.log("Respuestas Act6", valuesTableAct6);
     console.log("Respuestas Act7", respuestasAct7);
-    console.log("Respuestas Act9", valuesTableAct9);
+    console.log("Respuestas Act9", respuestasAct9);
+    console.log("Respuestas Preg1", opcionSelecPreg1);
+    console.log("Respuestas Preg2", opcionSelecPreg2);
+    console.log("Respuestas Preg3", opcionSelecPreg3);
+    console.log("Respuestas Preg4", opcionSelecPreg4);
   }, [
     valuesEval,
     valuesTable,
@@ -232,7 +267,12 @@ const Bloque1_1 = () => {
     respuestasAct5,
     valuesTableAct6,
     respuestasAct7,
+    respuestasAct9,
     valuesTableAct9,
+    opcionSelecPreg1,
+    opcionSelecPreg2,
+    opcionSelecPreg3,
+    opcionSelecPreg4,
   ]);
 
   return (
@@ -634,20 +674,23 @@ const Bloque1_1 = () => {
             <br />
             <BlockMath>{"g (x) = 5x"}</BlockMath>
             <br />
-            Esta última expresión es una <b>regla de correspondencia</b> porque establece 
-            una correspondencia entre <InlineMath>{"2"}</InlineMath> variables (relación entre <InlineMath>{"2"}</InlineMath> variables), a saber,
-            la ganancia <InlineMath>{"g(x)"}</InlineMath> y el número
-            de helados <InlineMath>{"x"}</InlineMath>. La expresión <InlineMath>{"g(x)= 5x"}</InlineMath> nos dice que a cada valor que le asignemos 
-            a <InlineMath>{"x"}</InlineMath> le corresponde un valor <InlineMath>{"g(x)"}</InlineMath> que se calcula
-            multiplicando <InlineMath>{"x"}</InlineMath> por <InlineMath>{"5"}</InlineMath>.
+            Esta última expresión es una <b>regla de correspondencia</b> porque
+            establece una correspondencia entre <InlineMath>{"2"}</InlineMath>{" "}
+            variables (relación entre <InlineMath>{"2"}</InlineMath> variables),
+            a saber, la ganancia <InlineMath>{"g(x)"}</InlineMath> y el número
+            de helados <InlineMath>{"x"}</InlineMath>. La expresión{" "}
+            <InlineMath>{"g(x)= 5x"}</InlineMath> nos dice que a cada valor que
+            le asignemos a <InlineMath>{"x"}</InlineMath> le corresponde un
+            valor <InlineMath>{"g(x)"}</InlineMath> que se calcula multiplicando{" "}
+            <InlineMath>{"x"}</InlineMath> por <InlineMath>{"5"}</InlineMath>.
           </p>
         </Col>
       </Row>
       <Row className="row-act">
         <Col className="actividad" md={10}>
           <p>
-            <b>Actividad 4:</b> Selecciona la regla de correspondencia que describe cada
-            situación.
+            <b>Actividad 4:</b> Selecciona la regla de correspondencia que
+            describe cada situación.
             <br />
           </p>
 
@@ -777,17 +820,18 @@ const Bloque1_1 = () => {
       <Row className="main-row">
         <Col>
           <p>
-            La regla de correspondencia nos permiten calcular el valor de una variable cuando
-            tenemos el valor de la otra. Siguiendo con el ejemplo del heladero,
-            ahora que conocemos la función <InlineMath>{"g(x)=5x"}</InlineMath>,
-            podemos responder a la pregunta ¿Cuánto gana si vende{" "}
-            <InlineMath>{"20"}</InlineMath> helados? En esta pregunta,
-            claramente conocemos a la variable independiente No. de helados, o
-            sea <InlineMath>{"x=20"}</InlineMath>, y lo que nos están
-            preguntando es el valor de la variable dependiente ganancia{" "}
+            La regla de correspondencia nos permiten calcular el valor de una
+            variable cuando conocemos el valor de la otra. Siguiendo con el
+            ejemplo del heladero, ahora que conocemos la relación{" "}
+            <InlineMath>{"g(x)=5x"}</InlineMath>, podemos responder a la
+            pregunta ¿Cuánto gana si vende <InlineMath>{"20"}</InlineMath>{" "}
+            helados? En esta pregunta, claramente conocemos a la variable
+            independiente No. de helados, o sea{" "}
+            <InlineMath>{"x=20"}</InlineMath>, y lo que nos están preguntando es
+            el valor de la variable dependiente ganancia{" "}
             <InlineMath>{"g(x)"}</InlineMath>. Es decir, basta con sustituir{" "}
             <InlineMath>{"x"}</InlineMath> por <InlineMath>{"20"}</InlineMath>{" "}
-            en la función para calcular la ganancia:
+            en la regla de correspondencia para calcular la ganancia:
             <br />
             <BlockMath>{"g(x)=5x"}</BlockMath>
             <BlockMath>{"g(20)=5(20)"}</BlockMath>
@@ -801,14 +845,14 @@ const Bloque1_1 = () => {
             <InlineMath>{"$85.00"}</InlineMath>, es decir{" "}
             <InlineMath>{"g(x)=85"}</InlineMath>. Para resolver esto basta con
             sustituir <InlineMath>{"g(x)"}</InlineMath> por{" "}
-            <InlineMath>{"85"}</InlineMath> en la función y despejar{" "}
-            <InlineMath>{"x"}</InlineMath> (número de helados):
+            <InlineMath>{"85"}</InlineMath> en la regla de correspondencia y
+            despejar <InlineMath>{"x"}</InlineMath> (número de helados):
             <BlockMath>{"g(x)=5x"}</BlockMath>
             <BlockMath>{"85 = 5x"}</BlockMath>
             <BlockMath>{"x=85/5"}</BlockMath>
             <BlockMath>{"x=17"}</BlockMath>
-            Esto es, el heladero vendió 17 helados para obtener 85 pesos de
-            ganancia.
+            Esto es, para obtener 85 pesos de ganancia, el heladero tuvo que
+            haber vendido 17 helados.
           </p>
         </Col>
       </Row>
@@ -822,9 +866,10 @@ const Bloque1_1 = () => {
           <br />
           <ul>
             <li>
-              Durante la quincena, el dinero de Cristina depende del número de
-              días que pasan de acuerdo con la función d(n)=4000-250n. Observa
-              que, si han transcurrido 0 días, Cristina tendrá 4000 pesos.
+              Durante la quincena, el dinero d(n) de Cristina depende del número
+              de días n que pasan de acuerdo con la regla de correspondencia
+              d(n)=4000-250n. Nota que, si han transcurrido 0 días, Cristina
+              tendrá 4000 pesos.
               <br />
               a) ¿Cuánto dinero le queda a Cristina, transcurridos 10 días?
               <input
@@ -891,7 +936,7 @@ const Bloque1_1 = () => {
           </ul>
         </Col>
       </Row>
-      <h4>Evaluar una función</h4>
+      <h4>Evaluar la regla de correspondencia</h4>
       <Row className="main-row">
         <Col>
           <p>
@@ -908,20 +953,23 @@ const Bloque1_1 = () => {
           <ul>
             <br />
             <li>
-              Sustituyendo <InlineMath>{"x=0"}</InlineMath> en{" "}
+              Para 0 helados vendidos, sustituimos{" "}
+              <InlineMath>{"x=0"}</InlineMath> en{" "}
               <InlineMath>{"g(x)=5x"}</InlineMath>:
               <br />
               <BlockMath>{"g(0)=5(0)"}</BlockMath>
               <BlockMath>{"g(0)=0"}</BlockMath>
             </li>
             <li>
-              Sustituyendo <InlineMath>{"x=1"}</InlineMath> en{" "}
+              Para 1 helado vendido, sustituimos{" "}
+              <InlineMath>{"x=1"}</InlineMath> en{" "}
               <InlineMath>{"g(x)=5x"}</InlineMath>:
               <br />
               <BlockMath>{"g(1)=5(1)=5"}</BlockMath>
             </li>
             <li>
-              Sustituyendo <InlineMath>{"x=2"}</InlineMath> en{" "}
+              Para 2 helados vendidos, sustituimos{" "}
+              <InlineMath>{"x=2"}</InlineMath> en{" "}
               <InlineMath>{"g(x)=5x"}</InlineMath>:
               <br />
               <BlockMath>{"g(2)=5(2)=10"}</BlockMath>
@@ -930,15 +978,15 @@ const Bloque1_1 = () => {
           <p>
             Al proceso de asignar un valor a la variable{" "}
             <InlineMath>{"x"}</InlineMath> y realizar las operaciones que indica
-            la función para calcular la variable dependiente,{" "}
+            la regla de correspondencia para calcular la variable dependiente,{" "}
             <InlineMath>{"g(x)"}</InlineMath> en este caso, se llama{" "}
-            <b>evaluar la función.</b>
+            <b>evaluar la regla de correspondencia.</b>
           </p>
         </Col>
       </Row>
       <Row className="row-act">
         <Col className="actividad" md={10}>
-          <b>Actividad 6:</b> Evalúa la función{" "}
+          <b>Actividad 6:</b> Evalúa la regla de correspondencia{" "}
           <InlineMath>{"g(x)=5x"}</InlineMath> en{" "}
           <InlineMath>{"x=3, 4, 5"}</InlineMath>.
           <br />
@@ -1009,9 +1057,8 @@ const Bloque1_1 = () => {
           </Container>
           <Container>
             <p>
-              Utiliza tus resultados de las evaluaciones de la función{" "}
-              <InlineMath>{"g"}</InlineMath> para completar los espacios vacíos
-              de la siguiente tabla.
+              Utiliza tus resultados de las evaluaciones para completar los
+              espacios vacíos de la siguiente tabla.
             </p>
           </Container>
           <Container className="cont-table-act3">
@@ -1104,84 +1151,129 @@ const Bloque1_1 = () => {
           </div>
         </Col>
       </Row>
-      <h4>Dominio e imagen de una función</h4>
       <Row className="main-row">
         <Col>
           <p>
             Observa que de la tabla podemos sacar algunas conclusiones valiosas,
             por ejemplo:
           </p>
-          <ul className="justified-list">
+          <ul>
             <li>
-              A medida que <InlineMath>{"x"}</InlineMath> se incrementa,{" "}
-              <InlineMath>{"g(x)"}</InlineMath> también se incrementa.
+              A medida que la variable independiente{" "}
+              <InlineMath>{"x"}</InlineMath> se incrementa, la variable
+              dependiente <InlineMath>{"g(x)"}</InlineMath> también se
+              incrementa. Recuerda que <InlineMath>{"x"}</InlineMath> es el
+              número de helados vendidos y <InlineMath>{"g(x)"}</InlineMath> es
+              la ganancia.
             </li>
+            <br />
             <li>
-              Los valores que toma la variable <InlineMath>{"x"}</InlineMath>{" "}
-              son <InlineMath>{"0, 1, 2, 3,"}</InlineMath> etc. Pero ¿cuál es el
-              valor máximo que <InlineMath>{"x"}</InlineMath> puede tomar?
-              Técnicamente, el heladero comenta que el número máximo de helados
-              que caben en su carrito es <InlineMath>{"200"}</InlineMath>. Por
-              lo tanto, <InlineMath>{"x"}</InlineMath> puede tomar valores
-              enteros desde <InlineMath>{"0"}</InlineMath> hasta{" "}
-              <InlineMath>{"200"}</InlineMath>. ¿Por qué{" "}
-              <InlineMath>{"x"}</InlineMath> no puede tomar valores como{" "}
-              <InlineMath>{"2.3"}</InlineMath> ó{" "}
-              <InlineMath>{"4/3"}</InlineMath>? Simplemente porque en el
-              contexto del que estamos hablando, el heladero no puede vender{" "}
-              <InlineMath>{"2.3"}</InlineMath> helados ó{" "}
-              <InlineMath>{"4/3"}</InlineMath> de helado, sólo puede vender
-              helados completos. A la totalidad de valores que puede adquirir la
-              variable independiente de una función se le llama{" "}
-              <b>dominio de la función</b>, por lo que el dominio de la función{" "}
-              <InlineMath>{"g"}</InlineMath>, en nuestro contexto, es:
-              <BlockMath>{"\\{0, 1, 2, 3, \\ldots, 199, 200\\}"}</BlockMath>
+              Hemos decidido que <InlineMath>{"x"}</InlineMath> adquiera valores
+              desde <InlineMath>{"0"}</InlineMath> helados hasta{" "}
+              <InlineMath>{"5"}</InlineMath> helados, pero hasta este momento no
+              tenemos ningún impedimento para que <InlineMath>{"x"}</InlineMath>{" "}
+              valga <InlineMath>{"100"}</InlineMath>,{" "}
+              <InlineMath>{"300"}</InlineMath>, o cualquier otra cantidad
+              helados.
             </li>
+            <br />
             <li>
-              Los valores que toma la variable <InlineMath>{"g(x)"}</InlineMath>{" "}
-              dependen del valor que tome <InlineMath>{"x"}</InlineMath>, y en
-              la tabla van desde <InlineMath>{"0"}</InlineMath> hasta{" "}
-              <InlineMath>{"25"}</InlineMath> porque hemos decidido tabular
-              valores de <InlineMath>{"x"}</InlineMath> desde{" "}
-              <InlineMath>{"0"}</InlineMath> hasta{" "}
-              <InlineMath>{"5"}</InlineMath>, pero ¿cuál es el máximo valor que
-              puede tomar <InlineMath>{"x"}</InlineMath>?. Pues si tomamos en
-              cuenta el contexto, <InlineMath>{"x"}</InlineMath> puede valer
-              hasta <InlineMath>{"200"}</InlineMath>, y por lo tanto el valor
-              máximo de <InlineMath>{"g(x)"}</InlineMath> es:
-              <BlockMath>{"g(200)=5(200)=1000"}</BlockMath>
-              Lo que quiere decir que la ganancia{" "}
-              <InlineMath>{"g(x)"}</InlineMath> va desde{" "}
-              <InlineMath>{"0"}</InlineMath> (cuando{" "}
-              <InlineMath>{"x=0"}</InlineMath>) hasta{" "}
-              <InlineMath>{"1000"}</InlineMath> (cuando{" "}
-              <InlineMath>{"x=200"}</InlineMath>): A la totalidad de valores que
-              puede adquirir la variable dependiente de una función se le llama{" "}
-              <b>rango</b> o <b>imagen de la función</b>, por lo que la imagen
-              de la función <InlineMath>{"g"}</InlineMath>, en nuestro contexto,
-              es:
-              <BlockMath>{"\\{0, 5, 10, 15, \\ldots, 995, 1000\\}"}</BlockMath>
+              A cada número de helados <InlineMath>{"x"}</InlineMath> le
+              corresponde un único valor de ganancia{" "}
+              <InlineMath>{"g(x)"}</InlineMath>. Por ejemplo, a{" "}
+              <InlineMath>{"x=2"}</InlineMath> le corresponde{" "}
+              <InlineMath>{"g(x)=10"}</InlineMath>, y a{" "}
+              <InlineMath>{"x=5"}</InlineMath> le corresponde{" "}
+              <InlineMath>{"g(x)=25"}</InlineMath>.
             </li>
           </ul>
         </Col>
       </Row>
+      <h4>Valores que adquiere la variable independiente</h4>
+      <Row className="main-row">
+        <Col>
+          <p>
+            Siguiendo con el caso del heladero, cuyas ganancias{" "}
+            <InlineMath>{"g(x)"}</InlineMath> están en función del número de
+            helados vendidos x de acuerdo con la regla de correspondencia{" "}
+            <InlineMath>{"g(x)=5x"}</InlineMath>, en la sección anterior
+            tabulamos valores de <InlineMath>{"x"}</InlineMath>, desde{" "}
+            <InlineMath>{"0"}</InlineMath> hasta <InlineMath>{"5"}</InlineMath>,
+            con sus respectivos valores de <InlineMath>{"g(x)"}</InlineMath>.
+            <br />
+            <br />
+            Pero ¿cuál es el valor máximo que <InlineMath>
+              {"x"}
+            </InlineMath>{" "}
+            puede tomar? Técnicamente, el heladero comenta que el número máximo
+            de helados que caben en su carrito es{" "}
+            <InlineMath>{"200"}</InlineMath>. Por lo tanto,{" "}
+            <InlineMath>{"x"}</InlineMath> puede tomar valores enteros desde{" "}
+            <InlineMath>{"0"}</InlineMath> hasta{" "}
+            <InlineMath>{"200"}</InlineMath>.
+            <br />
+            <br />
+            ¿Por qué <InlineMath>{"x"}</InlineMath> no puede tomar valores como{" "}
+            <InlineMath>{"2.3"}</InlineMath> ó <InlineMath>{"4/3"}</InlineMath>?
+            Simplemente porque en el contexto del que estamos hablando, el
+            heladero no puede vender <InlineMath>{"2.3"}</InlineMath> helados ó{" "}
+            <InlineMath>{"4/3"}</InlineMath> de helado, sólo puede vender
+            helados completos. Por lo tanto, la <b>totalidad de valores</b> que
+            puede adquirir la variable independiente{" "}
+            <InlineMath>{"x"}</InlineMath> es:
+            <BlockMath>{"\\{0, 1, 2, 3, \\ldots, 199, 200\\}"}</BlockMath>
+          </p>
+        </Col>
+        <Col className="col-iceCreamMan" md={5}>
+          <img src={iceCreamMan} alt="" />
+        </Col>
+      </Row>
+      <h4>Valores que adquiere la variable dependiente</h4>
+      <Row className="main-row">
+        <Col>
+          <p>
+            Continuemos con el caso del vendedor de helados. Nota que de acuerdo
+            con la regla de correspondencia <InlineMath>{"g(x)=5x"}</InlineMath>
+            , los valores que toma la ganancia <InlineMath>{"g(x)"}</InlineMath>{" "}
+            , es decir, las distintas ganancias que puede tener el heladero,
+            dependen del número de helados vendidos{" "}
+            <InlineMath>{"x"}</InlineMath>. En la sección anterior determinamos
+            que <InlineMath>{"x"}</InlineMath> puede valer desde{" "}
+            <InlineMath>{"0"}</InlineMath> hasta{" "}
+            <InlineMath>{"200"}</InlineMath>. Entonces, la{" "}
+            <b>mínima ganancia</b> sucede caundo el heladero vende{" "}
+            <InlineMath>{"0"}</InlineMath> helados:
+            <BlockMath>{"g(0)=5(0)=0"}</BlockMath>Y la <b>máxima ganancia</b>{" "}
+            sucede cuando el heladero vende <InlineMath>{"200"}</InlineMath>{" "}
+            helados:
+            <BlockMath>{"g(200)=5(200)=1000"}</BlockMath>
+            Por lo que la ganancia <InlineMath>{"g(x)"}</InlineMath> va desde{" "}
+            <InlineMath>{"0"}</InlineMath> hasta{" "}
+            <InlineMath>{"1000"}</InlineMath> pesos, de{" "}
+            <InlineMath>{"5"}</InlineMath> en <InlineMath>{"5"}</InlineMath>{" "}
+            (como se aprecia en la Tabla 2):
+            <BlockMath>{"\\{0, 5, 10, 15, \\ldots, 995, 1000\\}"}</BlockMath>
+          </p>
+        </Col>
+      </Row>
+
       <Row className="row-act">
         <Col className="actividad" md={10}>
           <p>
-            <b>Actividad 7:</b> Determina el dominio e imagen de las siguientes
-            funciones.{" "}
+            <b>Actividad 7:</b> Determina los valores que pueden adquirir las
+            variables independiente y dependiente en cada situación.
           </p>
           <ul>
             <li>
               <em>
                 Durante la quincena, la cantidad de dinero de Cristina depende
-                del número de días que pasan de acuerdo con la función
-                d(n)=4000-250n.
+                del número de días que pasan de acuerdo con la regla de
+                correspondencia <InlineMath>{"d(n)=4000-250n"}</InlineMath>.
               </em>
             </li>
             <ul>
               <li>
-                ¿Cuál es el dominio de la función d?
+                ¿Qué valores puede adquirir el número de días n?
                 <Form>
                   <Form.Group>
                     <Form.Check
@@ -1216,7 +1308,8 @@ const Bloque1_1 = () => {
               </li>
               <br />
               <li>
-                ¿Cuál es la imagen de la función d?
+                ¿Qué valores puede adquirir la cantidad de dinero{" "}
+                <InlineMath>{"d(n)"}</InlineMath>?
                 <Form>
                   <Form.Group>
                     <Form.Check
@@ -1253,14 +1346,17 @@ const Bloque1_1 = () => {
             <br />
             <li>
               <em>
-                Un taxi calcula el precio de sus viajes en función de la
-                distancia recorrida de acuerdo con la expresión p(x)=30+20x. Si
-                el taxi no hace viajes más largos que 30km:
+                Un taxi calcula el precio <InlineMath>{"p(x)"}</InlineMath> de
+                sus viajes en función de la distancia recorrida{" "}
+                <InlineMath>{"x"}</InlineMath> de acuerdo con la expresión{" "}
+                <InlineMath>{"p(x)=30+20x"}</InlineMath>. Si el taxi no hace
+                viajes más largos que <InlineMath>{"30km"}</InlineMath>:
               </em>
             </li>
             <ul>
               <li>
-                ¿Cuál es el dominio de la función p?
+                ¿Qué valores puede adquirir la variable independiente{" "}
+                <InlineMath>{"x"}</InlineMath>?
                 <Form>
                   <Form.Group>
                     <Form.Check
@@ -1295,7 +1391,8 @@ const Bloque1_1 = () => {
               </li>
               <br />
               <li>
-                ¿Cuál es el rango de la función p?
+                ¿Qué valores puede adquirir la variable dependiente{" "}
+                <InlineMath>{"p(x)"}</InlineMath>?
                 <Form>
                   <Form.Group>
                     <Form.Check
@@ -1334,13 +1431,15 @@ const Bloque1_1 = () => {
               <em>
                 La distancia recorrida (en km) de un automóvil de carreras es
                 función del tiempo transcurrido (en min) de acuerdo con la
-                expresión d(t)=2t. Sabiendo que el motor solo soporta estar en
-                funcionamiento 30 min:
+                expresión <InlineMath>{"d(t)=2t"}</InlineMath>. Sabiendo que el
+                motor solo soporta estar en funcionamiento{" "}
+                <InlineMath>{"30 min"}</InlineMath>:
               </em>
             </li>
             <ul>
               <li>
-                ¿Cuál es el dominio de la función d?
+                ¿Qué valores puede adquirir el tiempo{" "}
+                <InlineMath>{"t"}</InlineMath>?
                 <Form>
                   <Form.Group>
                     <Form.Check
@@ -1376,7 +1475,8 @@ const Bloque1_1 = () => {
               </li>
               <br />
               <li>
-                ¿Cuál es la imagen de la función d?
+                ¿Qué valores puede adquirir la distancia recorrida{" "}
+                <InlineMath>{"d(t)"}</InlineMath>?
                 <Form>
                   <Form.Group>
                     <Form.Check
@@ -1412,24 +1512,31 @@ const Bloque1_1 = () => {
             </ul>
           </ul>
         </Col>
+      </Row>
+      <Row className="main-row">
         <Col>
           <p>
-            Observa que cuando el dominio o imagen de una función son valores
-            puntuales, el dominio se representa como un conjunto{" "}
-            <InlineMath>{"{a, b, c…}"}</InlineMath>. En el caso del heladero, la
-            ganancia g(x) solo puede tomar cualquier valor del conjunto{" "}
-            <InlineMath>{"{0, 5, 10, 15, …, 995, 1000}"}</InlineMath>, pero es
-            imposible que la ganancia sea 7.5 por ejemplo, ya que para eso el
-            heladero tendría que haber vendido 1.5 helados.
+            Nota que cuando se tiene un conjunto de valores específicos como:{" "}
+            <BlockMath>{"\\{0, 5, 10, 15, \\ldots, 995, 1000\\}"}</BlockMath>
+            que representa los valores que puede adquirir la ganancia{" "}
+            <InlineMath>g(x)</InlineMath> en el caso del heladero, la variable
+            en cuestión no puede adquirir valores intermedios como{" "}
+            <InlineMath>{"7.5"}</InlineMath> ya que para eso el heladero tendría
+            que haber vendido <InlineMath>{"1.5"}</InlineMath> helados. Esto es,{" "}
+            <InlineMath>{"g(x)"}</InlineMath> sólo puede adquirir cualquier
+            valor del conjunto mencionado.
             <br />
             <br />
-            Sin embargo, si el dominio está representado como un intervalo{" "}
-            <InlineMath>{"a<=x<=b "}</InlineMath>, esto significa que la
-            variable x puede tomar cualquier valor entre a y b. En el caso del
-            taxi, <InlineMath>{"0<=x<=30 "}</InlineMath> significa que la
-            distancia x (en km) puede valer 0, pi, 136/9, 25 y en general
-            cualquier valor entre 0 y 30. Lo mismo ocurre si la imagen de una
-            función se expresa en forma de intervalo.
+            Sin embargo, si se tiene un intervalo como{" "}
+            <InlineMath>{"0 \\leq x \\leq 30"}</InlineMath>, que en el caso del
+            taxi representa los valores que puede adquirir la distancia
+            recorrida <InlineMath>{"x"}</InlineMath>, dicha variable puede tomar
+            valores como <InlineMath>{" 1.5 \\, km"}</InlineMath>,{" "}
+            <InlineMath>{" 7 \\, km"}</InlineMath>,{" "}
+            <InlineMath>{" 29.4 \\, km"}</InlineMath>, y en general cualquier
+            valor entre <InlineMath>{" 0 \\, km"}</InlineMath> y{" "}
+            <InlineMath>{" 30 \\, km"}</InlineMath>, ya que todas son posibles
+            distancias que el taxi puede recorrer.
           </p>
         </Col>
       </Row>
@@ -1437,46 +1544,34 @@ const Bloque1_1 = () => {
       <Row>
         <Col>
           <p>
-            Ahora que comprendes los conceptos de regla de correspondencia,
-            dominio y rango, veamos cómo definir una función en relación con
-            estas tres ideas. Una función matemática es una regla de
-            correspondencia que asigna a cada elemento del conjunto de entrada
-            (dominio) exactamente un elemento del conjunto de salida (imagen).
-            La regla de correspondencia describe cómo se relacionan los
-            elementos del dominio con los elementos de la imagen. Por lo tanto,
-            el dominio de una función es el conjunto de todos los posibles
-            valores de entrada que la función acepta, es decir, los valores para
-            los cuales la función está definida. La imagen de una función, por
-            otro lado, es el conjunto de todos los valores posibles de salida
-            que resultan de aplicar la regla de correspondencia a los elementos
-            del dominio.
-            <br />
-            <br />
-            Para referirse a cualquier elemento del dominio, utilizamos el
-            término "variable independiente", mientras que, para referirse a
-            cualquier elemento de la imagen, usamos el término "variable
-            dependiente". En resumen:
+            Ahora que comprendes que una regla de correspondencia es una
+            expresión matemática que relaciona una variable independiente con
+            una variable dependiente, definamos una función matemática:
             <br />
             <br />
             <em>
-              "Una <b>función</b> es una regla de correspondencia que relaciona
-              las variables independiente y dependiente. El conjunto de todos
-              los valores que puede adquirir la variable independiente se llama
-              dominio de la función, y el conjunto de todos los valores que
-              puede adquirir la variable dependiente se llama imagen o rango."
+              "Una <b>función</b> es simplemente una{" "}
+              <em>regla de correspondencia</em> que relaciona las variables
+              independiente y dependiente. El conjunto de valores que la
+              variable independiente puede tomar se llama <b>dominio</b> de la
+              función, mientras que el conjunto de valores que la variable
+              dependiente puede adquirir se conoce como su <b>imagen</b> o{" "}
+              <b>rango</b>."
             </em>
             <br />
             <br />
             Es importante destacar que el concepto de función está constituido
             por tres elementos básicos: la regla de correspondencia, el dominio
-            y el rango. Por lo tanto, definir una función implica comprender no
+            y el rango. Por lo tanto, definir una función implica conocer no
             solo la regla de correspondencia, sino también el dominio y el
             rango. Aunque a menudo se hace referencia a la regla de
             correspondencia como "función", es fundamental reconocer que la
             función está completamente definida solo cuando se conocen la regla
-            el dominio y el rango. A continuación, se muestra un resumen de las
-            funciones que hemos estudiado hasta aquí. Recuerda que el dominio y
-            el rango de cada función se han definido de acuerdo al contexto.
+            el dominio y el rango.
+            <br />
+            <br />A continuación, se muestra un resumen de las funciones que
+            hemos estudiado hasta aquí. Recuerda que el dominio y el rango de
+            cada función se han definido de acuerdo al contexto.
           </p>
           <Container className="cont-table-act1">
             <div className="tittle-table">
@@ -1496,20 +1591,23 @@ const Bloque1_1 = () => {
                   <td>Función g</td>
                   <td>g(x)=5x</td>
                   <td>
-                    <span>&#123;</span>0, 1, 2, 3, ..., 199, 200
+                    <span>&#123;</span>0, 1, 2, 3, . . . , 199, 200
                     <span>&#125;</span>
                   </td>
-                  <td>0</td>
+                  <td>
+                    <span>&#123;</span>0, 5, 10, 15, . . . , 995, 1000
+                    <span>&#125;</span>
+                  </td>
                 </tr>
                 <tr>
                   <td>Función d</td>
                   <td>d(n)=4000-250n</td>
                   <td>
-                    <span>&#123;</span>0, 1, 2, 3, ..., 14, 15
+                    <span>&#123;</span>0, 1, 2, 3, . . . , 14, 15
                     <span>&#125;</span>
                   </td>
                   <td>
-                    <span>&#123;</span>4000, 3750, 3500, 3250, ..., 500, 250
+                    <span>&#123;</span>4000, 3750, 3500, 3250, . . . , 500, 250
                     <span>&#125;</span>
                   </td>
                 </tr>
@@ -1535,17 +1633,22 @@ const Bloque1_1 = () => {
         <Col>
           <p>
             "Por lo general, cuando representamos una función matemática,
-            utilizamos letras como g para denotar ganancia, d para dinero o
-            distancia, y p para precio. Respecto a la variable independiente,
-            empleamos letras como n para el número de días y t para el tiempo. Y
-            finalmente, en cuanto a la variable dependiente, utilizamos g(n)
-            para indicar que la ganancia depende del número de helados, y d(t)
+            utilizamos letras como <InlineMath>{"g"}</InlineMath> para denotar
+            ganancia, <InlineMath>{"d"}</InlineMath> para dinero o distancia, y
+            p para precio. Respecto a la variable independiente, empleamos
+            letras como <InlineMath>{"d"}</InlineMath> para el número de días y{" "}
+            <InlineMath>{"t"}</InlineMath> para el tiempo. Y finalmente, en
+            cuanto a la variable dependiente, utilizamos{" "}
+            <InlineMath>{"g(n)"}</InlineMath> para indicar que la ganancia
+            depende del número de helados, y <InlineMath>{"d(t)"}</InlineMath>
             para mostrar que la distancia recorrida depende del tiempo.
             <br />
             <br />
             Sin embargo, dado que a menudo se utiliza una función sin contexto,
-            se recurre a f para representar una función genérica, x para la
-            variable independiente y f(x) para la variable dependiente."
+            se recurre a <InlineMath>{"f"}</InlineMath> para representar una
+            función genérica, <InlineMath>{"x"}</InlineMath> para la variable
+            independiente y <InlineMath>{"f(x)"}</InlineMath> para la variable
+            dependiente."
           </p>
         </Col>
       </Row>
@@ -1553,85 +1656,521 @@ const Bloque1_1 = () => {
       <Row className="main-row">
         <Col>
           <p>
-            Hasta ahora, todas las funciones que hemos visto han sido funciones
-            que relacionan una variable dependiente con una única variable
-            independiente. A estas funciones se les llama funciones de una
-            variable, por ejemplo: En la función{" "}
-            <InlineMath>{"g(x)=5x"}</InlineMath>, la única variable
-            independiente es <InlineMath>{"x"}</InlineMath>. En la función{" "}
-            <InlineMath>{"d(t)=2t"}</InlineMath>, la única variable
-            independiente es <InlineMath>{"t"}</InlineMath>.
-            <br />
-            <br />
+            Existen situaciones en las cuáles puede haber{" "}
+            <InlineMath>{"2"}</InlineMath> variables independientes y una
+            variable dependiente. Por ejemplo:
           </p>
         </Col>
       </Row>
       <Row>
-        <Col md={4}>
-          <img
-            src={corral}
-            alt="corral"
-            style={{ width: "100%" }}
-            className="border"
-          />
+        <Col className="border" md={5}>
+          <Rectangulo />
         </Col>
-        <Col md={8}>
+        <Col md={7}>
           <p>
-            No obstante, existen situaciones en las cuáles puede haber{" "}
-            <InlineMath>{"2"}</InlineMath> variables independientes y una
-            variable independiente. Un ejemplo de función de dos variables es el
-            siguiente:
-            <br />
-            <br />
             Un granjero hará un corral rectangular para las gallinas como el que
-            se muestra en la imagen de la izquierda y quiere calcular el área de
-            dicho corral.
+            se muestra a la izquierda y quiere calcular el área de dicho corral.
+            Nombrando <InlineMath>{"x"}</InlineMath> a uno de los lados, y{" "}
+            <InlineMath>{"y"}</InlineMath> al otro, la regla de correspondencia
+            que calcula el área es:
+            <BlockMath>{"A(x, y)=xy"}</BlockMath>
+            Ya que el área de un rectángulo se calcula multiplicando su largo
+            por su ancho. Recuerda que la notación{" "}
+            <InlineMath>{"A(x, y)"}</InlineMath> sólo indica que el área depende
+            de los valores <InlineMath>{"x"}</InlineMath> e{" "}
+            <InlineMath>{"y"}</InlineMath>.
+            <br />
+            <br />
+            ¿Cuál es el dominio de <InlineMath>{"x"}</InlineMath> y cuál es el
+            dominio de <InlineMath>{"y"}</InlineMath>? hasta ahora tanto{" "}
+            <InlineMath>{"x"}</InlineMath> como y podrían valer cualquier número
+            en el rango <InlineMath>{"(0, \\infty)"}</InlineMath> porque el
+            granjero no ha mencionado limitaciones del terreno en el cuál
+            construirá su corral ni limitaciones económicas.
           </p>
         </Col>
       </Row>
       <Row className="main-row">
         <Col>
           <p>
-            La función que calcula el área es entonces{" "}
-            <InlineMath>{"A(x, y)=xy"}</InlineMath> Ya que el área de un
-            rectángulo depende de la longitud de sus lados y se calcula
-            multiplicando su largo por ancho. Recuerda que la notación{" "}
-            <InlineMath>{"A(x, y)"}</InlineMath>
-            sólo indica que el área depende de los valores{" "}
-            <InlineMath>{"x"}</InlineMath> y <InlineMath>{"y"}</InlineMath>. En
-            este caso tanto <InlineMath>{"x"}</InlineMath> como{" "}
-            <InlineMath>{"y"}</InlineMath> podrían valer cualquier real
-            positivo, a menos que el granjero indique alguna condición que
-            relacione a las variables independientes{" "}
-            <InlineMath>{"x"}</InlineMath> y <InlineMath>{"y"}</InlineMath>. Por
-            ejemplo, si el granjero menciona que para construir el corral
-            únicamente cuenta con <InlineMath>{"300m"}</InlineMath> de cerca,
-            esto nos ayudará a hacer que la función dependa sólo de una
-            variable, ya sea
-            <InlineMath>{"x"}</InlineMath> o <InlineMath>{"y"}</InlineMath>.
-            Observa que, si el perímetro de la cerca es de{" "}
-            <InlineMath>{"300m"}</InlineMath>, esto significa que:
+            No obstante, el granjero indica que únicamente cuenta con{" "}
+            <InlineMath>{"300m"}</InlineMath> de cerca para construir el corral.
+            Sabemos entonces que el perímetro del corral es de{" "}
+            {"                                   "}
+            <InlineMath>{"300m"}</InlineMath>, lo que significa que:
             <br />
-            <BlockMath>{"2x+2y=300"}</BlockMath>Y de aquí podemos despejar{" "}
+            <BlockMath>{"2x+2y=300"}</BlockMath>Es decir:
+            <BlockMath>{"x+y=150"}</BlockMath>
+            El corral que se ha dibujado en la <b>ventana gráfica 1</b> cumple
+            con la condición de que su perímetro es{" "}
+            <InlineMath>{"300m"}</InlineMath>, o lo que es lo mismo, la suma de
+            los lados <InlineMath>{"x"}</InlineMath> y{" "}
+            <InlineMath>{"y"}</InlineMath> es <InlineMath>{"150"}</InlineMath>.
+            <br />
+            <br />
+            Si decidimos que el dominio del lado <InlineMath>
+              {"x"}
+            </InlineMath>{" "}
+            sea:
+            <BlockMath>{"0 \\leq x \\leq 40"}</BlockMath>
+            podemos determinar el dominio de <InlineMath>{"y"}</InlineMath>{" "}
+            deslizando el punto <InlineMath>{"B"}</InlineMath> sobre el eje{" "}
+            <InlineMath>{"x"}</InlineMath> (<b>ventana gráfica 1</b>), empezando
+            desde cero hasta llegar a <InlineMath>{"40"}</InlineMath>. ¿Qué
+            valores adquirió la variable <InlineMath>{"y"}</InlineMath>?{" "}
+            <InlineMath>{"y"}</InlineMath> empezó en{" "}
+            <InlineMath>{"150"}</InlineMath> (cuando{" "}
+            <InlineMath>{"x=0"}</InlineMath>) y fue disminuyendo hasta llegar a{" "}
+            <InlineMath>{"110"}</InlineMath> (cuando{" "}
+            <InlineMath>{"x=40"}</InlineMath>). Por lo tanto, el dominio de{" "}
+            <InlineMath>{"y"}</InlineMath> es:
+            <BlockMath>{"150 \\geq y \\geq 110"}</BlockMath>. Y ¿cuál es la
+            imagen de la función área? Observa que cuando{" "}
+            <InlineMath>{"x=0"}</InlineMath>, <InlineMath>{"y=150"}</InlineMath>{" "}
+            y en consecuencia el área es:
+            <BlockMath>{"A(x,y)=xy"}</BlockMath>
+            <BlockMath>{"A(0, 150)=0*150=0"}</BlockMath>Y cuando{" "}
+            <InlineMath>{"x=40"}</InlineMath>,{" "}
+            <InlineMath>{"y=110"}</InlineMath>, y el área es:
+            <BlockMath>{"A(x,y)=xy"}</BlockMath>
+            <BlockMath>{"A(40, 110)=40*110=4400"}</BlockMath>
+            Por lo que el área ha aumentado de <InlineMath>
+              {"0"}
+            </InlineMath>{" "}
+            hasta <InlineMath>{" 4400 \\,  \\text{m}^2 "}</InlineMath>, es
+            decir, la imagen de la función es:{" "}
+            <BlockMath>{"0 \\leq A(x, y) \\leq 4400"}</BlockMath>
+          </p>
+        </Col>
+      </Row>
+      <Row className="row-act">
+        <Col className="actividad" md={10}>
+          <p>
+            <b>Actividad 8.</b> Utiliza la ventana gráfica{" "}
+            <InlineMath>{"2"}</InlineMath> para encontrar el dominio de{" "}
+            <InlineMath>{"x"}</InlineMath> o de <InlineMath>{"y"}</InlineMath>,
+            según se solicite, y la imagen de la función
+            <InlineMath>{"A(x, y) = xy"}</InlineMath>. Recuerda que{" "}
+            <InlineMath>{"x+y=150"}</InlineMath>.
+          </p>
+          <ul>
+            <li>
+              Determina el dominio de <InlineMath>{"y"}</InlineMath> y el rango
+              de <InlineMath>{"A"}</InlineMath> para los siguientes dominios de{" "}
+              <InlineMath>{"x"}</InlineMath>:
+              <ul>
+                <li>
+                  <b>A)</b> Cuando el dominio de <InlineMath>{"x"}</InlineMath>{" "}
+                  es <InlineMath>{"0 \\leq x \\leq 75"}</InlineMath>:
+                  <br />
+                  el dominio de <InlineMath>{"y"}</InlineMath> es:{" "}
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                  <InlineMath>{"\\leq y \\leq"}</InlineMath>
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                  <br />y la imagen de la función área es:{" "}
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                  <InlineMath>{"\\leq A(x, y) \\leq"}</InlineMath>
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                </li>
+                <br />
+                <br />
+                <li>
+                  <b>B)</b> Cuando <InlineMath>{"0 \\leq x \\leq 120"}</InlineMath>,{" "}
+                  <br />
+                  el dominio de <InlineMath>{"y"}</InlineMath> es:{" "}
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                  <InlineMath>{"\\leq y \\leq"}</InlineMath>
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                  <br />y la imagen de la función área es:{" "}
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                  <InlineMath>{"\\leq A(x, y) \\leq"}</InlineMath>
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                </li>
+              </ul>
+            </li>
+            <br />
+            <li>
+              Determina el dominio de <InlineMath>{"x"}</InlineMath> y el rango
+              de <InlineMath>{"A"}</InlineMath> para el siguiente dominio de{" "}
+              <InlineMath>{"y"}</InlineMath>:
+              <ul>
+                <li>
+                  <b>A)</b> Cuando <InlineMath>{"0 \\leq y \\leq 40"}</InlineMath>, <br />
+                  el dominio de <InlineMath>{"x"}</InlineMath> es:{" "}
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                  <InlineMath>{"\\leq x \\leq"}</InlineMath>
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                  <br />y la imagen de la función área es:{" "}
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                  <InlineMath>{"\\leq A(x, y) \\leq"}</InlineMath>
+                  <input
+                    className="input-act8"
+                    type="text"
+                    value={respuestasAct5.preg1a}
+                    onChange={(e) => handleInputAct5("preg1a", e.target.value)}
+                  />
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </Col>
+      </Row>
+      <Row className="main-row">
+        <Col>
+          <p>
+            Nota que debido a que <InlineMath>{"A"}</InlineMath> es una función
+            de <InlineMath>{"2"}</InlineMath> variables independientes, pero
+            dependientes entre sí (ya que <InlineMath>{"x+y=150"}</InlineMath>),
+            el dominio de la variable <InlineMath>{"x"}</InlineMath> depende del
+            dominio de la variable <InlineMath>{"y"}</InlineMath>, y viceversa,
+            por lo que basta con fijar el dominio de una para obtener el dominio
+            de la otra, y a su vez determinar la imagen de{" "}
+            <InlineMath>{"A"}</InlineMath>.
+            <br />
+            <br />
+            No es común trabajar con dos variables independientes, en vez de eso
+            es preferible usar la relación entre ambas para hacer que{" "}
+            <InlineMath>{"A"}</InlineMath> sólo dependa de una de las variables,
+            ya sea <InlineMath>{"x"}</InlineMath> o{" "}
+            <InlineMath>{"y"}</InlineMath>. Para ello, lo único que debemos
+            hacer es despejar
             <InlineMath>{"x"}</InlineMath> o <InlineMath>{"y"}</InlineMath>,
-            según cuál sea más fácil de despejar. En este caso da lo mismo
-            despejar <InlineMath>{"x"}</InlineMath> o despejar{" "}
-            <InlineMath>{"y"}</InlineMath>, por lo que despejaremos{" "}
-            <InlineMath>{"y"}</InlineMath>:<BlockMath>{"2y=300-2x"}</BlockMath>
-            <BlockMath>{"y=(300-2x)/2"}</BlockMath>
-            Este resultado pone a la variable <InlineMath>{"y"}</InlineMath> en
-            función de <InlineMath>{"x"}</InlineMath>, y lo podemos sustituir en
-            la función del área:
+            según cuál sea más fácil de despejar, de la relación{" "}
+            <InlineMath>{"x+y=150"}</InlineMath>. En este caso despejaremos{" "}
+            <InlineMath>{"y"}</InlineMath>:<BlockMath>{"x+y=150"}</BlockMath>
+            <BlockMath>{"y=150-x"}</BlockMath>
+            Este resultado expresa la variable <InlineMath>{"y"}</InlineMath> en
+            función de <InlineMath>{"x"}</InlineMath>, lo que nos permite
+            sustituirla en la función del área, de modo que esta última
+            únicamente dependa de la variable <InlineMath>{"x"}</InlineMath>:
             <BlockMath>{"A(x, y)=xy"}</BlockMath>
-            <BlockMath>{"A(x)=x((300-2x)/2)"}</BlockMath>
+            <BlockMath>{"A(x)=x(150-x)"}</BlockMath>
             <BlockMath>{"A(x)=150x-x^2"}</BlockMath>
-            Obteniendo al área en función únicamente de{" "}
-            <InlineMath>{"x"}</InlineMath>. En muchos casos, cuando se tiene una
-            función de dos variables, se busca reducir dicha función a una sola
-            variable usando alguna condición que se mencione en el problema. De
-            igual manera, es útil mencionar que existen funciones de{" "}
-            <InlineMath>{"3"}</InlineMath> o más variables, aunque no serán
-            objeto de estudio en este curso.
+            ¿Cuál es el dominio de esta nueva función? ¿Cuál es el rango?
+            Analicemos un poco, recuerda que{" "}
+            <InlineMath>{"x+y=150"}</InlineMath>, por lo que podemos ver dos
+            casos extremos, el primero en el cuál{" "}
+            <InlineMath>{"x=0"}</InlineMath>, y por lo tanto{" "}
+            <InlineMath>{"y=150"}</InlineMath>, y el segundo en el cuál{" "}
+            <InlineMath>{"x=150"}</InlineMath> y{" "}
+            <InlineMath>{"y=0"}</InlineMath>. Entonces, gracias a la restricción
+            hemos podido determinar que el dominio de{" "}
+            <InlineMath>{"x"}</InlineMath> es:{" "}
+            <InlineMath>{"0 \\leq x \\leq 150"}</InlineMath>.
+            <br />
+            <br />
+            En cuanto al rango, aún cuando <InlineMath>
+              {"A(0)=0"}
+            </InlineMath> y <InlineMath>{"A(150)=0"}</InlineMath>, eso no
+            significa que el rango es{" "}
+            <InlineMath>{"0 \\leq A(x) \\leq 0"}</InlineMath>. Utilizando la
+            vista gráfica 2 determina cuál es el rango de la función área y
+            selecciona la respuesta:
+          </p>
+          <Form /* className="prueba" */>
+            <Form.Group>
+              <Form.Check
+                type="checkbox"
+                id="opcionA"
+                name="opcionesPreg2"
+                value="a"
+                checked={opcionSelecPreg2 === "a"}
+                onChange={() => handleSelecPreg2("a")}
+                label={<InlineMath>{"0 \\leq A(x) \\leq 150"}</InlineMath>}
+              />
+              <Form.Check
+                type="checkbox"
+                id="opcionB"
+                name="opcionesPreg2"
+                value="b"
+                checked={opcionSelecPreg2 === "b"}
+                onChange={() => handleSelecPreg2("b")}
+                label={<InlineMath>{"0 \\leq A(x) \\leq 5000"}</InlineMath>}
+              />
+
+              <Form.Check
+                type="checkbox"
+                id="opcionC"
+                name="opcionesPreg2"
+                value="c"
+                checked={opcionSelecPreg2 === "c"}
+                onChange={() => handleSelecPreg2("c")}
+                label={<InlineMath>{"0 \\leq A(x) \\leq 5625"}</InlineMath>}
+              />
+            </Form.Group>
+          </Form>
+        </Col>
+      </Row>
+      <Row className="row-act">
+        <Col className="actividad" md={10}>
+          <p>
+            <b>Actividad 9.</b> Una empresa de lácteos desea elaborar sus cajas
+            de leche de <InlineMath>{" 1000 \\,  \\text{cm}^3 "}</InlineMath>{" "}
+            (1L). De acuerdo con el diseñador, la altura de la botella debe
+            medir el doble de uno de sus lados de la base. Denotaremos la
+            longitud (en cm) de uno de los lados de la base con{" "}
+            <InlineMath>{"y"}</InlineMath>, el otro lado con{" "}
+            <InlineMath>{"x"}</InlineMath>, y la altura con{" "}
+            <InlineMath>{"2x"}</InlineMath>.
+          </p>
+          <ul>
+            <li>
+              ¿Cuál es la regla de correspondencia que calcula el área de la
+              caja? Recuerda que para calcular el área de una caja debes sumar
+              el área de sus 6 caras.
+              <Form>
+                <Form.Group>
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionA1"
+                    name="opciones1"
+                    value="a"
+                    checked={respuestasAct9.preg1 === "a"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg1")}
+                    label={<InlineMath>{"A(x,y) = 4x^2 + 6xy"}</InlineMath>}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionB1"
+                    name="opciones1"
+                    value="b"
+                    checked={respuestasAct9.preg1 === "b"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg1")}
+                    label={<InlineMath>{"A(x,y) = 4x^2 + 8xy"}</InlineMath>}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionC1"
+                    name="opciones1"
+                    value="c"
+                    checked={respuestasAct9.preg1 === "c"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg1")}
+                    label={<InlineMath>{"A(x,y) = 2x^2y + 6xy"}</InlineMath>}
+                  />
+                </Form.Group>
+              </Form>
+            </li>
+            <li>
+              ¿Cuál es la relación entre las variables{" "}
+              <InlineMath>x</InlineMath> y <InlineMath>y</InlineMath>?
+              <Form>
+                <Form.Group>
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionA2"
+                    name="opciones2"
+                    value="a"
+                    checked={respuestasAct9.preg2 === "a"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg2")}
+                    label={<InlineMath>{"1000 = 2x^2y"}</InlineMath>}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionB2"
+                    name="opciones2"
+                    value="b"
+                    checked={respuestasAct9.preg2 === "b"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg2")}
+                    label={<InlineMath>{"2000 = 2x^2y"}</InlineMath>}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionC2"
+                    name="opciones2"
+                    value="c"
+                    checked={respuestasAct9.preg2 === "c"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg2")}
+                    label={<InlineMath>{"1000 = 2x^2"}</InlineMath>}
+                  />
+                </Form.Group>
+              </Form>
+            </li>
+            <li>
+              ¿Cuál es la regla de correspondencia que calcula el área de la
+              caja en función de <InlineMath>x</InlineMath> únicamente?
+              <Form>
+                <Form.Group>
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionA3"
+                    name="opciones3"
+                    value="a"
+                    checked={respuestasAct9.preg3 === "a"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg3")}
+                    label={<InlineMath>{"A(x) = 4x^2 + 2000/x"}</InlineMath>}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionB3"
+                    name="opciones3"
+                    value="b"
+                    checked={respuestasAct9.preg3 === "b"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg3")}
+                    label={<InlineMath>{"A(x) = 4x^2 + 3000/x"}</InlineMath>}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionC3"
+                    name="opciones3"
+                    value="c"
+                    checked={respuestasAct9.preg3 === "c"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg3")}
+                    label={<InlineMath>{"A(x) = 4x^2 + 4000/x"}</InlineMath>}
+                  />
+                </Form.Group>
+              </Form>
+            </li>
+
+            <li>
+              ¿Cuál es la regla de correspondencia que calcula el área de la
+              caja en función de y únicamente?
+              <Form>
+                <Form.Group>
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionA4"
+                    name="opciones4"
+                    value="a"
+                    checked={respuestasAct9.preg4 === "a"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg4")}
+                    label={
+                      <InlineMath>
+                        {"A(y)=\\frac{2000}{y}+60\\sqrt{5} \\sqrt{y}"}
+                      </InlineMath>
+                    }
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionB4"
+                    name="opciones4"
+                    value="b"
+                    checked={respuestasAct9.preg4 === "b"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg4")}
+                    label={
+                      <InlineMath>
+                        {"A(y)=\\frac{2000}{y}+60 \\sqrt{y}"}
+                      </InlineMath>
+                    }
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionC4"
+                    name="opciones4"
+                    value="c"
+                    checked={respuestasAct9.preg4 === "c"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg4")}
+                    label={
+                      <InlineMath>
+                        {"A(y)=\\frac{2000}{\\sqrt{y}}+60 \\sqrt{5}\\sqrt{y}"}
+                      </InlineMath>
+                    }
+                  />
+                </Form.Group>
+              </Form>
+            </li>
+            <li>
+              Considerando el área en función del lado{" "}
+              <InlineMath>x</InlineMath> únicamente, si el diseñador dice que el
+              dominio de <InlineMath>x</InlineMath> debe ser{" "}
+              <InlineMath>{"5≤x≤20"}</InlineMath>. ¿Cuál es el rango de{" "}
+              <InlineMath>A(x)</InlineMath>?
+              <Form>
+                <Form.Group>
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionA5"
+                    name="opciones5"
+                    value="a"
+                    checked={respuestasAct9.preg5 === "a"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg5")}
+                    label={<InlineMath>{"624≤A(x)≤1750"}</InlineMath>}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionB5"
+                    name="opciones5"
+                    value="b"
+                    checked={respuestasAct9.preg5 === "b"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg5")}
+                    label={<InlineMath>{"700≤A(x)≤1100"}</InlineMath>}
+                  />
+                  <Form.Check
+                    type="checkbox"
+                    id="opcionC5"
+                    name="opciones5"
+                    value="c"
+                    checked={respuestasAct9.preg5 === "c"}
+                    onChange={(e) => handleRespChangeAct9(e, "preg5")}
+                    label={<InlineMath>{"1100≤A(x)≤1750"}</InlineMath>}
+                  />
+                </Form.Group>
+              </Form>
+            </li>
+          </ul>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p>
+            Como puedes ver, en muchos casos, cuando se tiene una función de dos
+            o más variables, se busca reducir dicha función a una sola variable
+            usando condiciones que relacionen a las variables independientes
+            entre sí.
           </p>
         </Col>
       </Row>
@@ -1646,22 +2185,22 @@ const Bloque1_1 = () => {
           ya que el taxi sólo podía recorrer un mínimo de cero km y un máximo de
           30 km. Y con imagen:
           <BlockMath>{"30 ≤ p(x) ≤ 630"}</BlockMath>
-          ya que el precio del viaje es de mínimo 30 pesos (cuando el taxi
-          recorre 0 km) y máximo 630 pesos (cuando el taxi recorre 30 km).
+          ya que el precio del viaje es de mínimo <InlineMath>30</InlineMath> pesos (cuando el taxi
+          recorre <InlineMath>0</InlineMath> km) y máximo <InlineMath>630</InlineMath> pesos (cuando el taxi recorre <InlineMath>30</InlineMath> km).
           <br />
           <br />
           Un día, el taxímetro se descompone y el taxista, para saber cuánto
           cobrar por cada viaje, decide hacer una tabla en la que pueda leer el
           precio para distintas distancias. El taxista comienza evaluando la
-          función en kilómetros enteros, es decir en x=0, 1, 2, 3, …, 30. No
+          función en kilómetros enteros, es decir en <InlineMath>x=0, 1, 2, 3, …, 30</InlineMath>. No
           obstante al percatarse que serán demasiados cálculos, decide evaluar
-          la función de 5km en 5km, es decir, en x=0, 5, 10, 15, 20, 25 y 30.
+          la función de <InlineMath>{" 5 \\, km"}</InlineMath> en <InlineMath>{" 5 \\, km"}</InlineMath>, es decir, en <InlineMath>x=0, 5, 10, 15, 20, 25, 30</InlineMath>.
         </p>
       </Row>
       <Row className="row-act">
         <Col className="actividad" md={10}>
           <p>
-            <b>Actividad 8:</b>. El taxista se encuentra evaluando la función{" "}
+            <b>Actividad 10:</b>. El taxista se encuentra evaluando la función{" "}
             <InlineMath>{"p(x)=30 + 8.5x"}</InlineMath> en{" "}
             <InlineMath>{"x=0, 5, 10, 15, 20, 25, 30"}</InlineMath>. Completa
             los cálculos que le faltan.
@@ -1767,7 +2306,7 @@ const Bloque1_1 = () => {
       <Row className="row-act">
         <Col className="actividad" md={10}>
           <p>
-            <b>Actividad 9:</b> Utilizando las evaluaciones previas realizadas
+            <b>Actividad 11:</b> Utilizando las evaluaciones previas realizadas
             sobre la función, completa los campos vacíos de la siguiente tabla:
           </p>
           <Container className="cont-table-act3">
@@ -1872,13 +2411,41 @@ const Bloque1_1 = () => {
             tabla podemos leer que cuando la distancia x es igual a 10, el
             precio p(x) será 115. ¿En cuál de los siguientes casos la tabla no
             le sirve taxista?
-            <br />
-            x=20
-            <br />
-            x=25
-            <br />
-            x=27
-            <br />
+          </p>
+          <Form>
+            <Form.Group>
+              <Form.Check
+                type="checkbox"
+                id="opcionA"
+                name="opcionesPreg3"
+                value="a"
+                checked={opcionSelecPreg3 === "a"}
+                onChange={() => handleSelecPreg3("a")}
+                label={<InlineMath>{"x=20"}</InlineMath>}
+              />
+              <Form.Check
+                type="checkbox"
+                id="opcionB"
+                name="opcionesPreg3"
+                value="b"
+                checked={opcionSelecPreg3 === "b"}
+                onChange={() => handleSelecPreg3("b")}
+                label={<InlineMath>{"x=25"}</InlineMath>}
+              />
+
+              <Form.Check
+                type="checkbox"
+                id="opcionC"
+                name="opcionesPreg3"
+                value="c"
+                checked={opcionSelecPreg3 === "c"}
+                onChange={() => handleSelecPreg3("c")}
+                label={<InlineMath>{"x=27"}</InlineMath>}
+              />
+            </Form.Group>
+          </Form>
+
+          <p>
             En realidad, la tabla sólo le sirve al taxista para distancias x
             múltiplos de 5, lo cual sucede con poca frecuencia. Un pasajero se
             sube al taxi y sólo recorre 2.5 km, ¿cómo debe hacer el taxista para
@@ -1986,14 +2553,14 @@ const Bloque1_1 = () => {
       <Row className="main-row">
         <Col className="actividad" sm={12} md={9} xl={6}>
           <p>
-            <b>Actividad 10:</b> Tomando en cuenta tus resultados de la
+            <b>Actividad 12:</b> Tomando en cuenta tus resultados de la
             actividad 2, completa la siguiente información:
           </p>
           <ul>
             <li className="liAct-4">
               <InlineMath>{"0"}</InlineMath> y <InlineMath>{"f(0)"}</InlineMath>{" "}
               se pueden graficar como el punto{" "}
-              <InlineMath>{"A(0, 30)"}</InlineMath>
+              <InlineMath>{"A=(0, 30)"}</InlineMath>
             </li>
             <li className="liAct-4">
               <InlineMath>{"5"}</InlineMath> y <InlineMath>{"f(5)"}</InlineMath>{" "}
@@ -2106,7 +2673,7 @@ const Bloque1_1 = () => {
         </Col>
         <Col className="actividad" sm={12} md={9} xl={5}>
           <p>
-            <b>Actividad 11:</b> En la siguiente cuadrícula, arrastra los puntos
+            <b>Actividad 13:</b> En la siguiente cuadrícula, arrastra los puntos
             amarillos a las coordenadas que les corresponden, según la actividad
             10.
             <br />
@@ -2132,38 +2699,38 @@ const Bloque1_1 = () => {
             <Form.Check
               type="checkbox"
               id="opcionA"
-              name="opciones"
+              name="opcionesPreg4"
               value="a"
-              checked={opcionSeleccionada === "a"}
-              onChange={() => handleSeleccion("a")}
+              checked={opcionSelecPreg4 === "a"}
+              onChange={() => handleSelecPreg4("a")}
               label="Una recta"
             />
             <Form.Check
               type="checkbox"
               id="opcionB"
-              name="opciones"
+              name="opcionesPreg4"
               value="b"
-              checked={opcionSeleccionada === "b"}
-              onChange={() => handleSeleccion("b")}
+              checked={opcionSelecPreg4 === "b"}
+              onChange={() => handleSelecPreg4("b")}
               label="Una parábola"
             />
 
             <Form.Check
               type="checkbox"
               id="opcionC"
-              name="opciones"
+              name="opcionesPreg4"
               value="c"
-              checked={opcionSeleccionada === "c"}
-              onChange={() => handleSeleccion("c")}
+              checked={opcionSelecPreg4 === "c"}
+              onChange={() => handleSelecPreg4("c")}
               label="El segmento de recta AH"
             />
             <Form.Check
               type="checkbox"
               id="opcionD"
-              name="opciones"
+              name="opcionesPreg4"
               value="d"
-              checked={opcionSeleccionada === "d"}
-              onChange={() => handleSeleccion("d")}
+              checked={opcionSelecPreg4 === "d"}
+              onChange={() => handleSelecPreg4("d")}
               label="Una curva cúbica"
             />
           </Form.Group>
@@ -2284,9 +2851,7 @@ const Bloque1_1 = () => {
           <h4>Dominio e imagen puntuales</h4>
           <h4>Dominio e imagen en intervalos</h4>
         </Col>
-        <Col className="border">
-          <VariacionFunciones />
-        </Col>
+        <Col>{/* <VariacionFunciones /> */}</Col>
       </Row>
       <Row>
         <Fade in={open}>

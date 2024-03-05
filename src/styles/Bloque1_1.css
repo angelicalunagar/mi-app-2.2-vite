@@ -103,6 +103,15 @@ h4 {
   text-align: center;
 }
 
+.input-act8 {
+  border-color: #ffecd1;
+  border-radius: 8px;
+  background-color: #ffecd1;
+  padding: 8px;
+  width: 7rem; 
+  text-align: center;
+}
+
 
 .input-act3 {
   border-color: #ffecd1 ;
@@ -131,6 +140,13 @@ h4 {
   width: 100%;
   height: 12rem;
   overflow: hidden;
+}
+
+
+.col-iceCreamMan img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover; 
 }
 
 .button-center {
