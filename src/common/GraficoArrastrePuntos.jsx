@@ -1,15 +1,20 @@
+
 //GraficoArrastrePuntos.jsx
-import React, { useEffect } from "react";
+import React, { useEffect, useRef} from "react";
 import { JSXGraph } from "jsxgraph";
 
-const GraficoArrastrePuntos = () => {
+const GraficoArrastrePuntos = ({ dibujarSegmentoAG }) => {
+  
+
   useEffect(() => {
     // Inicializar el tablero
     const board = JSXGraph.initBoard("jsxgraph-container", {
       boundingbox: [-2.5, 295, 32, -10],
       axis: true,
       showcopyright: false,
-    });
+    }); 
+
+    /* const board = boardRef.current; */
 
     // Definir los puntos A, B, G
     const puntoA = board.create("point", [0, 30], {
@@ -18,6 +23,8 @@ const GraficoArrastrePuntos = () => {
       color: "blue",
       fixed: true,
     });
+
+    console.log(puntoA);
     const puntoB = board.create("point", [5, 72.5], {
       name: "B",
       size: 3,
@@ -31,6 +38,11 @@ const GraficoArrastrePuntos = () => {
       color: "blue",
       fixed: true,
     });
+
+    if (dibujarSegmentoAG) {
+      board.create('segment', [puntoA, puntoG]);
+    }
+
     // Definir las coordenadas objetivo de los puntos C, D, E, F
     const coordsObjetivo = {
       C: { x: 10, y: 115},
@@ -136,12 +148,12 @@ const GraficoArrastrePuntos = () => {
     puntoE.on("up", () => handleDragEnd(puntoE));
     puntoF.on("up", () => handleDragEnd(puntoF));
     
-
     // Limpiar al desmontar el componente
     return () => {
-      JXG.JSXGraph.freeBoard(board);
+      JSXGraph.freeBoard(board);
     };
-  }, []); // Se ejecuta solo una vez al montar el componente
+  
+  }, [dibujarSegmentoAG]); 
 
   return (
     <div style={{ backgroundColor: "white" }}>
@@ -155,3 +167,5 @@ const GraficoArrastrePuntos = () => {
 };
 
 export default GraficoArrastrePuntos;
+
+

@@ -9,6 +9,7 @@ import QueEsFuncion from "./QueEsFuncion";
 import NomenclaturaFunciones from "./NomenclaturaFunciones";
 import FuncionesDosVariables from "./FuncionesDosVariables";
 import TablaDeFuncion from "./TablaDeFuncion";
+import GraficosDeFunciones from "./GraficosDeFunciones";
 
 function Bloque2(){
   return(
@@ -26,6 +27,7 @@ function Bloque2(){
       <NomenclaturaFunciones />
       <FuncionesDosVariables /> 
       <TablaDeFuncion />
+      <GraficosDeFunciones />
       
     </div>
   );

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 import VarDepYVarIndep from "./VarDepYVarIndep";
@@ -11,10 +10,11 @@ import QueEsFuncion from "./QueEsFuncion";
 import NomenclaturaFunciones from "./NomenclaturaFunciones";
 import FuncionesDosVariables from "./FuncionesDosVariables";
 import TablaDeFuncion from "./TablaDeFuncion";
+import '../styles/Sidebar.css'
 
 function Sidebar({ show, close }) {
   /* const [show, setShow] = useState(false); */
-  const [selectedComponent, setSelectedComponent] = useState(null);
+  const [selectedComponent, setSelectedComponent] = useState('VarDepYVarIndep');
 
 /*   const handleClose = () => {
     setShow(false);
@@ -55,83 +55,91 @@ function Sidebar({ show, close }) {
 
       <Offcanvas show={show} onHide={close}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Contenido</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          <ul>
+        <Offcanvas.Body className="sidebar">
+          <ul className="list-unstyled">
             <li>
-              <Button
-                variant="link"
+              <button
                 onClick={() => setSelectedComponent("VarDepYVarIndep")}
+                className={`text-nowrap sidebar-button ${selectedComponent === "VarDepYVarIndep" ? "selected" : ""}`}
+                
               >
-                VarDepYVarIndep
-              </Button>
+                Variable dependiente y variable independiente
+              </button>
             </li>
             <li>
-              <Button
-                variant="link"
+              <button
+                
                 onClick={() => setSelectedComponent("ReglaDeCorrespondencia")}
+                className={`text-nowrap sidebar-button ${selectedComponent === "ReglaDeCorrespondencia" ? "selected" : ""}`}
               >
-                ReglaDeCorrespondencia
-              </Button>
+                Regla de correspondencia
+              </button>
             </li>
             <li>
-              <Button
-                variant="link"
+              <button
+               
                 onClick={() =>
                   setSelectedComponent("EvaluarLaReglaDeCorrespon")
                 }
+                className={`text-nowrap sidebar-button ${selectedComponent === "EvaluarLaReglaDeCorrespon" ? "selected" : ""}`}
               >
-                EvaluarLaReglaDeCorrespon
-              </Button>
+                Evaluar la regla de correspondencia
+              </button>
             </li>
             <li>
-              <Button
-                variant="link"
+              <button
+                
                 onClick={() => setSelectedComponent("ValoresVarIndep")}
+                className={`text-nowrap sidebar-button ${selectedComponent === "ValoresVarIndep" ? "selected" : ""}`}
               >
-                ValoresVarIndep
-              </Button>
+                Valores que adquiere la variable independiente
+              </button>
             </li>
             <li>
-              <Button
-                variant="link"
+              <button
+                
                 onClick={() => setSelectedComponent("ValoresVarDependiente")}
+                className={`text-nowrap sidebar-button ${selectedComponent === "ValoresVarDependiente" ? "selected" : ""}`}
               >
-                ValoresVarDependiente
-              </Button>
+                Valores que adquiere la variable dependiente
+              </button>
             </li>
             <li>
-              <Button
-                variant="link"
+              <button
                 onClick={() => setSelectedComponent("QueEsFuncion")}
+                className={`text-nowrap sidebar-button ${selectedComponent === "QueEsFuncion" ? "selected" : ""}`}
               >
-                QueEsFuncion
-              </Button>
+                ¿Qué es una función?
+              </button>
             </li>
             <li>
-              <Button
-                variant="link"
+              <button
+                
                 onClick={() => setSelectedComponent("NomenclaturaFunciones")}
+                className={`text-nowrap sidebar-button ${selectedComponent === "NomenclaturaFunciones" ? "selected" : ""}`}
               >
-                NomenclaturaFunciones
-              </Button>
+                Nomenclatura de las funciones
+              </button>
             </li>
             <li>
-              <Button
-                variant="link"
+              <button
+                
                 onClick={() => setSelectedComponent("FuncionesDosVariables")}
+                className={`text-nowrap sidebar-button ${selectedComponent === "FuncionesDosVariables" ? "selected" : ""}`}
               >
-                FuncionesDosVariables
-              </Button>
+                Funciones de dos variables
+              </button>
             </li>
             <li>
-              <Button
-                variant="link"
+              <button
+                
                 onClick={() => setSelectedComponent("TablaDeFuncion")}
+                className={`text-nowrap sidebar-button ${selectedComponent === "TablaDeFuncion" ? "selected" : ""}`}
               >
-                TablaDeFuncion
-              </Button>
+                Tabla de una función
+              </button>
             </li>
           </ul>
         </Offcanvas.Body>

@@ -2,12 +2,13 @@ import React from "react";
 import "../styles/Bloque4.css";
 import Sidebar from "./Sidebar";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
+import { useState } from "react";
 
 function Bloque4() {
   const [showSidebar, setShowSidebar] = useState(false);
-
 
   const handleShow = () => {
     setShowSidebar(true);
@@ -16,23 +17,26 @@ function Bloque4() {
     setShowSidebar(false);
   };
 
-  console.log(showSidebar);
-  console.log(setShowSidebar);
-
-  
-
   return (
     <div className="bloque4-contenedor">
-      <div className="h-center">
-        <h1>Bloque 4</h1>
-        <h2>Funciones</h2>
-      </div>
-    
-      <Sidebar show={showSidebar} close={handleClose}/>
-      <Button variant="primary" onClick={handleShow}>
-        Launch
-      </Button>
-     
+      <Row className="h-center">
+        <Col md={2}>
+          <Button className="button-azul" onClick={handleShow}>
+            Contenido
+          </Button>
+        </Col>
+        <Col className="col-tittles" md={8}>
+          <h1>Bloque 4</h1>
+          <h2>Funciones</h2>
+        </Col>
+        <Col md={2}>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Sidebar show={showSidebar} close={handleClose} />
+        </Col>
+      </Row>
     </div>
   );
 }
