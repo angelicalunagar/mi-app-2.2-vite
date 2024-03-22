@@ -1,14 +1,14 @@
-import { useContext, useEffect,  } from 'react';
-import { JSXGraph } from 'jsxgraph';
-import { BoardContext } from '../contexts/BoardContext';
-import "../styles/Board.css";
+import { useContext, useEffect } from "react";
+import { JSXGraph } from "jsxgraph";
+import { BoardZoomContext } from "../contexts/BoardZoomContext";
+import "../styles/BoardZoom.css";
 
-const Board = () => {
-  const {brd, setBrd}  = useContext(BoardContext);
+const BoardZoom = () => {
+  const { brdZ, setBrdZ } = useContext(BoardZoomContext);
 
   useEffect(() => {
-    if (brd === null) {
-      const board = JSXGraph.initBoard('jsxgraph-container', {
+    if (brdZ === null) {
+      const board = JSXGraph.initBoard("jsxgraph-containerZ", {
         boundingbox: [-2.5, 295, 32, -10],
         axis: true,
         showNavigation: true,
@@ -42,19 +42,19 @@ const Board = () => {
       buttonContainer.appendChild(zoomOutButton);
 
       document
-        .getElementById("jsxgraph-container")
+        .getElementById("jsxgraph-containerZ")
         .appendChild(buttonContainer);
 
-
-
-      setBrd(board);
+      setBrdZ(board);
     }
-
   });
 
-  return <div id="jsxgraph-container" style={{ width: '100%', height: '400px', backgroundColor: "white" }}></div>;
+  return (
+    <div
+      id="jsxgraph-containerZ"
+      style={{ width: "100%", height: "400px", backgroundColor: "white" }}
+    ></div>
+  );
 };
 
-
-export default Board;
-
+export default BoardZoom;

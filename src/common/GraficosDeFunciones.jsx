@@ -1,25 +1,24 @@
 //GraficosDeFunciones.jsx
-import { useState} from "react";
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
-import GraficoArrastrePuntos from "./GraficoArrastrePuntos";
 import "katex/dist/katex.min.css";
 import { BlockMath, InlineMath } from "react-katex";
 import "../styles/Bloque1_1.css";
 import { Button, Form, Image } from "react-bootstrap";
 import graficarPuntos from "../assets/graficarPuntos.gif";
+import { BoardContextProvider } from "../contexts/BoardContext";
+import { SegmentContextProvider } from "../contexts/SegmentContext";
+import { RectaAGContextProvider } from "../contexts/RectaAGContext";
+
+import Board from "./Board";
+import GraficoArrastrePuntos from "./GraficoArrastrePuntos";
+import SegmentAG from "./SegmentAG";
+import RectaAG from "./RectaAG";
 
 const GraficosDeFunciones = () => {
-
-
-  const [dibujarSegmentoAG, setDibujarSegmentoAG] = useState(false);
-
-  const handleDibujarSegmentoAG = () => {
-    setDibujarSegmentoAG(true);
-  };
-
   const [fullscreen, setFullscreen] = useState(false);
 
   const toggleFullscreen = () => {
@@ -157,8 +156,8 @@ const GraficosDeFunciones = () => {
       <Row className="main-row">
         <Col className="actividad" sm={12} md={9} xl={6}>
           <p>
-            <b>Actividad 12:</b> Tomando en cuenta tus resultados de la
-            actividad 2, completa la siguiente información:
+            <b>Actividad 12:</b> Tomando en cuenta los datos de la Tabla 5,
+            completa la siguiente información:
           </p>
           <ul>
             <li className="liAct-4">
@@ -169,12 +168,12 @@ const GraficosDeFunciones = () => {
             <li className="liAct-4">
               <InlineMath>{"5"}</InlineMath> y <InlineMath>{"f(5)"}</InlineMath>{" "}
               se pueden graficar como el punto{" "}
-              <InlineMath>{"B(5, 72.5)"}</InlineMath>
+              <InlineMath>{"B=(5, 72.5)"}</InlineMath>
             </li>
             <li className="liAct-4">
               <InlineMath>{"10"}</InlineMath> y{" "}
               <InlineMath>{"f(10)"}</InlineMath> se pueden graficar como el
-              punto <InlineMath>{"C("}</InlineMath>
+              punto <InlineMath>{"C=("}</InlineMath>
               <input
                 className="input-coord"
                 type="text"
@@ -193,7 +192,7 @@ const GraficosDeFunciones = () => {
             <li className="liAct-4">
               <InlineMath>{"15"}</InlineMath> y{" "}
               <InlineMath>{"f(15)"}</InlineMath> se pueden graficar como el
-              punto <InlineMath>{"D("}</InlineMath>
+              punto <InlineMath>{"D=("}</InlineMath>
               <input
                 className="input-coord"
                 type="text"
@@ -212,7 +211,7 @@ const GraficosDeFunciones = () => {
             <li className="liAct-4">
               <InlineMath>{"20"}</InlineMath> y{" "}
               <InlineMath>{"f(20)"}</InlineMath> se pueden graficar como el
-              punto <InlineMath>{"E("}</InlineMath>
+              punto <InlineMath>{"E=("}</InlineMath>
               <input
                 className="input-coord"
                 type="text"
@@ -231,7 +230,7 @@ const GraficosDeFunciones = () => {
             <li className="liAct-4">
               <InlineMath>{"25"}</InlineMath> y{" "}
               <InlineMath>{"f(25)"}</InlineMath> se pueden graficar como el
-              punto <InlineMath>{"F("}</InlineMath>
+              punto <InlineMath>{"F=("}</InlineMath>
               <input
                 className="input-coord"
                 type="text"
@@ -250,7 +249,7 @@ const GraficosDeFunciones = () => {
             <li className="liAct-4">
               <InlineMath>{"30"}</InlineMath> y{" "}
               <InlineMath>{"f(30)"}</InlineMath> se pueden graficar como el
-              punto <InlineMath>{"G("}</InlineMath>
+              punto <InlineMath>{"G=("}</InlineMath>
               <input
                 className="input-coord"
                 type="text"
@@ -267,36 +266,46 @@ const GraficosDeFunciones = () => {
               <InlineMath>{")"}</InlineMath>
             </li>
             y en general:
-            <br />
-            <li>
+            <p>
+              <br />
               <InlineMath>{"x"}</InlineMath> y <InlineMath>{"f(x)"}</InlineMath>{" "}
               se puede graficar como el punto{" "}
               <InlineMath>{"P(x, y)"}</InlineMath>.
-            </li>
+            </p>
           </ul>
         </Col>
         <Col className="actividad" sm={12} md={9} xl={5}>
-          <p>
-            <b>Actividad 13:</b> En la siguiente cuadrícula, arrastra los puntos
-            amarillos a las coordenadas que les corresponden, según la actividad
-            12.
-            <br />
-            <br />
-            <Button id='segmentoAG' onClick={handleDibujarSegmentoAG}>
-              Segmento <InlineMath>{"AG"}</InlineMath>
-            </Button>
-            <Button>
-              Gráfica de <InlineMath>{"f(x)=2x"}</InlineMath>
-            </Button>
-          </p>
-          <GraficoArrastrePuntos dibujarSegmentoAG={dibujarSegmentoAG}/>
+          <BoardContextProvider>
+            <SegmentContextProvider>
+              <RectaAGContextProvider>
+                <p>
+                  <b>Actividad 13:</b> En la siguiente cuadrícula, arrastra los
+                  puntos amarillos a las coordenadas que les corresponden, según
+                  la actividad 12.
+                  <br />
+                  <br />
+                  <SegmentAG />
+                  <RectaAG />
+                  {/* <Button>
+                  Gráfica de <InlineMath>{"f(x)=2x"}</InlineMath>
+                </Button> */}
+                </p>
+                <Board />
+              </RectaAGContextProvider>
+              <GraficoArrastrePuntos />
+            </SegmentContextProvider>
+          </BoardContextProvider>
         </Col>
       </Row>
       <Row className="main-row">
         <p>
-          Hasta aquí lo que hemos obtenido son sólo puntos aislados que
-          pertenecen a la gráfica de la función, mas no la gráfica completa.
-          ¿Qué se forma si unimos los puntos que graficamos?
+          Hasta aquí lo que hemos obtenido son solo puntos aislados que
+          representan exactamente la misma información que la Tabla 5. Es decir,
+          de estos puntos graficados en el plano cartesiano es posible leer
+          cuánto cobrará el taxista si recorre 5 km, 10 km, etc. tan solo con
+          mirar a que altura (coordenada y) se encuentra cada punto. No
+          obstante, podemos obtener más información si unimos los putos. ¿Qué se
+          forma si unimos los puntos que graficamos?
         </p>
         <Form /* className="prueba" */>
           <Form.Group>
@@ -342,20 +351,20 @@ const GraficosDeFunciones = () => {
         <p>
           <br />
           Ciertamente, cuando unimos los puntos se forma el segmento de recta
-          AG, el cuál es sólo una parte de la gráfica de la función. Usa el
-          siguiente botón para dibujar el segmento en la cuadrícula de la
-          actividad 5.
+          AG. Oprime el siguiente botón que habilitará la opción de trazar el segmento en la
+          ventana gráfica de la Actividad 13.
           <br />
           <br />
           <Button>
-            Graficar segmento <InlineMath>{"AG"}</InlineMath>
+            Habilitar segmento <InlineMath>{"AG"}</InlineMath>
           </Button>
           <br />
           <br />
-          De hecho, ni siquiera podemos dibujar la gráfica completa, sino
-          solamente la parte que cabe en nuestra cuadrícula. Esto se debe a que
-          la función <InlineMath>{"f(x)=2x"}</InlineMath> puede recibir
-          cualquier número de la recta real, desde números tan negativos como{" "}
+          Una vez más, no hemos graficado la gráfica completa de la función. De
+          hecho, ni siquiera podemos dibujar la gráfica completa, sino solamente
+          la parte que cabe en nuestra cuadrícula. Esto se debe a que la función{" "}
+          <InlineMath>{"p(x)=30+8.5x"}</InlineMath> puede recibir cualquier
+          número de la recta real, desde números tan negativos como{" "}
           <InlineMath>{"\\text{-10 000 000 000}"}</InlineMath>, números
           irracionales como <InlineMath>{"e"}</InlineMath> y{" "}
           <InlineMath>{"\\pi"}</InlineMath>, números racionales como{" "}

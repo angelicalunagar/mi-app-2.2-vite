@@ -10,6 +10,7 @@ import QueEsFuncion from "./QueEsFuncion";
 import NomenclaturaFunciones from "./NomenclaturaFunciones";
 import FuncionesDosVariables from "./FuncionesDosVariables";
 import TablaDeFuncion from "./TablaDeFuncion";
+import GraficosDeFunciones from "./GraficosDeFunciones";
 import '../styles/Sidebar.css'
 
 function Sidebar({ show, close }) {
@@ -42,6 +43,8 @@ function Sidebar({ show, close }) {
         return <FuncionesDosVariables />;
       case "TablaDeFuncion":
         return <TablaDeFuncion />;
+      case "GraficosDeFunciones":
+        return <GraficosDeFunciones />;
       default:
         return null;
     }
@@ -139,6 +142,15 @@ function Sidebar({ show, close }) {
                 className={`text-nowrap sidebar-button ${selectedComponent === "TablaDeFuncion" ? "selected" : ""}`}
               >
                 Tabla de una función
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => setSelectedComponent("GraficosDeFunciones")}
+                className={`text-nowrap sidebar-button ${selectedComponent === "GraficosDeFunciones" ? "selected" : ""}`}
+                
+              >
+                Gráficos de Funciones
               </button>
             </li>
           </ul>

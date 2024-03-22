@@ -161,11 +161,11 @@ const GraficoArrastrePuntos = () => {
 
   return (
     <div style={{ backgroundColor: "white" }}>
-      <div
+    {/*   <div
         id="jsxgraph-container"
         className="jxgbox color-marco"
         style={{ width: "100%", height: "480px" }}
-      />
+      /> */}
     </div>
   );
 };

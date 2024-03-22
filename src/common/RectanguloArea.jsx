@@ -6,12 +6,28 @@ const RectanguloArea = () => {
     const board = JSXGraph.initBoard("variation-container2", {
       boundingbox: [-15, 170, 170, -15],
       axis: true,
+
       pan: {
         needShiftToPan: true,
         enabled: true,
       },
+      /*    zoom: {  // Configuración de zoom
+        enabled: true,  // Habilitar zoom
+        wheel: true,    // Permitir zoom con la rueda del mouse
+        needShift: true,  // Requiere presionar la tecla Shift para zoom con la rueda del mouse
+        min: 0.001,       // Valor mínimo de zoom
+        max: 1000.0,      // Valor máximo de zoom
+      }, */
+      showFullscreen: true,
+      fullscreen: {
+        symbol: "\u22c7",
+        scale: 0.95,
+      },
       showcopyright: false,
+      showZoom: true,
+      showNavigation: true,
     });
+
 
     // Crear los ejes x e y
     const xAxis = board.create(
@@ -45,7 +61,7 @@ const RectanguloArea = () => {
 
       // Calcular el área del rectángulo
       const areaValue = newXCoord * newYCoord;
-      
+
       // Actualizar el texto del área
       areaLabel.setText(`Área: ${areaValue.toFixed(2)}`);
     };
