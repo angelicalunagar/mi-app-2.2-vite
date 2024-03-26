@@ -1,31 +1,47 @@
 import { useContext, useState } from "react";
-import { BoardContext } from "../contexts/BoardContext";
+import { BoardsContext } from "../contexts/BoardsContext";
+import { SegmentContext } from "../contexts/SegmentContext";
 
-const SegmentAG = () => {
-  const { brd, ids, setIds } = useContext(BoardContext);
-  const [segmentoDibujado, setSegmentoDibujado] = useState(false);
+const SegmentAGX = ( {boardId} ) => {
+  const { brd, ids, setIds } = useContext(BoardsContext);
+  const { segDibujado, setSegDibujado, setDibPuntoM } = useContext(SegmentContext);
 
   const toggleSegmento = () => {
-    if (brd !== null) {
-      if (segmentoDibujado) {
+    if (brd[boardId]) {
+      const board = brd[boardId];
 
-        const segmentId = ids.idSegBG; // Obtener el ID del segmento desde la propiedad idSegBG
-        brd.removeObject(segmentId, false); // Eliminar el objeto del tablero usando su ID
-        // Filtrar los IDs para eliminar el ID del segmento de la lista de IDs
-        setIds({
-          ...ids,
-          idSegBG: '',
-        } 
-        );
-        setSegmentoDibujado(false);
+      if (segDibujado) {
+
+        const segmentId = ids.idSegAG; 
+        board.removeObject(segmentId, false);
+
+        const perpendicularToXAxisId = ids.idPerpendicularToXAxis;
+        const perpendicularToYAxisId = ids.idPerpendicularToYAxis;
+
+        if (perpendicularToXAxisId) board.removeObject(perpendicularToXAxisId, false);
+        if (perpendicularToYAxisId) board.removeObject(perpendicularToYAxisId, false);
+      
+        setIds((prevIds) => ({
+          ...prevIds,
+          idSegAG: '',
+          idPerpendicularToXAxis: '',
+          idPerpendicularToYAxis: '',
+        }));
+
+        setSegDibujado(false);
+        setDibPuntoM(false);
 
       } else {
-        if (ids.idB && ids.idG) {
-          // Crea un segmento entre los puntos B y G
-          const segmento = brd.create("segment", [ids.idB, ids.idG]);
-          // Guarda el ID del segmento en la lista de IDs
-          setIds({ ...ids, idSegBG: segmento.id });
-          setSegmentoDibujado(true);
+        if (ids.idPuntoA && ids.idPuntoG) {
+      
+          const segmento = board.create("segment", [ids.idPuntoA, ids.idPuntoG]);
+ 
+          setIds((prevIds) => ({
+            ...prevIds,
+            idSegAG: segmento.id ,
+          }));
+
+          setSegDibujado(true);
         }
       }
     }
@@ -34,10 +50,10 @@ const SegmentAG = () => {
   return (
     <div>
       <button onClick={toggleSegmento}>
-        {segmentoDibujado ? "Borrar Segmento" : "Trazar Segmento"}
+      {segDibujado? "Borrar Segmento" : "Trazar Segmento"}
       </button>
     </div>
   );
 };
 
-export default SegmentAG;
+export default SegmentAGX;

@@ -5,15 +5,20 @@ import { BoardContextProvider } from "../contexts/BoardContext";
 import { FuncionContextProvider } from "../contexts/FuncionContext";
 import { SegmentContextProvider } from "../contexts/SegmentContext";
 import { BoardZoomContextProvider } from "../contexts/BoardZoomContext";
-import {RectaAGContextProvider} from '../contexts/RectaAGContext';
+import { RectaAGContextProvider } from "../contexts/RectaAGContext";
+import { BoardsContextProvider } from "../contexts/BoardsContext";
 
 import SegmentAG from "./SegmentAG";
+import SegmentAGX from "./SegmentAGX";
 import BoardZoom from "./BoardZoom";
 import RectaAG from "./RectaAG";
+import PuntoMovibleM from "./PuntoMovibleM";
+import BoardX from "./BoardX";
+import PuntoMovibleMX from "./PuntoMovibleMX";
 
 import Board from "./Board";
 import GraficoArrastrePuntos from "./GraficoArrastrePuntos";
-
+import GraficoArrastrePuntosX from "./GraficoArrastrePuntosX";
 
 function Bloque5() {
   return (
@@ -21,28 +26,49 @@ function Bloque5() {
       <h1>Bloque 5</h1>
       <BoardContextProvider>
         <SegmentContextProvider>
-         <RectaAGContextProvider>
-          <Row>
-            <Col md={6}>
-              {/* <GrafDeFunciones /> */}
-              <Board />
-              <GraficoArrastrePuntos />
-            </Col>
-            <Col>
-              <SegmentAG />
-              <RectaAG />
-            </Col>
-          </Row>
-          </RectaAGContextProvider> 
+          <RectaAGContextProvider>
+            <Row>
+              <Col md={6}>
+                <Board />
+                <GraficoArrastrePuntos />
+              </Col>
+              <Col>
+                <SegmentAG />
+                <RectaAG />
+                <PuntoMovibleM />
+              </Col>
+            </Row>
+          </RectaAGContextProvider>
         </SegmentContextProvider>
       </BoardContextProvider>
-      <BoardZoomContextProvider>
-        <Row>
-          <Col md={9}>
-            <BoardZoom />
-          </Col>
-        </Row>
-      </BoardZoomContextProvider>
+      <BoardsContextProvider>
+        <SegmentContextProvider>
+          <Row>
+            <Col md={8}>
+              <BoardX boardId="board1" />
+              <GraficoArrastrePuntosX boardId="board1" />
+            </Col>
+            <Col>
+              <SegmentAGX boardId="board1" />
+              <PuntoMovibleMX boardId="board1"/>
+            </Col>
+          </Row>
+        </SegmentContextProvider>
+      </BoardsContextProvider>
+
+      <BoardsContextProvider>
+        <SegmentContextProvider>
+          <Row>
+            <Col md={8}>
+              <BoardX boardId="board2" />
+              <GraficoArrastrePuntosX boardId="board2" />
+            </Col>
+            <Col>
+              <SegmentAGX boardId="board2" />
+            </Col>
+          </Row>
+        </SegmentContextProvider>
+      </BoardsContextProvider>
     </div>
   );
 }

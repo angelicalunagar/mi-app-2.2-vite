@@ -351,8 +351,8 @@ const GraficosDeFunciones = () => {
         <p>
           <br />
           Ciertamente, cuando unimos los puntos se forma el segmento de recta
-          AG. Oprime el siguiente botón que habilitará la opción de trazar el segmento en la
-          ventana gráfica de la Actividad 13.
+          AG. Oprime el siguiente botón que habilitará la opción de trazar el
+          segmento en la ventana gráfica de la Actividad 13.
           <br />
           <br />
           <Button>
@@ -360,44 +360,21 @@ const GraficosDeFunciones = () => {
           </Button>
           <br />
           <br />
-          Una vez más, no hemos graficado la gráfica completa de la función. De
-          hecho, ni siquiera podemos dibujar la gráfica completa, sino solamente
-          la parte que cabe en nuestra cuadrícula. Esto se debe a que la función{" "}
-          <InlineMath>{"p(x)=30+8.5x"}</InlineMath> puede recibir cualquier
-          número de la recta real, desde números tan negativos como{" "}
-          <InlineMath>{"\\text{-10 000 000 000}"}</InlineMath>, números
-          irracionales como <InlineMath>{"e"}</InlineMath> y{" "}
-          <InlineMath>{"\\pi"}</InlineMath>, números racionales como{" "}
-          <InlineMath>{"5/2"}</InlineMath> y{" "}
-          <InlineMath>{"234/899"}</InlineMath>, y números positivos tan grandes
-          como <InlineMath>{"\\text{999 999 999}"}</InlineMath>, ya que la
-          función es capaz de devolver un valor para cualquiera de estos
-          números.
-          <br />
-          <br />A la totalidad de valores que puede recibir una función se le
-          llama <b>dominio de la función</b>, y por ahora basta con saber que el
-          dominio de <InlineMath>{"f(x)=2x"}</InlineMath> es el conjunto de los
-          números reales <InlineMath>{"(-\\infty, +\\infty)"}</InlineMath>.
-          Similarmente, a la totalidad de valores que devuelve una función se le
-          llama <b>rango</b> o <b>imagen</b>, que en el caso de{" "}
-          <InlineMath>{"f(x)=2x"}</InlineMath> es igualmente el conjunto de los
-          números reales. Esto se denota como:
-          <br />
-          <br />
+          Dicho segmento nos permite aproximar el precio de cualquier viaje que
+          comprenda una distancia entre 0 y 30 km. Por ejemplo, si un viaje dura
+          5.2 km, lo único que tienes que hacer es buscar 5.2 en el eje x y
+          mirar cuál es la coordenada y que le corresponde, tal como se aprecia
+          en la vista gráfica X si oprimes el botón Punto movible.
+<br />
+<br />
+          <Button>
+            Punto movible M
+          </Button>
+
           <BlockMath>{"\\text{Dom}(f): \\{ x \\in \\mathbb{R} \\}"}</BlockMath>
           <BlockMath>
             {"\\text{Im}(f): \\{ f(x) \\in \\mathbb{R} \\}"}
           </BlockMath>
-          <br />
-          Así como hemos graficado el punto (3, f(3))=(3, 6) también podríamos
-          graficar los puntos (10, 000, f(10, 000))=(10 000, 20 000) o bien
-          (-100, f(-100))=(-100, -200), y en general puntos cada vez más
-          alejados del origen del plano cartesiano, si no fuera porque nuestra
-          cuadrícula solo abarca puntos (x, y=f(x)) cuya coordenada x esté entre
-          -4 y 4 (xe [-4, 4]) y cuya coordenada y esté entre -5 y 7 (y e [-5,
-          7]). Esta limitación técnica obliga a dibujar únicamente la parte de
-          la gráfica que cabe en la cuadrícula. Usa el siguiente botón para
-          dibujar la gráfica de la función <InlineMath>{"f(x)=2x"}</InlineMath>.
           <br />
           <br />
           <Button>
