@@ -10,7 +10,7 @@ import NomenclaturaFunciones from "./NomenclaturaFunciones";
 import FuncionesDosVariables from "./FuncionesDosVariables";
 import TablaDeFuncion from "./TablaDeFuncion";
 /* import GraficosDeFunciones from "./GraficosDeFunciones"; */
-import GraficosDeFunciones from "./GraficosDeFunciones";
+import GraficosDeFunciones from "./GraficosDeFunciones/GraficosDeFunciones";
 
 function Bloque2(){
   return(

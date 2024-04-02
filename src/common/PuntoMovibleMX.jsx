@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { BoardsContext } from "../contexts/BoardsContext";
 import { SegmentContext } from "../contexts/SegmentContext";
+import {Button} from "react-bootstrap";
 
 const PuntoMovibleMX = ( {boardId} ) => {
   const { brd, ids, setIds } = useContext(BoardsContext);
@@ -30,7 +31,7 @@ const PuntoMovibleMX = ( {boardId} ) => {
       } else {
         if (ids.idSegAG) {
           // Crea un segmento entre los puntos B y G
-          const puntoM = board.create("glider", [12, 132, ids.idSegAG], {
+          const puntoM = board.create("glider", [12.3, 134.55, ids.idSegAG], {
             name: "M",
           });
 
@@ -68,9 +69,9 @@ const PuntoMovibleMX = ( {boardId} ) => {
 
   return (
     <div>
-      <button onClick={togglePuntoM}>
+      <Button onClick={togglePuntoM}>
         {dibPuntoM? "Borrar Punto M" : "Dibujar Punto M"}
-      </button>
+      </Button>
     </div>
   );
 };

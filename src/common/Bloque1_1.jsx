@@ -3,20 +3,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import Table from "react-bootstrap/Table";
-import GraficoArrastrePuntos from "./GraficoArrastrePuntos";
-
 import "katex/dist/katex.min.css";
 import { BlockMath, InlineMath } from "react-katex";
 import "../styles/Bloque1_1.css";
 import { Button, Fade, Form, Image } from "react-bootstrap";
-import graficarPuntos from "../assets/graficarPuntos.gif";
-import VariacionFunciones from "./VariacionFunciones";
 
 const Bloque1_1 = () => {
-
-
-
   const [open, setOpen] = useState(false);
 
   const [valuesTable, setValuesTable] = useState({

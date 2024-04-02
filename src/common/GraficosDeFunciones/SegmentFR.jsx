@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { BoardsContext } from "../contexts/BoardsContext";
-import { SegmentContext } from "../contexts/SegmentContext";
+import { BoardsContext } from "../../contexts/BoardsContext";
+import { SegmentFRContext } from "../../contexts/SegmentFRContext";
 import {Button} from "react-bootstrap";
 
-const SegmentAGX = ( {boardId} ) => {
+const SegmentFR = ( {boardId} ) => {
   const { brd, ids, setIds } = useContext(BoardsContext);
-  const { segDibujado, setSegDibujado, setDibPuntoM } = useContext(SegmentContext);
+  const { segDibujado, setSegDibujado, setDibPuntoM } = useContext(SegmentFRContext);
 
   const toggleSegmento = () => {
     if (brd[boardId]) {
@@ -13,8 +13,10 @@ const SegmentAGX = ( {boardId} ) => {
 
       if (segDibujado) {
 
-        const segmentId = ids.idSegAG; 
-        board.removeObject(segmentId, false);
+        const segmentIdI = ids.idSegFRI; 
+        const segmentIdD = ids.idSegFRD; 
+        board.removeObject(segmentIdI, false);
+        board.removeObject(segmentIdD, false);
 
         const perpendicularToXAxisId = ids.idPerpendicularToXAxis;
         const perpendicularToYAxisId = ids.idPerpendicularToYAxis;
@@ -24,7 +26,8 @@ const SegmentAGX = ( {boardId} ) => {
       
         setIds((prevIds) => ({
           ...prevIds,
-          idSegAG: '',
+          idSegFRI: '',
+          idSegFRD: '',
           idPerpendicularToXAxis: '',
           idPerpendicularToYAxis: '',
         }));
@@ -35,11 +38,13 @@ const SegmentAGX = ( {boardId} ) => {
       } else {
         if (ids.idPuntoA && ids.idPuntoG) {
       
-          const segmento = board.create("segment", [ids.idPuntoA, ids.idPuntoG]);
- 
+          const segmentoI = board.create("functiongraph", [function(x){ return 2/x;}, -25, -0.03]);
+          const segmentoD = board.create("functiongraph", [function(x){ return 2/x;}, 0.03, 25]);
+          
           setIds((prevIds) => ({
             ...prevIds,
-            idSegAG: segmento.id ,
+            idSegFRI: segmentoI.id,
+            idSegFRD: segmentoD.id,
           }));
 
           setSegDibujado(true);
@@ -51,10 +56,10 @@ const SegmentAGX = ( {boardId} ) => {
   return (
     <div>
       <Button onClick={toggleSegmento}>
-      {segDibujado? "Borrar Segmento" : "Trazar Segmento"}
+      {segDibujado? "Desunir puntos" : "Unir puntos"}
       </Button>
     </div>
   );
 };
 
-export default SegmentAGX;
+export default SegmentFR;

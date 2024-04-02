@@ -1,9 +1,8 @@
 //GraficoArrastrePuntosX.jsx
 import React, { useContext, useEffect } from "react";
-import { BoardsContext } from "../contexts/BoardsContext";
+import { BoardsContext } from "../../contexts/BoardsContext";
 
-
-const GraficoArrastrePuntosX = ({ boardId }) => {
+const GraficoArrastrePuntosFR = ({ boardId }) => {
   const { brd, ids, setIds } = useContext(BoardsContext);
 
   useEffect(() => {
@@ -12,8 +11,8 @@ const GraficoArrastrePuntosX = ({ boardId }) => {
 
       console.log(board);
 
-      // Definir los puntos A, B, G
-      const puntoA = board.create("point", [0, 30], {
+      // Definir los puntos A, B, D, F
+      const puntoA = board.create("point", [-25, -0.08], {
         name: "A",
         size: 3,
         color: "blue",
@@ -21,61 +20,68 @@ const GraficoArrastrePuntosX = ({ boardId }) => {
       });
 
       console.log(puntoA);
-      const puntoB = board.create("point", [5, 72.5], {
+      const puntoB = board.create("point", [-8.5, -0.24], {
         name: "B",
         size: 3,
         color: "blue",
         fixed: true,
       });
 
-      const puntoG = board.create("point", [30, 285], {
-        name: "G",
+      const puntoD = board.create("point", [-0.03, -66.67], {
+        name: "D",
         size: 3,
         color: "blue",
         fixed: true,
       });
 
-      // Definir las coordenadas objetivo de los puntos C, D, E, F
+      const puntoF = board.create("point", [1.5, 1.33], {
+        name: "F",
+        size: 3,
+        color: "blue",
+        fixed: true,
+      });
+
+      // Definir las coordenadas objetivo de los puntos C, E, G, H
       const coordsObjetivo = {
-        C: { x: 10, y: 115 },
-        D: { x: 15, y: 157.5 },
-        E: { x: 20, y: 200 },
-        F: { x: 25, y: 242.5 },
+        C: { x: -1.5, y: -1.33 },
+        E: { x: 0.03, y: 66.67 },
+        G: { x: 8.5, y: 0.24 },
+        H: { x: 25, y: 0.08 },
       };
 
-      // Definir las coordenadas iniciales de los puntos C, D, E, F
+      // Definir las coordenadas iniciales de los puntos C, E, G, H
       const coordsInicio = {
-        C: { x: 5, y: 280 },
-        D: { x: 5, y: 260 },
-        E: { x: 5, y: 240 },
-        F: { x: 5, y: 220 },
+        C: { x: 3, y: 60 },
+        E: { x: 3, y: 80 },
+        G: { x: 3, y: 100 },
+        H: { x: 3, y: 120 },
       };
 
-      // Crear puntos C, D, E, F
-      const puntoC = board.create("point", [5, 280], {
+      // Crear puntos C, E, G, H
+      const puntoC = board.create("point", [3, 60], {
         name: "C",
         size: 3,
         color: "orange",
       });
 
-      const puntoD = board.create("point", [5, 260], {
-        name: "D",
-        size: 3,
-        color: "orange",
-      });
-
-      const puntoE = board.create("point", [5, 240], {
+      const puntoE = board.create("point", [3, 80], {
         name: "E",
         size: 3,
         color: "orange",
       });
-      const puntoF = board.create("point", [5, 220], {
-        name: "F",
+
+      const puntoG = board.create("point", [3, 100], {
+        name: "G",
+        size: 3,
+        color: "orange",
+      });
+      const puntoH = board.create("point", [3, 120], {
+        name: "H",
         size: 3,
         color: "orange",
       });
 
-      // Función para manejar el arrastre de puntos D, E, F
+      // Función para manejar el arrastre de puntos C, E, G, H
       const handleDragMove = (punto) => {
         const puntoArrastrado = punto.name;
         const coordsArrastrado = punto.coords.usrCoords;
@@ -88,7 +94,7 @@ const GraficoArrastrePuntosX = ({ boardId }) => {
         );
 
         // Si la distancia es menor que un umbral, acercar automáticamente el punto a las coordenadas objetivo
-        const umbral = 1;
+        const umbral = 5;
         if (distancia < umbral) {
           punto.moveTo(
             [
@@ -124,16 +130,16 @@ const GraficoArrastrePuntosX = ({ boardId }) => {
         }
       };
 
-      // Agregar manejadores de eventos de arrastre para los puntos C, D, E, F
+      // Agregar manejadores de eventos de arrastre para los puntos C, E, G, H
       puntoC.on("drag", () => handleDragMove(puntoC));
-      puntoD.on("drag", () => handleDragMove(puntoD));
       puntoE.on("drag", () => handleDragMove(puntoE));
-      puntoF.on("drag", () => handleDragMove(puntoF));
+      puntoG.on("drag", () => handleDragMove(puntoG));
+      puntoH.on("drag", () => handleDragMove(puntoH));
 
       puntoC.on("up", () => handleDragEnd(puntoC));
-      puntoD.on("up", () => handleDragEnd(puntoD));
       puntoE.on("up", () => handleDragEnd(puntoE));
-      puntoF.on("up", () => handleDragEnd(puntoF));
+      puntoG.on("up", () => handleDragEnd(puntoG));
+      puntoH.on("up", () => handleDragEnd(puntoH));
 
       setIds((prevIds) => ({
         ...prevIds,
@@ -144,6 +150,7 @@ const GraficoArrastrePuntosX = ({ boardId }) => {
         idPuntoE: puntoE.id,
         idPuntoF: puntoF.id,
         idPuntoG: puntoG.id,
+        idPuntoH: puntoG.id,
       }));
     }
     console.log(ids);
@@ -153,4 +160,4 @@ const GraficoArrastrePuntosX = ({ boardId }) => {
   return <div style={{ backgroundColor: "white" }}></div>;
 };
 
-export default GraficoArrastrePuntosX;
+export default GraficoArrastrePuntosFR;

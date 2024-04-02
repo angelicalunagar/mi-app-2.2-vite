@@ -4,14 +4,14 @@ import { JSXGraph } from "jsxgraph";
 import { BoardsContext } from "../contexts/BoardsContext";
 import "../styles/Board.css";
 
-const BoardX = ( { boardId } ) => {
+const BoardX = ( { boardId, boundingBox } ) => {
   const { addBoard, brd }  = useContext(BoardsContext);
 
   useEffect(() => {
   
     if (!brd.hasOwnProperty(boardId)) {
       const board = JSXGraph.initBoard(boardId, {
-        boundingbox: [-2.5, 295, 32, -10],
+        boundingbox: boundingBox,
         axis: true,
         showNavigation: true,
         showZoom: true,

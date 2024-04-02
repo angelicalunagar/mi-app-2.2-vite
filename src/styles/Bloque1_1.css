@@ -209,6 +209,12 @@ h4 {
   text-align: center;
 }
 
+.cont-table-fr {
+  width: 95%;
+  justify-content: center;
+  text-align: center;
+}
+
 
 @media (min-width: 768px) {
   .cont-table-act3 {
@@ -232,6 +238,11 @@ h4 {
 .sticky {
   position: sticky;
   top: 7rem; /* Ajusta esta propiedad según sea necesario */
+}
+
+.sticky-act13 {
+  position: sticky;
+  top: 2.7rem; /* Ajusta esta propiedad según sea necesario */
 }
 
 .center-act10 {
