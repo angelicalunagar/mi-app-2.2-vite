@@ -21,15 +21,19 @@ import { SegmentFRContextProvider } from "../../contexts/SegmentFRContext";
 /* import { RectaAGContextProvider } from "../contexts/RectaAGContext"; */
 
 import BoardX from "../BoardX";
+import BoardXX from "../BoardXX";
 import GraficoArrastrePuntosX from "../GraficoArrastrePuntosX";
 import GraficoArrastrePuntosFR from "./GraficoArrastrePuntosFR";
+import GraficoArrastrePuntosFRaiz from "./GraficoArrastrePuntosFRaiz";
+import GraficaF from "./GraficaF";
+import { GraficaFContextProvider } from "../../contexts/GraficaFContext";
 import SegmentAGX from "../SegmentAGX";
-import SegmentFR from "./SegmentFR";
 import PuntoMovibleMX from "../PuntoMovibleMX";
 import CuestionarioFR from "./CuestionarioFR";
-import PuntoMovibleM from "../PuntoMovibleM";
 import Act14 from "./Act14";
 import Act12 from "./Act12";
+import PuntoMovibleF from "./PuntoMovibleF";
+
 /* import RectaAG from "./RectaAG"; */
 
 const GraficosDeFunciones = () => {
@@ -482,7 +486,7 @@ const GraficosDeFunciones = () => {
       </Row>
       <Row>
         <BoardsContextProvider>
-          <SegmentFRContextProvider>
+          <GraficaFContextProvider>
             <Col md={5}>
               <p>
                 Ya que hemos encontrado el dominio, podemos determinar el rango.
@@ -552,48 +556,219 @@ const GraficosDeFunciones = () => {
                 <br />
                 Como se ha visto anteriormente, cada par ordenado (x, f(x)) se
                 puede representar como un punto en el plano. Coloca los puntos
-                amarillos donde les corresponda según la Tabla 6. Una vez
-                completado, presiona el botón "unir puntos" y responde las
-                siguientes preguntas:
+                amarillos donde les corresponda según la Tabla 6.
+                <br />
+                <br />
+                Los puntos A-H son tan solo algunos de los puntos que forman a
+                la gráfica de la función, pero muestran cómo es su tendencia y
+                dan una idea de su forma. Presiona el siguiente botón para
+                graficar la función f(x)=2/x, la cuál está conformada por todos
+                los pares ordenados (x, 2/x) situados en el plano cartesiano
               </p>
-              <SegmentFR boardId="board2" />
+
+              <GraficaF boardId="board2" funcionGrafica={(x) => 2 / x} />
+
+              {/* <SegmentFR boardId="board2" /> */}
               <br />
               <CuestionarioFR />
 
               <p>
-                Analizando las preguntas anteriores, es posible concluir que
-                f(x) se aproxima cada vez más a cero cuando x es negativo y
-                grande, y tiende a −∞ cuando x se acerca a cero desde la
-                izquierda (excluyendo el cero del dominio).
+                Después de analizar las primeras cuatro preguntas y sus
+                respuestas, es hora de profundizar en la comprensión de la
+                función f(x)=2/x mediante una reflexión más detallada. Para
+                ello, te invito a dibujar el punto M y deslizarlo a lo largo de
+                la gráfica de la función.
                 <br />
                 <br />
-                Además, si x es cada vez más pequeño pero positivo, f(x) tiende
-                a +∞, mientras que si x es positivo y aumenta sin límite, f(x)
-                se acerca cada vez más a cero, pero sin alcanzarlo.
+                <PuntoMovibleF boardId="board2" />
                 <br />
                 <br />
-                ¿Por qué f(x) nunca alcanza el cero? Porque al evaluar f(x)=2/x
-                en números positivos y negativos cada vez más grandes (como
-                −2000 o 2000), el resultado será casi cero, pero nunca llegará a
-                ser cero.
+                Este ejercicio te ayudará a visualizar mejor el comportamiento
+                de la función en diferentes rangos de valores de x y a
+                relacionarlo con los conceptos discutidos anteriormente.
                 <br />
                 <br />
-                Oprime el siguiente botón para graficar la función. Luego dibuja
-                el punto M y deslízalo a lo largo de la gráfica de la función
-                para explorar qué sucede con y=f(x) a medida que x aumenta o
-                disminuye.
+                Mientras realizas esta actividad, considera las siguientes
+                preguntas para reflexionar:
+                <br />
+                <br />
+                <ul className="li-preg-reflex">
+                  <li>¿A cuánto tiende f(x) cuando x es negativo y grande?</li>
+                  <li>
+                    ¿Cuál es la tendencia de f(x) cuando x es negativo y muy
+                    pequeño?
+                  </li>
+                  <li>
+                    ¿Cuál es la tendencia de f(x) cuando x es positivo y muy
+                    pequeño?
+                  </li>
+                  <li>
+                    ¿A cuánto se aproxima f(x) cuando x es positivo y grande?
+                  </li>
+                  <li>¿Por qué f(x) nunca es igual a cero?</li>
+                </ul>
+                <br />
+                <br />
+                Observa que en la gráfica de f(x)=2/x, el rango va de -inf a 0
+                por la derecha, sin tocarlo, y de +inf a cero por la izquierda,
+                sin tocarlo. Por lo que se puede concluir que el rango es:
+                {/* -inf < f(x) <  +inf,f(x)≠0 */}
+                <BlockMath>
+                  {"-\\infty < f(x) < +\\infty,\\ excepto \\ f(x) = 0"}
+                </BlockMath>
               </p>
             </Col>
             <Col md={7}>
               <Row className="sticky">
-                <BoardX boardId="board2" boundingBox={[-27, 130, 27, -80]} />
+                <BoardXX boardId="board2" boundingBox={[-27, 130, 27, -80]} />
                 <GraficoArrastrePuntosFR boardId="board2" />
               </Row>
             </Col>
-          </SegmentFRContextProvider>
+          </GraficaFContextProvider>
         </BoardsContextProvider>
       </Row>
-
+      <Row className="main-row">
+        <Col>
+          <p>
+            Examinemos otro caso en el cuál la regla de correspondencia impone
+            una restricción al dominio, pero esta vez en cuanto a la
+            imposibilidad de sacar raíz cuadrada de un número negativo. Piensa
+            en qué casos no es posible evaluar la siguiente regla:
+            <BlockMath>{"f(x)=√x"}</BlockMath>
+            Como se mencionó antes, no es posible sacar raíz cuadrada de números
+            reales negativos, lo que quiere decir que el dominio consiste sólo
+            en números positivos. Pero ¿hasta qué número positivo? En realidad,
+            no hay límite en el sentido de que no hay ninguna restricción
+            contextual y siempre es posible sacar raíz cuadrada de un número
+            cada vez más grande, por lo que el dominio de la función son todos
+            los reales positivos y el cero:
+            <BlockMath>{"0 <= x < +\\infty"}</BlockMath>
+            Por otra parte, para encontrar el rango, graficaremos algunos puntos
+            de la función y observemos la tendencia. Completa la Tabla 7 con los
+            datos que faltan y luego grafica los puntos amarillos donde les
+            corresponde.
+            <br />
+            <br />
+          </p>
+        </Col>
+      </Row>
+      <Row>
+        <BoardsContextProvider>
+          <GraficaFContextProvider>
+            <Col md={4}>
+              <Container className="cont-table-fr">
+                <div className="tittle-table">
+                  <h6>Tabla 7</h6>
+                </div>
+                <Table striped bordered hover>
+                  <thead>
+                    <tr>
+                      <th>x</th>
+                      <th>f(x)</th>
+                      <th>Punto (x, y=f(x))</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>0</td>
+                      <td>0</td>
+                      <td>A = (0, 0)</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>2</td>
+                      <td>B = (4, 2)</td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td>3</td>
+                      <td>C = (9, 3)</td>
+                    </tr>
+                    <tr>
+                      <td>20</td>
+                      <td>4.5</td>
+                      <td>D = (20, 4.5)</td>
+                    </tr>
+                    <tr>
+                      <td>31.5</td>
+                      <td>5.6</td>
+                      <td>E = (31.5, 5.6)</td>
+                    </tr>
+                    <tr>
+                      <td>49</td>
+                      <td>7</td>
+                      <td>F = (49, 7)</td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </Container>
+              <p>
+                <br />
+                Los puntos A-F son tan solo algunos de los puntos que forman a
+                la gráfica de f(x)=sqrt(x), pero muestran cómo es su tendencia y
+                dan una idea de su forma.
+                <br />
+                <br />
+                Presiona el siguiente botón para graficar la función, la cuál
+                está conformada por todos los pares ordenados (x, sqrt(x))
+                situados en el plano cartesiano.
+              </p>
+              <GraficaF boardId="board3" funcionGrafica={(x) => Math.sqrt(x)} />
+              <p>
+                <br />
+                Esta gráfica muestra la tendencia de f(x) a medida que x cambia.
+                Por ejemplo, observa que f(x) se incrementa cuando x se
+                incrementa cada vez más. Para visualizarlo mejor, puedes
+                graficar el punto M y observar el valor de f(x) para distintos
+                valores de x cada vez más grandes.
+                <br />
+              </p>
+              <PuntoMovibleF boardId="board3" />
+              <p>
+                <br />
+                "Esta tendencia tiene lógica, ya que al calcular la raíz
+                cuadrada de números cada vez más grandes, los valores
+                resultantes también aumentan. Por lo tanto podemos concluir que
+                el rango máximo de f(x)=sqrt(x) son todos los reales positivos y
+                el cero:
+                <BlockMath>{"0 <= f(x) < +\\infty"}</BlockMath>
+              </p>
+            </Col>
+            <Col md={8}>
+              <Row className="sticky">
+                <BoardXX boardId="board3" boundingBox={[-2, 11, 51, -1]} />
+                <GraficoArrastrePuntosFRaiz boardId="board3" />
+              </Row>
+            </Col>
+          </GraficaFContextProvider>
+        </BoardsContextProvider>
+      </Row>
+      <Row>
+        <Col>
+          <p>
+            Estos dos casos, a saber, f(x)=2/x y f(x)=sqrt(x), son ejemplos de
+            funciones que presentan indeterminaciones para ciertos valores de x,
+            por lo que para hallar su dominio basta con excluir aquellos valores
+            para los cuáles la expresión se indetermina. 
+            <br />
+            <br />
+            Si bien en este curso no estudiaremos funciones racionales ni con raíces,
+            es importante conocerlas para entender en qué casos la regla misma delimita su
+            dominio. 
+            <br />
+            <br />
+            Volvamos a la regla de correspondencia genérica
+            f(x)=30+8.5x y piensa en si existe algun número en el cuál no
+            podamos evaluar la función. Para ello es necesario recordar que en
+            matemáticas las indeterminaciones suceden cuando se tiene división
+            entre cero o cuando se intenta sacar raíz cuadrada de números
+            negativos. En vista de que f(x)=30+8.5x consiste únicamente en una
+            suma y un producto, no hay nada que restrinja su dominio y en
+            consecuencia su dominio máximo son todos los números reales:
+            <BlockMath>{"-\\infty < x < +\\infty"}</BlockMath>
+          </p>
+        </Col>
+      </Row>
       <Row className="main-row">
         <p>
           <br />

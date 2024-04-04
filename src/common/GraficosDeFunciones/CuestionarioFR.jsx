@@ -19,7 +19,10 @@ const CuestionarioFR = () => {
   };
   return (
     <>
-      <ul>
+  <p>
+    Contesta las siguientes preguntas: 
+  </p>
+      <ul className='cuest-fr'>
             <li>
               ¿Qué punto tiene una coordenada x negativa y de gran magnitud?
               ¿Cómo es f(x) en este caso?

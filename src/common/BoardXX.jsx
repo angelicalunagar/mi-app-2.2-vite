@@ -1,12 +1,13 @@
-//BoardX.jsx
-import { useContext, useEffect } from "react";
+//BoardXX.jsx
+import { useContext, useEffect, useState } from "react";
 import { JSXGraph } from "jsxgraph";
 import { BoardsContext } from "../contexts/BoardsContext";
 import "../styles/Board.css";
 
-const BoardX = ( { boardId, boundingBox } ) => {
+const BoardXX = ( { boardId, boundingBox } ) => {
   const { addBoard, brd }  = useContext(BoardsContext);
-
+  const [initialBoundingBox, setInitialBoundingBox] = useState(boundingBox); // Estado para almacenar los valores iniciales del boundingBox
+  
   useEffect(() => {
   
     if (!brd.hasOwnProperty(boardId)) {
@@ -22,7 +23,7 @@ const BoardX = ( { boardId, boundingBox } ) => {
         showcopyright: false,
       });
 
-      // Agregar manualmente los botones de zoom in y zoom out
+      // Agregar los botones de zoom in y zoom out
       const buttonContainer = document.createElement("div");
       buttonContainer.className = "button-container";
       buttonContainer.style.position = "absolute";
@@ -43,10 +44,39 @@ const BoardX = ( { boardId, boundingBox } ) => {
       });
       buttonContainer.appendChild(zoomOutButton);
 
+      // Agregar botón para restablecer valores iniciales del boundingBox
+      const resetButton = document.createElement("button");
+      resetButton.textContent='x';
+      resetButton.addEventListener("click", () => {
+        board.setBoundingBox(initialBoundingBox);
+      });
+      buttonContainer.appendChild(resetButton);
+
       document.getElementById(boardId).appendChild(buttonContainer);
 
       addBoard(boardId, board);
     }
+
+    //Mano al aplastar la tecla Shift
+    const handleKeyDown = (event) => {
+      if (event.key === "Shift") {
+        document.getElementById(boardId).style.cursor = "grab";
+      }
+    };
+
+    const handleKeyUp = (event) => {
+      if (event.key === "Shift") {
+        document.getElementById(boardId).style.cursor = "default";
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
   
   }, [brd]);
 
@@ -58,4 +88,4 @@ const BoardX = ( { boardId, boundingBox } ) => {
   );
 };
 
-export default BoardX;
+export default BoardXX;

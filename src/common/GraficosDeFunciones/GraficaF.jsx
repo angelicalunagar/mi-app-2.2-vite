@@ -1,18 +1,18 @@
 import { useContext, useState } from "react";
 import { BoardsContext } from "../../contexts/BoardsContext";
-import { GraficaFRContext } from "../../contexts/GraficaFContext";
+import { GraficaFContext } from "../../contexts/GraficaFContext";
 import { Button } from "react-bootstrap";
 
-const GraficaFR = ({ boardId }) => {
+const GraficaF = ({ boardId, funcionGrafica }) => {
   const { brd, ids, setIds } = useContext(BoardsContext);
-  const { dibujarGrafica, setDibujarGrafica, setDibPuntoM} = useContext(GraficaFRContext);
+  const { dibujarGrafica, setDibujarGrafica, setDibPuntoM} = useContext(GraficaFContext);
 
-  const toggleGraficaFR = () => {
+  const toggleGraficaF = () => {
     if (brd[boardId]) {
       const board = brd[boardId];
 
       if (dibujarGrafica) {
-        const graficaId = ids.idGraficaFR; // Obtener el ID de la recta
+        const graficaId = ids.idGraficaF; // Obtener el ID de la recta
         board.removeObject(graficaId, false); // Eliminar el objeto del tablero usando su ID
 
         const perpendicularToXAxisId = ids.idPerpendicularToXAxis;
@@ -25,7 +25,7 @@ const GraficaFR = ({ boardId }) => {
 
         setIds((prevIds) => ({
           ...prevIds,
-          idGraficaFR: "",
+          idGraficaF: "",
           idPerpendicularToXAxis: "",
           idPerpendicularToYAxis: "",
         }));
@@ -34,17 +34,15 @@ const GraficaFR = ({ boardId }) => {
         setDibPuntoM(false);
 
       } else {
-        if (ids.idPuntoA && ids.idPuntoG) {
+        if (ids.idPuntoA && ids.idPuntoB) {
           const grafica = board.create("functiongraph", [
-            function (x) {
-              return 2 / x;
-            },
+            funcionGrafica
           ]);
 
           // Guarda el ID de la recta en la lista de IDs
           setIds((prevIds) => ({
             ...prevIds,
-            idGraficaFR: grafica.id,
+            idGraficaF: grafica.id,
           }));
 
           setDibujarGrafica(true);
@@ -57,11 +55,11 @@ const GraficaFR = ({ boardId }) => {
 
   return (
     <div>
-      <Button onClick={toggleGraficaFR}>
+      <Button onClick={toggleGraficaF}>
         {dibujarGrafica ? "Borrar la gráfica de f(x)" : "Graficar f(x)"}
       </Button>
     </div>
   );
 };
 
-export default GraficaFR;
+export default GraficaF;

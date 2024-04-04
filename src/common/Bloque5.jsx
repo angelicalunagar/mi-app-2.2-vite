@@ -9,12 +9,14 @@ import { RectaAGContextProvider } from "../contexts/RectaAGContext";
 import { BoardsContextProvider } from "../contexts/BoardsContext";
 
 
+
 import SegmentAG from "./SegmentAG";
 import SegmentAGX from "./SegmentAGX";
 import BoardZoom from "./BoardZoom";
 import RectaAG from "./RectaAG";
 import PuntoMovibleM from "./PuntoMovibleM";
 import BoardX from "./BoardX";
+import BoardXX from "./BoardXX";
 import PuntoMovibleMX from "./PuntoMovibleMX";
 import Act14 from "./GraficosDeFunciones/Act14";
 
@@ -49,7 +51,7 @@ function Bloque5() {
         <SegmentContextProvider>
           <Row>
             <Col md={8}>
-              <BoardX boardId="board1" boundingBox={[-2.5, 295, 32, -10]}/>
+              <BoardXX boardId="board1" boundingBox={[-2.5, 295, 32, -10]}/>
               <GraficoArrastrePuntosX boardId="board1" />
             </Col>
             <Col>
@@ -64,11 +66,11 @@ function Bloque5() {
         <SegmentContextProvider>
           <Row>
             <Col md={8}>
-              <BoardX boardId="board2" boundingBox={[-2.5, 295, 32, -10]}/>
-              <GraficoArrastrePuntosX boardId="board2" />
+              <BoardXX boardId="board3" boundingBox={[-2.5, 295, 32, -10]}/>
+              <GraficoArrastrePuntosX boardId="board3" />
             </Col>
             <Col>
-              <SegmentAGX boardId="board2" />
+              <SegmentAGX boardId="board3" />
             </Col>
           </Row>
         </SegmentContextProvider>
