@@ -1,5 +1,5 @@
 //GraficosDeFunciones.jsx
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
   Container,
   Row,
@@ -16,12 +16,14 @@ import "../../styles/Bloque1_1.css";
 import graficarPuntos from "../../assets/graficarPuntos.gif";
 import { BoardsContextProvider } from "../../contexts/BoardsContext";
 import { SegmentContextProvider } from "../../contexts/SegmentContext";
-import { SegmentFRContextProvider } from "../../contexts/SegmentFRContext";
-
+import { FuncLinealContextProvider } from "../../contexts/FuncLinealContext";
+import { FuncLinealContext } from "../../contexts/FuncLinealContext";
 /* import { RectaAGContextProvider } from "../contexts/RectaAGContext"; */
 
 import BoardX from "../BoardX";
 import BoardXX from "../BoardXX";
+/* import FuncionLineal from "./FuncionLineal"; */
+import FuncionLineal2 from "./FuncionLineal2";
 import GraficoArrastrePuntosX from "../GraficoArrastrePuntosX";
 import GraficoArrastrePuntosFR from "./GraficoArrastrePuntosFR";
 import GraficoArrastrePuntosFRaiz from "./GraficoArrastrePuntosFRaiz";
@@ -33,11 +35,13 @@ import CuestionarioFR from "./CuestionarioFR";
 import Act14 from "./Act14";
 import Act12 from "./Act12";
 import PuntoMovibleF from "./PuntoMovibleF";
+import GraficoArrastrePuntosFL from "./GraficoArrastrePuntosFL";
 
 /* import RectaAG from "./RectaAG"; */
 
 const GraficosDeFunciones = () => {
   const [fullscreen, setFullscreen] = useState(false);
+  /*   const {intercept, slope } = useContext(FuncLinealContext); */
 
   const toggleFullscreen = () => {
     setFullscreen(!fullscreen);
@@ -566,7 +570,7 @@ const GraficosDeFunciones = () => {
                 los pares ordenados (x, 2/x) situados en el plano cartesiano
               </p>
 
-              <GraficaF boardId="board2" funcionGrafica={(x) => 2 / x} />
+              <GraficaF boardId="board2" funcionGrafica={(x) => 20 / x} />
 
               {/* <SegmentFR boardId="board2" /> */}
               <br />
@@ -592,21 +596,23 @@ const GraficosDeFunciones = () => {
                 preguntas para reflexionar:
                 <br />
                 <br />
-                <ul className="li-preg-reflex">
-                  <li>¿A cuánto tiende f(x) cuando x es negativo y grande?</li>
-                  <li>
-                    ¿Cuál es la tendencia de f(x) cuando x es negativo y muy
-                    pequeño?
-                  </li>
-                  <li>
-                    ¿Cuál es la tendencia de f(x) cuando x es positivo y muy
-                    pequeño?
-                  </li>
-                  <li>
-                    ¿A cuánto se aproxima f(x) cuando x es positivo y grande?
-                  </li>
-                  <li>¿Por qué f(x) nunca es igual a cero?</li>
-                </ul>
+              </p>
+              <ul className="li-preg-reflex">
+                <li>¿A cuánto tiende f(x) cuando x es negativo y grande?</li>
+                <li>
+                  ¿Cuál es la tendencia de f(x) cuando x es negativo y muy
+                  pequeño?
+                </li>
+                <li>
+                  ¿Cuál es la tendencia de f(x) cuando x es positivo y muy
+                  pequeño?
+                </li>
+                <li>
+                  ¿A cuánto se aproxima f(x) cuando x es positivo y grande?
+                </li>
+                <li>¿Por qué f(x) nunca es igual a cero?</li>
+              </ul>
+              <p>
                 <br />
                 <br />
                 Observa que en la gráfica de f(x)=2/x, el rango va de -inf a 0
@@ -655,7 +661,7 @@ const GraficosDeFunciones = () => {
       <Row>
         <BoardsContextProvider>
           <GraficaFContextProvider>
-            <Col md={4}>
+            <Col md={5}>
               <Container className="cont-table-fr">
                 <div className="tittle-table">
                   <h6>Tabla 7</h6>
@@ -734,7 +740,7 @@ const GraficosDeFunciones = () => {
                 <BlockMath>{"0 <= f(x) < +\\infty"}</BlockMath>
               </p>
             </Col>
-            <Col md={8}>
+            <Col md={7}>
               <Row className="sticky">
                 <BoardXX boardId="board3" boundingBox={[-2, 11, 51, -1]} />
                 <GraficoArrastrePuntosFRaiz boardId="board3" />
@@ -746,28 +752,90 @@ const GraficosDeFunciones = () => {
       <Row>
         <Col>
           <p>
-            Estos dos casos, a saber, f(x)=2/x y f(x)=sqrt(x), son ejemplos de
+            Estos dos casos, a saber, f(x)=20/x y f(x)=sqrt(x), son ejemplos de
             funciones que presentan indeterminaciones para ciertos valores de x,
             por lo que para hallar su dominio basta con excluir aquellos valores
-            para los cuáles la expresión se indetermina. 
+            para los cuáles la expresión se indetermina.
             <br />
             <br />
-            Si bien en este curso no estudiaremos funciones racionales ni con raíces,
-            es importante conocerlas para entender en qué casos la regla misma delimita su
-            dominio. 
+            Si bien en estas actividades no estudiaremos funciones racionales ni con
+            raíces, es importante conocerlas para entender en qué casos la regla
+            misma delimita su dominio.
             <br />
             <br />
-            Volvamos a la regla de correspondencia genérica
-            f(x)=30+8.5x y piensa en si existe algun número en el cuál no
-            podamos evaluar la función. Para ello es necesario recordar que en
-            matemáticas las indeterminaciones suceden cuando se tiene división
-            entre cero o cuando se intenta sacar raíz cuadrada de números
-            negativos. En vista de que f(x)=30+8.5x consiste únicamente en una
-            suma y un producto, no hay nada que restrinja su dominio y en
-            consecuencia su dominio máximo son todos los números reales:
+            Volvamos a la regla de correspondencia genérica f(x)=30+8.5x y
+            piensa en si existe algun número en el cuál no podamos evaluar la
+            función. Para ello es necesario recordar que en matemáticas las
+            indeterminaciones suceden cuando se tiene división entre cero o
+            cuando se intenta sacar raíz cuadrada de números negativos. En vista
+            de que f(x)=30+8.5x consiste únicamente en una suma y un producto,
+            no hay nada que restrinja su dominio y en consecuencia su dominio
+            máximo son todos los números reales:
             <BlockMath>{"-\\infty < x < +\\infty"}</BlockMath>
           </p>
         </Col>
+      </Row>
+      <Row>
+        <BoardsContextProvider>
+          <GraficaFContextProvider>
+            <Col md={5}>
+              <p>
+                Ahora, para conocer su rango, analicemos cuál es el
+                comportamiento de f(x) para distintos valores de x. Para ello
+                podemos recordar que ya hemos graficado algunos puntos de la
+                función y que incluso unimos dichos puntos con el segmento AG.
+                Esto nos permite conocer cómo es la función para{" "}
+                <InlineMath>{"0 <= x <= 30"}</InlineMath>.
+                <br />
+                <br />
+                ¿Qué sucede con f(x) conforme x se hace más grande que 30 y cada
+                vez mayor? Pues si evaluáramos la función en números cada vez
+                más grandes podemos ver cómo f(x) también se va incrementando,
+                esto es, si x crece, f(x) también crece.
+                <br />
+                <br />Y ¿cómo es f(x) a medida que x es menor que cero y cada
+                vez de mayor magnitud? En este caso f(x) también es negativo y
+                cada vez de mayor magnitud. Grafica f(x)=30+8.5x y desliza el
+                punto M sobre la gráfica de la función para confirmar estas
+                observaciones.
+              </p>
+              <GraficaF boardId="board4" funcionGrafica={(x) => 30 + 8.5 * x} />
+              <p>
+                <br />
+                Lo anterior quiere decir que f(x) abarca valores negativos y de
+                una magnitud tan grande como se quiera hasta valores positivos
+                tan grandes como se desee, por lo que el rango es:
+                <BlockMath>{"-\\infty < f(x) < +\\infty"}</BlockMath>
+              </p>
+            </Col>
+            <Col md={7}>
+              <Row className="sticky">
+                <BoardXX boardId="board4" boundingBox={[-2.5, 295, 32, -10]} />
+                <GraficoArrastrePuntosFL boardId="board4" />
+              </Row>
+            </Col>
+          </GraficaFContextProvider>
+        </BoardsContextProvider>
+      </Row>
+
+      <Row className="row-nuevotema">
+        <BoardsContextProvider>
+          <FuncLinealContextProvider>
+            <Col className="border " md={6}>
+              {/*  Function: f(x) = {slope} x + {intercept} */}
+              <div className="sticky">
+                <p>HOLA</p>
+                <BoardXX boardId="board5" boundingBox={[-20, 60, 20, -30]} />
+                <FuncionLineal2 boardId="board5" />
+              </div>
+            </Col>
+            <Col className="actividad" md={5}>
+              <p>
+                <b>Actividad 15.</b> Utiliza la ventana gráfica{" "}
+              </p>
+            </Col>
+          </FuncLinealContextProvider>
+        </BoardsContextProvider>
       </Row>
       <Row className="main-row">
         <p>
@@ -779,8 +847,9 @@ const GraficosDeFunciones = () => {
         <ul>
           <li>f(x)=x</li>
           <li>f(x)=3x</li>
+          <li>f(x)=-3x</li>
           <li>f(x)=3x+4</li>
-          <li>f(x)=-3x+4</li>y en general:
+          <li>f(x)=3x-4</li>y en general:
           <li>f(x)=a1x+a0</li>
         </ul>
         <p>

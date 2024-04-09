@@ -18,7 +18,8 @@ import PuntoMovibleM from "./PuntoMovibleM";
 import BoardX from "./BoardX";
 import BoardXX from "./BoardXX";
 import PuntoMovibleMX from "./PuntoMovibleMX";
-import Act14 from "./GraficosDeFunciones/Act14";
+import GraficaAct15 from "./GraficosDeFunciones/GraficaAct15";
+import VariacionFunciones from './VariacionFunciones';
 
 import Board from "./Board";
 import GraficoArrastrePuntos from "./GraficoArrastrePuntos";
@@ -28,7 +29,7 @@ function Bloque5() {
   return (
     <div className="bloque5-contenedor">
       <h1>Bloque 5</h1>
-      <Act14 />
+    <GraficaAct15 /> 
       <BoardContextProvider>
         <SegmentContextProvider>
           <RectaAGContextProvider>
@@ -47,7 +48,7 @@ function Bloque5() {
         </SegmentContextProvider>
       </BoardContextProvider>
 
-      <BoardsContextProvider>
+      {/* <BoardsContextProvider>
         <SegmentContextProvider>
           <Row>
             <Col md={8}>
@@ -60,8 +61,8 @@ function Bloque5() {
             </Col>
           </Row>
         </SegmentContextProvider>
-      </BoardsContextProvider>
-
+      </BoardsContextProvider> */}
+{/* 
       <BoardsContextProvider>
         <SegmentContextProvider>
           <Row>
@@ -74,7 +75,8 @@ function Bloque5() {
             </Col>
           </Row>
         </SegmentContextProvider>
-      </BoardsContextProvider>
+      </BoardsContextProvider> */}
+      <VariacionFunciones />
     </div>
   );
 }

@@ -34,7 +34,7 @@ const GraficaF = ({ boardId, funcionGrafica }) => {
         setDibPuntoM(false);
 
       } else {
-        if (ids.idPuntoA && ids.idPuntoB) {
+        /* if (ids.idPuntoA && ids.idPuntoB) {
           const grafica = board.create("functiongraph", [
             funcionGrafica
           ]);
@@ -46,7 +46,18 @@ const GraficaF = ({ boardId, funcionGrafica }) => {
           }));
 
           setDibujarGrafica(true);
-        }
+        } */
+        const grafica = board.create("functiongraph", [
+          funcionGrafica
+        ]);
+
+        // Guarda el ID de la recta en la lista de IDs
+        setIds((prevIds) => ({
+          ...prevIds,
+          idGraficaF: grafica.id,
+        }));
+
+        setDibujarGrafica(true);
       }
     } else {
       console.log("El tablero brd es null");
