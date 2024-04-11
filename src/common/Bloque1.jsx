@@ -16,7 +16,7 @@ function Bloque1(){
         <Row>
           <Col md={9}>
          
-            <Board />
+            {/* <Board />  */}
           </Col>
         </Row>
       </BoardContextProvider>

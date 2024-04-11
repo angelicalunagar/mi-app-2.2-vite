@@ -17,7 +17,7 @@ import graficarPuntos from "../../assets/graficarPuntos.gif";
 import { BoardsContextProvider } from "../../contexts/BoardsContext";
 import { SegmentContextProvider } from "../../contexts/SegmentContext";
 import { FuncLinealContextProvider } from "../../contexts/FuncLinealContext";
-import { FuncLinealContext } from "../../contexts/FuncLinealContext";
+
 /* import { RectaAGContextProvider } from "../contexts/RectaAGContext"; */
 
 import BoardX from "../BoardX";
@@ -28,6 +28,7 @@ import GraficoArrastrePuntosX from "../GraficoArrastrePuntosX";
 import GraficoArrastrePuntosFR from "./GraficoArrastrePuntosFR";
 import GraficoArrastrePuntosFRaiz from "./GraficoArrastrePuntosFRaiz";
 import GraficaF from "./GraficaF";
+import GraficoArrastrePuntosFL from "./GraficoArrastrePuntosFL";
 import { GraficaFContextProvider } from "../../contexts/GraficaFContext";
 import SegmentAGX from "../SegmentAGX";
 import PuntoMovibleMX from "../PuntoMovibleMX";
@@ -35,7 +36,7 @@ import CuestionarioFR from "./CuestionarioFR";
 import Act14 from "./Act14";
 import Act12 from "./Act12";
 import PuntoMovibleF from "./PuntoMovibleF";
-import GraficoArrastrePuntosFL from "./GraficoArrastrePuntosFL";
+import TextoFuncion from "./TextoFuncion";
 
 /* import RectaAG from "./RectaAG"; */
 
@@ -758,9 +759,9 @@ const GraficosDeFunciones = () => {
             para los cuáles la expresión se indetermina.
             <br />
             <br />
-            Si bien en estas actividades no estudiaremos funciones racionales ni con
-            raíces, es importante conocerlas para entender en qué casos la regla
-            misma delimita su dominio.
+            Si bien en estas actividades no estudiaremos funciones racionales ni
+            con raíces, es importante conocerlas para entender en qué casos la
+            regla misma delimita su dominio.
             <br />
             <br />
             Volvamos a la regla de correspondencia genérica f(x)=30+8.5x y
@@ -821,11 +822,15 @@ const GraficosDeFunciones = () => {
       <Row className="row-nuevotema">
         <BoardsContextProvider>
           <FuncLinealContextProvider>
-            <Col className="border " md={6}>
-              {/*  Function: f(x) = {slope} x + {intercept} */}
+            <Col
+              className="border borde-redon"
+              md={6}
+              style={{ backgroundColor: "#011627" }}
+            >
+              <br />
               <div className="sticky">
-                <p>HOLA</p>
                 <BoardXX boardId="board5" boundingBox={[-20, 60, 20, -30]} />
+                <TextoFuncion />
                 <FuncionLineal2 boardId="board5" />
               </div>
             </Col>
