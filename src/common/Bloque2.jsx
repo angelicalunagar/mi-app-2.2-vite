@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/Bloque2.css'
+import "../styles/Bloque2.css";
 import VarDepYVarIndep from "./VarDepYVarIndep";
 import ReglaDeCorrespondencia from "./ReglaDeCorrespondencia";
 import EvaluarLaReglaDeCorrespon from "./EvaluarLaReglaDeCorrespon";
@@ -11,11 +11,12 @@ import FuncionesDosVariables from "./FuncionesDosVariables";
 import TablaDeFuncion from "./TablaDeFuncion";
 /* import GraficosDeFunciones from "./GraficosDeFunciones"; */
 import GraficosDeFunciones from "./GraficosDeFunciones/GraficosDeFunciones";
+import Act15 from "./GraficosDeFunciones/Act15";
 
-function Bloque2(){
-  return(
+function Bloque2() {
+  return (
     <div className="bloque2-contenedor">
-       <div className="h-center">
+      <div className="h-center">
         <h1>Bloque 2</h1>
         <h2>Funciones</h2>
       </div>
@@ -26,11 +27,10 @@ function Bloque2(){
       <ValoresVarDependiente />
       <QueEsFuncion />
       <NomenclaturaFunciones />
-      <FuncionesDosVariables /> 
+      <FuncionesDosVariables />
       <TablaDeFuncion />
       {/* <GraficosDeFunciones /> */}
       <GraficosDeFunciones />
-  
     </div>
   );
 }

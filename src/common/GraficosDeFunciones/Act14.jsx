@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../../styles/Bloque1_1.css";
 import { 
   Row,
   Col,
@@ -111,7 +112,7 @@ const Act14 = () => {
             Rango: 30 ≤ p(x) ≤ 630
           </p>
           <ul>
-            <li className="liAct-4">
+            <li /* className="liAct-4" */>
               ¿Cuál es el precio de un viaje de {distanciaViaje1} km?
               <Form>
                 <Form.Group>
@@ -120,7 +121,7 @@ const Act14 = () => {
                     id="opcionA1"
                     name="opciones1"
                     value="a"
-                    checked={respuestasAct14.preg1 === "a"}
+                    checked=  {respuestasAct14.preg1 === "a"}
                     onChange={(e) => handleRespChangeAct14(e, "preg1")}
                     label={calcularPrecioViaje(distanciaViaje1)}
                   />
@@ -145,7 +146,7 @@ const Act14 = () => {
                 </Form.Group>
               </Form>
             </li>
-            <li className="liAct-4">
+            <li /* className="liAct-4" */>
               Juan contrató el taxi y al término de su viaje pagó {precioViaje2}
               pesos. ¿Qué distancia recorrió el taxi?
               <Form>
@@ -214,40 +215,7 @@ const Act14 = () => {
                 </Form.Group>
               </Form>
             </li>
-           {/*  <li>
-              ¿Cuánto cobrará el taxista por un viaje de {distanciaViaje4} km?
-              <Form>
-                <Form.Group>
-                  <Form.Check
-                    type="checkbox"
-                    id="opcionA4"
-                    name="opciones4"
-                    value="a"
-                    checked={respuestasAct14.preg4 === "a"}
-                    onChange={(e) => handleRespChangeAct14(e, "preg4")}
-                    label='La distancia x está fuera del rango'
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    id="opcionB4"
-                    name="opciones4"
-                    value="b"
-                    checked={respuestasAct14.preg4 === "b"}
-                    onChange={(e) => handleRespChangeAct14(e, "preg4")}
-                    label='La distancia x está fuera del dominio'
-                  />
-                  <Form.Check
-                    type="checkbox"
-                    id="opcionC4"
-                    name="opciones4"
-                    value="c"
-                    checked={respuestasAct14.preg4 === "c"}
-                    onChange={(e) => handleRespChangeAct14(e, "preg4")}
-                    label={calcularPrecioViaje(distanciaViaje4)}
-                  />
-                </Form.Group>
-              </Form>
-            </li> */}
+         
             <li>
               ¿Cuánto cobrará el taxista por un viaje de {distanciaViaje5} km?
               <Form>

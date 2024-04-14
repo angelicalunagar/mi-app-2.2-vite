@@ -33,10 +33,14 @@ import { GraficaFContextProvider } from "../../contexts/GraficaFContext";
 import SegmentAGX from "../SegmentAGX";
 import PuntoMovibleMX from "../PuntoMovibleMX";
 import CuestionarioFR from "./CuestionarioFR";
-import Act14 from "./Act14";
 import Act12 from "./Act12";
+import Act14 from "./Act14";
+import Act15 from "./Act15";
+import Act16 from "./Act16";
+import Act16Aleatorio from "./Act16Aleatorio";
 import PuntoMovibleF from "./PuntoMovibleF";
 import TextoFuncion from "./TextoFuncion";
+
 
 /* import RectaAG from "./RectaAG"; */
 
@@ -271,8 +275,10 @@ const GraficosDeFunciones = () => {
                       los puntos amarillos a las coordenadas que les
                       corresponden, según la actividad 12.
                       <br />
-                      <br />
                     </p>
+                    <div className="tittle-table">
+                      <h6>Ventana gráfica 3</h6>
+                    </div>
                     <BoardX
                       boardId="board1"
                       boundingBox={[-2.5, 295, 32, -10]}
@@ -627,6 +633,9 @@ const GraficosDeFunciones = () => {
             </Col>
             <Col md={7}>
               <Row className="sticky">
+                <div className="tittle-table">
+                  <h6>Ventana gráfica 4</h6>
+                </div>
                 <BoardXX boardId="board2" boundingBox={[-27, 130, 27, -80]} />
                 <GraficoArrastrePuntosFR boardId="board2" />
               </Row>
@@ -743,6 +752,9 @@ const GraficosDeFunciones = () => {
             </Col>
             <Col md={7}>
               <Row className="sticky">
+                <div className="tittle-table">
+                  <h6>Ventana gráfica 5</h6>
+                </div>
                 <BoardXX boardId="board3" boundingBox={[-2, 11, 51, -1]} />
                 <GraficoArrastrePuntosFRaiz boardId="board3" />
               </Row>
@@ -757,7 +769,14 @@ const GraficosDeFunciones = () => {
             funciones que presentan indeterminaciones para ciertos valores de x,
             por lo que para hallar su dominio basta con excluir aquellos valores
             para los cuáles la expresión se indetermina.
-            <br />
+          </p>
+        </Col>
+      </Row>
+      <br />
+      <Act15 />
+      <Row>
+        <Col>
+          <p>
             <br />
             Si bien en estas actividades no estudiaremos funciones racionales ni
             con raíces, es importante conocerlas para entender en qué casos la
@@ -800,6 +819,7 @@ const GraficosDeFunciones = () => {
                 punto M sobre la gráfica de la función para confirmar estas
                 observaciones.
               </p>
+
               <GraficaF boardId="board4" funcionGrafica={(x) => 30 + 8.5 * x} />
               <p>
                 <br />
@@ -807,10 +827,18 @@ const GraficosDeFunciones = () => {
                 una magnitud tan grande como se quiera hasta valores positivos
                 tan grandes como se desee, por lo que el rango es:
                 <BlockMath>{"-\\infty < f(x) < +\\infty"}</BlockMath>
+                Ya que has graficado f(x)= 30+8.5x, usa los botones de zoom para
+                observar que la gráfica tiene un dominio que abarca todos los
+                números reales (de −∞−∞ a +∞+∞) y su rango también son todos los
+                números reales. Como has observado, la gráfica de f(x)=30+8.5x
+                es una línea recta.
               </p>
             </Col>
             <Col md={7}>
               <Row className="sticky">
+                <div className="tittle-table">
+                  <h6>Ventana gráfica 6</h6>
+                </div>
                 <BoardXX boardId="board4" boundingBox={[-2.5, 295, 32, -10]} />
                 <GraficoArrastrePuntosFL boardId="board4" />
               </Row>
@@ -828,16 +856,17 @@ const GraficosDeFunciones = () => {
               style={{ backgroundColor: "#011627" }}
             >
               <br />
-              <div className="sticky">
+              <div className="sticky-act16">
+                <div className="tittle-table">
+                  <h6 style={{ color: "white" }}>Ventana gráfica 7</h6>
+                </div>
                 <BoardXX boardId="board5" boundingBox={[-20, 60, 20, -30]} />
                 <TextoFuncion />
                 <FuncionLineal2 boardId="board5" />
               </div>
             </Col>
-            <Col className="actividad" md={5}>
-              <p>
-                <b>Actividad 15.</b> Utiliza la ventana gráfica{" "}
-              </p>
+            <Col>
+              <Act16Aleatorio />
             </Col>
           </FuncLinealContextProvider>
         </BoardsContextProvider>

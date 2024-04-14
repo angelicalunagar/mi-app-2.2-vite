@@ -100,12 +100,10 @@ const RectanguloArea = () => {
 
   return (
     <div>
-      <div>
-        <p></p>
-      </div>
+      
       <div
         id="variation-container2"
-        className="jxgbox color-marco"
+        className="jxgbox color-marco border" 
         style={{ width: "100%", height: "400px" }}
       />
     </div>

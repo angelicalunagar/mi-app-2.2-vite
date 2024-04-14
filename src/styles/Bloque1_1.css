@@ -249,6 +249,11 @@ h4 {
   top: 2.7rem; /* Ajusta esta propiedad según sea necesario */
 }
 
+.sticky-act16 {
+  position: sticky;
+  top: 3.8rem; /* Ajusta esta propiedad según sea necesario */
+}
+
 .center-act10 {
   padding-top: 2rem;
   justify-content: center;

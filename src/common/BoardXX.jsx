@@ -4,12 +4,11 @@ import { JSXGraph } from "jsxgraph";
 import { BoardsContext } from "../contexts/BoardsContext";
 import "../styles/Board.css";
 
-const BoardXX = ( { boardId, boundingBox } ) => {
-  const { addBoard, brd }  = useContext(BoardsContext);
+const BoardXX = ({ boardId, boundingBox }) => {
+  const { addBoard, brd } = useContext(BoardsContext);
   const [initialBoundingBox, setInitialBoundingBox] = useState(boundingBox); // Estado para almacenar los valores iniciales del boundingBox
-  
+
   useEffect(() => {
-  
     if (!brd.hasOwnProperty(boardId)) {
       const board = JSXGraph.initBoard(boardId, {
         boundingbox: boundingBox,
@@ -46,7 +45,7 @@ const BoardXX = ( { boardId, boundingBox } ) => {
 
       // Agregar botón para restablecer valores iniciales del boundingBox
       const resetButton = document.createElement("button");
-      resetButton.textContent='x';
+      resetButton.textContent = "x";
       resetButton.addEventListener("click", () => {
         board.setBoundingBox(initialBoundingBox);
       });
@@ -77,11 +76,11 @@ const BoardXX = ( { boardId, boundingBox } ) => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleKeyUp);
     };
-  
   }, [brd]);
 
   return (
     <div
+      className="border"
       id={boardId}
       style={{ width: "100%", height: "400px", backgroundColor: "white" }}
     ></div>

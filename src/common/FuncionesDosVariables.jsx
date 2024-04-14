@@ -88,7 +88,10 @@ const FuncionesDosVariables = () => {
         </Col>
       </Row>
       <Row>
-        <Col className="border" md={5}>
+        <Col md={5}>
+          <div className="tittle-table">
+            <h6>Ventana gráfica 1</h6>
+          </div>
           <Rectangulo />
         </Col>
         <Col md={7}>
@@ -405,8 +408,11 @@ const FuncionesDosVariables = () => {
           </ul>
         </Col>
 
-        <Col className="border " md={4}>
+        <Col md={4}>
           <div className="sticky">
+            <div className="tittle-table">
+              <h6>Ventana gráfica 2</h6>
+            </div>
             <RectanguloArea />
           </div>
         </Col>
@@ -528,7 +534,7 @@ const FuncionesDosVariables = () => {
           </Form>
         </Col>
       </Row>
-      <Row className="row-nuevotema" >
+      <Row className="row-nuevotema">
         <Col md={3}>
           <img src={milkBoxWhite} alt="" className="img-fluid sticky" />
         </Col>
@@ -700,8 +706,8 @@ const FuncionesDosVariables = () => {
             </li>
             <li>
               Considerando el área en función del lado{" "}
-              <InlineMath>x</InlineMath> únicamente, si el diseñador indica que el
-              dominio de <InlineMath>x</InlineMath> debe ser{" "}
+              <InlineMath>x</InlineMath> únicamente, si el diseñador indica que
+              el dominio de <InlineMath>x</InlineMath> debe ser{" "}
               <InlineMath>{"6≤x≤15"}</InlineMath>. ¿Cuál es el rango de{" "}
               <InlineMath>A(x)</InlineMath>?
               <Form>
@@ -739,7 +745,7 @@ const FuncionesDosVariables = () => {
           </ul>
         </Col>
       </Row>
-     
+
       <Row>
         <Col>
           <p>

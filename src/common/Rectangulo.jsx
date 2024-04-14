@@ -70,10 +70,7 @@ const Rectangulo = () => {
   }, []);
 
   return (
-    <div>
-      <div>
-        <p></p>
-      </div>
+    <div className="border">
       <div
         id="variation-container"
         className="jxgbox color-marco"
