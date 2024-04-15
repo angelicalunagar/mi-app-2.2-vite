@@ -35,6 +35,12 @@ const Act16Aleatorio = () => {
   // Estado para controlar la visibilidad de los íconos
   const [mostrarIconos, setMostrarIconos] = useState(false);
 
+  // Estado para bloquear las selecciones después de revisar respuestas
+  const [bloquearSeleccion, setBloquearSeleccion] = useState(false);
+
+  // Estado para almacenar el mensaje de calificación
+  const [mensajeCalificacion, setMensajeCalificacion] = useState("");
+
   // Función para calcular el puntaje de la pregunta
   const calcularScore = (pregunta, respuesta) => {
     // Lógica para determinar si la respuesta es correcta
@@ -60,6 +66,7 @@ const Act16Aleatorio = () => {
 
   // Manejar cambios en las respuestas del usuario
   const handleRespChangeAct16 = (e, preg) => {
+    if (bloquearSeleccion) return; // Bloquear selecciones si ya se revisaron las respuestas
     const { value } = e.target;
 
     setRespuestasUsuarioAct16((prevRespuestas) => ({
@@ -132,15 +139,45 @@ const Act16Aleatorio = () => {
   };
 
   const revisarRespuestas = () => {
-    // Calcular puntaje
-    const score = {};
-    for (const preg in respuestasUsuarioAct16) {
-      score[preg] = calcularScore(preg, respuestasUsuarioAct16[preg]);
-    }
-    setScoreUsuario(score);
-
     // Mostrar los íconos
     setMostrarIconos(true);
+
+    // Bloquear selecciones
+    setBloquearSeleccion(true);
+
+    // Calcular puntaje
+    const numCorrectas = Object.values(scoreUsuario).filter(
+      (score) => score
+    ).length;
+    const totalPreguntas = Object.keys(respuestasPreguntas).length;
+    const puntaje = `${numCorrectas}/${totalPreguntas}`;
+
+    // Mostrar mensaje de calificación
+    setMensajeCalificacion(`Puntaje: ${puntaje}`);
+  };
+
+  const modificarRespuestas = () => {
+    // Ocultar íconos
+    setMostrarIconos(false);
+    // Desbloquear selecciones
+    setBloquearSeleccion(false);
+    // Limpiar respuestas
+    setRespuestasUsuarioAct16({
+      preg1: "",
+      preg2: "",
+      preg3: "",
+      preg4: "",
+    });
+    // Limpiar puntajes
+    setScoreUsuario({
+      preg1: null,
+      preg2: null,
+      preg3: null,
+      preg4: null,
+    });
+
+    // Limpiar mensaje de calificación
+    setMensajeCalificacion("");
   };
 
   return (
@@ -174,6 +211,7 @@ const Act16Aleatorio = () => {
                           {opcion} {mostrarIcono("preg1", opcion)}
                         </span>
                       }
+                      disabled={bloquearSeleccion} // Bloquear selecciones después de revisar respuestas
                     />
                   ))}
                 </Form.Group>
@@ -198,6 +236,7 @@ const Act16Aleatorio = () => {
                           {opcion} {mostrarIcono("preg2", opcion)}
                         </span>
                       }
+                      disabled={bloquearSeleccion}
                     />
                   ))}
                 </Form.Group>
@@ -221,6 +260,7 @@ const Act16Aleatorio = () => {
                           {opcion} {mostrarIcono("preg3", opcion)}
                         </span>
                       }
+                      disabled={bloquearSeleccion}
                     />
                   ))}
                 </Form.Group>
@@ -244,14 +284,27 @@ const Act16Aleatorio = () => {
                           {opcion} {mostrarIcono("preg4", opcion)}
                         </span>
                       }
+                      disabled={bloquearSeleccion}
                     />
                   ))}
                 </Form.Group>
               </Form>
             </li>
           </ul>
+
           <div className="button-center">
-            <Button onClick={revisarRespuestas}>Revisar respuestas</Button>
+            {bloquearSeleccion ? ( // Cambiar texto del botón dependiendo del estado de bloqueo
+              <>
+              <div> {/* Ajusta el valor de marginBottom según sea necesario */}
+                <Button onClick={modificarRespuestas}>
+                  Modificar respuestas
+                </Button>
+                <span style={{ marginLeft: '10px' }}>{mensajeCalificacion}</span> {/* Ajusta el valor de marginLeft según sea necesario */}
+              </div>
+            </>
+            ) : (
+                <Button onClick={revisarRespuestas}>Revisar respuestas</Button>            
+            )}
           </div>
         </Col>
       </Row>
