@@ -31,7 +31,7 @@ const PuntoMovibleF = ( {boardId} ) => {
       } else {
         if (ids.idGraficaF) {
           // Crea un segmento entre los puntos B y G
-          const puntoM = board.create("glider", [0.5, 4, ids.idGraficaF], {
+          const puntoM = board.create("glider", [6, 5, ids.idGraficaF], {
             name: "M",
           });
 

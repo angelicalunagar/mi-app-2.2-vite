@@ -40,6 +40,8 @@ import Act16 from "./Act16";
 import Act16Aleatorio from "./Act16Aleatorio";
 import PuntoMovibleF from "./PuntoMovibleF";
 import TextoFuncion from "./TextoFuncion";
+import Quiz15 from "./Quiz15";
+import Quiz16 from "./Quiz16";
 
 
 /* import RectaAG from "./RectaAG"; */
@@ -591,7 +593,7 @@ const GraficosDeFunciones = () => {
                 la gráfica de la función.
                 <br />
                 <br />
-                <PuntoMovibleF boardId="board2" />
+                <PuntoMovibleF boardId="board2"/>
                 <br />
                 <br />
                 Este ejercicio te ayudará a visualizar mejor el comportamiento
@@ -773,7 +775,9 @@ const GraficosDeFunciones = () => {
         </Col>
       </Row>
       <br />
-      <Act15 />
+      <Quiz15 />
+      
+      
       <Row>
         <Col>
           <p>
@@ -821,6 +825,7 @@ const GraficosDeFunciones = () => {
               </p>
 
               <GraficaF boardId="board4" funcionGrafica={(x) => 30 + 8.5 * x} />
+              <PuntoMovibleF boardId="board4" />
               <p>
                 <br />
                 Lo anterior quiere decir que f(x) abarca valores negativos y de
@@ -866,7 +871,7 @@ const GraficosDeFunciones = () => {
               </div>
             </Col>
             <Col>
-              <Act16Aleatorio />
+              <Quiz16 />
             </Col>
           </FuncLinealContextProvider>
         </BoardsContextProvider>
