@@ -880,64 +880,6 @@ const GraficosDeFunciones = () => {
           </FuncLinealContextProvider>
         </BoardsContextProvider>
       </Row>
-      <Row className="main-row">
-        <p>
-          <br />
-          Como pudiste observar, la gráfica de f(x)=2x es una línea recta, por
-          lo que se dice que es una función lineal. Otros ejemplos de funciones
-          lineales son:
-        </p>
-        <ul>
-          <li>f(x)=x</li>
-          <li>f(x)=3x</li>
-          <li>f(x)=-3x</li>
-          <li>f(x)=3x+4</li>
-          <li>f(x)=3x-4</li>y en general:
-          <li>f(x)=a1x+a0</li>
-        </ul>
-        <p>
-          Donde a1 y a0 son constantes. Por ejemplo, en la función f(x)=x, a1 es
-          el coeficiente de x, o sea a1=1, y a0 es el término independiente de
-          x, o sea x0=0:
-        </p>
-        <ul>
-          <li>f(x)=1x+0</li>
-          <li>f(x)=x</li>
-        </ul>
-        <p>
-          Observar que en las funciones lineales el exponente de x siempre es 1.
-          <br />
-          <br />
-          <b>Actividad 6:</b>
-          Dadas las siguienetes funciones lineales, determinar los valores de a0
-          y a1:
-        </p>
-        <ul>
-          <li>En la función f(x)=-x+3, a0= y a1= </li>
-          <li>En la función f(x)=x-1, a0= y a1= </li>
-          <li>En la función f(x)=100x, a0= y a1= </li>
-          <li>En la función f(x)=2/3x-3, a0= y a1= </li>
-          <li>En la función f(x)=-0.3x, a0= y a1= </li>
-        </ul>
-        <p>
-          Sugerencia: utiliza un graficador como GeoGrebra para verificar que
-          las graficas de las funciones de esta actividad son rectas.
-        </p>
-        <p>
-          Imagina que pasaría si en vez de que la función duplicara el valor que
-          ingresa, lo elevara al cuadrado. ¿Cuál de las siguientes expresiones
-          es la correcta?
-        </p>
-        <ul>
-          <li>f(x)=x^3</li>
-          <li>f(x)=3x</li>
-          <li>f(x)=x^2</li>
-          <li>f(x)=x^4</li>
-        </ul>
-        Este tipo de funciones donde el exponente de x está elevado al cuadrado
-        se llaman funciones cuadráticas, y su gráfica ya no es una recta sino
-        una parábola.
-      </Row>
     </Container>
   );
 };
