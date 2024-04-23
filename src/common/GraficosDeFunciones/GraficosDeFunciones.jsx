@@ -43,7 +43,6 @@ import TextoFuncion from "./TextoFuncion";
 import Quiz15 from "./Quiz15";
 import Quiz16 from "./Quiz16";
 
-
 /* import RectaAG from "./RectaAG"; */
 
 const GraficosDeFunciones = () => {
@@ -524,43 +523,43 @@ const GraficosDeFunciones = () => {
                   <tbody>
                     <tr>
                       <td>-25</td>
-                      <td>-0.08</td>
-                      <td>A=(-25, -0.08)</td>
+                      <td>-0.8</td>
+                      <td>A=(-25, -0.8)</td>
                     </tr>
                     <tr>
                       <td>-8.5</td>
-                      <td>-0.24</td>
-                      <td>B=(-8.5, -0.24)</td>
+                      <td>-2.4</td>
+                      <td>B=(-8.5, -2.4)</td>
                     </tr>
                     <tr>
                       <td>-1.5</td>
-                      <td>-1.33</td>
-                      <td>C=(-1.5, -1.33)</td>
+                      <td>-13.3</td>
+                      <td>C=(-1.5, -13.3)</td>
                     </tr>
                     <tr>
-                      <td>-0.03</td>
-                      <td>-66.67</td>
-                      <td>D=(-0.03, -66.67)</td>
+                      <td>-0.5</td>
+                      <td>-40</td>
+                      <td>D=(-0.5, -40)</td>
                     </tr>
                     <tr>
-                      <td>0.03</td>
-                      <td>66.67</td>
-                      <td>E=(0.03, 66.67)</td>
+                      <td>0.5</td>
+                      <td>40</td>
+                      <td>E=(0.5, 40)</td>
                     </tr>
                     <tr>
                       <td>1.5</td>
-                      <td>1.33</td>
-                      <td>F=(1.5, 1.33)</td>
+                      <td>13.3</td>
+                      <td>F=(1.5, 13.3)</td>
                     </tr>
                     <tr>
                       <td>8.5</td>
-                      <td>0.24</td>
-                      <td>G=(8.5, 0.24)</td>
+                      <td>2.4</td>
+                      <td>G=(8.5, 2.4)</td>
                     </tr>
                     <tr>
                       <td>25</td>
-                      <td>0.08</td>
-                      <td>H=(25, 0.08)</td>
+                      <td>0.8</td>
+                      <td>H=(25, 0.8)</td>
                     </tr>
                   </tbody>
                 </Table>
@@ -593,7 +592,7 @@ const GraficosDeFunciones = () => {
                 la gráfica de la función.
                 <br />
                 <br />
-                <PuntoMovibleF boardId="board2"/>
+                <PuntoMovibleF boardId="board2" initialCoordinates={[5, 4]} />
                 <br />
                 <br />
                 Este ejercicio te ayudará a visualizar mejor el comportamiento
@@ -627,7 +626,6 @@ const GraficosDeFunciones = () => {
                 Observa que en la gráfica de f(x)=2/x, el rango va de -inf a 0
                 por la derecha, sin tocarlo, y de +inf a cero por la izquierda,
                 sin tocarlo. Por lo que se puede concluir que el rango es:
-                {/* -inf < f(x) <  +inf,f(x)≠0 */}
                 <BlockMath>
                   {"-\\infty < f(x) < +\\infty,\\ excepto \\ f(x) = 0"}
                 </BlockMath>
@@ -741,7 +739,10 @@ const GraficosDeFunciones = () => {
                 valores de x cada vez más grandes.
                 <br />
               </p>
-              <PuntoMovibleF boardId="board3" />
+              <PuntoMovibleF
+                boardId="board3"
+                initialCoordinates={[7, Math.sqrt(7)]}
+              />
               <p>
                 <br />
                 "Esta tendencia tiene lógica, ya que al calcular la raíz
@@ -776,8 +777,7 @@ const GraficosDeFunciones = () => {
       </Row>
       <br />
       <Quiz15 />
-      
-      
+
       <Row>
         <Col>
           <p>
@@ -819,13 +819,17 @@ const GraficosDeFunciones = () => {
                 <br />
                 <br />Y ¿cómo es f(x) a medida que x es menor que cero y cada
                 vez de mayor magnitud? En este caso f(x) también es negativo y
-                cada vez de mayor magnitud. Grafica f(x)=30+8.5x y desliza el
-                punto M sobre la gráfica de la función para confirmar estas
-                observaciones.
+                cada vez de mayor magnitud. 
+                <br />
+                <br />
+                Para confirmar estas observaciones,
+                grafica f(x)=30+8.5x, luego grafica el punto M y deslizalo sobre
+                la gráfica de la función.
               </p>
 
               <GraficaF boardId="board4" funcionGrafica={(x) => 30 + 8.5 * x} />
-              <PuntoMovibleF boardId="board4" />
+              <br />
+              <PuntoMovibleF boardId="board4" initialCoordinates={[7, 89.5]} />
               <p>
                 <br />
                 Lo anterior quiere decir que f(x) abarca valores negativos y de

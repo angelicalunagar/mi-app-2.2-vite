@@ -82,7 +82,7 @@ const Quiz = ({ activityNumber, instruction, questions, correctAnswers, md }) =>
     ) : null;
   };
 
-
+  
   const renderRespuesta = (respuesta, renderInlineMath) => {
     if (renderInlineMath) {
       return <InlineMath>{respuesta}</InlineMath>;

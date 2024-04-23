@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import { BoardContextProvider } from "../contexts/BoardContext";
 import Quiz16 from "./GraficosDeFunciones/Quiz16";
 import Quiz15 from "./GraficosDeFunciones/Quiz15";
+import FuncLinealesResumen2 from "./GraficosDeFunciones/FuncLinealesResumen2";
 
 function Bloque5() {
   return (
@@ -11,6 +12,7 @@ function Bloque5() {
       <h1>Bloque 5</h1>
     <Quiz16 />
     <Quiz15 />
+   <FuncLinealesResumen2 md={9}/> 
     </div>
   );
 }

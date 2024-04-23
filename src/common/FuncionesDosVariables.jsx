@@ -81,7 +81,7 @@ const FuncionesDosVariables = () => {
       <Row className="main-row">
         <Col>
           <p>
-            Existen situaciones e n las cuáles puede haber{" "}
+            Existen situaciones en las cuáles puede haber{" "}
             <InlineMath>{"2"}</InlineMath> variables independientes y una
             variable dependiente. Por ejemplo:
           </p>

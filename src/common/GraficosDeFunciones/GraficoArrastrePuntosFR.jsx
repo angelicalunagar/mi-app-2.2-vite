@@ -12,7 +12,7 @@ const GraficoArrastrePuntosFR = ({ boardId }) => {
       console.log(board);
 
       // Definir los puntos A, B, D, F
-      const puntoA = board.create("point", [-25, -0.08], {
+      const puntoA = board.create("point", [-25, -0.8], {
         name: "A",
         size: 3,
         color: "blue",
@@ -20,21 +20,21 @@ const GraficoArrastrePuntosFR = ({ boardId }) => {
       });
 
       console.log(puntoA);
-      const puntoB = board.create("point", [-8.5, -0.24], {
+      const puntoB = board.create("point", [-8.5, -2.4], {
         name: "B",
         size: 3,
         color: "blue",
         fixed: true,
       });
 
-      const puntoD = board.create("point", [-0.03, -66.67], {
+      const puntoD = board.create("point", [-0.5, -40], {
         name: "D",
         size: 3,
         color: "blue",
         fixed: true,
       });
 
-      const puntoF = board.create("point", [1.5, 1.33], {
+      const puntoF = board.create("point", [1.5, 13.3], {
         name: "F",
         size: 3,
         color: "blue",
@@ -43,10 +43,10 @@ const GraficoArrastrePuntosFR = ({ boardId }) => {
 
       // Definir las coordenadas objetivo de los puntos C, E, G, H
       const coordsObjetivo = {
-        C: { x: -1.5, y: -1.33 },
-        E: { x: 0.03, y: 66.67 },
-        G: { x: 8.5, y: 0.24 },
-        H: { x: 25, y: 0.08 },
+        C: { x: -1.5, y: -13.3 },
+        E: { x: 0.5, y: 40 },
+        G: { x: 8.5, y: 2.4 },
+        H: { x: 25, y: 0.8 },
       };
 
       // Definir las coordenadas iniciales de los puntos C, E, G, H

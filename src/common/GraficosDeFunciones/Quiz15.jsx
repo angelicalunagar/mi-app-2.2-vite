@@ -8,7 +8,7 @@ const Quiz15 = () => {
   const activityNumber = "15";
   const instruction = (
     <span>
-      Determina el dominio correspondiente a las siguientes reglas de correspondencia:
+      Determina el dominio máximo de las siguientes reglas de correspondencia:
     </span>
   );
 

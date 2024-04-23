@@ -5,7 +5,8 @@ import { Button } from "react-bootstrap";
 
 const GraficaF = ({ boardId, funcionGrafica }) => {
   const { brd, ids, setIds } = useContext(BoardsContext);
-  const { dibujarGrafica, setDibujarGrafica, setDibPuntoM} = useContext(GraficaFContext);
+  const { dibujarGrafica, setDibujarGrafica, setDibPuntoM } =
+    useContext(GraficaFContext);
 
   const toggleGraficaF = () => {
     if (brd[boardId]) {
@@ -17,22 +18,27 @@ const GraficaF = ({ boardId, funcionGrafica }) => {
 
         const perpendicularToXAxisId = ids.idPerpendicularToXAxis;
         const perpendicularToYAxisId = ids.idPerpendicularToYAxis;
+        const segmentXAxisId = ids.idSegmentXAxis;
+        const segmentYAxisId = ids.idSegmentYAxis;
 
         if (perpendicularToXAxisId)
           board.removeObject(perpendicularToXAxisId, false);
         if (perpendicularToYAxisId)
           board.removeObject(perpendicularToYAxisId, false);
+        if (segmentXAxisId) board.removeObject(segmentXAxisId, false);
+        if (segmentYAxisId) board.removeObject(segmentYAxisId, false);
 
         setIds((prevIds) => ({
           ...prevIds,
           idGraficaF: "",
           idPerpendicularToXAxis: "",
           idPerpendicularToYAxis: "",
+          idSegmentXAxis: "",
+          idSegmentYAxis: "",
         }));
 
         setDibujarGrafica(false);
         setDibPuntoM(false);
-
       } else {
         /* if (ids.idPuntoA && ids.idPuntoB) {
           const grafica = board.create("functiongraph", [
@@ -47,9 +53,7 @@ const GraficaF = ({ boardId, funcionGrafica }) => {
 
           setDibujarGrafica(true);
         } */
-        const grafica = board.create("functiongraph", [
-          funcionGrafica
-        ]);
+        const grafica = board.create("functiongraph", [funcionGrafica]);
 
         // Guarda el ID de la recta en la lista de IDs
         setIds((prevIds) => ({

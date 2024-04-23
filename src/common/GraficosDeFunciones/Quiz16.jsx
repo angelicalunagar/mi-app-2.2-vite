@@ -30,18 +30,7 @@ const Quiz16 = () => {
       renderInlineMath: false,
     },
 
-    preg2: {
-      preg: (
-        <span>
-          Mueve el coeficiente <InlineMath>m</InlineMath> para que valga{" "}
-          <InlineMath>-2</InlineMath>. ¿Qué sucedió con la inclinación de la
-          recta con respecto a la anterior?
-        </span>
-      ),
-      resps: ["Cambió su dirección", "Permaneció igual", "Aumentó"],
-      renderInlineMath: false,
-    },
-
+  
     preg3: {
       preg: (
         <span>
@@ -88,7 +77,7 @@ const Quiz16 = () => {
       preg: (
         <span>
           ¿Cuál de las siguientes reglas de correspondencia tiene una gráfica
-          más inclinada (sin importar el sentido de la inclinación)?
+          más inclinada?
         </span>
       ),
 
@@ -199,7 +188,6 @@ const Quiz16 = () => {
 
   const correctAnswers = {
     preg1: "Disminuyó",
-    preg2: "Cambió su dirección",
     preg3:
       "Es creciente, lo que quiere decir que si camináramos de izquierda a derecha sobre su gráfica estaríamos subiendo.",
     preg4:
