@@ -21,7 +21,7 @@ import { FuncLinealContextProvider } from "../../contexts/FuncLinealContext";
 /* import { RectaAGContextProvider } from "../contexts/RectaAGContext"; */
 
 import BoardX from "../BoardX";
-import BoardXX from "../BoardXX";
+import BoardXX from "../Utilerias/BoardXX";
 /* import FuncionLineal from "./FuncionLineal"; */
 import FuncionLineal2 from "./FuncionLineal2";
 import GraficoArrastrePuntosX from "../GraficoArrastrePuntosX";
@@ -35,8 +35,6 @@ import PuntoMovibleMX from "../PuntoMovibleMX";
 import CuestionarioFR from "./CuestionarioFR";
 import Act12 from "./Act12";
 import Act14 from "./Act14";
-import Act15 from "./Act15";
-import Act16 from "./Act16";
 import Act16Aleatorio from "./Act16Aleatorio";
 import PuntoMovibleF from "./PuntoMovibleF";
 import TextoFuncion from "./TextoFuncion";
@@ -255,11 +253,6 @@ const GraficosDeFunciones = () => {
                       <BlockMath>
                         {"\\text{Im}(f): \\{ f(x) \\in \\mathbb{R} \\}"}
                       </BlockMath> */}
-                    <br />
-                    <br />
-                    <Button>
-                      Graficar la función <InlineMath>{"f(x)=2x"}</InlineMath>
-                    </Button>
                     <br />
                     <br />
                   </p>
@@ -819,12 +812,11 @@ const GraficosDeFunciones = () => {
                 <br />
                 <br />Y ¿cómo es f(x) a medida que x es menor que cero y cada
                 vez de mayor magnitud? En este caso f(x) también es negativo y
-                cada vez de mayor magnitud. 
+                cada vez de mayor magnitud.
                 <br />
                 <br />
-                Para confirmar estas observaciones,
-                grafica f(x)=30+8.5x, luego grafica el punto M y deslizalo sobre
-                la gráfica de la función.
+                Para confirmar estas observaciones, grafica f(x)=30+8.5x, luego
+                grafica el punto M y deslizalo sobre la gráfica de la función.
               </p>
 
               <GraficaF boardId="board4" funcionGrafica={(x) => 30 + 8.5 * x} />

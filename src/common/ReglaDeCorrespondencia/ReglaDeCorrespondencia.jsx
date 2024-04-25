@@ -1,12 +1,10 @@
-import React from "react";
+import { React, useState} from "react";
 import "katex/dist/katex.min.css";
-import "../styles/Bloque1_1.css";
-import { useState} from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import {Form} from "react-bootstrap";
+import "../../styles/Bloque1_1.css";
+import {Row, Col, Form} from "react-bootstrap";
 import { BlockMath, InlineMath } from "react-katex";
 import Container from "react-bootstrap/Container";
+import Quiz4 from "./Quiz4";
 
 
 const ReglaDeCorrespondencia = () => {
@@ -113,137 +111,7 @@ const ReglaDeCorrespondencia = () => {
           </p>
         </Col>
       </Row>
-      <Row className="row-act">
-        <Col className="actividad" md={10}>
-          <p>
-            <b>Actividad 4:</b> Selecciona la regla de correspondencia que
-            describe cada situación.
-            <br />
-          </p>
-
-          <ul>
-            <li>
-              <em>
-                Cristina gana 4000 pesos quincenales, de los cuáles gasta 250
-                pesos diarios. La función que describe que el dinero restante
-                depende del número de días que han trascurrido desde el pago de
-                la quincena es:
-              </em>
-            </li>
-            <Form>
-              <Form.Group>
-                <Form.Check
-                  type="checkbox"
-                  id="opcionA1"
-                  name="opciones1"
-                  value="a"
-                  checked={respuestasAct4.preg1 === "a"}
-                  onChange={(e) => handleRespChangeAct4(e, "preg1")}
-                  label="d(n)=2000-125n"
-                />
-                <Form.Check
-                  type="checkbox"
-                  id="opcionB1"
-                  name="opciones1"
-                  value="b"
-                  checked={respuestasAct4.preg1 === "b"}
-                  onChange={(e) => handleRespChangeAct4(e, "preg1")}
-                  label="d(n)=4000-250n"
-                />
-                <Form.Check
-                  type="checkbox"
-                  id="opcionC1"
-                  name="opciones1"
-                  value="c"
-                  checked={respuestasAct4.preg1 === "c"}
-                  onChange={(e) => handleRespChangeAct4(e, "preg1")}
-                  label="d(n)=250n+4000"
-                />
-              </Form.Group>
-            </Form>
-            <br />
-            <li>
-              <em>
-                Un Uber cobra una cuota fija por contratación de $30.00 y
-                adicionalmente $8.50 por km recorrido. La función que describe
-                que el precio <InlineMath>{"p"}</InlineMath> de un viaje en Uber
-                depende de la distancia recorrida <InlineMath>{"x"}</InlineMath>
-                (en km) es:
-              </em>
-            </li>
-            <Form>
-              <Form.Group>
-                <Form.Check
-                  type="checkbox"
-                  id="opcionA2"
-                  name="opciones2"
-                  value="a"
-                  checked={respuestasAct4.preg2 === "a"}
-                  onChange={(e) => handleRespChangeAct4(e, "preg2")}
-                  label="p(x)=30+8.50x"
-                />
-                <Form.Check
-                  type="checkbox"
-                  id="opcionB2"
-                  name="opciones2"
-                  value="b"
-                  checked={respuestasAct4.preg2 === "b"}
-                  onChange={(e) => handleRespChangeAct4(e, "preg2")}
-                  label="p(x)=30-8.50x"
-                />
-                <Form.Check
-                  type="checkbox"
-                  id="opcionC2"
-                  name="opciones2"
-                  value="c"
-                  checked={respuestasAct4.preg2 === "c"}
-                  onChange={(e) => handleRespChangeAct4(e, "preg2")}
-                  label="p(x)=-30+8.50x"
-                />
-              </Form.Group>
-            </Form>
-            <br />
-            <li>
-              <em>
-                Un automóvil de carreras avanza 2 km por cada minuto, por lo que
-                la distancia recorrida es función de tiempo transcurrido. ¿Cuál
-                es la función correcta?
-              </em>
-            </li>
-            <Form>
-              <Form.Group>
-                <Form.Check
-                  type="checkbox"
-                  id="opcionA3"
-                  name="opciones3"
-                  value="a"
-                  checked={respuestasAct4.preg3 === "a"}
-                  onChange={(e) => handleRespChangeAct4(e, "preg3")}
-                  label="d(t)=2t + 10"
-                />
-                <Form.Check
-                  type="checkbox"
-                  id="opcionB3"
-                  name="opciones3"
-                  value="b"
-                  checked={respuestasAct4.preg3 === "b"}
-                  onChange={(e) => handleRespChangeAct4(e, "preg3")}
-                  label="d(t)=-2t"
-                />
-                <Form.Check
-                  type="checkbox"
-                  id="opcionC3"
-                  name="opciones3"
-                  value="c"
-                  checked={respuestasAct4.preg3 === "c"}
-                  onChange={(e) => handleRespChangeAct4(e, "preg3")}
-                  label="d(t)=2t"
-                />
-              </Form.Group>
-            </Form>
-          </ul>
-        </Col>
-      </Row>
+      <Quiz4 />
       <Row className="main-row">
         <Col>
           <p>

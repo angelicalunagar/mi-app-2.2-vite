@@ -1,6 +1,6 @@
-// Quiz16.js
+// Quiz17.js
 import React from "react";
-import Quiz from "../GraficosDeFunciones/Quiz";
+import Quiz from "../Utilerias/Quiz";
 import { InlineMath } from "react-katex";
 
 const Quiz17 = () => {
@@ -63,24 +63,24 @@ const Quiz17 = () => {
       ),
 
       resps: ["Va aumentando", "Va disminuyendo", "Siempre es igual"],
-      renderInlineMath: true,
+      renderInlineMath: false,
     },
 
     preg5: {
       preg: (
         <span>
-          ¿Cómo dirías que es A(x) en el intervalo de dominio 20 ≤ x ≤ 60?
+          ¿Cómo dirías que es A(x) en el intervalo de dominio 20 ≤ x ≤ 60 cuando x se incrementa?
         </span>
       ),
 
-      resps: ["Creciente", "Decreciente", "Constante"],
-      renderInlineMath: true,
+      resps: ["Aumenta", "Disminuye", "Es constante"],
+      renderInlineMath: false,
     },
 
     preg6: {
       preg: (
         <span>
-          ¿En qué intervalo el área A(x) es creciente?
+          ¿En qué intervalo el área A(x) crece?
         </span>
       ),
 
@@ -91,7 +91,7 @@ const Quiz17 = () => {
     preg7: {
       preg: (
         <span>
-          ¿En qué intervalo el área A(x) es decreciente?
+          ¿En qué intervalo el área A(x) decrece?
         </span>
       ),
 
@@ -102,7 +102,8 @@ const Quiz17 = () => {
     preg8: {
       preg: (
         <span>
-          ¿Cuál de los siguientes puntos de la función es el punto máximo? Toma en cuenta que punto máximo es aquella pareja (x, f(x)) para la cual f(x) es el máximo valor posible del rango. 
+          El punto máximo de la gráfica de una función es aquella pareja (x, f(x)) para la cual f(x) es el máximo valor posible del rango.
+          ¿Cuál de los siguientes puntos de la función es un punto máximo?  
         </span>
       ),
 
@@ -113,15 +114,31 @@ const Quiz17 = () => {
     preg9: {
       preg: (
         <span>
-          ¿Cuáles de los siguientes puntos es uno de los puntos mínimos de la función? Toma en cuenta que punto mínimo es aquella pareja (x, f(x)) para la cual f(x) es el mínimo valor posible del rango. 
+          El punto mínimo de una función es aquella pareja (x, f(x)) para la cual f(x) es el mínimo valor posible del rango. 
+          ¿Cuál de los siguientes puntos es un punto mínimo? 
         </span>
       ),
 
       resps: ["Punto = (150, 0)", "Punto = (145, 725)", "Punto = (5, 725)"],
-      renderInlineMath: true,
+      renderInlineMath: false,
     },
 
     preg10: {
+      preg: (
+        <span>
+          ¿Cuántos puntos mínimos tiene la función?
+        </span>
+      ),
+
+      resps: [
+        'Uno',
+        'Dos',
+        "Tres",
+      ],
+      renderInlineMath: false,
+    },
+
+    preg11: {
       preg: (
         <span>
           ¿Cuántos puntos máximos tiene la función?
@@ -150,6 +167,7 @@ const Quiz17 = () => {
     preg8: "Punto = (75, 5625)",
     preg9: "Punto = (150, 0)",
     preg10: 'Dos',
+    preg11: 'Uno',
   };
 
   return (

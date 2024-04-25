@@ -75,7 +75,8 @@ const FuncLinealesResumen2 = ({ md }) => {
             >
               <option>---</option>
               <option value="f(x)=mx+b">f(x)=mx+b</option>
-              <option value="f(x)=bx+m">f(x)=bx+m</option>
+              <option value="f(x)=b/x">f(x)=b/x</option>
+              <option value="f(x)=x^2+3x">f(x)=x^2+3x</option>
             </Form.Select>
             {renderIcon("select2", selectedOptions["select2"])}, donde f(x)
             representa a la variable{" "}

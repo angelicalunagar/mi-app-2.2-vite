@@ -1,6 +1,6 @@
 // Quiz16.js
 import React from "react";
-import Quiz from "./Quiz";
+import Quiz from "../Utilerias/Quiz";
 import { BlockMath, InlineMath } from "react-katex";
 
 const Quiz16 = () => {

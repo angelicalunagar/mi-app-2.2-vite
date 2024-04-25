@@ -6,7 +6,7 @@ import {
 } from "react-bootstrap";
 
 import { BlockMath } from "react-katex";
-import BoardXX from "./BoardXX";
+import BoardXX from "./Utilerias/BoardXX";
 import TextoFuncion from "./GraficosDeFunciones/TextoFuncion";
 import FuncionLineal2 from "./GraficosDeFunciones/FuncionLineal2";
 import { BoardsContextProvider } from "../contexts/BoardsContext";

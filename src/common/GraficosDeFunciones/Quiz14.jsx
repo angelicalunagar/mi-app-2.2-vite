@@ -1,29 +1,40 @@
-// Quiz15.js
+// Quiz14.js
 import React from "react";
 import Quiz from "../Utilerias/Quiz";
 import { BlockMath, InlineMath } from "react-katex";
 
-const Quiz15 = () => {
-  const md=10;
-  const activityNumber = "15";
+const Quiz14 = () => {
+  const md = 10;
+  const activityNumber = "14";
   const instruction = (
     <span>
-      Determina el dominio máximo de las siguientes reglas de correspondencia:
+      Moviendo el punto <b>M</b> de la Ventana gráfica 3, contesta las
+      siguientes preguntas sobre el caso del taxista.
+      <br />
+      <br />
+      Recuerda que el segmento <InlineMath>AG</InlineMath> de la Actividad 13
+      representa a la función que describe el precio{" "}
+      <InlineMath>p(x)</InlineMath> de un viaje en taxi en función de la
+      distancia recorrida <InlineMath>x</InlineMath>:
+    
+      <BlockMath>p(x)=30+8.5</BlockMath>
+      <BlockMath>{"0 ≤ x ≤ 30"}</BlockMath>
+      <BlockMath>{"30 ≤ p(x) ≤ 630"}</BlockMath>
     </span>
   );
 
-  const questions = {
+  const questions = {  
     preg1: {
       preg: (
         <span>
           <InlineMath>{"f(x) = \\sqrt{x + 2}"}</InlineMath>
         </span>
       ),
-      resps: ["x \\geq -2", "x \\geq -4", "x \\geq 2"],
+      resps: ["x \\geq -2", "x \\geq -4", "x \\geq 2"], 
       renderInlineMath: true,
     },
 
-   preg2: {
+    preg2: {
       preg: (
         <span>
           <InlineMath>{"f(x) = \\sqrt{x - 3}"}</InlineMath>
@@ -36,7 +47,7 @@ const Quiz15 = () => {
     preg3: {
       preg: (
         <span>
-         <InlineMath>{"f(x) = \\frac{20}{x - 1}"}</InlineMath>
+          <InlineMath>{"f(x) = \\frac{20}{x - 1}"}</InlineMath>
         </span>
       ),
       resps: [

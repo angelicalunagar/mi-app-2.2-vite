@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { BlockMath, InlineMath } from "react-katex";
 import { BoardsContextProvider } from "../../contexts/BoardsContext";
 import { GraficaFContextProvider } from "../../contexts/GraficaFContext";
-import BoardXX from "../BoardXX";
+import BoardXX from "../Utilerias/BoardXX";
 import GraficaF from "../GraficosDeFunciones/GraficaF";
 import PuntoMovibleF from "../GraficosDeFunciones/PuntoMovibleF";
 import Quiz17 from "./Quiz17";
@@ -33,7 +33,7 @@ const FuncionesCuadraticas = () => {
             <InlineMath>{"f(x)=mx+b"}</InlineMath>, el mayor exponente de x es
             1, lo que resulta en una relación lineal entre la variable
             dependiente y la variable independiente. Entonces, ¿crees que la
-            gráfica de esta función tiene forma de recta?
+            gráfica de <InlineMath>{"A(x)=150x-x^2"}</InlineMath> tiene forma de recta?
           </p>
         </Col>
       </Row>

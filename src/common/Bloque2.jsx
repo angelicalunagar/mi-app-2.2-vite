@@ -1,19 +1,18 @@
 import React from "react";
 import "../styles/Bloque2.css";
 import VarDepYVarIndep from "./VarDepYVarIndep";
-import ReglaDeCorrespondencia from "./ReglaDeCorrespondencia";
+import ReglaDeCorrespondencia from "./ReglaDeCorrespondencia/ReglaDeCorrespondencia";
 import EvaluarLaReglaDeCorrespon from "./EvaluarLaReglaDeCorrespon";
 import ValoresVarIndep from "./ValoresVarIndep";
-import ValoresVarDependiente from "./ValoresVarDependiente";
+import ValoresVarDependiente from "./ValoresVarDependiente/ValoresVarDependiente";
 import QueEsFuncion from "./QueEsFuncion";
 import NomenclaturaFunciones from "./NomenclaturaFunciones";
-import FuncionesDosVariables from "./FuncionesDosVariables";
+import FuncionesDosVariables from "./FuncionesDosVariables/FuncionesDosVariables";
 import TablaDeFuncion from "./TablaDeFuncion";
 /* import GraficosDeFunciones from "./GraficosDeFunciones"; */
 import GraficosDeFunciones from "./GraficosDeFunciones/GraficosDeFunciones";
 import FuncLineales from "./FuncLineales";
 import FuncionesCuadraticas from "./FuncionesCuadraticas/FuncionesCuadraticas";
-import Act15 from "./GraficosDeFunciones/Act15";
 
 function Bloque2() {
   return (

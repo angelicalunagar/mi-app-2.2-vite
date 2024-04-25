@@ -1,8 +1,8 @@
 //BoardXX.jsx
 import { useContext, useEffect, useState } from "react";
 import { JSXGraph } from "jsxgraph";
-import { BoardsContext } from "../contexts/BoardsContext";
-import "../styles/Board.css";
+import { BoardsContext } from "../../contexts/BoardsContext";
+import "../../styles/Board.css";
 
 const BoardXX = ({ boardId, boundingBox }) => {
   const { addBoard, brd } = useContext(BoardsContext);

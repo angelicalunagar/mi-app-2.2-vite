@@ -5,7 +5,7 @@ import { BsCheckCircle, BsExclamationCircle } from "react-icons/bs";
 import { BlockMath, InlineMath } from "react-katex";
 import "../../styles/Bloque1_1.css";
 
-const Quiz = ({ activityNumber, instruction, questions, correctAnswers, md }) => {
+const QuizSub = ({ activityNumber, instruction, questions, correctAnswers, md }) => {
   const [respuestasPreguntas, setRespuestasPreguntas] = useState({});
   const [respuestasUsuario, setRespuestasUsuario] = useState({});
   const [scoreUsuario, setScoreUsuario] = useState({});
@@ -25,7 +25,7 @@ const Quiz = ({ activityNumber, instruction, questions, correctAnswers, md }) =>
     const preguntasAleatorias = {};
     const respuestasUsuarioInicial = {};
     const scoreUsuarioInicial = {};
-    Object.keys(questions).forEach((pregunta) => {
+    Object.keys(questions).forEach((pregunta) => { //pregunta = preg1, preg2
       const opcionesAleatorias = shuffleRespuestas([...questions[pregunta].resps]);
       preguntasAleatorias[pregunta] = {
         preg: questions[pregunta].preg,
@@ -148,4 +148,4 @@ const Quiz = ({ activityNumber, instruction, questions, correctAnswers, md }) =>
   );
 };
 
-export default Quiz;
+export default QuizSub;
