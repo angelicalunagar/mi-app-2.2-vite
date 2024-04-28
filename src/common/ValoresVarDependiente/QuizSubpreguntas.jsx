@@ -163,6 +163,7 @@ const QuizSubpreguntas = ({
     const respuestasUsuarioInicial = {};
     const scoreUsuarioInicial = {};
     Object.keys(questions).forEach((pregunta) => {
+      
       questions[pregunta].subpreguntas.forEach((subpregunta) => {
         respuestasUsuarioInicial[subpregunta.id] = "";
         scoreUsuarioInicial[subpregunta.id] = null;

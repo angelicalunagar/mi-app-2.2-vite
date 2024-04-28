@@ -34,7 +34,7 @@ const Quiz = ({ activityNumber, instruction, questions, correctAnswers, md }) =>
       respuestasUsuarioInicial[pregunta] = "";
       scoreUsuarioInicial[pregunta] = null;
     });
-    setRespuestasPreguntas(preguntasAleatorias);
+    setRespuestasPreguntas(preguntasAleatorias);  //respuestasPreguntas={preg1: {preg, resps}}
     setRespuestasUsuario(respuestasUsuarioInicial);
     setScoreUsuario(scoreUsuarioInicial);
   }, [questions]);
@@ -82,7 +82,6 @@ const Quiz = ({ activityNumber, instruction, questions, correctAnswers, md }) =>
     ) : null;
   };
 
-  
   const renderRespuesta = (respuesta, renderInlineMath) => {
     if (renderInlineMath) {
       return <InlineMath>{respuesta}</InlineMath>;

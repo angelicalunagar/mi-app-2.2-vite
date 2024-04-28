@@ -1,11 +1,17 @@
-// Quiz
+// QuizSub
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { BsCheckCircle, BsExclamationCircle } from "react-icons/bs";
 import { BlockMath, InlineMath } from "react-katex";
 import "../../styles/Bloque1_1.css";
 
-const QuizSub = ({ activityNumber, instruction, questions, correctAnswers, md }) => {
+const QuizSub = ({
+  activityNumber,
+  instruction,
+  questions,
+  correctAnswers,
+  md,
+}) => {
   const [respuestasPreguntas, setRespuestasPreguntas] = useState({});
   const [respuestasUsuario, setRespuestasUsuario] = useState({});
   const [scoreUsuario, setScoreUsuario] = useState({});
@@ -25,40 +31,53 @@ const QuizSub = ({ activityNumber, instruction, questions, correctAnswers, md })
     const preguntasAleatorias = {};
     const respuestasUsuarioInicial = {};
     const scoreUsuarioInicial = {};
-    Object.keys(questions).forEach((pregunta) => { //pregunta = preg1, preg2
-      const opcionesAleatorias = shuffleRespuestas([...questions[pregunta].resps]);
+    Object.keys(questions).forEach((pregunta) => {
       preguntasAleatorias[pregunta] = {
-        preg: questions[pregunta].preg,
-        resps: opcionesAleatorias
+        instruccion: questions[pregunta].instruccion, // Debería ser 'instruccion' en lugar de 'instruction'
+        subpreguntas: {}, // Inicializa el objeto de subpreguntas
       };
-      respuestasUsuarioInicial[pregunta] = "";
-      scoreUsuarioInicial[pregunta] = null;
+
+      questions[pregunta].subpreguntas.forEach((subpregunta) => {
+        const opcionesAleatorias = shuffleRespuestas([...subpregunta.opciones]); // No es necesario acceder a questions[pregunta].subpreguntas[subpregunta]
+
+        preguntasAleatorias[pregunta].subpreguntas[subpregunta.id] = {
+          // Utiliza 'pregunta' en lugar de 'preguntas' para acceder al objeto principal
+          subpregunta: subpregunta.subpregunta,
+          opciones: opcionesAleatorias,
+          renderInlineMath: subpregunta.renderInlineMath,
+        };
+        respuestasUsuarioInicial[subpregunta.id] = "";
+        scoreUsuarioInicial[subpregunta.id] = null;
+      });
     });
+
     setRespuestasPreguntas(preguntasAleatorias);
     setRespuestasUsuario(respuestasUsuarioInicial);
     setScoreUsuario(scoreUsuarioInicial);
   }, [questions]);
 
-  const handleRespChange = (e, pregunta) => {
+  const handleRespChange = (e, subpreguntaId) => {
     if (bloquearSeleccion) return;
     const { value } = e.target;
     setRespuestasUsuario((prevRespuestas) => ({
       ...prevRespuestas,
-      [pregunta]: value,
+      [subpreguntaId]: value,
     }));
-    const respuestaCorrecta = correctAnswers[pregunta];
+    const respuestaCorrecta = correctAnswers[subpreguntaId];
     const score = value === respuestaCorrecta;
     setScoreUsuario((prevScore) => ({
       ...prevScore,
-      [pregunta]: score,
+      [subpreguntaId]: score,
     }));
   };
 
   const revisarRespuestas = () => {
     setMostrarIconos(true);
     setBloquearSeleccion(true);
-    const numCorrectas = Object.values(scoreUsuario).filter((score) => score).length;
-    const totalPreguntas = Object.keys(respuestasPreguntas).length;
+    const numCorrectas = Object.values(scoreUsuario).filter(
+      (score) => score
+    ).length;
+    const totalPreguntas = Object.keys(respuestasUsuario).length;
     const puntaje = `${numCorrectas}/${totalPreguntas}`;
     setMensajeCalificacion(`Puntaje: ${puntaje}`);
   };
@@ -71,10 +90,10 @@ const QuizSub = ({ activityNumber, instruction, questions, correctAnswers, md })
     setMensajeCalificacion("");
   };
 
-  const mostrarIcono = (pregunta, opcion) => {
-    if (!mostrarIconos || scoreUsuario[pregunta] === null) return null;
-    return respuestasUsuario[pregunta] === opcion ? (
-      scoreUsuario[pregunta] ? (
+  const mostrarIcono = (subpreguntaId, opcion) => {
+    if (!mostrarIconos || scoreUsuario[subpreguntaId] === null) return null;
+    return respuestasUsuario[subpreguntaId] === opcion ? (
+      scoreUsuario[subpreguntaId] ? (
         <BsCheckCircle style={{ color: "green" }} />
       ) : (
         <BsExclamationCircle style={{ color: "red" }} />
@@ -82,7 +101,6 @@ const QuizSub = ({ activityNumber, instruction, questions, correctAnswers, md })
     ) : null;
   };
 
-  
   const renderRespuesta = (respuesta, renderInlineMath) => {
     if (renderInlineMath) {
       return <InlineMath>{respuesta}</InlineMath>;
@@ -90,7 +108,7 @@ const QuizSub = ({ activityNumber, instruction, questions, correctAnswers, md })
       return respuesta;
     }
   };
-  
+
   return (
     <div>
       <Row className="row-act">
@@ -99,32 +117,120 @@ const QuizSub = ({ activityNumber, instruction, questions, correctAnswers, md })
             <b>Actividad {activityNumber}:</b> {instruction}
           </p>
           <ul>
-            {Object.keys(respuestasPreguntas).map((pregunta, index) => (
+            {/* {Object.keys(respuestasPreguntas).map((pregunta, index) => (
               <li key={index}>
-                {respuestasPreguntas[pregunta].preg}
-                <Form>
+                {respuestasPreguntas[pregunta].instruccion}
+                respuestasPreguntas[pregunta].subpreguntas.map((subpregunta, index) => (
+                  {respuestasPreguntas[pregunta].subpreguntas[subpregunta].subpregunta}
+                  <Form>
                   <Form.Group>
-                    {respuestasPreguntas[pregunta].resps.map((opcion, opcionIndex) => (
-                      <Form.Check
-                        key={opcionIndex}
-                        type="checkbox"
-                        id={`opcion${opcionIndex + 1}`}
-                        name={`opciones${opcionIndex}`}
-                        value={opcion}
-                        checked={respuestasUsuario[pregunta] === opcion}
-                        onChange={(e) => handleRespChange(e, pregunta)}
-                        label={
-                          <span>
-                            {/* {opcion} {mostrarIcono(pregunta, opcion)} */}
-                            {/* {renderRespuesta(opcion)} {mostrarIcono(pregunta, opcion)} */}
-                            {renderRespuesta(opcion, questions[pregunta].renderInlineMath)} {mostrarIcono(pregunta, opcion)}
-                          </span>
-                        }
-                        disabled={bloquearSeleccion}
-                      />
-                    ))}
+                    {respuestasPreguntas[pregunta].subpreguntas[subpregunta].opciones.map(
+                      (opcion, opcionIndex) => (
+                        <Form.Check
+                          key={opcionIndex}
+                          type="checkbox"
+                          id={`opcion${opcionIndex + 1}`}
+                          name={`opciones${opcionIndex}`}
+                          value={opcion}
+                          checked={respuestasUsuario[subpreguntas.id] === opcion}
+                          onChange={(e) => handleRespChange(e, subpregunta.id)}
+                          label={
+                            <span>
+                              
+                              {renderRespuesta(
+                                opcion,
+                                questions[pregunta].renderInlineMath
+                              )}{" "}
+                              {mostrarIcono(pregunta, opcion)}
+                            </span>
+                          }
+                          disabled={bloquearSeleccion}
+                        />
+                      )
+                    )}
                   </Form.Group>
                 </Form>
+                ))
+                        
+              </li>
+            ))} */}
+            {Object.keys(respuestasPreguntas).map((pregunta, index) => (
+              <li key={index}>
+                {respuestasPreguntas[pregunta].instruccion}
+                {Object.keys(respuestasPreguntas[pregunta].subpreguntas).map(
+                  (subpreguntaId) => (
+                    /* {respuestasPreguntas[pregunta].subpreguntas[subpreguntaId].subpregunta}
+                    <Form key={subpreguntaId}>
+                      <Form.Group>
+                        {respuestasPreguntas[pregunta].subpreguntas[
+                          subpreguntaId
+                        ].opciones.map((opcion, opcionIndex) => (
+                          <Form.Check
+                            key={opcionIndex}
+                            type="checkbox"
+                            id={`opcion${opcionIndex + 1}`}
+                            name={`opciones${opcionIndex}`}
+                            value={opcion}
+                            checked={
+                              respuestasUsuario[subpreguntaId] === opcion
+                            }
+                            onChange={(e) => handleRespChange(e, subpreguntaId)}
+                            label={
+                              <span>
+                                {renderRespuesta(
+                                  opcion,
+                                  respuestasPreguntas[pregunta].subpreguntas[subpreguntaId].renderInlineMath
+                                )}{" "}
+                                {mostrarIcono(subpreguntaId, opcion)}
+                              </span>
+                            }
+                            disabled={bloquearSeleccion}
+                          />
+                        ))}
+                      </Form.Group>
+                    </Form> */
+                    <div key={subpreguntaId}>
+                      {
+                        respuestasPreguntas[pregunta].subpreguntas[
+                          subpreguntaId
+                        ].subpregunta
+                      }
+                      <Form key={subpreguntaId}>
+                        <Form.Group>
+                          {respuestasPreguntas[pregunta].subpreguntas[
+                            subpreguntaId
+                          ].opciones.map((opcion, opcionIndex) => (
+                            <Form.Check
+                              key={opcionIndex}
+                              type="checkbox"
+                              id={`opcion${opcionIndex + 1}`}
+                              name={`opciones${opcionIndex}`}
+                              value={opcion}
+                              checked={
+                                respuestasUsuario[subpreguntaId] === opcion
+                              }
+                              onChange={(e) =>
+                                handleRespChange(e, subpreguntaId)
+                              }
+                              label={
+                                <span>
+                                  {renderRespuesta(
+                                    opcion,
+                                    respuestasPreguntas[pregunta].subpreguntas[
+                                      subpreguntaId
+                                    ].renderInlineMath
+                                  )}{" "}
+                                  {mostrarIcono(subpreguntaId, opcion)}
+                                </span>
+                              }
+                              disabled={bloquearSeleccion}
+                            />
+                          ))}
+                        </Form.Group>
+                      </Form>
+                    </div>
+                  )
+                )}
               </li>
             ))}
           </ul>
@@ -135,7 +241,9 @@ const QuizSub = ({ activityNumber, instruction, questions, correctAnswers, md })
                   <Button onClick={modificarRespuestas}>
                     Modificar respuestas
                   </Button>
-                  <span style={{ marginLeft: '10px' }}>{mensajeCalificacion}</span>
+                  <span style={{ marginLeft: "10px" }}>
+                    {mensajeCalificacion}
+                  </span>
                 </div>
               </>
             ) : (

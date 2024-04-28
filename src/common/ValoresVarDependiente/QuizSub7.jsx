@@ -1,6 +1,6 @@
 // QuizSub7.js
 import React from "react";
-import QuizSubpreguntas from "./QuizSubpreguntas";
+import QuizSub from "../Utilerias/QuizSub";
 import { BlockMath, InlineMath } from "react-katex";
 
 const QuizSub7 = () => {
@@ -31,6 +31,7 @@ const QuizSub7 = () => {
             "{0, 1, 2, 4, ..., 3999, 4000}",
             "{0, 1, 2, 4, ...,14, 15}",
           ],
+          renderInlineMath: true,
         },
         {
           id: "preg1_2",
@@ -41,9 +42,9 @@ const QuizSub7 = () => {
             "{0, 250, 500, 750, ..., 3750, 4000}",
             "{250, 500, 750, 1000, ..., 3750, 4000}",
           ],
+          renderInlineMath: true,
         },
       ],
-      renderInlineMath: true,
     },
     preg2: {
       instruccion: (
@@ -61,15 +62,16 @@ const QuizSub7 = () => {
           subpregunta:
             "¿Qué valores puede adquirir la variable independiente x?",
           opciones: ["0 ≤ x ≤ 30", "20 ≤ x ≤ 30", "0 ≤ x ≤ 20"],
+          renderInlineMath: true,
         },
         {
           id: "preg2_2",
           subpregunta:
             "¿Qué valores puede adquirir la variable dependiente p(x)?",
           opciones: ["630 ≤ p(x) ≤ 0", "30 ≤ p(x) ≤ 630", "20 ≤ p(x) ≤ 630"],
+          renderInlineMath: true,
         },
       ],
-      renderInlineMath: true,
     },
     preg3: {
       instruccion: (
@@ -85,36 +87,31 @@ const QuizSub7 = () => {
           id: "preg3_1",
           subpregunta: "¿Qué valores puede adquirir el tiempo t?",
           opciones: ["2 ≤ t ≤ 30", "1 ≤ t ≤ 30", "0 ≤ t ≤ 30"],
+          renderInlineMath: true,
         },
         {
           id: "preg3_2",
           subpregunta:
             "¿Qué valores puede adquirir la distancia recorrida d(t)?",
           opciones: ["4 ≤ d(t) ≤ 60", "0 ≤ d(t) ≤ 60", "2 ≤ d(t) ≤ 60"],
+          renderInlineMath: true,
         },
       ],
-      renderInlineMath: true,
     },
   };
 
   const correctAnswers = {
-    preg1: {
       preg1_1: "{0, 1, 2, 4, ...,14, 15}",
       preg1_2: "{4000, 3750, 3500, 3250, ..., 500, 250}",
-    },
-    preg2: {
       preg2_1: "0 ≤ x ≤ 30",
       preg2_2: "30 ≤ p(x) ≤ 630",
-    },
-    preg3: {
       preg3_1: "0 ≤ t ≤ 30",
       preg3_2: "0 ≤ d(t) ≤ 60",
-    },
   };
 
   return (
     <div>
-      <QuizSubpreguntas
+      <QuizSub
         activityNumber={activityNumber}
         instruction={instruction}
         questions={questions}
