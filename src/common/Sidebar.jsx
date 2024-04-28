@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
-import VarDepYVarIndep from "./VarDepYVarIndep";
+import VarDepYVarIndep from "./VarDepYVarIndep/VarDepYVarIndep";
 import ReglaDeCorrespondencia from "./ReglaDeCorrespondencia/ReglaDeCorrespondencia";
 import EvaluarLaReglaDeCorrespon from "./EvaluarLaReglaDeCorrespon";
 import ValoresVarIndep from "./ValoresVarIndep";

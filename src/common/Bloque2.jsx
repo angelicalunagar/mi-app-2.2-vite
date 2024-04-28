@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/Bloque2.css";
-import VarDepYVarIndep from "./VarDepYVarIndep";
+import VarDepYVarIndep from "./VarDepYVarIndep/VarDepYVarIndep";
 import ReglaDeCorrespondencia from "./ReglaDeCorrespondencia/ReglaDeCorrespondencia";
 import EvaluarLaReglaDeCorrespon from "./EvaluarLaReglaDeCorrespon";
 import ValoresVarIndep from "./ValoresVarIndep";

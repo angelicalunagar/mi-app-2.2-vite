@@ -77,7 +77,7 @@ const QuizSub = ({
     const numCorrectas = Object.values(scoreUsuario).filter(
       (score) => score
     ).length;
-    const totalPreguntas = Object.keys(respuestasUsuario).length;
+    const totalPreguntas = Object.keys(correctAnswers).length;
     const puntaje = `${numCorrectas}/${totalPreguntas}`;
     setMensajeCalificacion(`Puntaje: ${puntaje}`);
   };
@@ -117,46 +117,11 @@ const QuizSub = ({
             <b>Actividad {activityNumber}:</b> {instruction}
           </p>
           <ul>
-            {/* {Object.keys(respuestasPreguntas).map((pregunta, index) => (
+            {Object.keys(respuestasPreguntas).map((pregunta, index) => (      
               <li key={index}>
                 {respuestasPreguntas[pregunta].instruccion}
-                respuestasPreguntas[pregunta].subpreguntas.map((subpregunta, index) => (
-                  {respuestasPreguntas[pregunta].subpreguntas[subpregunta].subpregunta}
-                  <Form>
-                  <Form.Group>
-                    {respuestasPreguntas[pregunta].subpreguntas[subpregunta].opciones.map(
-                      (opcion, opcionIndex) => (
-                        <Form.Check
-                          key={opcionIndex}
-                          type="checkbox"
-                          id={`opcion${opcionIndex + 1}`}
-                          name={`opciones${opcionIndex}`}
-                          value={opcion}
-                          checked={respuestasUsuario[subpreguntas.id] === opcion}
-                          onChange={(e) => handleRespChange(e, subpregunta.id)}
-                          label={
-                            <span>
-                              
-                              {renderRespuesta(
-                                opcion,
-                                questions[pregunta].renderInlineMath
-                              )}{" "}
-                              {mostrarIcono(pregunta, opcion)}
-                            </span>
-                          }
-                          disabled={bloquearSeleccion}
-                        />
-                      )
-                    )}
-                  </Form.Group>
-                </Form>
-                ))
-                        
-              </li>
-            ))} */}
-            {Object.keys(respuestasPreguntas).map((pregunta, index) => (
-              <li key={index}>
-                {respuestasPreguntas[pregunta].instruccion}
+                <br />
+                <br />
                 {Object.keys(respuestasPreguntas[pregunta].subpreguntas).map(
                   (subpreguntaId) => (
                     /* {respuestasPreguntas[pregunta].subpreguntas[subpreguntaId].subpregunta}
@@ -189,12 +154,14 @@ const QuizSub = ({
                         ))}
                       </Form.Group>
                     </Form> */
+                
                     <div key={subpreguntaId}>
                       {
                         respuestasPreguntas[pregunta].subpreguntas[
                           subpreguntaId
                         ].subpregunta
                       }
+                      
                       <Form key={subpreguntaId}>
                         <Form.Group>
                           {respuestasPreguntas[pregunta].subpreguntas[
@@ -228,6 +195,8 @@ const QuizSub = ({
                           ))}
                         </Form.Group>
                       </Form>
+                      <br />
+                      
                     </div>
                   )
                 )}

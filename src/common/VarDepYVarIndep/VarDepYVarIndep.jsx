@@ -1,13 +1,11 @@
 import React from "react";
 import "katex/dist/katex.min.css";
-import "../styles/Bloque1_1.css";
+import "../../styles/Bloque1_1.css";
 import { useState} from "react";
-import { Button} from "react-bootstrap";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import car from "../assets/car.jpg";
-import Container from "react-bootstrap/Container";
-import Table from "react-bootstrap/Table";
+import { Button, Row, Col, Container, Table} from "react-bootstrap";
+import car from "../../assets/car.jpg";
+import Act2 from "./Act2";
+
 
 const VarDepYVarIndep = () => {
   const [valuesTable, setValuesTable] = useState({
@@ -147,6 +145,7 @@ const VarDepYVarIndep = () => {
                         handleInputChange("cell_22", e.target.value)
                       }
                     />
+                    
                   </td>
                 </tr>
                 <tr>
@@ -223,6 +222,7 @@ const VarDepYVarIndep = () => {
                 Mi vecino es heladero y me ha comentado que su ganancia aumenta
                 a medida que incrementa la cantidad de helados vendidos.
               </em>
+              <br />
               <label>
                 Variable dependiente:
                 <input
@@ -249,7 +249,7 @@ const VarDepYVarIndep = () => {
                 Cristina comienza la quincena con una cantidad de dinero, pero a
                 medida que pasan los días, su dinero va disminuyendo.
               </em>
-
+              <br />
               <label>
                 Variable dependiente:
                 <input
@@ -277,7 +277,7 @@ const VarDepYVarIndep = () => {
                 Raúl observa que el Uber le cobra más cuando la distancia
                 recorrida es mayor.
               </em>
-
+              <br />
               <label>
                 Variable dependiente:
                 <input
@@ -305,6 +305,7 @@ const VarDepYVarIndep = () => {
           </div>
         </Col>
       </Row>
+      <Act2 />
       <Row className="main-row">
         <Col>
           <p>
