@@ -14,15 +14,6 @@ const Act2 = () => {
     ru3_2: "",
   });
 
-  const [iconosVisibles, setIconosVisibles] = useState({
-    ru1_1: false,
-    ru1_2: false,
-    ru2_1: false,
-    ru2_2: false,
-    ru3_1: false,
-    ru3_2: false,
-  });
-
   const retroalimentacion = {
     ru1_1: "ganancia",
     ru1_2: "número de helados vendidos",
@@ -56,34 +47,15 @@ const Act2 = () => {
       ru3_1: "",
       ru3_2: "",
     });
-    setIconosVisibles({
-      ru1_1: false,
-      ru1_2: false,
-      ru2_1: false,
-      ru2_2: false,
-      ru3_1: false,
-      ru3_2: false,
-    });
   };
 
   const popoverRight2 = (content) => (
     <div>
-      <Popover
-        id="popover-positioned-right"
-        title="Popover right"
-        style={{ padding: "5px", justifyItems: "center", alignItems: "center" }}
-      >
+      <Popover id="popover-positioned-right" title="Popover right" style={{ padding: "5px", justifyItems: 'center', alignItems: 'center' }}>
         {content}
       </Popover>
     </div>
   );
-
-  const toggleIcono = (key) => {
-    setIconosVisibles((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
-  };
 
   return (
     <div>
@@ -111,28 +83,18 @@ const Act2 = () => {
                   onChange={(e) => handleInputAct2("ru1_1", e.target.value)}
                 />
                 {mostrarIconos && (
-                  <OverlayTrigger
-                    trigger="click"
-                    placement="right"
-                    overlay={popoverRight2(retroalimentacion.ru1_1)}
-                  >
-                    {/* <Button>
+                <OverlayTrigger
+                  trigger="click"
+                  placement="right"
+                  overlay={popoverRight2(retroalimentacion.ru1_1)}
+                >
+                  <Button>
                     <ImEyePlus
                       style={{ color: "white", cursor: "pointer" }}
+    
                     />
-                  </Button> */}
-                    <Button onClick={() => toggleIcono("ru1_1")}>
-                      {iconosVisibles.ru1_1 ? (
-                        <ImEyeMinus
-                          style={{ color: "white", cursor: "pointer" }}
-                        />
-                      ) : (
-                        <ImEyePlus
-                          style={{ color: "white", cursor: "pointer" }}
-                        />
-                      )}
-                    </Button>
-                  </OverlayTrigger>
+                  </Button>
+                </OverlayTrigger>
                 )}
               </label>
               <br />
@@ -146,29 +108,18 @@ const Act2 = () => {
                   onChange={(e) => handleInputAct2("ru1_2", e.target.value)}
                 />
                 {mostrarIconos && (
-                  <OverlayTrigger
-                    trigger="click"
-                    placement="right"
-                    overlay={popoverRight2(retroalimentacion.ru1_2)}
-                  >
-                    {/* <Button>
+                <OverlayTrigger
+                  trigger="click"
+                  placement="right"
+                  overlay={popoverRight2(retroalimentacion.ru1_2)}
+                >
+                  <Button>
                     <ImEyePlus
                       style={{ color: "white", cursor: "pointer" }}
 
                     />
-                  </Button> */}
-                    <Button onClick={() => toggleIcono("ru1_2")}>
-                      {iconosVisibles.ru1_2 ? (
-                        <ImEyeMinus
-                          style={{ color: "white", cursor: "pointer" }}
-                        />
-                      ) : (
-                        <ImEyePlus
-                          style={{ color: "white", cursor: "pointer" }}
-                        />
-                      )}
-                    </Button>
-                  </OverlayTrigger>
+                  </Button>
+                </OverlayTrigger>
                 )}
               </label>
             </li>
@@ -189,26 +140,15 @@ const Act2 = () => {
                   onChange={(e) => handleInputAct2("ru2_1", e.target.value)}
                 />
                 {mostrarIconos && (
-                  <OverlayTrigger
-                    trigger="click"
-                    placement="right"
-                    overlay={popoverRight2(retroalimentacion.ru2_1)}
-                  >
-                    {/* <Button>
+                <OverlayTrigger
+                  trigger="click"
+                  placement="right"
+                  overlay={popoverRight2(retroalimentacion.ru2_1)}
+                >
+                  <Button>
                     <ImEyePlus style={{ color: "white", cursor: "pointer" }} />
-                  </Button> */}
-                    <Button onClick={() => toggleIcono("ru2_1")}>
-                      {iconosVisibles.ru2_1 ? (
-                        <ImEyeMinus
-                          style={{ color: "white", cursor: "pointer" }}
-                        />
-                      ) : (
-                        <ImEyePlus
-                          style={{ color: "white", cursor: "pointer" }}
-                        />
-                      )}
-                    </Button>
-                  </OverlayTrigger>
+                  </Button>
+                </OverlayTrigger>
                 )}
               </label>
               <br />
@@ -223,26 +163,15 @@ const Act2 = () => {
                   onChange={(e) => handleInputAct2("ru2_2", e.target.value)}
                 />
                 {mostrarIconos && (
-                  <OverlayTrigger
-                    trigger="click"
-                    placement="right"
-                    overlay={popoverRight2(retroalimentacion.ru2_2)}
-                  >
-                    {/*  <Button>
+                <OverlayTrigger
+                  trigger="click"
+                  placement="right"
+                  overlay={popoverRight2(retroalimentacion.ru2_2)}
+                >
+                  <Button>
                     <ImEyePlus style={{ color: "white", cursor: "pointer" }} />
-                  </Button> */}
-                    <Button onClick={() => toggleIcono("ru2_2")}>
-                      {iconosVisibles.ru2_2 ? (
-                        <ImEyeMinus
-                          style={{ color: "white", cursor: "pointer" }}
-                        />
-                      ) : (
-                        <ImEyePlus
-                          style={{ color: "white", cursor: "pointer" }}
-                        />
-                      )}
-                    </Button>
-                  </OverlayTrigger>
+                  </Button>
+                </OverlayTrigger>
                 )}
               </label>
             </li>
@@ -263,24 +192,15 @@ const Act2 = () => {
                   onChange={(e) => handleInputAct2("ru3_1", e.target.value)}
                 />
                 {mostrarIconos && (
-                  <OverlayTrigger
-                    trigger="click"
-                    placement="right"
-                    overlay={popoverRight2(retroalimentacion.ru3_1)}
-                  >
-                   {/*  <Button>
-                      <ImEyePlus
-                        style={{ color: "white", cursor: "pointer" }}
-                      />
-                    </Button> */}
-                    <Button onClick={() => toggleIcono("ru3_1")}>
-                      {iconosVisibles.ru3_1 ? (
-                        <ImEyeMinus style={{ color: "white", cursor: "pointer" }} />
-                      ) : (
-                        <ImEyePlus style={{ color: "white", cursor: "pointer" }} />
-                      )}
-                    </Button>
-                  </OverlayTrigger>
+                <OverlayTrigger
+                  trigger="click"
+                  placement="right"
+                  overlay={popoverRight2(retroalimentacion.ru3_1)}
+                >
+                  <Button>
+                    <ImEyePlus style={{ color: "white", cursor: "pointer" }} />
+                  </Button>
+                </OverlayTrigger>
                 )}
               </label>
 
@@ -295,24 +215,15 @@ const Act2 = () => {
                   onChange={(e) => handleInputAct2("ru3_2", e.target.value)}
                 />
                 {mostrarIconos && (
-                  <OverlayTrigger
-                    trigger="click"
-                    placement="right"
-                    overlay={popoverRight2(retroalimentacion.ru3_2)}
-                  >
-                    {/* <Button>
-                      <ImEyePlus
-                        style={{ color: "white", cursor: "pointer" }}
-                      />
-                    </Button> */}
-                    <Button onClick={() => toggleIcono("ru3_2")}>
-                      {iconosVisibles.ru3_2 ? (
-                        <ImEyeMinus style={{ color: "white", cursor: "pointer" }} />
-                      ) : (
-                        <ImEyePlus style={{ color: "white", cursor: "pointer" }} />
-                      )}
-                    </Button>
-                  </OverlayTrigger>
+                <OverlayTrigger
+                  trigger="click"
+                  placement="right"
+                  overlay={popoverRight2(retroalimentacion.ru3_2)}
+                >
+                  <Button>
+                    <ImEyePlus style={{ color: "white", cursor: "pointer" }} />
+                  </Button>
+                </OverlayTrigger>
                 )}
               </label>
             </li>
