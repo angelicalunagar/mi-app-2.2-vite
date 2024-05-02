@@ -5,7 +5,7 @@ import { useState} from "react";
 import { Button, Row, Col, Container, Table} from "react-bootstrap";
 import car from "../../assets/car.jpg";
 import Act2 from "./Act2";
-
+import Act3 from "./Act3";
 
 const VarDepYVarIndep = () => {
   const [valuesTable, setValuesTable] = useState({
@@ -21,37 +21,6 @@ const VarDepYVarIndep = () => {
     setValuesTable((prevValues) => ({
       ...prevValues,
       [cell]: value,
-    }));
-  };
-
-  const [valuesAct2, setValuesAct2] = useState({
-    vd_1: "",
-    vi_1: "",
-    vd_2: "",
-    vi_2: "",
-    vd_3: "",
-    vi_3: "",
-  });
-
-  const handleInputAct2 = (key, value) => {
-    setValuesAct2((prevValues) => ({
-      ...prevValues,
-      [key]: value,
-    }));
-  };
-
-  const [valuesAct3, setValuesAct3] = useState({
-    vd_1: "",
-    vi_1: "",
-    vd_2: "",
-    vi_2: "",
-    vd_3: "",
-    vi_3: "",
-  });
-  const handleInputAct3 = (key, value) => {
-    setValuesAct3((prevValues) => ({
-      ...prevValues,
-      [key]: value,
     }));
   };
 
@@ -209,102 +178,7 @@ const VarDepYVarIndep = () => {
           </div>
         </Col>
       </Row>
-      <Row className="row-act">
-        <Col className="actividad" md={10}>
-          <p>
-            <b>Actividad 2:</b> En las siguientes situaciones, identifica la
-            variable dependiente y a la variable independiente.
-          </p>
-          <br />
-          <ul>
-            <li>
-              <em>
-                Mi vecino es heladero y me ha comentado que su ganancia aumenta
-                a medida que incrementa la cantidad de helados vendidos.
-              </em>
-              <br />
-              <label>
-                Variable dependiente:
-                <input
-                  className="input-act2"
-                  type="text"
-                  value={valuesAct2.vd_1}
-                  onChange={(e) => handleInputAct2("vd_1", e.target.value)}
-                />
-              </label>
-              <br />
-              <label>
-                Variable independiente:
-                <input
-                  className="input-act2"
-                  type="text"
-                  value={valuesAct2.vi_1}
-                  onChange={(e) => handleInputAct2("vi_1", e.target.value)}
-                />
-              </label>
-            </li>
-            <br />
-            <li>
-              <em>
-                Cristina comienza la quincena con una cantidad de dinero, pero a
-                medida que pasan los días, su dinero va disminuyendo.
-              </em>
-              <br />
-              <label>
-                Variable dependiente:
-                <input
-                  className="input-act2"
-                  type="text"
-                  value={valuesAct2.vd_2}
-                  onChange={(e) => handleInputAct2("vd_2", e.target.value)}
-                />
-              </label>
-              <br />
-
-              <label>
-                Variable independiente:
-                <input
-                  className="input-act2"
-                  type="text"
-                  value={valuesAct2.vi_2}
-                  onChange={(e) => handleInputAct2("vi_2", e.target.value)}
-                />
-              </label>
-            </li>
-            <br />
-            <li>
-              <em>
-                Raúl observa que el Uber le cobra más cuando la distancia
-                recorrida es mayor.
-              </em>
-              <br />
-              <label>
-                Variable dependiente:
-                <input
-                  className="input-act2"
-                  type="text"
-                  value={valuesAct2.vd_3}
-                  onChange={(e) => handleInputAct2("vd_3", e.target.value)}
-                />
-              </label>
-
-              <br />
-              <label>
-                Variable independiente:
-                <input
-                  className="input-act2"
-                  type="text"
-                  value={valuesAct2.vi_3}
-                  onChange={(e) => handleInputAct2("vi_3", e.target.value)}
-                />
-              </label>
-            </li>
-          </ul>
-          <div className="button-center">
-            <Button>Revisar respuestas</Button>
-          </div>
-        </Col>
-      </Row>
+      
       <Act2 />
       <Row className="main-row">
         <Col>
@@ -323,72 +197,7 @@ const VarDepYVarIndep = () => {
           </p>
         </Col>
       </Row>
-      <Row className="row-act">
-        <Col className="actividad" md={10}>
-          <p>
-            <b>Actividad 3:</b> Completa los espacios en blanco:
-            <br />
-          </p>
-          <ul>
-            <li>
-              Si la ganancia del heladero depende del número de helados
-              vendidos, se dice que{" "}
-              <input
-                className="input-act3"
-                type="text"
-                value={valuesAct3.vd_1}
-                onChange={(e) => handleInputAct3("vd_1", e.target.value)}
-              />
-              es función (o es una función) de{" "}
-              <input
-                className="input-act3"
-                type="text"
-                value={valuesAct3.vi_1}
-                onChange={(e) => handleInputAct3("vi_1", e.target.value)}
-              />
-            </li>
-            <br />
-            <li>
-              Si el dinero de Cristina depende de los días que han transcurrido
-              a partir del cobro de la quincena, se dice que{" "}
-              <input
-                className="input-act3"
-                type="text"
-                value={valuesAct3.vd_2}
-                onChange={(e) => handleInputAct3("vd_2", e.target.value)}
-              />
-              es función (o es una función) de{" "}
-              <input
-                className="input-act3"
-                type="text"
-                value={valuesAct3.vi_2}
-                onChange={(e) => handleInputAct3("vi_2", e.target.value)}
-              />
-            </li>
-            <br />
-            <li>
-              Si el precio final de un viaje en Uber depende de la distancia
-              recorrida, se dice que{" "}
-              <input
-                className="input-act3"
-                type="text"
-                value={valuesAct3.vd_3}
-                onChange={(e) => handleInputAct3("vd_3", e.target.value)}
-              />
-              es función (o es una función) de{" "}
-              <input
-                className="input-act3"
-                type="text"
-                value={valuesAct3.vi_3}
-                onChange={(e) => handleInputAct3("vi_3", e.target.value)}
-              />
-            </li>
-          </ul>
-          <div className="button-center">
-            <Button>Revisar respuestas</Button>
-          </div>
-        </Col>
-      </Row>
+      <Act3 />
     </Container>
   );
 };

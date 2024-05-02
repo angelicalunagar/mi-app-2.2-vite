@@ -9,7 +9,7 @@ import ValoresVarDependiente from "./ValoresVarDependiente/ValoresVarDependiente
 import QueEsFuncion from "./QueEsFuncion";
 import NomenclaturaFunciones from "./NomenclaturaFunciones";
 import FuncionesDosVariables from "./FuncionesDosVariables/FuncionesDosVariables";
-import TablaDeFuncion from "./TablaDeFuncion";
+import TablaDeFuncion from "./TablaDeFuncion/TablaDeFuncion";
 import GraficosDeFunciones from "./GraficosDeFunciones/GraficosDeFunciones";
 import FuncLineales from "./FuncLineales";
 import FuncionesCuadraticas from "./FuncionesCuadraticas/FuncionesCuadraticas";

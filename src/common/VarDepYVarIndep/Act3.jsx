@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Row, Col, OverlayTrigger, Popover } from "react-bootstrap";
 import { ImEyePlus, ImEyeMinus } from "react-icons/im";
 
-const Act2 = () => {
+const Act3 = () => {
   const [mostrarIconos, setMostrarIconos] = useState(false);
   const [bloquearInput, setBloquearInput] = useState(false);
   const [respuestasUsuario, setRespuestasUsuario] = useState({
@@ -24,12 +24,12 @@ const Act2 = () => {
   });
 
   const retroalimentacion = {
-    ru1_1: "ganancia",
+    ru1_1: "la ganancia",
     ru1_2: "número de helados vendidos",
-    ru2_1: "dinero disponible",
-    ru2_2: "días de la quincena transcurridos",
-    ru3_1: "precio de un viaje en Uber",
-    ru3_2: "distancia recorrida",
+    ru2_1: "el dinero disponible",
+    ru2_2: "los días de la quincena transcurridos",
+    ru3_1: "el precio de un viaje en Uber",
+    ru3_2: "la distancia recorrida",
   };
 
   const toggleIcono = (key) => {
@@ -39,7 +39,7 @@ const Act2 = () => {
     }));
   };
 
-  const handleInputAct2 = (key, value) => {
+  const handleInputAct3 = (key, value) => {
     if (bloquearInput) return;
     setRespuestasUsuario((prevValues) => ({
       ...prevValues,
@@ -47,19 +47,18 @@ const Act2 = () => {
     }));
   };
 
-  const renderInput = (key, label) => (
-    <label>
-      {label}:
+  const renderInput = (key) => (
+    <>
       <input
-        className="input-act2"
+        className="input-act3"
         type="text"
         value={respuestasUsuario[key]}
-        onChange={(e) => handleInputAct2(key, e.target.value)}
+        onChange={(e) => handleInputAct3(key, e.target.value)}
       />
       {mostrarIconos && (
         <OverlayTrigger
           trigger="click"
-          placement="right"
+          placement="bottom"
           overlay={popoverRight(retroalimentacion[key])}
         >
           <Button onClick={() => toggleIcono(key)}>
@@ -67,13 +66,13 @@ const Act2 = () => {
           </Button>
         </OverlayTrigger>
       )}
-    </label>
+    </>
   );
 
   const popoverRight = (content) => (
     <Popover
-      id="popover-positioned-right"
-      title="Popover right"
+      id="popover-positioned-bottom"
+      title="Popover bottom"
       style={{ padding: "5px", justifyItems: "center", alignItems: "center" }}
     >
       {content}
@@ -84,9 +83,6 @@ const Act2 = () => {
     setBloquearInput(true);
     setMostrarIconos(true);
   };
-
-
-
 
   const modificarRespuestas = () => {
     setMostrarIconos(false);
@@ -114,41 +110,27 @@ const Act2 = () => {
       <Row className="row-act">
         <Col className="actividad" md={10}>
           <p>
-            <b>Actividad 2:</b> En las siguientes situaciones, identifica la
-            variable dependiente y a la variable independiente.
+            <b>Actividad 3:</b> Completa los espacios en blanco:
           </p>
           <br />
           <ul>
             <li>
-              <em>
-                Mi vecino es heladero y me ha comentado que su ganancia aumenta
-                a medida que incrementa la cantidad de helados vendidos.
-              </em>
-              <br />
-              {renderInput("ru1_1", "Variable dependiente")}
-              <br />
-              {renderInput("ru1_2", "Variable independiente")}
+              Si la ganancia del heladero depende del número de helados
+              vendidos, se dice que {renderInput("ru1_1")}{' '}
+              es función (o es una función) de {renderInput("ru1_2")}
             </li>
             <br />
             <li>
-              <em>
-                Cristina comienza la quincena con una cantidad de dinero, pero a
-                medida que pasan los días, su dinero va disminuyendo.
-              </em>
-              <br />
-              {renderInput("ru2_1", "Variable dependiente")}
-              <br />
-              {renderInput("ru2_2", "Variable independiente")}
+              Si el dinero de Cristina depende de los días que han transcurrido
+              a partir del cobro de la quincena, se dice que{" "}
+              {renderInput("ru2_1")}{' '}
+              es función (o es una función) de {renderInput("ru2_2")}
             </li>
             <br />
             <li>
-              <em>
-                Raúl observa que el Uber le cobra más cuando la distancia
-                recorrida es mayor.
-              </em>
-              <br />
-              {renderInput("ru3_1", "Variable dependiente")}
-              <br />
+              Si el precio final de un viaje en Uber depende de la distancia
+              recorrida, se dice que {renderInput("ru3_1")}{' '}
+              es función (o es una función) de{" "}
               {renderInput("ru3_2", "Variable independiente")}
             </li>
           </ul>
@@ -167,4 +149,4 @@ const Act2 = () => {
   );
 };
 
-export default Act2;
+export default Act3;

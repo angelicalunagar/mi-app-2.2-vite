@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button, Row, Col, OverlayTrigger, Popover } from "react-bootstrap";
 import { ImEyePlus, ImEyeMinus } from "react-icons/im";
+import { BlockMath, InlineMath } from "react-katex";
 
-const Act2 = () => {
+const Act10 = () => {
   const [mostrarIconos, setMostrarIconos] = useState(false);
   const [bloquearInput, setBloquearInput] = useState(false);
   const [respuestasUsuario, setRespuestasUsuario] = useState({
@@ -12,6 +13,10 @@ const Act2 = () => {
     ru2_2: "",
     ru3_1: "",
     ru3_2: "",
+    ru4_1: "",
+    ru4_2: "",
+    ru5_1: "",
+    ru5_2: "",
   });
 
   const [iconosPlus, setIconosPlus] = useState({
@@ -21,15 +26,23 @@ const Act2 = () => {
     ru2_2: false,
     ru3_1: false,
     ru3_2: false,
+    ru4_1: false,
+    ru4_2: false,
+    ru5_1: false,
+    ru5_2: false,
   });
 
   const retroalimentacion = {
-    ru1_1: "ganancia",
-    ru1_2: "número de helados vendidos",
-    ru2_1: "dinero disponible",
-    ru2_2: "días de la quincena transcurridos",
-    ru3_1: "precio de un viaje en Uber",
-    ru3_2: "distancia recorrida",
+    ru1_1: "10",
+    ru1_2: "115",
+    ru2_1: "15",
+    ru2_2: "157.5",
+    ru3_1: "20",
+    ru3_2: "200",
+    ru4_1: "25",
+    ru4_2: "242.5",
+    ru5_1: "30",
+    ru5_2: "285",
   };
 
   const toggleIcono = (key) => {
@@ -39,7 +52,7 @@ const Act2 = () => {
     }));
   };
 
-  const handleInputAct2 = (key, value) => {
+  const handleInputAct3 = (key, value) => {
     if (bloquearInput) return;
     setRespuestasUsuario((prevValues) => ({
       ...prevValues,
@@ -47,14 +60,13 @@ const Act2 = () => {
     }));
   };
 
-  const renderInput = (key, label) => (
-    <label>
-      {label}:
+  const renderInput = (key) => (
+    <>
       <input
-        className="input-act2"
+        className="input-eval"
         type="text"
         value={respuestasUsuario[key]}
-        onChange={(e) => handleInputAct2(key, e.target.value)}
+        onChange={(e) => handleInputAct3(key, e.target.value)}
       />
       {mostrarIconos && (
         <OverlayTrigger
@@ -67,7 +79,7 @@ const Act2 = () => {
           </Button>
         </OverlayTrigger>
       )}
-    </label>
+    </>
   );
 
   const popoverRight = (content) => (
@@ -85,9 +97,6 @@ const Act2 = () => {
     setMostrarIconos(true);
   };
 
-
-
-
   const modificarRespuestas = () => {
     setMostrarIconos(false);
     setBloquearInput(false);
@@ -98,6 +107,10 @@ const Act2 = () => {
       ru2_2: "",
       ru3_1: "",
       ru3_2: "",
+      ru4_1: "",
+      ru4_2: "",
+      ru5_1: "",
+      ru5_2: "",
     });
     setIconosPlus({
       ru1_1: false,
@@ -106,52 +119,62 @@ const Act2 = () => {
       ru2_2: false,
       ru3_1: false,
       ru3_2: false,
+      ru4_1: false,
+      ru4_2: false,
+      ru5_1: false,
+      ru5_2: false,
     });
   };
 
   return (
     <div>
       <Row className="row-act">
-        <Col className="actividad" md={10}>
+      <Col className="actividad" md={10}>
           <p>
-            <b>Actividad 2:</b> En las siguientes situaciones, identifica la
-            variable dependiente y a la variable independiente.
+            <b>Actividad 10:</b>. El taxista se encuentra evaluando la función{" "}
+            <InlineMath>{"p(x)=30 + 8.5x"}</InlineMath> en{" "}
+            <InlineMath>{"x=0, 5, 10, 15, 20, 25, 30"}</InlineMath>. Completa
+            los cálculos que le faltan.
           </p>
+
+          <BlockMath>{`f(0) = 30 + 8.5(0)=30+0=30`}</BlockMath>
+          <BlockMath>{`f(5) = 30 + 8.5(5)=30+42.5=72.5`}</BlockMath>
+
+          <div className="center-act10">
+            <InlineMath>{`f(10) = 30 + 8.5(`}</InlineMath>
+            {renderInput("ru1_1")}{' '}
+            <InlineMath>{`) = `}</InlineMath>
+            {renderInput("ru1_2")}{' '}
+            <br />
+            <br />
+
+            <InlineMath>{`f(15) = 30 + 8.5(`}</InlineMath>
+            {renderInput("ru2_1")}{' '}
+            <InlineMath>{`) = `}</InlineMath>
+            {renderInput("ru2_2")}{' '}
+            <br />
+            <br />
+
+            <InlineMath>{`f(20) = 30 + 8.5(`}</InlineMath>
+            {renderInput("ru3_1")}{' '}
+            <InlineMath>{`) = `}</InlineMath>
+            {renderInput("ru3_2")}{' '}
+            <br />
+            <br />
+
+            <InlineMath>{`f(25) = 30 + 8.5(`}</InlineMath>
+            {renderInput("ru4_1")}{' '}
+            <InlineMath>{`) = `}</InlineMath>
+            {renderInput("ru4_2")}{' '}
+            <br />
+            <br />
+
+            <InlineMath>{`f(30) = 30 + 8.5(`}</InlineMath>
+            {renderInput("ru5_1")}{' '}
+            <InlineMath>{`) = `}</InlineMath>
+            {renderInput("ru5_2")}{' '}
+          </div>
           <br />
-          <ul>
-            <li>
-              <em>
-                Mi vecino es heladero y me ha comentado que su ganancia aumenta
-                a medida que incrementa la cantidad de helados vendidos.
-              </em>
-              <br />
-              {renderInput("ru1_1", "Variable dependiente")}
-              <br />
-              {renderInput("ru1_2", "Variable independiente")}
-            </li>
-            <br />
-            <li>
-              <em>
-                Cristina comienza la quincena con una cantidad de dinero, pero a
-                medida que pasan los días, su dinero va disminuyendo.
-              </em>
-              <br />
-              {renderInput("ru2_1", "Variable dependiente")}
-              <br />
-              {renderInput("ru2_2", "Variable independiente")}
-            </li>
-            <br />
-            <li>
-              <em>
-                Raúl observa que el Uber le cobra más cuando la distancia
-                recorrida es mayor.
-              </em>
-              <br />
-              {renderInput("ru3_1", "Variable dependiente")}
-              <br />
-              {renderInput("ru3_2", "Variable independiente")}
-            </li>
-          </ul>
           <div className="button-center">
             {bloquearInput ? (
               <Button onClick={modificarRespuestas}>
@@ -167,4 +190,4 @@ const Act2 = () => {
   );
 };
 
-export default Act2;
+export default Act10;

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Button, Row, Col, OverlayTrigger, Popover } from "react-bootstrap";
 import { ImEyePlus, ImEyeMinus } from "react-icons/im";
+import { BlockMath, InlineMath } from "react-katex";
 
-const Act2 = () => {
+const Act5Optimizado = () => {
   const [mostrarIconos, setMostrarIconos] = useState(false);
   const [bloquearInput, setBloquearInput] = useState(false);
   const [respuestasUsuario, setRespuestasUsuario] = useState({
@@ -24,12 +25,12 @@ const Act2 = () => {
   });
 
   const retroalimentacion = {
-    ru1_1: "ganancia",
-    ru1_2: "número de helados vendidos",
-    ru2_1: "dinero disponible",
-    ru2_2: "días de la quincena transcurridos",
-    ru3_1: "precio de un viaje en Uber",
-    ru3_2: "distancia recorrida",
+    ru1_1: "1500 pesos",
+    ru1_2: "5 días",
+    ru2_1: "180 pesos",
+    ru2_2: "3.2 km",
+    ru3_1: "13 km",
+    ru3_2: "11.3 min",
   };
 
   const toggleIcono = (key) => {
@@ -39,7 +40,7 @@ const Act2 = () => {
     }));
   };
 
-  const handleInputAct2 = (key, value) => {
+  const handleInputAct5 = (key, value) => {
     if (bloquearInput) return;
     setRespuestasUsuario((prevValues) => ({
       ...prevValues,
@@ -51,10 +52,10 @@ const Act2 = () => {
     <label>
       {label}:
       <input
-        className="input-act2"
+        className="input-act5"
         type="text"
         value={respuestasUsuario[key]}
-        onChange={(e) => handleInputAct2(key, e.target.value)}
+        onChange={(e) => handleInputAct5(key, e.target.value)}
       />
       {mostrarIconos && (
         <OverlayTrigger
@@ -85,9 +86,6 @@ const Act2 = () => {
     setMostrarIconos(true);
   };
 
-
-
-
   const modificarRespuestas = () => {
     setMostrarIconos(false);
     setBloquearInput(false);
@@ -114,42 +112,70 @@ const Act2 = () => {
       <Row className="row-act">
         <Col className="actividad" md={10}>
           <p>
-            <b>Actividad 2:</b> En las siguientes situaciones, identifica la
-            variable dependiente y a la variable independiente.
+            <b>Actividad 5:</b> Calcula el valor de la variable dependiente y la
+            variable independiente según cada situación.
           </p>
           <br />
           <ul>
             <li>
-              <em>
-                Mi vecino es heladero y me ha comentado que su ganancia aumenta
-                a medida que incrementa la cantidad de helados vendidos.
-              </em>
+              <b>
+                Durante la quincena, el dinero <InlineMath>d(n)</InlineMath> de
+                Cristina depende del número de días n que pasan de acuerdo con
+                la regla de correspondencia{" "}
+                <InlineMath>d(n)=4000-250n</InlineMath>. Nota que, si han
+                transcurrido 0 días, Cristina tendrá 4000 pesos.
+              </b>
               <br />
-              {renderInput("ru1_1", "Variable dependiente")}
+              {renderInput(
+                "ru1_1",
+                <span>
+                  a) ¿Cuánto dinero le queda a Cristina, transcurridos 10 días?"
+                </span>
+              )}
               <br />
-              {renderInput("ru1_2", "Variable independiente")}
+              {renderInput(
+                "ru1_2",
+                <span>
+                  b) Si hasta ahora a Cristina le quedan $2750.00, cuántos días
+                  han transcurrido desde el pago de la quincena.
+                </span>
+              )}
             </li>
             <br />
             <li>
-              <em>
-                Cristina comienza la quincena con una cantidad de dinero, pero a
-                medida que pasan los días, su dinero va disminuyendo.
-              </em>
+              <b>
+                Un taxi calcula el precio de sus viajes en función de la
+                distancia recorrida de acuerdo con la expresión{" "}
+                <InlineMath>p(x)=30+20x</InlineMath>.
+              </b>
               <br />
-              {renderInput("ru2_1", "Variable dependiente")}
+              {renderInput(
+                "ru2_1",
+                "a) ¿Cuánto cobra el taxi si el viaje de un cliente es de 7.5 km?"
+              )}
               <br />
-              {renderInput("ru2_2", "Variable independiente")}
+              {renderInput(
+                "ru2_2",
+                "b) ¿Si el taxi me ha cobrado 94 pesos, cuántos kilómetros recorrió?"
+              )}
             </li>
             <br />
             <li>
-              <em>
-                Raúl observa que el Uber le cobra más cuando la distancia
-                recorrida es mayor.
-              </em>
+              <b>
+                La distancia recorrida (en km) de un automóvil de carreras es
+                función del tiempo transcurrido (en min) de acuerdo con la
+                expresión <InlineMath>d(t)=2t</InlineMath>.
+              </b>
               <br />
-              {renderInput("ru3_1", "Variable dependiente")}
+              {renderInput(
+                "ru3_1",
+                "a) ¿Qué distancia ha recorrido el automóvil en 6.5 minutos?"
+              )}
               <br />
-              {renderInput("ru3_2", "Variable independiente")}
+              {renderInput(
+                "ru3_2",
+                " b) ¿Si la distancia recorrida es de 22.6 km, cuántos minutos ha estado andando el automóvil?"
+              )}
             </li>
           </ul>
           <div className="button-center">
@@ -167,4 +193,4 @@ const Act2 = () => {
   );
 };
 
-export default Act2;
+export default Act5Optimizado;

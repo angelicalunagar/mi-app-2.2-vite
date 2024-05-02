@@ -5,6 +5,7 @@ import {Row, Col, Form} from "react-bootstrap";
 import { BlockMath, InlineMath } from "react-katex";
 import Container from "react-bootstrap/Container";
 import Quiz4 from "./Quiz4";
+import Act5Optimizado from "./Act5Optimizado";
 
 
 const ReglaDeCorrespondencia = () => {
@@ -151,86 +152,7 @@ const ReglaDeCorrespondencia = () => {
           </p>
         </Col>
       </Row>
-      <Row className="row-act">
-        <Col className="actividad" md={10}>
-          <p>
-            <b>Actividad 5:</b> Calcula el valor de la variable dependiente y la
-            variable independiente según cada situación.
-          </p>
-          <br />
-          <ul>
-            <li>
-              Durante la quincena, el dinero d(n) de Cristina depende del número
-              de días n que pasan de acuerdo con la regla de correspondencia
-              d(n)=4000-250n. Nota que, si han transcurrido 0 días, Cristina
-              tendrá 4000 pesos.
-              <br />
-              a) ¿Cuánto dinero le queda a Cristina, transcurridos 10 días?
-              <input
-                className="input-act5"
-                type="text"
-                value={respuestasAct5.preg1a}
-                onChange={(e) => handleInputAct5("preg1a", e.target.value)}
-              />
-              <br />
-              b) Si hasta ahora a Cristina le quedan $2750.00, cuántos días han
-              transcurrido desde el pago de la quincena.
-              <input
-                className="input-act5"
-                type="text"
-                value={respuestasAct5.preg1b}
-                onChange={(e) => handleInputAct5("preg1b", e.target.value)}
-              />
-            </li>
-            <br />
-            <li>
-              Un taxi calcula el precio de sus viajes en función de la distancia
-              recorrida de acuerdo con la expresión p(x)=30+20x.
-              <br />
-              a) ¿Cuánto cobra el taxi si el viaje de un cliente es de 7.5 km?
-              <input
-                className="input-act5"
-                type="text"
-                value={respuestasAct5.preg2a}
-                onChange={(e) => handleInputAct5("preg2a", e.target.value)}
-              />
-              <br />
-              b) ¿Si el taxi me ha cobrado 94 pesos, cuántos kilómetros
-              recorrió?
-              <input
-                className="input-act5"
-                type="text"
-                value={respuestasAct5.preg2b}
-                onChange={(e) => handleInputAct5("preg2b", e.target.value)}
-              />
-            </li>
-            <br />
-            <li>
-              La distancia recorrida (en km) de un automóvil de carreras es
-              función del tiempo transcurrido (en min) de acuerdo con la
-              expresión d(t)=2t.
-              <br />
-              a) ¿Qué distancia ha recorrido el automóvil en 6.5 minutos?
-              <input
-                className="input-act5"
-                type="text"
-                value={respuestasAct5.preg3a}
-                onChange={(e) => handleInputAct5("preg3a", e.target.value)}
-              />
-              <br />
-              b) ¿Si la distancia recorrida es de 22.6 km, cuántos minutos ha
-              estado andando el automóvil?
-              <input
-                className="input-act5"
-                type="text"
-                value={respuestasAct5.preg3b}
-                onChange={(e) => handleInputAct5("preg3b", e.target.value)}
-              />
-            </li>
-          </ul>
-        </Col>
-      </Row>
-
+      <Act5Optimizado />
     </Container>
   )
 }

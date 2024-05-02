@@ -1,6 +1,6 @@
 import React from "react";
 import "katex/dist/katex.min.css";
-import "../styles/Bloque1_1.css";
+import "../../styles/Bloque1_1.css";
 import { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -8,6 +8,7 @@ import { BlockMath, InlineMath } from "react-katex";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import { Button, Form} from "react-bootstrap";
+import Act10 from "./Act10";
 
 const TablaDeFuncion = () => {
   const [valuesEval, setValuesEval] = useState({
@@ -200,7 +201,9 @@ const TablaDeFuncion = () => {
             />
           </div>
         </Col>
+        
       </Row>
+      <Act10 />
       <Row className="main-row">
         <Col>
           <p>
