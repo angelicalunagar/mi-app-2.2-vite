@@ -33,7 +33,7 @@ const Act10 = () => {
   });
 
   const retroalimentacion = {
-    ru1_1: "10",
+    ru1_1: (<span><InlineMath>10</InlineMath></span>),
     ru1_2: "115",
     ru2_1: "15",
     ru2_2: "157.5",
@@ -64,7 +64,7 @@ const Act10 = () => {
     <>
       <input
         className="input-eval"
-        type="text"
+        type="number"
         value={respuestasUsuario[key]}
         onChange={(e) => handleInputAct3(key, e.target.value)}
       />

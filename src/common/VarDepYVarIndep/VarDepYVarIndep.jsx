@@ -1,11 +1,12 @@
 import React from "react";
-import "katex/dist/katex.min.css";
-import "../../styles/Bloque1_1.css";
 import { useState} from "react";
 import { Button, Row, Col, Container, Table} from "react-bootstrap";
 import car from "../../assets/car.jpg";
+import Act1 from "./Act1";
 import Act2 from "./Act2";
 import Act3 from "./Act3";
+import "katex/dist/katex.min.css";
+import "../../styles/Bloque1_1.css";
 
 const VarDepYVarIndep = () => {
   const [valuesTable, setValuesTable] = useState({
@@ -76,109 +77,8 @@ const VarDepYVarIndep = () => {
             <br />
           </p>
         </Col>
-        <Col className="actividad" md={5}>
-          <p>
-            <b>Actividad 1:</b> Completa la siguiente tabla tomando en cuenta
-            que tienes un automóvil con velocidad de 2km/min.
-          </p>
-          <Container className="cont-table-act1">
-            <div className="tittle-table">
-              <h6>Tabla 1</h6>
-            </div>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>
-                    Tiempo transcurrido <br />
-                    (minutos)
-                  </th>
-                  <th>
-                    Distancia recorrida <br />
-                    (km)
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>0</td>
-                  <td>0</td>
-                </tr>
-                <tr>
-                  <td>1.5</td>
-                  <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTable.cell_22}
-                      onChange={(e) =>
-                        handleInputChange("cell_22", e.target.value)
-                      }
-                    />
-                    
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTable.cell_31}
-                      onChange={(e) =>
-                        handleInputChange("cell_31", e.target.value)
-                      }
-                    />
-                  </td>
-                  <td>6</td>
-                </tr>
-                <tr>
-                  <td>3.7</td>
-                  <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTable.cell_42}
-                      onChange={(e) =>
-                        handleInputChange("cell_42", e.target.value)
-                      }
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTable.cell_52}
-                      onChange={(e) =>
-                        handleInputChange("cell_52", e.target.value)
-                      }
-                    />
-                  </td>
-                </tr>
-
-                <tr>
-                  <td>7</td>
-                  <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTable.cell_62}
-                      onChange={(e) =>
-                        handleInputChange("cell_62", e.target.value)
-                      }
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
-          </Container>
-          <div className="button-center">
-            <Button>Revisar respuestas</Button>
-          </div>
-        </Col>
+        <Act1 />
       </Row>
-      
       <Act2 />
       <Row className="main-row">
         <Col>

@@ -3,7 +3,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 
 import VarDepYVarIndep from "./VarDepYVarIndep/VarDepYVarIndep";
 import ReglaDeCorrespondencia from "./ReglaDeCorrespondencia/ReglaDeCorrespondencia";
-import EvaluarLaReglaDeCorrespon from "./EvaluarLaReglaDeCorrespon";
+import EvaluarLaReglaDeCorrespon from "./EvaluarLaReglaDeCorrespon/EvaluarLaReglaDeCorrespon";
 import ValoresVarIndep from "./ValoresVarIndep";
 import ValoresVarDependiente from "./ValoresVarDependiente/ValoresVarDependiente";
 import QueEsFuncion from "./QueEsFuncion";

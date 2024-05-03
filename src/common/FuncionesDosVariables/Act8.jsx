@@ -3,7 +3,7 @@ import { Button, Row, Col, OverlayTrigger, Popover } from "react-bootstrap";
 import { ImEyePlus, ImEyeMinus } from "react-icons/im";
 import { BlockMath, InlineMath } from "react-katex";
 
-const Act8Optimizado = () => {
+const Act8 = () => {
   const [mostrarIconos, setMostrarIconos] = useState(false);
   const [bloquearInput, setBloquearInput] = useState(false);
   const [respuestasUsuario, setRespuestasUsuario] = useState({
@@ -94,7 +94,7 @@ const Act8Optimizado = () => {
     <>
       <input
         className="input-act8"
-        type="text"
+        type="number"
         value={respuestasUsuario[key]}
         onChange={(e) => handleInputAct(key, e.target.value)}
       />
@@ -286,4 +286,4 @@ const Act8Optimizado = () => {
   );
 };
 
-export default Act8Optimizado;
+export default Act8;

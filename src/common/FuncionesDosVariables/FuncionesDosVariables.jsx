@@ -7,7 +7,7 @@ import Rectangulo from "./Rectangulo";
 import RectanguloArea from "./RectanguloArea";
 import milkBoxWhite from "../../assets/milkBoxWhite.png";
 import Quiz9 from "./Quiz9";
-import Act8Optimizado from "./Act8Optimizado";
+import Act8 from "./Act8";
 
 const FuncionesDosVariables = () => {
   const [respuestasAct8, setRespuestasAct8] = useState({
@@ -166,7 +166,7 @@ const FuncionesDosVariables = () => {
         </Col>
       </Row>
       <Row className="row-nuevotema">
-        <Act8Optimizado />
+        <Act8 />
         <Col md={4}>
           <div className="sticky">
             <div className="tittle-table">

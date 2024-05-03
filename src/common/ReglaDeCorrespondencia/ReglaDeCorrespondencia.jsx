@@ -5,8 +5,7 @@ import {Row, Col, Form} from "react-bootstrap";
 import { BlockMath, InlineMath } from "react-katex";
 import Container from "react-bootstrap/Container";
 import Quiz4 from "./Quiz4";
-import Act5Optimizado from "./Act5Optimizado";
-
+import Act5 from "./Act5";
 
 const ReglaDeCorrespondencia = () => {
   const [opcionSelecPreg1, setOpcionSelecPreg1] = useState(null);
@@ -152,7 +151,7 @@ const ReglaDeCorrespondencia = () => {
           </p>
         </Col>
       </Row>
-      <Act5Optimizado />
+      <Act5 />
     </Container>
   )
 }

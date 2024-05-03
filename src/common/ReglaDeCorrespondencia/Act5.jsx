@@ -3,7 +3,7 @@ import { Button, Row, Col, OverlayTrigger, Popover } from "react-bootstrap";
 import { ImEyePlus, ImEyeMinus } from "react-icons/im";
 import { BlockMath, InlineMath } from "react-katex";
 
-const Act5Optimizado = () => {
+const Act5 = () => {
   const [mostrarIconos, setMostrarIconos] = useState(false);
   const [bloquearInput, setBloquearInput] = useState(false);
   const [respuestasUsuario, setRespuestasUsuario] = useState({
@@ -193,4 +193,4 @@ const Act5Optimizado = () => {
   );
 };
 
-export default Act5Optimizado;
+export default Act5;
