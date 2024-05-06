@@ -1,39 +1,133 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Button, Col, Row, OverlayTrigger, Popover } from "react-bootstrap";
+import { ImEyePlus, ImEyeMinus } from "react-icons/im";
 import { InlineMath } from "react-katex";
-import { 
-  Row,
-  Col,
-} from "react-bootstrap";
 
 const Act12 = () => {
-  const [valuesPoints, setValuesPoints] = useState({
-    a_x: "",
-    a_y: "",
-    b_x: "",
-    b_y: "",
-    c_x: "",
-    c_y: "",
-    d_x: "",
-    d_y: "",
-    e_x: "",
-    e_y: "",
-    f_x: "",
-    f_y: "",
-    g_x: "",
-    g_y: "",
-    h_x: "",
-    h_y: "",
+  const [mostrarIconos, setMostrarIconos] = useState(false);
+  const [bloquearInput, setBloquearInput] = useState(false);
+  const [respuestasUsuario, setRespuestasUsuario] = useState({
+    ru3_1: "",
+    ru3_2: "",
+    ru4_1: "",
+    ru4_2: "",
+    ru5_1: "",
+    ru5_2: "",
+    ru6_1: "",
+    ru6_2: "",
+    ru7_1: "",
+    ru7_2: "",
   });
 
-  const handlePointsInputChange = (pointKey, value) => {
-    setValuesPoints((prevValues) => ({
-      ...prevValues,
-      [pointKey]: value,
+  const [iconosPlus, setIconosPlus] = useState({
+    ru3_1: false,
+    ru3_2: false,
+    ru4_1: false,
+    ru4_2: false,
+    ru5_1: false,
+    ru5_2: false,
+    ru6_1: false,
+    ru6_2: false,
+    ru7_1: false,
+    ru7_2: false,
+  });
+
+  const retroalimentacion = {
+    ru3_1: "10",
+    ru3_2: "115",
+    ru4_1: "15",
+    ru4_2: "157.5",
+    ru5_1: "20",
+    ru5_2: "200",
+    ru6_1: "25",
+    ru6_2: "242.5",
+    ru7_1: "30",
+    ru7_2: "285",
+  };
+
+  const toggleIcono = (key) => {
+    setIconosPlus((prev) => ({
+      ...prev,
+      [key]: !prev[key],
     }));
   };
 
+  const handleInputAct = (key, value) => {
+    if (bloquearInput) return;
+    setRespuestasUsuario((prevValues) => ({
+      ...prevValues,
+      [key]: value,
+    }));
+  };
+
+  const renderInput = (key) => (
+    <>
+      <input
+        className="input-act8"
+        type="number"
+        value={respuestasUsuario[key]}
+        onChange={(e) => handleInputAct(key, e.target.value)}
+      />
+      {mostrarIconos && (
+        <OverlayTrigger
+          trigger="click"
+          placement="right"
+          overlay={popoverRight(retroalimentacion[key])}
+        >
+          <Button onClick={() => toggleIcono(key)}>
+            {iconosPlus[key] ? <ImEyeMinus /> : <ImEyePlus />}
+          </Button>
+        </OverlayTrigger>
+      )}
+    </>
+  );
+
+  const popoverRight = (content) => (
+    <Popover
+      id="popover-positioned-right"
+      title="Popover right"
+      style={{ padding: "5px", justifyItems: "center", alignItems: "center" }}
+    >
+      {content}
+    </Popover>
+  );
+
+  const revisarRespuestas = () => {
+    setBloquearInput(true);
+    setMostrarIconos(true);
+  };
+
+  const modificarRespuestas = () => {
+    setMostrarIconos(false);
+    setBloquearInput(false);
+    setRespuestasUsuario({
+      ru3_1: "",
+      ru3_2: "",
+      ru4_1: "",
+      ru4_2: "",
+      ru5_1: "",
+      ru5_2: "",
+      ru6_1: "",
+      ru6_2: "",
+      ru7_1: "",
+      ru7_2: "",
+    });
+    setIconosPlus({
+      ru3_1: false,
+      ru3_2: false,
+      ru4_1: false,
+      ru4_2: false,
+      ru5_1: false,
+      ru5_2: false,
+      ru6_1: false,
+      ru6_2: false,
+      ru7_1: false,
+      ru7_2: false,
+    });
+  };
+
   return (
-    <div>
+    <>
       <Row>
         <Col className="actividad" /* sm={12} md={9} xl={6} */>
           <p>
@@ -55,95 +149,45 @@ const Act12 = () => {
               <InlineMath>{"10"}</InlineMath> y{" "}
               <InlineMath>{"f(10)"}</InlineMath> se pueden graficar como el
               punto <InlineMath>{"C=("}</InlineMath>
-              <input
-                className="input-coord"
-                type="text"
-                value={valuesPoints.c_x}
-                onChange={(e) => handlePointsInputChange("c_x", e.target.value)}
-              />
+              {renderInput("ru3_1")}{" "}
               ,
-              <input
-                className="input-coord"
-                type="text"
-                value={valuesPoints.c_y}
-                onChange={(e) => handlePointsInputChange("c_y", e.target.value)}
-              />
+              {renderInput("ru3_2")}{" "}
               <InlineMath>{")"}</InlineMath>
             </li>
             <li className="liAct-4">
               <InlineMath>{"15"}</InlineMath> y{" "}
               <InlineMath>{"f(15)"}</InlineMath> se pueden graficar como el
               punto <InlineMath>{"D=("}</InlineMath>
-              <input
-                className="input-coord"
-                type="text"
-                value={valuesPoints.d_x}
-                onChange={(e) => handlePointsInputChange("d_x", e.target.value)}
-              />
+              {renderInput("ru4_1")}{" "}
               ,
-              <input
-                className="input-coord"
-                type="text"
-                value={valuesPoints.d_y}
-                onChange={(e) => handlePointsInputChange("d_y", e.target.value)}
-              />
+              {renderInput("ru4_2")}{" "}
               <InlineMath>{")"}</InlineMath>
             </li>
             <li className="liAct-4">
               <InlineMath>{"20"}</InlineMath> y{" "}
               <InlineMath>{"f(20)"}</InlineMath> se pueden graficar como el
               punto <InlineMath>{"E=("}</InlineMath>
-              <input
-                className="input-coord"
-                type="text"
-                value={valuesPoints.e_x}
-                onChange={(e) => handlePointsInputChange("e_x", e.target.value)}
-              />
+              {renderInput("ru5_1")}{" "}
               ,
-              <input
-                className="input-coord"
-                type="text"
-                value={valuesPoints.e_y}
-                onChange={(e) => handlePointsInputChange("e_y", e.target.value)}
-              />
+              {renderInput("ru5_2")}{" "}
               <InlineMath>{")"}</InlineMath>
             </li>
             <li className="liAct-4">
               <InlineMath>{"25"}</InlineMath> y{" "}
               <InlineMath>{"f(25)"}</InlineMath> se pueden graficar como el
               punto <InlineMath>{"F=("}</InlineMath>
-              <input
-                className="input-coord"
-                type="text"
-                value={valuesPoints.f_x}
-                onChange={(e) => handlePointsInputChange("f_x", e.target.value)}
-              />
+              {renderInput("ru6_1")}{" "}
               ,
-              <input
-                className="input-coord"
-                type="text"
-                value={valuesPoints.f_y}
-                onChange={(e) => handlePointsInputChange("f_y", e.target.value)}
-              />
+              {renderInput("ru6_2")}{" "}
               <InlineMath>{")"}</InlineMath>
             </li>
             <li className="liAct-4">
               <InlineMath>{"30"}</InlineMath> y{" "}
               <InlineMath>{"f(30)"}</InlineMath> se pueden graficar como el
               punto <InlineMath>{"G=("}</InlineMath>
-              <input
-                className="input-coord"
-                type="text"
-                value={valuesPoints.g_x}
-                onChange={(e) => handlePointsInputChange("g_x", e.target.value)}
-              />
+              {renderInput("ru7_1")}{" "}
               ,
-              <input
-                className="input-coord"
-                type="text"
-                value={valuesPoints.g_y}
-                onChange={(e) => handlePointsInputChange("g_y", e.target.value)}
-              />
+              {renderInput("ru7_2")}{" "}
               <InlineMath>{")"}</InlineMath>
             </li>
             y en general:
@@ -154,9 +198,18 @@ const Act12 = () => {
               <InlineMath>{"P(x, y)"}</InlineMath>.
             </p>
           </ul>
+          <div className="button-center">
+            {bloquearInput ? (
+              <Button onClick={modificarRespuestas}>
+                Modificar respuestas
+              </Button>
+            ) : (
+              <Button onClick={revisarRespuestas}>Revisar respuestas</Button>
+            )}
+          </div>
         </Col>
       </Row>
-    </div>
+    </>
   );
 };
 

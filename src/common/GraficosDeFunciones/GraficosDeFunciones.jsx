@@ -5,7 +5,6 @@ import {
   Row,
   Col,
   Table,
-  Button,
   Form,
   Image,
 } from "react-bootstrap";
@@ -14,6 +13,8 @@ import { BlockMath, InlineMath } from "react-katex";
 import "katex/dist/katex.min.css";
 import "../../styles/Bloque1_1.css";
 import graficarPuntos from "../../assets/graficarPuntos.gif";
+import Tabla6 from "./Tabla6";
+import Tabla7 from "./Tabla7";
 import { BoardsContextProvider } from "../../contexts/BoardsContext";
 import { SegmentContextProvider } from "../../contexts/SegmentContext";
 import { FuncLinealContextProvider } from "../../contexts/FuncLinealContext";
@@ -492,7 +493,7 @@ const GraficosDeFunciones = () => {
       <Row>
         <BoardsContextProvider>
           <GraficaFContextProvider>
-            <Col md={5}>
+            <Col md={6}>
               <p>
                 Ya que hemos encontrado el dominio, podemos determinar el rango.
                 Para ello es conveniente ver cómo se comportan los valores que
@@ -500,63 +501,7 @@ const GraficosDeFunciones = () => {
                 muestra los valores de f(x) para distintos valores de x,
                 complétala.
               </p>
-
-              <Container className="cont-table-fr">
-                <div className="tittle-table">
-                  <h6>Tabla 6</h6>
-                </div>
-                <Table striped bordered hover>
-                  <thead>
-                    <tr>
-                      <th>x</th>
-                      <th>f(x)</th>
-                      <th>Punto (x, y=f(x))</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>-25</td>
-                      <td>-0.8</td>
-                      <td>A=(-25, -0.8)</td>
-                    </tr>
-                    <tr>
-                      <td>-8.5</td>
-                      <td>-2.4</td>
-                      <td>B=(-8.5, -2.4)</td>
-                    </tr>
-                    <tr>
-                      <td>-1.5</td>
-                      <td>-13.3</td>
-                      <td>C=(-1.5, -13.3)</td>
-                    </tr>
-                    <tr>
-                      <td>-0.5</td>
-                      <td>-40</td>
-                      <td>D=(-0.5, -40)</td>
-                    </tr>
-                    <tr>
-                      <td>0.5</td>
-                      <td>40</td>
-                      <td>E=(0.5, 40)</td>
-                    </tr>
-                    <tr>
-                      <td>1.5</td>
-                      <td>13.3</td>
-                      <td>F=(1.5, 13.3)</td>
-                    </tr>
-                    <tr>
-                      <td>8.5</td>
-                      <td>2.4</td>
-                      <td>G=(8.5, 2.4)</td>
-                    </tr>
-                    <tr>
-                      <td>25</td>
-                      <td>0.8</td>
-                      <td>H=(25, 0.8)</td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </Container>
+              <Tabla6 />
               <p>
                 <br />
                 Como se ha visto anteriormente, cada par ordenado (x, f(x)) se
@@ -624,7 +569,7 @@ const GraficosDeFunciones = () => {
                 </BlockMath>
               </p>
             </Col>
-            <Col md={7}>
+            <Col md={6}>
               <Row className="sticky">
                 <div className="tittle-table">
                   <h6>Ventana gráfica 4</h6>
@@ -664,53 +609,8 @@ const GraficosDeFunciones = () => {
       <Row>
         <BoardsContextProvider>
           <GraficaFContextProvider>
-            <Col md={5}>
-              <Container className="cont-table-fr">
-                <div className="tittle-table">
-                  <h6>Tabla 7</h6>
-                </div>
-                <Table striped bordered hover>
-                  <thead>
-                    <tr>
-                      <th>x</th>
-                      <th>f(x)</th>
-                      <th>Punto (x, y=f(x))</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>0</td>
-                      <td>0</td>
-                      <td>A = (0, 0)</td>
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td>2</td>
-                      <td>B = (4, 2)</td>
-                    </tr>
-                    <tr>
-                      <td>9</td>
-                      <td>3</td>
-                      <td>C = (9, 3)</td>
-                    </tr>
-                    <tr>
-                      <td>20</td>
-                      <td>4.5</td>
-                      <td>D = (20, 4.5)</td>
-                    </tr>
-                    <tr>
-                      <td>31.5</td>
-                      <td>5.6</td>
-                      <td>E = (31.5, 5.6)</td>
-                    </tr>
-                    <tr>
-                      <td>49</td>
-                      <td>7</td>
-                      <td>F = (49, 7)</td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </Container>
+            <Col md={6}>
+              <Tabla7 />
               <p>
                 <br />
                 Los puntos A-F son tan solo algunos de los puntos que forman a
@@ -746,7 +646,7 @@ const GraficosDeFunciones = () => {
                 <BlockMath>{"0 <= f(x) < +\\infty"}</BlockMath>
               </p>
             </Col>
-            <Col md={7}>
+            <Col md={6}>
               <Row className="sticky">
                 <div className="tittle-table">
                   <h6>Ventana gráfica 5</h6>

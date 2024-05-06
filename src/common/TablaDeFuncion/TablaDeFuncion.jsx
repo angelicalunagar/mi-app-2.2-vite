@@ -1,56 +1,17 @@
 import React from "react";
 import "katex/dist/katex.min.css";
 import "../../styles/Bloque1_1.css";
-import { useState, useEffect } from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { useState } from "react";
 import { BlockMath, InlineMath } from "react-katex";
-import Container from "react-bootstrap/Container";
-import Table from "react-bootstrap/Table";
-import { Button, Form} from "react-bootstrap";
+import { Form, Row, Col, Container } from "react-bootstrap";
 import Act10 from "./Act10";
+import Act11 from "./Act11";
 
 const TablaDeFuncion = () => {
-  const [valuesEval, setValuesEval] = useState({
-    eval_1_1: "",
-    eval_1_2: "",
-    eval_2_1: "",
-    eval_2_2: "",
-    eval_3_1: "",
-    eval_3_2: "",
-    eval_4_1: "",
-    eval_4_2: "",
-    eval_5_1: "",
-    eval_5_2: "",
-  });
-
-  const handleEvalInputChange = (evalKey, value) => {
-    setValuesEval((prevValues) => ({
-      ...prevValues,
-      [evalKey]: value,
-    }));
-  };
-
-  const [valuesTableAct9, setValuesTableAct9] = useState({
-    cell_32: "",
-    cell_41: "",
-    cell_52: "",
-    cell_61: "",
-    cell_72: "",
-  });
-
-  const handleTableAct9 = (cell, value) => {
-    setValuesTableAct9((prevValues) => ({
-      ...prevValues,
-      [cell]: value,
-    }));
-  };
-
   const [opcionSelecPreg3, setOpcionSelecPreg3] = useState(null);
   const handleSelecPreg3 = (opcion) => {
     setOpcionSelecPreg3(opcion);
   };
-
 
   return (
     <Container>
@@ -96,106 +57,7 @@ const TablaDeFuncion = () => {
           </p>
         </Col>
       </Row>
-      <Row className="row-act">
-        <Col className="actividad" md={10}>
-          <p>
-            <b>Actividad 11:</b> Utilizando las evaluaciones previas realizadas
-            sobre la función, completa los campos vacíos de la siguiente tabla:
-          </p>
-          <Container className="cont-table-act3">
-            <div className="tittle-table">
-              <h6>Tabla 4</h6>
-            </div>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>x</th>
-                  <th>p(x)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>0</td>
-                  <td>30</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>72.5</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTableAct9.cell_32}
-                      onChange={(e) =>
-                        handleTableAct9("cell_32", e.target.value)
-                      }
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTableAct9.cell_41}
-                      onChange={(e) =>
-                        handleTableAct9("cell_41", e.target.value)
-                      }
-                    />
-                  </td>
-                  <td>157.5</td>
-                </tr>
-                <tr>
-                  <td>20</td>
-                  <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTableAct9.cell_52}
-                      onChange={(e) =>
-                        handleTableAct9("cell_52", e.target.value)
-                      }
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTableAct9.cell_61}
-                      onChange={(e) =>
-                        handleTableAct9("cell_61", e.target.value)
-                      }
-                    />
-                  </td>
-                  <td>242.5</td>
-                </tr>
-
-                <tr>
-                  <td>30</td>
-                  <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTableAct9.cell_72}
-                      onChange={(e) =>
-                        handleTableAct9("cell_72", e.target.value)
-                      }
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </Table>
-          </Container>
-          <div className="button-center">
-            <Button onClick={() => setOpen(!open)}>Revisar respuestas</Button>
-          </div>
-        </Col>
-      </Row>
+      <Act11 />
       <Row className="main-row">
         <Col>
           <p>

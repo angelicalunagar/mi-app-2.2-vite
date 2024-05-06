@@ -125,6 +125,15 @@ h4 {
 
 }
 
+.input-tabla6 {
+  border-color: #ffecd1;
+  border-radius: 8px;
+  background-color: #ffc;
+  padding: 8px;
+  width: 5.5rem; 
+  text-align: center;
+}
+
 .actividad {
   background-color: #ffc596; 
   padding: 16px;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Row, Col, OverlayTrigger, Popover } from "react-bootstrap";
+import { Button, Col, OverlayTrigger, Popover } from "react-bootstrap";
 import { ImEyePlus, ImEyeMinus } from "react-icons/im";
-import { BlockMath, InlineMath } from "react-katex";
+import { InlineMath } from "react-katex";
 
 const Act8 = () => {
   const [mostrarIconos, setMostrarIconos] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button, Row, Col, OverlayTrigger, Popover } from "react-bootstrap";
+import { Button, Row, Col, OverlayTrigger, Popover, Container, Table } from "react-bootstrap";
 import { ImEyePlus, ImEyeMinus } from "react-icons/im";
-import { BlockMath, InlineMath } from "react-katex";
+import { InlineMath } from "react-katex";
 
 const Act11 = () => {
   const [mostrarIconos, setMostrarIconos] = useState(false);
@@ -116,8 +116,8 @@ const Act11 = () => {
             <Table striped bordered hover>
               <thead>
                 <tr>
-                  <th>x</th>
-                  <th>p(x)</th>
+                  <th><InlineMath>x</InlineMath></th>
+                  <th><InlineMath>p(x)</InlineMath></th>
                 </tr>
               </thead>
               <tbody>
@@ -137,40 +137,19 @@ const Act11 = () => {
                 </tr>
                 <tr>
                   <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTableAct9.cell_41}
-                      onChange={(e) =>
-                        handleTableAct9("cell_41", e.target.value)
-                      }
-                    />
+                  {renderInput("ru2")}{' '}
                   </td>
                   <td>157.5</td>
                 </tr>
                 <tr>
                   <td>20</td>
                   <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTableAct9.cell_52}
-                      onChange={(e) =>
-                        handleTableAct9("cell_52", e.target.value)
-                      }
-                    />
+                  {renderInput("ru3")}{' '}
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTableAct9.cell_61}
-                      onChange={(e) =>
-                        handleTableAct9("cell_61", e.target.value)
-                      }
-                    />
+                  {renderInput("ru4")}{' '}
                   </td>
                   <td>242.5</td>
                 </tr>
@@ -178,21 +157,20 @@ const Act11 = () => {
                 <tr>
                   <td>30</td>
                   <td>
-                    <input
-                      className="custom-input"
-                      type="text"
-                      value={valuesTableAct9.cell_72}
-                      onChange={(e) =>
-                        handleTableAct9("cell_72", e.target.value)
-                      }
-                    />
+                  {renderInput("ru5")}{' '}
                   </td>
                 </tr>
               </tbody>
             </Table>
           </Container>
           <div className="button-center">
-            <Button onClick={() => setOpen(!open)}>Revisar respuestas</Button>
+            {bloquearInput ? (
+              <Button onClick={modificarRespuestas}>
+                Modificar respuestas
+              </Button>
+            ) : (
+              <Button onClick={revisarRespuestas}>Revisar respuestas</Button>
+            )}
           </div>
         </Col>
       </Row>

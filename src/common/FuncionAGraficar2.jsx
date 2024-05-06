@@ -2,6 +2,7 @@
 import { useContext, useEffect } from "react";
 import { FuncionContext } from "../contexts/FuncionContext";
 import { BoardContext } from "../contexts/BoardContext";
+import { InlineMath } from "react-katex";
 
 const FuncionAGraficar = () => {
   //const [selectedFunc, setSelectedFunc] = useContext(FuncionContext);
@@ -85,7 +86,7 @@ const FuncionAGraficar = () => {
       <h2>Selecciona una función:</h2>
       <select value={selectedFunc} onChange={handleFuncChange}>
         <option value="a*x">f(x) = ax</option>
-        <option value="a*x**2">f(x) = ax^2</option>
+        <option value="a*x**2"><InlineMath>f(x) = ax^2</InlineMath></option>
         <option value="a*x**3">f(x) = ax^3</option>
         <option value="a*x**4">f(x) = ax^4</option>
       </select>
