@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import { BoardContextProvider } from "../contexts/BoardContext";
 import QuizSub7 from "./ValoresVarDependiente/QuizSub7";
 import Quiz15 from "./GraficosDeFunciones/Quiz15";
-import FuncLinealesResumen2 from "./GraficosDeFunciones/FuncLinealesResumen2";
+import FuncLinealesResumen2 from "./FuncionesLineales/FuncLinealesResumen2";
 import Act2Original from "./VarDepYVarIndep/Act2Original";
 import Act5 from "./ReglaDeCorrespondencia/Act5";
 import Act2 from "./VarDepYVarIndep/Act2";

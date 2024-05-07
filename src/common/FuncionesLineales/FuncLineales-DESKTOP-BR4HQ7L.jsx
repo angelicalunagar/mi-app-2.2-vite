@@ -6,13 +6,13 @@ import {
 } from "react-bootstrap";
 
 import { BlockMath } from "react-katex";
-import BoardXX from "./Utilerias/BoardXX";
-import TextoFuncion from "./GraficosDeFunciones/TextoFuncion";
-import FuncionLineal2 from "./GraficosDeFunciones/FuncionLineal2";
-import { BoardsContextProvider } from "../contexts/BoardsContext";
-import { FuncLinealContextProvider } from "../contexts/FuncLinealContext";
-import FuncLinealesResumen2 from "./GraficosDeFunciones/FuncLinealesResumen2";
-import "../styles/Bloque1_1.css";
+import BoardXX from "../Utilerias/BoardXX";
+import TextoFuncion from "../GraficosDeFunciones/TextoFuncion";
+import FuncionLineal2 from "../GraficosDeFunciones/FuncionLineal2";
+import { BoardsContextProvider } from "../../contexts/BoardsContext";
+import { FuncLinealContextProvider } from "../../contexts/FuncLinealContext";
+import FuncLinealesResumen2 from "./FuncLinealesResumen2";
+import "../../styles/Bloque1_1.css";
 
 const FuncLineales = () => {
   return (

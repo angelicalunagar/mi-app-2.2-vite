@@ -50,6 +50,14 @@ const FuncionAGraficar = () => {
     { value: "a*x**4", label: <InlineMath>f(x) = x^4</InlineMath> },
   ];
 
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      width: '200px', // Ajusta el ancho a tu preferencia
+    }),
+  };
+
+
   return (
     <div className="funcion-grafica">
       <h2>Selecciona una función:</h2>
@@ -57,6 +65,7 @@ const FuncionAGraficar = () => {
         value={{ value: selectedFunc, label: selectedLabel }}
         onChange={handleFuncChange}
         options={options}
+        styles={customStyles} // Aplica los estilos personalizados
       />
     </div>
   );

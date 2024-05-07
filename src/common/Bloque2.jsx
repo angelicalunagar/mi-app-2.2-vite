@@ -11,7 +11,7 @@ import FuncionesDosVariables from "./FuncionesDosVariables/FuncionesDosVariables
 import TablaDeFuncion from "./TablaDeFuncion/TablaDeFuncion";
 /* import GraficosDeFunciones from "./GraficosDeFunciones"; */
 import GraficosDeFunciones from "./GraficosDeFunciones/GraficosDeFunciones";
-import FuncLineales from "./FuncLineales";
+import FuncLineales from "./FuncionesLineales/FuncLineales";
 import FuncionesCuadraticas from "./FuncionesCuadraticas/FuncionesCuadraticas";
 
 function Bloque2() {
