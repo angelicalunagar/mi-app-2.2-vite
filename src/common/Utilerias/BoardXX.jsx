@@ -6,7 +6,7 @@ import "../../styles/Board.css";
 
 const BoardXX = ({ boardId, boundingBox }) => {
   const { addBoard, brd } = useContext(BoardsContext);
-  const [initialBoundingBox, setInitialBoundingBox] = useState(boundingBox); // Estado para almacenar los valores iniciales del boundingBox
+  const [initialBoundingBox, setInitialBoundingBox] = useState(boundingBox);
 
   useEffect(() => {
     if (!brd.hasOwnProperty(boardId)) {

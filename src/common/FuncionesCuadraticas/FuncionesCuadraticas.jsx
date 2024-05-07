@@ -6,7 +6,9 @@ import { GraficaFContextProvider } from "../../contexts/GraficaFContext";
 import BoardXX from "../Utilerias/BoardXX";
 import GraficaF from "../GraficosDeFunciones/GraficaF";
 import PuntoMovibleF from "../GraficosDeFunciones/PuntoMovibleF";
+import Quiz18 from "./Quiz18";
 import Quiz17 from "./Quiz17";
+import VariacionIntervaloF from "./VariacionIntervaloF"
 import "../../styles/Bloque1_1.css";
 
 const FuncionesCuadraticas = () => {
@@ -33,7 +35,8 @@ const FuncionesCuadraticas = () => {
             <InlineMath>{"f(x)=mx+b"}</InlineMath>, el mayor exponente de x es
             1, lo que resulta en una relación lineal entre la variable
             dependiente y la variable independiente. Entonces, ¿crees que la
-            gráfica de <InlineMath>{"A(x)=150x-x^2"}</InlineMath> tiene forma de recta?
+            gráfica de <InlineMath>{"A(x)=150x-x^2"}</InlineMath> tiene forma de
+            recta?
           </p>
         </Col>
       </Row>
@@ -45,20 +48,57 @@ const FuncionesCuadraticas = () => {
                 <div className="tittle-table">
                   <h6>Ventana gráfica 9</h6>
                 </div>
-                <BoardXX boardId="board7" boundingBox={[-2, 11, 51, -1]} />
-                <GraficaF
+                <BoardXX
                   boardId="board7"
-                  funcionGrafica={(x) => 150*x-x*x}
+                  boundingBox={[-10, 6800, 180, -300]}
                 />
-
-                <PuntoMovibleF
-                  boardId="board7"
-                  initialCoordinates={[7, Math.sqrt(7)]}
-                />
+                <span style={{ display: "inline-block" }}>
+                  <GraficaF
+                    boardId="board7"
+                    funcionGrafica={(x) => 150 * x - x * x}
+                  />
+                  <PuntoMovibleF
+                    boardId="board7"
+                    initialCoordinates={[8, 1136]}
+                  />
+                </span>
               </Row>
             </Col>
             <Col>
             <Quiz17 />
+              <Quiz18 />
+            </Col>
+          </GraficaFContextProvider>
+        </BoardsContextProvider>
+      </Row>
+
+      <Row>
+      <BoardsContextProvider>
+          <GraficaFContextProvider>
+            <Col md={7}>
+              <Row className="sticky">
+                <div className="tittle-table">
+                  <h6>Ventana gráfica 9</h6>
+                </div>
+                <BoardXX
+                  boardId="board7.5"
+                  boundingBox={[-10, 6800, 180, -300]}
+                />
+                <span style={{ display: "inline-block" }}>
+                  <GraficaF
+                    boardId="board7.5"
+                    funcionGrafica={(x) => 150 * x - x * x}
+                  />
+                   <VariacionIntervaloF
+                    boardId="board7.5"
+                    initialCoordinates={[8, 1136, 20, 2600]}
+                  />
+                </span>
+              </Row>
+            </Col>
+            <Col>
+            <Quiz17 />
+              <Quiz18 />
             </Col>
           </GraficaFContextProvider>
         </BoardsContextProvider>

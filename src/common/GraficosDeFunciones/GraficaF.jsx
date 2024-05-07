@@ -59,6 +59,7 @@ const GraficaF = ({ boardId, funcionGrafica }) => {
         setIds((prevIds) => ({
           ...prevIds,
           idGraficaF: grafica.id,
+          funcionGrafica: funcionGrafica,
         }));
 
         setDibujarGrafica(true);
@@ -69,11 +70,11 @@ const GraficaF = ({ boardId, funcionGrafica }) => {
   };
 
   return (
-    <div>
+    <>
       <Button onClick={toggleGraficaF}>
         {dibujarGrafica ? "Borrar la gráfica de f(x)" : "Graficar f(x)"}
       </Button>
-    </div>
+    </>
   );
 };
 

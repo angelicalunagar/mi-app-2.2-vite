@@ -163,9 +163,11 @@ const FuncLinealesResumen2 = ({ md }) => {
     <>
       <Row>
         <Col style={{ display: "inline-block", alignItems: "center" }} md={md}>
-          
-            <span style={{ display: "inline-block" }}>Toda función lineal tiene por gráfica a</span>
-            <span  style={{ display: "inline-block" }}><Select
+          <span style={{ display: "inline-block" }}>
+            Toda función lineal tiene por gráfica a
+          </span>
+          <span style={{ display: "inline-block" }}>
+            <Select
               options={options.select1}
               value={options.select1.find(
                 (option) => option.value === selectedOptions["select1"]
@@ -176,111 +178,157 @@ const FuncLinealesResumen2 = ({ md }) => {
               className="select1"
               isClearable
               styles={customStyles}
-            /></span>
-            
-            {renderIcon("select1", selectedOptions["select1"])}
-           <p>y su forma algebraica puede generalizarse como{" "}</p> 
-            <Select
-              options={options.select2}
-              value={options.select2.find(
-                (option) => option.value === selectedOptions["select2"]
-              )}
-              onChange={(selectedOption) =>
-                handleOptionChange(selectedOption, "select2")
-              }
-              className="select2"
-              isClearable
-              styles={customStyles}
             />
-            {renderIcon("select2", selectedOptions["select2"])}, donde f(x)
-            representa a la variable{" "}
-            <Select
-              options={options.select3}
-              value={options.select3.find(
-                (option) => option.value === selectedOptions["select3"]
-              )}
-              onChange={(selectedOption) =>
-                handleOptionChange(selectedOption, "select3")
-              }
-              className="select3"
-              isClearable
-              styles={customStyles}
-            />
-            {renderIcon("select3", selectedOptions["select3"])} y{" "}
-            <InlineMath>x</InlineMath> representa a la variable{" "}
-            <Select
-              options={options.select4}
-              value={options.select4.find(
-                (option) => option.value === selectedOptions["select4"]
-              )}
-              onChange={(selectedOption) =>
-                handleOptionChange(selectedOption, "select4")
-              }
-              className="select4"
-              isClearable
-              styles={customStyles}
-            />
-            {renderIcon("select4", selectedOptions["select4"])}. Por su parte,{" "}
-            <InlineMath>m</InlineMath> es el coeficiente de{" "}
-            <InlineMath>x</InlineMath> e indica{" "}
-            <Select
-              options={options.select5}
-              value={options.select5.find(
-                (option) => option.value === selectedOptions["select5"]
-              )}
-              onChange={(selectedOption) =>
-                handleOptionChange(selectedOption, "select5")
-              }
-              className="select5"
-              isClearable
-              styles={customStyles}
-            />
-            {renderIcon("select5", selectedOptions["select5"])} y{" "}
-            <InlineMath>b</InlineMath> es el término independiente de{" "}
-            <InlineMath>x</InlineMath> e indica la coordenada{" "}
-            <InlineMath>y</InlineMath> del punto donde la recta{" "}
-            <Select
-              options={options.select6}
-              value={options.select6.find(
-                (option) => option.value === selectedOptions["select6"]
-              )}
-              onChange={(selectedOption) =>
-                handleOptionChange(selectedOption, "select6")
-              }
-              className="select6"
-              isClearable
-              styles={customStyles}
-            />
-            {renderIcon("select6", selectedOptions["select6"])}. Toda función
-            lineal, puesto que consiste en un producto mx y su suma con b, no
-            posee restricciones para x, por lo que su dominio es{" "}
-            <Select
-              options={options.select7}
-              value={options.select7.find(
-                (option) => option.value === selectedOptions["select7"]
-              )}
-              onChange={(selectedOption) =>
-                handleOptionChange(selectedOption, "select7")
-              }
-              className="select7"
-              isClearable
-              styles={customStyles}
-            />
-            {renderIcon("select7", selectedOptions["select7"])}. Finalmente, el
-            rango de las funciones lineales es{" "}
-            <Select
-              options={options.select8}
-              value={options.select8.find(
-                (option) => option.value === selectedOptions["select8"]
-              )}
-              onChange={(selectedOption) =>
-                handleOptionChange(selectedOption, "select8")
-              }
-              className="select8"
-              isClearable
-              styles={customStyles}
-            />
-            {renderIcon("select8", selectedOptions["select8"])}.
+          </span>
+          <span style={{ display: "inline-block" }}>
+          {renderIcon("select1", selectedOptions["select1"])}
+          </span>
+          <span style={{ display: "inline-block" }}>
+          <p>y su forma algebraica puede generalizarse como </p>
+          </span>
+          <span style={{ display: "inline-block" }}>
+          <Select
+            options={options.select2}
+            value={options.select2.find(
+              (option) => option.value === selectedOptions["select2"]
+            )}
+            onChange={(selectedOption) =>
+              handleOptionChange(selectedOption, "select2")
+            }
+            className="select2"
+            isClearable
+            styles={customStyles}
+          />
+          </span>
+          <span style={{ display: "inline-block" }}>
+          {renderIcon("select2", selectedOptions["select2"])}, donde f(x)
+          </span>
+          <span style={{ display: "inline-block" }}>
+          representa a la variable{" "}
+          </span>
+          <span style={{ display: "inline-block" }}>
+          <Select
+            options={options.select3}
+            value={options.select3.find(
+              (option) => option.value === selectedOptions["select3"]
+            )}
+            onChange={(selectedOption) =>
+              handleOptionChange(selectedOption, "select3")
+            }
+            className="select3"
+            isClearable
+            styles={customStyles}
+          />
+          </span>
+          <span style={{ display: "inline-block" }}>
+          {renderIcon("select3", selectedOptions["select3"])} y{" "}
+          </span>
+          <span style={{ display: "inline-block" }}>
+          <InlineMath>x</InlineMath> representa a la variable{" "}
+          </span>
+          <span style={{ display: "inline-block" }}>
+          <Select
+            options={options.select4}
+            value={options.select4.find(
+              (option) => option.value === selectedOptions["select4"]
+            )}
+            onChange={(selectedOption) =>
+              handleOptionChange(selectedOption, "select4")
+            }
+            className="select4"
+            isClearable
+            styles={customStyles}
+          />
+          </span>
+          <span style={{ display: "inline-block" }}>
+          {renderIcon("select4", selectedOptions["select4"])}.
+          </span>
+          <br />
+          <br />
+          <span style={{ display: "inline-block" }}>
+           Por su parte,{" "}
+           </span>
+           <span style={{ display: "inline-block" }}>
+          <InlineMath>m</InlineMath> es el coeficiente de{" "}
+          <InlineMath>x</InlineMath> e indica{" "}
+          </span>
+          <span style={{ display: "inline-block" }}>
+          <Select
+            options={options.select5}
+            value={options.select5.find(
+              (option) => option.value === selectedOptions["select5"]
+            )}
+            onChange={(selectedOption) =>
+              handleOptionChange(selectedOption, "select5")
+            }
+            className="select5"
+            isClearable
+            styles={customStyles}
+          />
+          </span>
+          <span style={{ display: "inline-block" }}>
+          {renderIcon("select5", selectedOptions["select5"])} y{" "}
+          </span>
+          <span style={{ display: "inline-block" }}>
+          <InlineMath>b</InlineMath> es el término independiente de{" "}
+          <InlineMath>x</InlineMath> e indica la coordenada{" "}
+          </span>{' '}
+          <InlineMath>y</InlineMath> del punto donde la recta{" "}
+          
+          <span style={{ display: "inline-block" }}>
+          <Select
+            options={options.select6}
+            value={options.select6.find(
+              (option) => option.value === selectedOptions["select6"]
+            )}
+            onChange={(selectedOption) =>
+              handleOptionChange(selectedOption, "select6")
+            }
+            className="select6"
+            isClearable
+            styles={customStyles}
+          />
+          </span>
+          <span style={{ display: "inline-block" }}>
+          {renderIcon("select6", selectedOptions["select6"])}. Toda función
+          lineal, puesto que consiste en un producto mx y su suma con b, no
+          posee restricciones para x, por lo que su dominio es{" "}
+          </span>
+          <span style={{ display: "inline-block" }}>
+          <Select
+            options={options.select7}
+            value={options.select7.find(
+              (option) => option.value === selectedOptions["select7"]
+            )}
+            onChange={(selectedOption) =>
+              handleOptionChange(selectedOption, "select7")
+            }
+            className="select7"
+            isClearable
+            styles={customStyles}
+          />
+          </span>
+          <span style={{ display: "inline-block" }}>
+          {renderIcon("select7", selectedOptions["select7"])}. Finalmente, el
+          rango de las funciones lineales es{" "}
+          </span>
+          <span style={{ display: "inline-block" }}>
+          <Select
+            options={options.select8}
+            value={options.select8.find(
+              (option) => option.value === selectedOptions["select8"]
+            )}
+            onChange={(selectedOption) =>
+              handleOptionChange(selectedOption, "select8")
+            }
+            className="select8"
+            isClearable
+            styles={customStyles}
+          />
+          </span>
+          <span style={{ display: "inline-block" }}>
+          {renderIcon("select8", selectedOptions["select8"])}.
+          </span>
         </Col>
       </Row>
 

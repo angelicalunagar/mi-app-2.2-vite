@@ -120,7 +120,7 @@ const VariacionFunciones = () => {
           <option value="10 * x">f(x) = 10x</option>
           <option value="x ** 2">f(x) = x^2</option>
           <option value="2 * x ** 2">f(x) = 2x^2</option>
-          <option value="10 * x ** 2">f(x) = 10x^2</option>
+          <option value="150 * x -x*x">f(x) = 150x-x^2</option>
         </select>
       </div>
       <div>

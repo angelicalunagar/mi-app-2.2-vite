@@ -17,26 +17,26 @@ const Quiz17 = () => {
 
   const questions = {
     preg1: {
-      preg: (
-        <span>
-          ¿Cuánto tiene que medir el lado x para que el área A(x) sea de 3000 m2?
-        </span>
-      ),
-      resps: ["x=23.8", "x=12.5", "x=61"],
+      preg: <span>¿Cuál es la imagen de x=40?</span>,
+      resps: ["4400", "5000", "40", "870"],
       renderInlineMath: true,
     },
 
     preg2: {
-      preg: (
-        <span>
-          
-        ¿Cuánto vale el área cuando el lado x mide 20 m?
-        </span>
-      ),
+      preg: <span>¿Qué significa que la imagen de x=50 sea 5000?</span>,
       resps: [
-        "A(x)=2600",
-        "A(x)=200",
-        "A(x)=5000",
+        <span>
+          Cuando el lado x mide 50 m, el área es de
+          5000 <InlineMath>m^2</InlineMath>
+        </span>,
+        <span>
+          Cuando el lado <InlineMath>y</InlineMath> mide 50 m, el área es de
+          5000 <InlineMath>m^2</InlineMath>
+        </span>,
+        <span>
+          El área es de 50 <InlineMath>m^2</InlineMath> cuando el lado mide 5000
+          m
+        </span>,
       ],
       renderInlineMath: false,
     },
@@ -44,130 +44,44 @@ const Quiz17 = () => {
     preg3: {
       preg: (
         <span>
-          ¿Cuánto vale el área cuando el lado x mide 60 m?
+          ¿Cuánto vale <InlineMath>x</InlineMath> si su imagen es 3500{" "}
+          <InlineMath>m^2</InlineMath>?
         </span>
       ),
-      resps: [
-        "A(x)=5400",
-        "A(x)=5000",
-        "A(x)=5950",
-      ],
-      renderInlineMath: false,
+      resps: ["x=28.9", "x=31.2", "x=60"],
+      renderInlineMath: true,
     },
 
     preg4: {
-      preg: (
-        <span>
-          Desliza el punto M de manera gradual dentro del intervalo de dominio 20 ≤ x ≤ 60, incrementando x. ¿Cómo varía el área A(x) a medida que el punto M se desplaza?
-        </span>
-      ),
-
-      resps: ["Va aumentando", "Va disminuyendo", "Siempre es igual"],
-      renderInlineMath: false,
-    },
-
-    preg5: {
-      preg: (
-        <span>
-          ¿Cómo dirías que es A(x) en el intervalo de dominio 20 ≤ x ≤ 60 cuando x se incrementa?
-        </span>
-      ),
-
-      resps: ["Aumenta", "Disminuye", "Es constante"],
-      renderInlineMath: false,
-    },
-
-    preg6: {
-      preg: (
-        <span>
-          ¿En qué intervalo el área A(x) crece?
-        </span>
-      ),
-
-      resps: ["0 ≤ x ≤ 75", "0 ≤ x ≤ 80.5", "20 ≤ x ≤ 120"],
-      renderInlineMath: false,
-    },
-
-    preg7: {
-      preg: (
-        <span>
-          ¿En qué intervalo el área A(x) decrece?
-        </span>
-      ),
-
-      resps: ["75 ≤ x ≤ 150", "0 ≤ x ≤ 150", "75 ≤ x ≤ 120"],
-      renderInlineMath: false,
-    },
-
-    preg8: {
-      preg: (
-        <span>
-          El punto máximo de la gráfica de una función es aquella pareja (x, f(x)) para la cual f(x) es el máximo valor posible del rango.
-          ¿Cuál de los siguientes puntos de la función es un punto máximo?  
-        </span>
-      ),
-
-      resps: ["Punto = (75, 5625)", "Punto = (80, 5600)", "Punto = (110, 4400)"],
-      renderInlineMath: false,
-    },
-
-    preg9: {
-      preg: (
-        <span>
-          El punto mínimo de una función es aquella pareja (x, f(x)) para la cual f(x) es el mínimo valor posible del rango. 
-          ¿Cuál de los siguientes puntos es un punto mínimo? 
-        </span>
-      ),
-
-      resps: ["Punto = (150, 0)", "Punto = (145, 725)", "Punto = (5, 725)"],
-      renderInlineMath: false,
-    },
-
-    preg10: {
-      preg: (
-        <span>
-          ¿Cuántos puntos mínimos tiene la función?
-        </span>
-      ),
+      preg: <span>¿Qué valor es más grande f(55) o f(125)?</span>,
 
       resps: [
-        'Uno',
-        'Dos',
-        "Tres",
-      ],
-      renderInlineMath: false,
-    },
-
-    preg11: {
-      preg: (
         <span>
-          ¿Cuántos puntos máximos tiene la función?
-        </span>
-      ),
-
-      resps: [
-        'Uno',
-        'Dos',
-        "Tres",
+          <InlineMath>f(55)</InlineMath>
+        </span>,
+        <span>
+          <InlineMath>f(125)</InlineMath>{" "}
+        </span>,
+        "Valen lo mismo",
       ],
       renderInlineMath: false,
     },
   };
 
   const correctAnswers = {
-    preg1: "x=23.8",
-    preg2:
-      "A(x)=2600",
-    preg3:
-      "A(x)=5400",
-    preg4: "Va aumentando",
-    preg5: "Creciente",
-    preg6: "0 ≤ x ≤ 75",
-    preg7: "75 ≤ x ≤ 150",
-    preg8: "Punto = (75, 5625)",
-    preg9: "Punto = (150, 0)",
-    preg10: 'Dos',
-    preg11: 'Uno',
+    preg1: "4400",
+    preg2: (
+      <span>
+        Cuando el lado <InlineMath>x</InlineMath> mide 50 m, el área es de 5000{" "}
+        <InlineMath>m^2</InlineMath>"
+      </span>
+    ),
+    preg3: "x=28.9",
+    preg4: (
+      <span>
+        <InlineMath>f(55)</InlineMath>
+      </span>
+    ),
   };
 
   return (
