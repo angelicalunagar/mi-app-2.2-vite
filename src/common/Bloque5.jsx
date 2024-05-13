@@ -1,20 +1,20 @@
 import "../styles/Bloque5.css";
+import "../styles/Bloque1_1.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import VariacionFunciones from "./VariacionFunciones";
 import { BoardsContextProvider } from "../contexts/BoardsContext";
 import { GraficaFContextProvider } from "../contexts/GraficaFContext";
+import { FunCuadratContextProvider } from "../contexts/FunCuadratContext";
 import BoardXX from "./Utilerias/BoardXX";
-import GraficaF from "./GraficosDeFunciones/GraficaF";
-import VariacionIntervaloF from "./FuncionesCuadraticas/VariacionIntervaloF";
-import CaracterisParabola from "./FuncionesCuadraticas/CaracterisParabola";
+import FuncionCuadrat from "./FuncionesCuadraticas/FuncionCuadrat";
 import CaracParab2 from "./FuncionesCuadraticas/CaracParab2";
 
 function Bloque5() {
   return (
     <div className="bloque5-contenedor">
       <h1>Bloque 5</h1>
-      <BoardsContextProvider>
+      {/* <BoardsContextProvider>
         <GraficaFContextProvider>
           <Col md={7}>
             <Row className="sticky">
@@ -27,6 +27,32 @@ function Bloque5() {
             </Row>
           </Col>
         </GraficaFContextProvider>
+      </BoardsContextProvider> */}
+      <BoardsContextProvider>
+        <FunCuadratContextProvider>
+          <Col
+            md={7}
+            className="border borde-redon"
+            style={{ backgroundColor: "#011627" }}
+          >
+            <Row className="sticky">
+              <Col md={8}>
+              <div className="sticky-act16">
+                <div className="tittle-table">
+                  <h6 style={{ color: "white" }}>Ventana gráfica 9</h6>
+                </div>
+                <BoardXX
+                  boardId="board7.2"
+                  boundingBox={[-10, 6800, 180, -300]}
+                />
+              </div>
+              </Col>
+              <Col>
+              <FuncionCuadrat boardId="board7.2" />
+              </Col>
+            </Row>
+          </Col>
+        </FunCuadratContextProvider>
       </BoardsContextProvider>
     </div>
   );

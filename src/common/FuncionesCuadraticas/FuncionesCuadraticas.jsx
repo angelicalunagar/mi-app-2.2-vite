@@ -6,7 +6,8 @@ import { GraficaFContextProvider } from "../../contexts/GraficaFContext";
 import BoardXX from "../Utilerias/BoardXX";
 import GraficaF from "../GraficosDeFunciones/GraficaF";
 import PuntoMovibleF from "../GraficosDeFunciones/PuntoMovibleF";
-import "../../styles/Bloque1_1.css"
+import CaracParab2 from "./CaracParab2";
+import "../../styles/Bloque1_1.css";
 
 import Quiz17 from "./Quiz17";
 import Quiz18 from "./Quiz18";
@@ -193,6 +194,8 @@ const FuncionesCuadraticas = () => {
             </Col>
             <Col>
               <p>
+                <br />
+                <br />
                 Ahora, descontextualicemos la función y escribámosla como una
                 función genérica:
                 <BlockMath>f(x)=150x-x^2</BlockMath>
@@ -209,14 +212,73 @@ const FuncionesCuadraticas = () => {
                 />
               </span>
               <br />
-              Observa que la gráfica de <InlineMath>f(x)=150x-x^2</InlineMath> es una curva continua (no
-              se rompe) que se asemeja a la forma de un arco; esta forma se
-              conoce como parábola.
+              Observa que la gráfica de <InlineMath>
+                f(x)=150x-x^2
+              </InlineMath>{" "}
+              es una curva continua (no se rompe) que se asemeja a la forma de
+              un arco; esta forma se conoce como parábola.
               <Quiz20 />
             </Col>
           </GraficaFContextProvider>
         </BoardsContextProvider>
       </Row>
+      <br />
+      <br />
+      <br />
+      <Row>
+        <BoardsContextProvider>
+          <GraficaFContextProvider>
+            <Col md={7}>
+              <Row className="sticky">
+                <div className="tittle-table">
+                  <h6>Ventana gráfica 13</h6>
+                </div>
+                <BoardXX boardId="board11" boundingBox={[-15, 11, 15, -10]} />
+              </Row>
+            </Col>
+            <Col>
+              <p>
+                <br />
+                <br />
+                La parábola, reconocida por su forma distintiva en arco, posee
+                ciertos atributos particulares. Utiliza la ventana gráfica 13
+                para explorar algunas de las propiedades fundamentales de la
+                parábola.
+              </p>
+              <span className="button-center">
+                <CaracParab2 boardId="board11" />
+              </span>
+            </Col>
+          </GraficaFContextProvider>
+        </BoardsContextProvider>
+      </Row>
+     {/*  <Row>
+        <BoardsContextProvider>
+          <GraficaFContextProvider>
+            <Col md={7}>
+              <Row className="sticky">
+                <div className="tittle-table">
+                  <h6>Ventana gráfica 13</h6>
+                </div>
+                <BoardXX boardId="board11" boundingBox={[-15, 11, 15, -10]} />
+              </Row>
+            </Col>
+            <Col>
+              <p>
+                <br />
+                <br />
+                La parábola, reconocida por su forma distintiva en arco, posee
+                ciertos atributos particulares. Utiliza la ventana gráfica 13
+                para explorar algunas de las propiedades fundamentales de la
+                parábola.
+              </p>
+              <span className="button-center">
+                <CaracParab2 boardId="board11" />
+              </span>
+            </Col>
+          </GraficaFContextProvider>
+        </BoardsContextProvider>
+      </Row> */}
     </Container>
   );
 };

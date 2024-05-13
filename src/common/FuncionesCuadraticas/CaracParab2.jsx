@@ -97,36 +97,44 @@ const CaracParab2 = ({ boardId }) => {
 
   return (
     <div>
-      <FormGroup>
-        <Form.Check
-          type="checkbox"
-          label="Hacia abajo"
-          checked={downward}
-          onChange={handleCheckboxChangeDownward}
-        />
-        <Form.Check
-          type="checkbox"
-          label="Hacia arriba"
-          checked={upward}
-          onChange={handleCheckboxChangeUpward}
-        />
-      </FormGroup>
-
-      <FormGroup>
-        <Form.Check
-          type="checkbox"
-          label="Poco abierta"
-          checked={narrow}
-          onChange={handleCheckboxChangeNarrow}
-        />
-        <Form.Check
-          type="checkbox"
-          label="Muy abierta"
-          checked={wide}
-          onChange={handleCheckboxChangeWide}
-        />
-      </FormGroup>
       <div>
+        <p style={{marginBottom: '0.3rem'}}>
+          <b>Concavidad</b>
+        </p>
+        <FormGroup>
+          <Form.Check
+            type="checkbox"
+            label="Hacia abajo"
+            checked={downward}
+            onChange={handleCheckboxChangeDownward}
+          />
+          <Form.Check
+            type="checkbox"
+            label="Hacia arriba"
+            checked={upward}
+            onChange={handleCheckboxChangeUpward}
+          />
+        </FormGroup>
+        <FormGroup>
+          <Form.Check
+            type="checkbox"
+            label="Poco abierta"
+            checked={narrow}
+            onChange={handleCheckboxChangeNarrow}
+          />
+          <Form.Check
+            type="checkbox"
+            label="Muy abierta"
+            checked={wide}
+            onChange={handleCheckboxChangeWide}
+          />
+        </FormGroup>
+      </div>
+<br />
+      <div>
+        <p style={{marginBottom: '0.3rem'}}>
+          <b>Vértice</b>
+        </p>
         <Form.Check
           type="checkbox"
           label="Mostrar vértice"
@@ -134,7 +142,11 @@ const CaracParab2 = ({ boardId }) => {
           onChange={() => setShowVertex(!showVertex)}
         />
       </div>
+      <br />
       <div>
+        <p style={{marginBottom: '0.3rem'}}>
+          <b>Raíces</b>
+        </p>
         <Form.Check
           type="checkbox"
           label="Mostrar raíces"
