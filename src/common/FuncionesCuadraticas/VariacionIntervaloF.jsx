@@ -13,18 +13,28 @@ const VariacionIntervaloF = ({ boardId, initialCoordinates }) => {
       const board = brd[boardId];
 
       if (intervaloDib) {
-        const GliderAId = ids.idgGliderA; // Obtener el ID del segmento desde la propiedad idSegBG
-        
+        const GliderAId = ids.idGliderA; // Obtener el ID del segmento desde la propiedad idSegBG
+        const GliderBId = ids.idGliderB;
+        const CurveFId = ids.idCurveF;
+        const SegmentPerpAToXAxisId = ids.idSegmentPerpAToXAxis;
+        const SegmentPerpAToYAxisId = ids.idSegmentPerpAToYAxis;
+        const SegmentPerpBToXAxisId = ids.idSegmentPerpBToXAxis;
+        const SegmentPerpBToYAxisId = ids.idSegmentPerpBToYAxis;
+        const CurveABXId = ids.idCurveABX;
+        const CurveABYId = ids.idCurveABY;
+        const CurveF = ids.idCurveF
+
         board.removeObject(GliderAId, false); // Eliminar el objeto del tablero usando su ID
-        board.removeObject(ids.idGliderB, false);
-        board.removeObject(ids.idCurveF, false);
-        board.removeObject(ids.idSegmentPerpAToXAxis, false);
-        board.removeObject(ids.idSegmentPerpBToXAxis, false);
-        board.removeObject(ids.idSegmentPerpAToYAxis, false);
-        board.removeObject(ids.idSegmentPerpBToYAxis, false);
-        board.removeObject(ids.idCurveABX, false);
-        board.removeObject(ids.idCurveABY, false);
-        
+        board.removeObject(GliderBId, false);
+        board.removeObject(CurveFId, false);
+        board.removeObject(SegmentPerpAToXAxisId, false);
+        board.removeObject(SegmentPerpBToXAxisId, false);
+        board.removeObject(SegmentPerpAToYAxisId, false);
+        board.removeObject(SegmentPerpBToYAxisId, false);
+        board.removeObject(CurveABXId, false);
+        board.removeObject(CurveABYId, false);
+        board.removeObject(CurveF, false);
+
         setIds((prevIds) => ({
           ...prevIds,
           idGliderA: "",
@@ -49,12 +59,11 @@ const VariacionIntervaloF = ({ boardId, initialCoordinates }) => {
             name: "B",
           });
 
-          const curveF = board.create("functiongraph", [
-            ids.funcionGrafica,
-            () => gliderA.X(),
-            () => gliderB.X(),
-          ],
-          { strokeWidth: 1, dash: 2});
+          const curveF = board.create(
+            "functiongraph",
+            [ids.funcionGrafica, () => gliderA.X(), () => gliderB.X()],
+            { strokeWidth: 1, dash: 2 }
+          );
           console.log(/* id de la grafica:" ${ids.idGraficaF} */);
 
           const segmentPerpAToXAxis = board.create(
@@ -92,14 +101,14 @@ const VariacionIntervaloF = ({ boardId, initialCoordinates }) => {
             ],
             { strokeWidth: 1, dash: 2 }
           );
-board.suspendUpdate();
+          board.suspendUpdate();
           var curveABX = board.create("curve", [[], []], {
-            strokeWidth: 3,
+            dash: 2,
             fillColor: "yellow",
             fillOpacity: 0.3,
           });
           var curveABY = board.create("curve", [[], []], {
-            strokeWidth: 3,
+            dash: 2,
             fillColor: "blue",
             fillOpacity: 0.3,
           });
@@ -133,7 +142,7 @@ board.suspendUpdate();
             this.dataY.push(gliderB.Y());
           };
 
-          board.unsuspendUpdate()
+          board.unsuspendUpdate();
           // Guarda el ID del segmento en la lista de IDs
           setIds((prevIds) => ({
             ...prevIds,
@@ -145,10 +154,10 @@ board.suspendUpdate();
             idSegmentPerpBToYAxis: segmentPerpBToYAxis.id,
             idCurveABX: curveABX.id,
             idCurveABY: curveABY.id,
+            idCurveF: curveF.id
           }));
 
           setIntervaloDib(true);
-
         }
       }
     }

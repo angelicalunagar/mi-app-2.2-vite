@@ -3,10 +3,11 @@ import { BoardsContext } from "../../contexts/BoardsContext";
 import { GraficaFContext } from "../../contexts/GraficaFContext";
 import { Button } from "react-bootstrap";
 
-const GraficaF = ({ boardId, funcionGrafica }) => {
+const GraficaFCortada = ({ boardId, funcionGrafica, intervaloX }) => {
   const { brd, ids, setIds } = useContext(BoardsContext);
   const { dibujarGrafica, setDibujarGrafica, setDibPuntoM, setIntervaloDib } =
     useContext(GraficaFContext);
+  const [xi, xf] = intervaloX;
 
   const toggleGraficaF = () => {
     if (brd[boardId]) {
@@ -67,7 +68,6 @@ const GraficaF = ({ boardId, funcionGrafica }) => {
           idSegmentPerpBToYAxis: "",
           idCurveABX: "",
           idCurveABY: "",
-         
         }));
 
         setDibujarGrafica(false);
@@ -87,7 +87,7 @@ const GraficaF = ({ boardId, funcionGrafica }) => {
 
           setDibujarGrafica(true);
         } */
-        const grafica = board.create("functiongraph", [funcionGrafica]);
+        const grafica = board.create("functiongraph", [funcionGrafica, xi, xf]);
 
         // Guarda el ID de la recta en la lista de IDs
         setIds((prevIds) => ({
@@ -112,4 +112,4 @@ const GraficaF = ({ boardId, funcionGrafica }) => {
   );
 };
 
-export default GraficaF;
+export default GraficaFCortada;

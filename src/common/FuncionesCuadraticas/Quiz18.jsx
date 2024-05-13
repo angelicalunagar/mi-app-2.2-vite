@@ -8,10 +8,12 @@ const Quiz18 = () => {
   const activityNumber = "18";
   const instruction = (
     <span>
-      Grafica la función <InlineMath>{"f(x)= 150x−x^2"}</InlineMath> en la
-      Ventana gráfica 9 y responde a estas preguntas. Recuerda que por ahora
-      estamos considerando a la función dentro del contexto del área del
-      terreno.
+      Continuando con el caso del granjero, éste decidió construir un corral de
+      lado <InlineMath>{"x=50 \\, m"}</InlineMath>, donde ha metido a sus gallinas, pero
+      se da cuenta de que le falta colocar adentro una mini bodega para guardar
+      alimento y utensilios, la cual requiere al menos{" "}
+      <InlineMath>{"200 \\, m^2"}</InlineMath>. A partir de esta situación,
+      responde las siguientes preguntas.
     </span>
   );
 
@@ -19,38 +21,41 @@ const Quiz18 = () => {
     preg1: {
       preg: (
         <span>
-          ¿Cuánto tiene que medir el lado x para que el área A(x) sea de 3000 m2?
+          Si el granjero aumentara el lado en{" "}
+          <InlineMath>{"5 \\, m"}</InlineMath>, es decir si ahora el lado midiera{" "}
+          <InlineMath>{"55 \\, m"}</InlineMath>, ¿cuánto aumentaría el área?
         </span>
       ),
-      resps: ["x=23.8", "x=12.5", "x=61"],
+      resps: ["225 \\, m^2", "175 \\, m^2", "400 \\, m^2"],
       renderInlineMath: true,
     },
 
     preg2: {
       preg: (
         <span>
-          
-        ¿Cuánto vale el área cuando el lado x mide 20 m?
+          Qué pasaría si el granjero volviera a aumentar nuevamente en{" "}
+          <InlineMath>{"5 \\, m"}</InlineMath> el lado, es decir, si ahora el
+          lado midiera <InlineMath>{"60 \\, m"}</InlineMath>. ¿Cuánto aumentaría
+          el área con respecto al anterior?
         </span>
       ),
-      resps: [
-        "A(x)=2600",
-        "A(x)=200",
-        "A(x)=5000",
-      ],
-      renderInlineMath: false,
+      resps: ["225 \\, m^2", "175 \\, m^2", "400 \\, m^2"],
+      renderInlineMath: true,
     },
 
     preg3: {
       preg: (
         <span>
-          ¿Cuánto vale el área cuando el lado x mide 60 m?
+          A partir de las dos preguntas anteriores se puede concluir que, si
+          bien en el intervalo del dominio{" "}
+          <InlineMath>{"0 \\geq x \\geq 75"}</InlineMath> el área{" "}
+          <InlineMath>A(x)</InlineMath> aumenta:
         </span>
       ),
       resps: [
-        "A(x)=5400",
-        "A(x)=5000",
-        "A(x)=5950",
+        "El aumento del área es distinto para intervalos iguales del dominio",
+        "El aumento del área es igual para intervalos iguales del dominio",
+        "Nunca hay aumento de área",
       ],
       renderInlineMath: false,
     },
@@ -58,116 +63,70 @@ const Quiz18 = () => {
     preg4: {
       preg: (
         <span>
-          Desliza el punto M de manera gradual dentro del intervalo de dominio 20 ≤ x ≤ 60, incrementando x. ¿Cómo varía el área A(x) a medida que el punto M se desplaza?
+          Si el granjero comienza con un corral de lado{" "}
+          <InlineMath>{"x=50 \\, m"}</InlineMath>, ¿cuánto deberá aumentar la
+          longitud del lado para que el área de su corral se incremente{" "}
+          <InlineMath>{"200 \\, m^2"}</InlineMath>?
         </span>
       ),
 
-      resps: ["Va aumentando", "Va disminuyendo", "Siempre es igual"],
-      renderInlineMath: false,
+      resps: ["4.4 \\, m", "5 \\, m", "7.2 \\, m"],
+      renderInlineMath: true,
     },
 
     preg5: {
       preg: (
         <span>
-          ¿Cómo dirías que es A(x) en el intervalo de dominio 20 ≤ x ≤ 60 cuando x se incrementa?
+          El granjero decide hacer otro corral de lado <InlineMath>{"x=75 \\, m"}</InlineMath>, pero quiere
+          aumentar el lado en <InlineMath>{"10 \\, m"}</InlineMath> con el objetivo de aumentar el área. ¿Qué
+          sucederá con el área del corral?
         </span>
       ),
 
-      resps: ["Aumenta", "Disminuye", "Es constante"],
-      renderInlineMath: false,
+      resps: ["Aumentará \\, 100 \\, m^2", "Disminuirá \\, 100 \\, m^2", "Permanecerá \\, igual"],
+      renderInlineMath: true,
     },
 
     preg6: {
-      preg: (
-        <span>
-          ¿En qué intervalo el área A(x) crece?
-        </span>
-      ),
+      preg: <span>¿En cuál de los siguientes intervalos <InlineMath>f(x)</InlineMath> disminuye más?	</span>,
 
-      resps: ["0 ≤ x ≤ 75", "0 ≤ x ≤ 80.5", "20 ≤ x ≤ 120"],
+      resps: ["75 ≤ x ≤ 85", "95 ≤ x ≤ 105", "120 ≤ x ≤ 130"],
       renderInlineMath: false,
     },
 
     preg7: {
       preg: (
         <span>
-          ¿En qué intervalo el área A(x) decrece?
+          ¿En cuál de los siguientes intervalos <InlineMath>f(x)</InlineMath> incrementa más?	
         </span>
       ),
 
-      resps: ["75 ≤ x ≤ 150", "0 ≤ x ≤ 150", "75 ≤ x ≤ 120"],
+      resps: ["55 ≤ x ≤ 65", "70 ≤ x ≤ 75 ", "120 ≤ x ≤ 130"],
       renderInlineMath: false,
     },
 
     preg8: {
       preg: (
         <span>
-          El punto máximo de la gráfica de una función es aquella pareja (x, f(x)) para la cual f(x) es el máximo valor posible del rango.
-          ¿Cuál de los siguientes puntos de la función es un punto máximo?  
+          Se puede concluir que la función <InlineMath>A(x) = 150x -x^2</InlineMath>:
         </span>
       ),
 
-      resps: ["Punto = (75, 5625)", "Punto = (80, 5600)", "Punto = (110, 4400)"],
-      renderInlineMath: false,
-    },
-
-    preg9: {
-      preg: (
-        <span>
-          El punto mínimo de una función es aquella pareja (x, f(x)) para la cual f(x) es el mínimo valor posible del rango. 
-          ¿Cuál de los siguientes puntos es un punto mínimo? 
-        </span>
-      ),
-
-      resps: ["Punto = (150, 0)", "Punto = (145, 725)", "Punto = (5, 725)"],
-      renderInlineMath: false,
-    },
-
-    preg10: {
-      preg: (
-        <span>
-          ¿Cuántos puntos mínimos tiene la función?
-        </span>
-      ),
-
-      resps: [
-        'Uno',
-        'Dos',
-        "Tres",
-      ],
-      renderInlineMath: false,
-    },
-
-    preg11: {
-      preg: (
-        <span>
-          ¿Cuántos puntos máximos tiene la función?
-        </span>
-      ),
-
-      resps: [
-        'Uno',
-        'Dos',
-        "Tres",
-      ],
+      resps: ["Cambia más rápidamente en intervalos del dominio alejados del punto máximo", "Cambia más rápidamente en intervalos del dominio cercanos al punto máximo", "Cambia lo mismo a intervalos iguales del dominio"],
       renderInlineMath: false,
     },
   };
 
   const correctAnswers = {
-    preg1: "x=23.8",
-    preg2:
-      "A(x)=2600",
-    preg3:
-      "A(x)=5400",
-    preg4: "Va aumentando",
-    preg5: "Creciente",
-    preg6: "0 ≤ x ≤ 75",
-    preg7: "75 ≤ x ≤ 150",
-    preg8: "Punto = (75, 5625)",
-    preg9: "Punto = (150, 0)",
-    preg10: 'Dos',
-    preg11: 'Uno',
+    preg1: "225 \\, m^2",
+    preg2: "175 \\, m^2",
+    preg3: "El aumento del área es distinto para intervalos iguales del dominio",
+    preg4: "4.4 \\, m",
+    preg5: "Disminuirá \\, 100 \\, m^2",
+    preg6: "120 ≤ x ≤ 130",
+    preg7: "55 ≤ x ≤ 65",
+    preg8: "Cambia más rápidamente en intervalos del dominio alejados del punto máximo",
+    
   };
 
   return (

@@ -6,9 +6,14 @@ import { GraficaFContextProvider } from "../../contexts/GraficaFContext";
 import BoardXX from "../Utilerias/BoardXX";
 import GraficaF from "../GraficosDeFunciones/GraficaF";
 import PuntoMovibleF from "../GraficosDeFunciones/PuntoMovibleF";
-import Quiz18 from "./Quiz18";
+import "../../styles/Bloque1_1.css"
+
 import Quiz17 from "./Quiz17";
-import VariacionIntervaloF from "./VariacionIntervaloF"
+import Quiz18 from "./Quiz18";
+import Quiz19 from "./Quiz19";
+import Quiz20 from "./Quiz20";
+import VariacionIntervaloF from "./VariacionIntervaloF";
+import GraficaFCortada from "../Utilerias/GraficaFCortada";
 import "../../styles/Bloque1_1.css";
 
 const FuncionesCuadraticas = () => {
@@ -52,10 +57,17 @@ const FuncionesCuadraticas = () => {
                   boardId="board7"
                   boundingBox={[-10, 6800, 180, -300]}
                 />
-                <span style={{ display: "inline-block" }}>
-                  <GraficaF
+                <span
+                  style={{
+                    display: "inline-flex",
+                    justifyContent: "space-evenly",
+                    alignItems: "center",
+                  }}
+                >
+                  <GraficaFCortada
                     boardId="board7"
                     funcionGrafica={(x) => 150 * x - x * x}
+                    intervaloX={[0, 150]}
                   />
                   <PuntoMovibleF
                     boardId="board7"
@@ -65,40 +77,142 @@ const FuncionesCuadraticas = () => {
               </Row>
             </Col>
             <Col>
-            <Quiz17 />
+              <Quiz17 />
+            </Col>
+          </GraficaFContextProvider>
+        </BoardsContextProvider>
+      </Row>
+      <br />
+      <br />
+      <br />
+      <Row>
+        <BoardsContextProvider>
+          <GraficaFContextProvider>
+            <Col md={7}>
+              <Row className="sticky">
+                <div className="tittle-table">
+                  <h6>Ventana gráfica 10</h6>
+                </div>
+                <BoardXX
+                  boardId="board8"
+                  boundingBox={[-10, 6800, 180, -300]}
+                />
+                <div
+                  style={{
+                    display: "inline-flex",
+                    justifyContent: "space-evenly",
+                  }}
+                >
+                  <GraficaFCortada
+                    boardId="board8"
+                    funcionGrafica={(x) => 150 * x - x * x}
+                    intervaloX={[0, 150]}
+                  />
+                  <VariacionIntervaloF
+                    boardId="board8"
+                    initialCoordinates={[8, 1136, 20, 2600]}
+                  />
+                </div>
+              </Row>
+            </Col>
+            <Col>
               <Quiz18 />
             </Col>
           </GraficaFContextProvider>
         </BoardsContextProvider>
       </Row>
-
+      <br />
+      <br />
+      <br />
       <Row>
-      <BoardsContextProvider>
+        <BoardsContextProvider>
           <GraficaFContextProvider>
             <Col md={7}>
               <Row className="sticky">
                 <div className="tittle-table">
-                  <h6>Ventana gráfica 9</h6>
+                  <h6>Ventana gráfica 11</h6>
                 </div>
                 <BoardXX
-                  boardId="board7.5"
+                  boardId="board9"
                   boundingBox={[-10, 6800, 180, -300]}
                 />
-                <span style={{ display: "inline-block" }}>
-                  <GraficaF
-                    boardId="board7.5"
+                <span
+                  style={{
+                    display: "inline-flex",
+                    justifyContent: "space-evenly",
+                    alignItems: "center",
+                  }}
+                >
+                  <GraficaFCortada
+                    boardId="board9"
                     funcionGrafica={(x) => 150 * x - x * x}
+                    intervaloX={[0, 150]}
                   />
-                   <VariacionIntervaloF
-                    boardId="board7.5"
-                    initialCoordinates={[8, 1136, 20, 2600]}
+                  <PuntoMovibleF
+                    boardId="board9"
+                    initialCoordinates={[8, 1136]}
                   />
                 </span>
               </Row>
             </Col>
             <Col>
-            <Quiz17 />
-              <Quiz18 />
+              <Quiz19 />
+            </Col>
+          </GraficaFContextProvider>
+        </BoardsContextProvider>
+      </Row>
+
+      <br />
+      <br />
+      <br />
+      <Row>
+        <BoardsContextProvider>
+          <GraficaFContextProvider>
+            <Col md={7}>
+              <Row className="sticky">
+                <div className="tittle-table">
+                  <h6>Ventana gráfica 12</h6>
+                </div>
+                <BoardXX
+                  boardId="board10"
+                  boundingBox={[-10, 6800, 180, -300]}
+                />
+                <span
+                  style={{
+                    display: "inline-flex",
+                    justifyContent: "space-evenly",
+                    alignItems: "center",
+                  }}
+                >
+                  <PuntoMovibleF
+                    boardId="board10"
+                    initialCoordinates={[8, 1136]}
+                  />
+                </span>
+              </Row>
+            </Col>
+            <Col>
+              <p>
+                Ahora, descontextualicemos la función y escribámosla como una
+                función genérica:
+                <BlockMath>f(x)=150x-x^2</BlockMath>
+                ¿Cuáles son su dominio y rango máximos? Puedes usar el siguiente
+                botón para graficar la función
+                <InlineMath>f(x)=150x-x^2</InlineMath> en la Ventana gráfica 12
+                y contestar esta pregunta.
+                <br />
+              </p>
+              <span className="button-center">
+                <GraficaF
+                  boardId="board10"
+                  funcionGrafica={(x) => 150 * x - x * x}
+                />
+              </span>
+              <br />
+              Observa que la gráfica de <InlineMath>f(x)=150x-x^2</InlineMath> es una curva continua (no
+              se rompe) que se asemeja a la forma de un arco; esta forma se
+              conoce como parábola.
+              <Quiz20 />
             </Col>
           </GraficaFContextProvider>
         </BoardsContextProvider>
