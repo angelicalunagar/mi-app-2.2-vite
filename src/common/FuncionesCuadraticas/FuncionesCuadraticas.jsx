@@ -2,11 +2,14 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { BlockMath, InlineMath } from "react-katex";
 import { BoardsContextProvider } from "../../contexts/BoardsContext";
+import { FunCuadratContextProvider } from "../../contexts/FunCuadratContext";
 import { GraficaFContextProvider } from "../../contexts/GraficaFContext";
+import FuncionCuadrat from "./FuncionCuadrat";
 import BoardXX from "../Utilerias/BoardXX";
 import GraficaF from "../GraficosDeFunciones/GraficaF";
 import PuntoMovibleF from "../GraficosDeFunciones/PuntoMovibleF";
 import CaracParab2 from "./CaracParab2";
+import Quiz21 from "./Quiz21";
 import "../../styles/Bloque1_1.css";
 
 import Quiz17 from "./Quiz17";
@@ -252,33 +255,39 @@ const FuncionesCuadraticas = () => {
           </GraficaFContextProvider>
         </BoardsContextProvider>
       </Row>
-     {/*  <Row>
+
+
+      <Row className="row-nuevotema">
         <BoardsContextProvider>
-          <GraficaFContextProvider>
-            <Col md={7}>
+        <FunCuadratContextProvider>
+            <Col
+              className="border borde-redon"
+              md={7}
+              style={{ backgroundColor: "#011627" }}
+            >
               <Row className="sticky">
+              <Col md={7}>
+              <div className="sticky-act16">
                 <div className="tittle-table">
-                  <h6>Ventana gráfica 13</h6>
+                  <h6 style={{ color: "white" }}>Ventana gráfica 14</h6>
                 </div>
-                <BoardXX boardId="board11" boundingBox={[-15, 11, 15, -10]} />
-              </Row>
+                <BoardXX
+                  boardId="board12"
+                  boundingBox={[-10, 6800, 180, -300]}
+                />
+              </div>
+              </Col>
+              <Col>
+              <FuncionCuadrat boardId="board12" />
+              </Col>
+            </Row>
             </Col>
             <Col>
-              <p>
-                <br />
-                <br />
-                La parábola, reconocida por su forma distintiva en arco, posee
-                ciertos atributos particulares. Utiliza la ventana gráfica 13
-                para explorar algunas de las propiedades fundamentales de la
-                parábola.
-              </p>
-              <span className="button-center">
-                <CaracParab2 boardId="board11" />
-              </span>
+              <Quiz21 />
             </Col>
-          </GraficaFContextProvider>
+            </FunCuadratContextProvider>
         </BoardsContextProvider>
-      </Row> */}
+      </Row>
     </Container>
   );
 };

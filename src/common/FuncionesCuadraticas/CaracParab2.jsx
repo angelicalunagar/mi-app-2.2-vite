@@ -24,10 +24,17 @@ const CaracParab2 = ({ boardId }) => {
         setIds((prevIds) => ({ ...prevIds, idVertex: "" }));
       }
 
+      // Eliminar las raíces si existen
+      if (ids.idpuntoA && ids.idpuntoB) {
+        board.removeObject(ids.idpuntoA, false);
+        board.removeObject(ids.idpuntoB, false);
+        setIds((prevIds) => ({ ...prevIds, idpuntoA: "", idpuntoB: "" }));
+      }
+
       // Verificar si se debe mostrar el vértice
       if (showVertex) {
         // Crear el nuevo vértice
-        const vertex = board.createElement("point", [0, b], {
+        const vertex = board.create("point", [0, b], {
           name: "Vértice",
           size: 2,
         });
@@ -43,7 +50,7 @@ const CaracParab2 = ({ boardId }) => {
       }
 
       // Actualizar la función gráfica cuando cambien los valores de a y b
-      const graph = board.createElement("functiongraph", [
+      const graph = board.create("functiongraph", [
         (x) => a * x ** 2 + b,
       ]);
 
@@ -51,7 +58,21 @@ const CaracParab2 = ({ boardId }) => {
       setIds((prevIds) => ({ ...prevIds, idParabola: graph.id }));
 
       if (showRoots) {
-        const roots = board.createElement(
+        const r1 = board.create("point", [Math.sqrt(-b / a), 0], {
+          name: "A",
+          size: 2,
+        });
+        const r2 = board.create("point", [-Math.sqrt(-b / a), 0],
+        {
+          name: "B",
+          size: 2,
+        });
+
+        // Guardar el ID de los puntos
+        setIds((prevIds) => ({ ...prevIds, idpuntoA: r1.id }));
+        setIds((prevIds) => ({ ...prevIds, idpuntoB: r2.id }));
+
+        /* const roots = board.createElement(
           "intersection",
           [
             graph,
@@ -65,7 +86,7 @@ const CaracParab2 = ({ boardId }) => {
             ),
           ],
           { withLabel: true }
-        );
+        ); */
       }
     }
   }, [a, b, showVertex, showRoots]);
@@ -98,7 +119,7 @@ const CaracParab2 = ({ boardId }) => {
   return (
     <div>
       <div>
-        <p style={{marginBottom: '0.3rem'}}>
+        <p style={{ marginBottom: "0.3rem" }}>
           <b>Concavidad</b>
         </p>
         <FormGroup>
@@ -130,9 +151,9 @@ const CaracParab2 = ({ boardId }) => {
           />
         </FormGroup>
       </div>
-<br />
+      <br />
       <div>
-        <p style={{marginBottom: '0.3rem'}}>
+        <p style={{ marginBottom: "0.3rem" }}>
           <b>Vértice</b>
         </p>
         <Form.Check
@@ -144,7 +165,7 @@ const CaracParab2 = ({ boardId }) => {
       </div>
       <br />
       <div>
-        <p style={{marginBottom: '0.3rem'}}>
+        <p style={{ marginBottom: "0.3rem" }}>
           <b>Raíces</b>
         </p>
         <Form.Check

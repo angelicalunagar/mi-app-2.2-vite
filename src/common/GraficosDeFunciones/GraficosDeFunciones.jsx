@@ -772,6 +772,8 @@ const GraficosDeFunciones = () => {
           </FuncLinealContextProvider>
         </BoardsContextProvider>
       </Row>
+
+      
     </Container>
   );
 };

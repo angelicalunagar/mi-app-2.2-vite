@@ -1,4 +1,4 @@
-// Quiz19.js
+// Quiz20.js
 import React from "react";
 import Quiz from "../Utilerias/Quiz";
 import { BlockMath, InlineMath } from "react-katex";
@@ -115,14 +115,14 @@ const Quiz20 = () => {
     preg8: {
       preg: <span>¿Qué valores del dominio tienen una imagen positiva (<InlineMath>{"f(x) > 0"}</InlineMath>)?</span>,
 
-      resps: ["0 \\leq x \\leq 150", "150 \\leq x < \\infty", "-\\infty < x \\leq 0"],
+      resps: ["0 < x < 150", "150 < x < \\infty", "-\\infty < x < 0"],
       renderInlineMath: true,
     },
 
     preg9: {
       preg: <span>¿Qué valores del dominio tienen una imagen negativa (<InlineMath>{"f(x) < 0"}</InlineMath>)?</span>,
 
-      resps: ["-\\infty < x < \\infty,\\ excepto \\  0 \\leq x \\leq 150", "0 \\leq x \\leq 150", "-\\infty < x < \\infty"],
+      resps: ["-\\infty < x < \\infty,\\ excepto \\  0 < x < 150", "0 < x \\leq 150", "-\\infty < x < \\infty"],
       renderInlineMath: true,
     },
   };
@@ -135,8 +135,8 @@ const Quiz20 = () => {
     preg5: "Punto = (75, 5625)",
     preg6: "No hay puntos mínimos",
     preg7: "f(40)=4400, f(40) es positiva",
-    preg8: "0 \\leq x \\leq 150",
-    preg9: "-\\infty < x < \\infty,\\ excepto \\  0 \\leq x \\leq 150",
+    preg8: "0 < x < 150",
+    preg9: "-\\infty < x < \\infty,\\ excepto \\  0 < x < 150",
   };
 
   return (

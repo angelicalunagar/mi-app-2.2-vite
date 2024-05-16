@@ -6,53 +6,66 @@ import VariacionFunciones from "./VariacionFunciones";
 import { BoardsContextProvider } from "../contexts/BoardsContext";
 import { GraficaFContextProvider } from "../contexts/GraficaFContext";
 import { FunCuadratContextProvider } from "../contexts/FunCuadratContext";
+import { FunCubicaContextProvider } from "../contexts/FunCubicaContext";
 import BoardXX from "./Utilerias/BoardXX";
-import FuncionCuadrat from "./FuncionesCuadraticas/FuncionCuadrat";
-import CaracParab2 from "./FuncionesCuadraticas/CaracParab2";
+import GraficaF from "./GraficosDeFunciones/GraficaF";
+import GraficaFSinBoton from "./FuncionesPolinomiales.jsx/GraficaFSinBoton";
+import PuntoMovibleF from "./GraficosDeFunciones/PuntoMovibleF";
+import VariacionIntervaloF from "./FuncionesCuadraticas/VariacionIntervaloF";
+import FunCubicaParam from "./FuncionesPolinomiales.jsx/FunCubicaParam";
 
 function Bloque5() {
   return (
     <div className="bloque5-contenedor">
       <h1>Bloque 5</h1>
-      {/* <BoardsContextProvider>
-        <GraficaFContextProvider>
-          <Col md={7}>
-            <Row className="sticky">
-              <div className="tittle-table">
-                <h6>Ventana gráfica 9</h6>
-              </div>
 
-              <BoardXX boardId="board7.1" boundingBox={[-15, 11, 15, -4]} />
-              <CaracParab2 boardId="board7.1" />
-            </Row>
-          </Col>
-        </GraficaFContextProvider>
-      </BoardsContextProvider> */}
       <BoardsContextProvider>
-        <FunCuadratContextProvider>
+        <GraficaFContextProvider>
+          <Row>
+            <Col md={6}>
+              <BoardXX boardId="board7.4" boundingBox={[-8, 40, 8, -25]}/>
+
+              <GraficaFSinBoton
+                boardId="board7.4"
+                funcionGrafica={(x) =>  x * x * x + 5 * x * x + x - 2}
+              />
+
+              <PuntoMovibleF boardId="board7.4" initialCoordinates={[1, 6]} />
+
+              <VariacionIntervaloF
+                boardId="board7.4"
+                initialCoordinates={[1, 5, 2, 28]}
+              />
+            </Col>
+          </Row>
+        </GraficaFContextProvider>
+      </BoardsContextProvider>
+
+      <BoardsContextProvider>
+        <FunCubicaContextProvider>
           <Col
             md={7}
             className="border borde-redon"
             style={{ backgroundColor: "#011627" }}
           >
             <Row className="sticky">
-              <Col md={8}>
-              <div className="sticky-act16">
-                <div className="tittle-table">
-                  <h6 style={{ color: "white" }}>Ventana gráfica 9</h6>
+              <Col md={7}>
+                <div className="sticky-act16">
+                  <div className="tittle-table">
+                    <h6 style={{ color: "white" }}>Ventana gráfica 9</h6>
+                  </div>
+                  <BoardXX
+                    boardId="board7.3"
+                    boundingBox={[-12, 30, 12, -30]}
+                  />
                 </div>
-                <BoardXX
-                  boardId="board7.2"
-                  boundingBox={[-10, 6800, 180, -300]}
-                />
-              </div>
               </Col>
               <Col>
-              <FuncionCuadrat boardId="board7.2" />
+                <FunCubicaParam boardId="board7.3" />
               </Col>
             </Row>
           </Col>
-        </FunCuadratContextProvider>
+        </FunCubicaContextProvider>
       </BoardsContextProvider>
     </div>
   );

@@ -112,7 +112,7 @@ const Quiz18 = () => {
         </span>
       ),
 
-      resps: ["Cambia más rápidamente en intervalos del dominio alejados del punto máximo", "Cambia más rápidamente en intervalos del dominio cercanos al punto máximo", "Cambia lo mismo a intervalos iguales del dominio"],
+      resps: ["Cambia más rápidamente en intervalos del dominio alejados del punto más alto de la gráfica (punto máximo)", "Cambia más rápidamente en intervalos del dominio cercanos al punto más alto de la gráfica (punto máximo)", "Cambia lo mismo a intervalos iguales del dominio"],
       renderInlineMath: false,
     },
   };
@@ -125,7 +125,7 @@ const Quiz18 = () => {
     preg5: "Disminuirá \\, 100 \\, m^2",
     preg6: "120 ≤ x ≤ 130",
     preg7: "55 ≤ x ≤ 65",
-    preg8: "Cambia más rápidamente en intervalos del dominio alejados del punto máximo",
+    preg8: "Cambia más rápidamente en intervalos del dominio alejados del punto más alto de la gráfica (punto máximo)",
     
   };
 
