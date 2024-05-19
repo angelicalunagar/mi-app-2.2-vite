@@ -96,11 +96,11 @@ const PuntoMovibleF = ( {boardId, initialCoordinates } ) => {
   };
 
   return (
-    <div>
+    <>
       <Button onClick={togglePuntoM}>
         {dibPuntoM? "Borrar Punto M" : "Dibujar Punto M"}
       </Button>
-    </div>
+    </>
   );
 };
 

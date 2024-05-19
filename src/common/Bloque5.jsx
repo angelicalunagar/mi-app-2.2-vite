@@ -13,6 +13,7 @@ import GraficaFSinBoton from "./FuncionesPolinomiales.jsx/GraficaFSinBoton";
 import PuntoMovibleF from "./GraficosDeFunciones/PuntoMovibleF";
 import VariacionIntervaloF from "./FuncionesCuadraticas/VariacionIntervaloF";
 import FunCubicaParam from "./FuncionesPolinomiales.jsx/FunCubicaParam";
+import Quiz22 from "./FuncionesPolinomiales.jsx/Quiz22";
 
 function Bloque5() {
   return (
@@ -21,21 +22,34 @@ function Bloque5() {
 
       <BoardsContextProvider>
         <GraficaFContextProvider>
-          <Row>
+          <Row className="grafica-quiz">
             <Col md={6}>
-              <BoardXX boardId="board7.4" boundingBox={[-8, 40, 8, -25]}/>
+              <Row className="sticky">
+                <div className="tittle-table">
+                  <h6>Ventana gráfica 15</h6>
+                </div>
+                <BoardXX boardId="board7.4" boundingBox={[-8, 40, 8, -25]} />
 
-              <GraficaFSinBoton
-                boardId="board7.4"
-                funcionGrafica={(x) =>  x * x * x + 5 * x * x + x - 2}
-              />
-
-              <PuntoMovibleF boardId="board7.4" initialCoordinates={[1, 6]} />
-
-              <VariacionIntervaloF
-                boardId="board7.4"
-                initialCoordinates={[1, 5, 2, 28]}
-              />
+                <GraficaFSinBoton
+                  boardId="board7.4"
+                  funcionGrafica={(x) => x * x * x + 5 * x * x + x - 2}
+                />
+                
+                <span className="botones-grafica">
+                  <PuntoMovibleF
+                    boardId="board7.4"
+                    initialCoordinates={[1, 6]}
+                  />
+                  <VariacionIntervaloF
+                    boardId="board7.4"
+                    initialCoordinates={[1, 5, 2, 28]}
+                  />
+                </span>
+        
+              </Row>
+            </Col>
+            <Col md={5}>
+              <Quiz22 />
             </Col>
           </Row>
         </GraficaFContextProvider>

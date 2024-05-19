@@ -13,6 +13,7 @@ import TablaDeFuncion from "./TablaDeFuncion/TablaDeFuncion";
 import GraficosDeFunciones from "./GraficosDeFunciones/GraficosDeFunciones";
 import FuncLineales from "./FuncionesLineales/FuncLineales";
 import FuncionesCuadraticas from "./FuncionesCuadraticas/FuncionesCuadraticas";
+import FunPolinomiales from "./FuncionesPolinomiales.jsx/FunPolinomiales";
 
 function Bloque2() {
   return (
@@ -34,6 +35,7 @@ function Bloque2() {
       <GraficosDeFunciones />
       <FuncLineales />
       <FuncionesCuadraticas />
+     <FunPolinomiales /> 
     </div>
   );
 }

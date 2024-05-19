@@ -7,6 +7,17 @@ const GraficaFSinBoton = ({ boardId, funcionGrafica }) => {
   useEffect(() => {
     if (brd && brd[boardId]) {
       const board = brd[boardId];
+
+      if (ids.idGraficaF) {
+        const existingGraph = ids.idGraficaF;
+        board.removeObject(existingGraph);
+
+        setIds((prevIds) => ({
+          ...prevIds,
+          idGraficaF: "",
+        }));
+      }
+
       const grafica = board.create("functiongraph", [funcionGrafica]);
 
       // Guarda el ID de la recta en la lista de IDs
@@ -20,7 +31,7 @@ const GraficaFSinBoton = ({ boardId, funcionGrafica }) => {
     }
   }, [brd, boardId, funcionGrafica]);
 
-  return null ; // Devuelve null en lugar de un fragmento vacío
+  return null; // Devuelve null en lugar de un fragmento vacío
 };
 
 export default GraficaFSinBoton;

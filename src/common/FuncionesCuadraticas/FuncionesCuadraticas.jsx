@@ -49,10 +49,10 @@ const FuncionesCuadraticas = () => {
           </p>
         </Col>
       </Row>
-      <Row>
-        <BoardsContextProvider>
-          <GraficaFContextProvider>
-            <Col md={7}>
+      <BoardsContextProvider>
+        <GraficaFContextProvider>
+          <Row className="grafica-quiz">
+            <Col md={6}>
               <Row className="sticky">
                 <div className="tittle-table">
                   <h6>Ventana gráfica 9</h6>
@@ -61,13 +61,7 @@ const FuncionesCuadraticas = () => {
                   boardId="board7"
                   boundingBox={[-10, 6800, 180, -300]}
                 />
-                <span
-                  style={{
-                    display: "inline-flex",
-                    justifyContent: "space-evenly",
-                    alignItems: "center",
-                  }}
-                >
+                <span className="botones-grafica">
                   <GraficaFCortada
                     boardId="board7"
                     funcionGrafica={(x) => 150 * x - x * x}
@@ -80,19 +74,19 @@ const FuncionesCuadraticas = () => {
                 </span>
               </Row>
             </Col>
-            <Col>
+            <Col md={5}>
               <Quiz17 />
             </Col>
-          </GraficaFContextProvider>
-        </BoardsContextProvider>
-      </Row>
+          </Row>
+        </GraficaFContextProvider>
+      </BoardsContextProvider>
       <br />
       <br />
       <br />
-      <Row>
+      <Row className="grafica-quiz">
         <BoardsContextProvider>
           <GraficaFContextProvider>
-            <Col md={7}>
+            <Col md={6}>
               <Row className="sticky">
                 <div className="tittle-table">
                   <h6>Ventana gráfica 10</h6>
@@ -101,12 +95,7 @@ const FuncionesCuadraticas = () => {
                   boardId="board8"
                   boundingBox={[-10, 6800, 180, -300]}
                 />
-                <div
-                  style={{
-                    display: "inline-flex",
-                    justifyContent: "space-evenly",
-                  }}
-                >
+                <div className="botones-grafica">
                   <GraficaFCortada
                     boardId="board8"
                     funcionGrafica={(x) => 150 * x - x * x}
@@ -119,7 +108,7 @@ const FuncionesCuadraticas = () => {
                 </div>
               </Row>
             </Col>
-            <Col>
+            <Col md={5}>
               <Quiz18 />
             </Col>
           </GraficaFContextProvider>
@@ -128,10 +117,10 @@ const FuncionesCuadraticas = () => {
       <br />
       <br />
       <br />
-      <Row>
+      <Row className="grafica-quiz">
         <BoardsContextProvider>
           <GraficaFContextProvider>
-            <Col md={7}>
+            <Col md={6}>
               <Row className="sticky">
                 <div className="tittle-table">
                   <h6>Ventana gráfica 11</h6>
@@ -140,13 +129,7 @@ const FuncionesCuadraticas = () => {
                   boardId="board9"
                   boundingBox={[-10, 6800, 180, -300]}
                 />
-                <span
-                  style={{
-                    display: "inline-flex",
-                    justifyContent: "space-evenly",
-                    alignItems: "center",
-                  }}
-                >
+                <span className="botones-grafica">
                   <GraficaFCortada
                     boardId="board9"
                     funcionGrafica={(x) => 150 * x - x * x}
@@ -159,7 +142,7 @@ const FuncionesCuadraticas = () => {
                 </span>
               </Row>
             </Col>
-            <Col>
+            <Col md={5}>
               <Quiz19 />
             </Col>
           </GraficaFContextProvider>
@@ -169,10 +152,10 @@ const FuncionesCuadraticas = () => {
       <br />
       <br />
       <br />
-      <Row>
+      <Row className="grafica-quiz">
         <BoardsContextProvider>
           <GraficaFContextProvider>
-            <Col md={7}>
+            <Col md={6}>
               <Row className="sticky">
                 <div className="tittle-table">
                   <h6>Ventana gráfica 12</h6>
@@ -181,13 +164,7 @@ const FuncionesCuadraticas = () => {
                   boardId="board10"
                   boundingBox={[-10, 6800, 180, -300]}
                 />
-                <span
-                  style={{
-                    display: "inline-flex",
-                    justifyContent: "space-evenly",
-                    alignItems: "center",
-                  }}
-                >
+                <span className="botones-grafica">
                   <PuntoMovibleF
                     boardId="board10"
                     initialCoordinates={[8, 1136]}
@@ -195,7 +172,7 @@ const FuncionesCuadraticas = () => {
                 </span>
               </Row>
             </Col>
-            <Col>
+            <Col md={5}>
               <p>
                 <br />
                 <br />
@@ -228,10 +205,10 @@ const FuncionesCuadraticas = () => {
       <br />
       <br />
       <br />
-      <Row>
+      <Row className="grafica-quiz">
         <BoardsContextProvider>
           <GraficaFContextProvider>
-            <Col md={7}>
+            <Col md={6}>
               <Row className="sticky">
                 <div className="tittle-table">
                   <h6>Ventana gráfica 13</h6>
@@ -239,7 +216,7 @@ const FuncionesCuadraticas = () => {
                 <BoardXX boardId="board11" boundingBox={[-15, 11, 15, -10]} />
               </Row>
             </Col>
-            <Col>
+            <Col md={5}>
               <p>
                 <br />
                 <br />
@@ -256,36 +233,35 @@ const FuncionesCuadraticas = () => {
         </BoardsContextProvider>
       </Row>
 
-
-      <Row className="row-nuevotema">
+      <Row className="row-nuevotema grafica-quiz">
         <BoardsContextProvider>
-        <FunCuadratContextProvider>
+          <FunCuadratContextProvider>
             <Col
               className="border borde-redon"
               md={7}
               style={{ backgroundColor: "#011627" }}
             >
               <Row className="sticky">
-              <Col md={7}>
-              <div className="sticky-act16">
-                <div className="tittle-table">
-                  <h6 style={{ color: "white" }}>Ventana gráfica 14</h6>
-                </div>
-                <BoardXX
-                  boardId="board12"
-                  boundingBox={[-10, 6800, 180, -300]}
-                />
-              </div>
-              </Col>
-              <Col>
-              <FuncionCuadrat boardId="board12" />
-              </Col>
-            </Row>
+                <Col md={7}>
+                  <div className="sticky-act16">
+                    <div className="tittle-table">
+                      <h6 style={{ color: "white" }}>Ventana gráfica 14</h6>
+                    </div>
+                    <BoardXX
+                      boardId="board12"
+                      boundingBox={[-10, 6800, 180, -300]}
+                    />
+                  </div>
+                </Col>
+                <Col>
+                  <FuncionCuadrat boardId="board12" />
+                </Col>
+              </Row>
             </Col>
-            <Col>
+            <Col md={5}>
               <Quiz21 />
             </Col>
-            </FunCuadratContextProvider>
+          </FunCuadratContextProvider>
         </BoardsContextProvider>
       </Row>
     </Container>
