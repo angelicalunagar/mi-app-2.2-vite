@@ -13,73 +13,38 @@ import GraficaFSinBoton from "./FuncionesPolinomiales.jsx/GraficaFSinBoton";
 import PuntoMovibleF from "./GraficosDeFunciones/PuntoMovibleF";
 import VariacionIntervaloF from "./FuncionesCuadraticas/VariacionIntervaloF";
 import FunCubicaParam from "./FuncionesPolinomiales.jsx/FunCubicaParam";
+import Fun4toGradoParam from "./FuncionesPolinomiales.jsx/Fun4toGradoParam";
 import Quiz22 from "./FuncionesPolinomiales.jsx/Quiz22";
+import TextoFunCubica from "./FuncionesPolinomiales.jsx/TextoFunCubica";
+import TextoFun4toGrado from "./FuncionesPolinomiales.jsx/TextoFun4toGrado";
+import { Fun4toGradoContextProvider } from "../contexts/Fun4toGradoContext";
 
 function Bloque5() {
   return (
     <div className="bloque5-contenedor">
       <h1>Bloque 5</h1>
-
       <BoardsContextProvider>
-        <GraficaFContextProvider>
-          <Row className="grafica-quiz">
-            <Col md={6}>
-              <Row className="sticky">
-                <div className="tittle-table">
-                  <h6>Ventana gráfica 15</h6>
-                </div>
-                <BoardXX boardId="board7.4" boundingBox={[-8, 40, 8, -25]} />
-
-                <GraficaFSinBoton
-                  boardId="board7.4"
-                  funcionGrafica={(x) => x * x * x + 5 * x * x + x - 2}
-                />
-                
-                <span className="botones-grafica">
-                  <PuntoMovibleF
-                    boardId="board7.4"
-                    initialCoordinates={[1, 6]}
-                  />
-                  <VariacionIntervaloF
-                    boardId="board7.4"
-                    initialCoordinates={[1, 5, 2, 28]}
-                  />
-                </span>
-        
-              </Row>
-            </Col>
-            <Col md={5}>
-              <Quiz22 />
-            </Col>
-          </Row>
-        </GraficaFContextProvider>
-      </BoardsContextProvider>
-
-      <BoardsContextProvider>
-        <FunCubicaContextProvider>
+        <Fun4toGradoContextProvider>
           <Col
             md={7}
             className="border borde-redon"
             style={{ backgroundColor: "#011627" }}
           >
             <Row className="sticky">
-              <Col md={7}>
-                <div className="sticky-act16">
-                  <div className="tittle-table">
-                    <h6 style={{ color: "white" }}>Ventana gráfica 9</h6>
-                  </div>
-                  <BoardXX
-                    boardId="board7.3"
-                    boundingBox={[-12, 30, 12, -30]}
-                  />
+              <Col md={8}>
+                <div className="tittle-table">
+                  <h6 style={{ color: "white" }}>Ventana gráfica 9</h6>
                 </div>
+                <BoardXX boardId="board7.3" boundingBox={[-12, 30, 12, -30]} />
+
+                <TextoFun4toGrado />
               </Col>
               <Col>
-                <FunCubicaParam boardId="board7.3" />
+                <Fun4toGradoParam boardId="board7.3" />
               </Col>
             </Row>
           </Col>
-        </FunCubicaContextProvider>
+        </Fun4toGradoContextProvider>
       </BoardsContextProvider>
     </div>
   );

@@ -8,6 +8,13 @@ import GraficaFSinBoton from "./GraficaFSinBoton";
 import PuntoMovibleF from "../GraficosDeFunciones/PuntoMovibleF";
 import VariacionIntervaloF from "../FuncionesCuadraticas/VariacionIntervaloF";
 import Quiz22 from "./Quiz22";
+import { FunCubicaContextProvider } from "../../contexts/FunCubicaContext";
+import { Fun4toGradoContextProvider } from "../../contexts/Fun4toGradoContext";
+import FunCubicaParam from "./FunCubicaParam";
+import Fun4toGradoParam from "./Fun4toGradoParam";
+import TextoFunCubica from "./TextoFunCubica";
+import TextoFun4toGrado from "./TextoFun4toGrado";
+
 import "../../styles/Bloque1_1.css";
 
 const FunPolinomiales = () => {
@@ -34,7 +41,7 @@ const FunPolinomiales = () => {
           </p>
         </Col>
       </Row>
-     {/*  <BoardsContextProvider>
+      {/*  <BoardsContextProvider>
         <GraficaFContextProvider>
          
             <Col md={6}>
@@ -72,7 +79,7 @@ const FunPolinomiales = () => {
                   boardId="board13"
                   funcionGrafica={(x) => x * x * x + 5 * x * x + x - 2}
                 />
-                
+
                 <span className="botones-grafica">
                   <PuntoMovibleF
                     boardId="board13"
@@ -83,7 +90,6 @@ const FunPolinomiales = () => {
                     initialCoordinates={[1, 5, 2, 28]}
                   />
                 </span>
-        
               </Row>
             </Col>
             <Col md={5}>
@@ -92,6 +98,157 @@ const FunPolinomiales = () => {
           </Row>
         </GraficaFContextProvider>
       </BoardsContextProvider>
+
+      <BoardsContextProvider>
+        <FunCubicaContextProvider>
+          <Row className="grafica-quiz row-nuevotema">
+            <Col md={4}>
+              <p>
+                Ahora, interactúa con la{" "}
+                <b>
+                  <em>Ventana gráfica 16</em>
+                </b>{" "}
+                y modifica los parámetros de la función. Observa:
+              </p>
+              <ul className="li-preg-reflex">
+                <li>
+                  en dónde intersecta la gráfica al eje{" "}
+                  <InlineMath>y</InlineMath> cuando modificas el término
+                  independiente <InlineMath>d</InlineMath>.
+                </li>
+                <li>
+                  si la función (en general) es creciente o decreciente cuando
+                  modificas el término cúbico <InlineMath>a</InlineMath>.
+                </li>
+                <li>
+                  ¿Qué pasa si modificas el término cuadrático{" "}
+                  <InlineMath>b</InlineMath> o el término lineal{" "}
+                  <InlineMath>c</InlineMath>?
+                </li>
+                <li>
+                  ¿Cuál es el número máximo de raíces que puede tener una
+                  función cúbica?
+                </li>
+                <li>
+                  ¿Cuál es el número mínimo de raíces que puede tener una
+                  función cúbica?
+                </li>
+              </ul>
+            </Col>
+
+            <Col
+              md={7}
+              className="border borde-redon"
+              style={{ backgroundColor: "#011627" }}
+            >
+              <Row className="sticky">
+                <Col md={8}>
+                  <div className="tittle-table">
+                    <h6 style={{ color: "white" }}>Ventana gráfica 16</h6>
+                  </div>
+                  <BoardXX boardId="board14" boundingBox={[-12, 30, 12, -30]} />
+                  <TextoFunCubica />
+                </Col>
+                <Col>
+                  <FunCubicaParam boardId="board14" />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </FunCubicaContextProvider>
+      </BoardsContextProvider>
+
+      <BoardsContextProvider>
+        <Fun4toGradoContextProvider>
+          <Row className="grafica-quiz row-nuevotema">
+            <Col md={4}>
+              <p>
+                Interactúa con la{" "}
+                <b>
+                  <em>Ventana gráfica 17</em>
+                </b>
+                . ¿El dominio siempre es el mismo para todas las funciones
+                cuarticas? Observa:
+              </p>
+              <ul className="li-preg-reflex">
+                <li>
+                  intervalos donde <InlineMath>f(x)</InlineMath> se incrementa a
+                  medida que <InlineMath>x</InlineMath> se incrementa
+                </li>
+                <li>
+                  intervalos donde <InlineMath>f(x)</InlineMath> disminuye a
+                  medida que <InlineMath>x</InlineMath> se incrementa
+                </li>
+                <li>
+                  intervalos donde <InlineMath>f(x)</InlineMath> es positiva
+                </li>
+                <li>
+                  intervalos donde <InlineMath>f(x)</InlineMath> es negativa
+                </li>
+                <li>puntos máximos y/o mínimos relativos</li>
+              </ul>
+
+              <p>
+                Además, puedes modificar los parámetros de la función. Observa:
+              </p>
+              <ul className="li-preg-reflex">
+                <li>
+                  en dónde intersecta la gráfica al eje y cuando modificas el
+                  término independiente e.
+                </li>
+                <li>
+                  qué pasa si la función abre hacia arriba o hacia abajo cuando
+                  modificas el coeficiente de x^4 a
+                </li>
+                <li>
+                  ¿Qué pasa si modificas el término cúbico b, el término
+                  cuadrático c o el término lineal d?
+                </li>
+                <li>
+                  ¿Cuál es el número máximo de raíces que puede tener una
+                  función de cuarto grado?
+                </li>
+                <li>
+                  ¿Cuál es el número mínimo de raíces que puede tener una
+                  función de cuarto grado?
+                </li>
+              </ul>
+            </Col>
+            <Col
+              md={7}
+              className="border borde-redon"
+              style={{ backgroundColor: "#011627" }}
+            >
+              <Row className="sticky">
+                <Col md={8}>
+                  <div className="tittle-table">
+                    <h6 style={{ color: "white" }}>Ventana gráfica 17</h6>
+                  </div>
+                  <BoardXX boardId="board15" boundingBox={[-12, 30, 12, -30]} />
+                  <TextoFun4toGrado />
+                </Col>
+                <Col>
+                  <Fun4toGradoParam boardId="board15" />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Fun4toGradoContextProvider>
+      </BoardsContextProvider>
+      <Row className="row-nuevotema">
+        <Col>
+          <p>
+            Como te has podido percatar, las funciones polinomiales son
+            funciones que únicamente involucran sumas y productos, por lo que su
+            dominio serán todos los números reales, mientras que su rango
+            dependerá del tipo específico de función. Por ejemplo, las funciones
+            de grado impar (lineales y cúbicas, etc.) siempre tienen por rango a
+            todos los reales, mientras que las funciones de grado par
+            (cuadráticas, de grado 4, etc.) tendrán rangos variables dependiendo
+            del valor de sus parámetros a, b, etc.
+          </p>
+        </Col>
+      </Row>
     </Container>
   );
 };
