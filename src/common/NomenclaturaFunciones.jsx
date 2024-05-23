@@ -17,8 +17,8 @@ const NomenclaturaFunciones = () => {
           <p>
             "Por lo general, cuando representamos una función matemática,
             utilizamos letras como <InlineMath>{"g"}</InlineMath> para denotar
-            ganancia, <InlineMath>{"d"}</InlineMath> para dinero o distancia, y
-            p para precio. Respecto a la variable independiente, empleamos
+            ganancia, <InlineMath>{"d"}</InlineMath> para dinero o distancia, y{" "}
+            <InlineMath>p</InlineMath> para precio. Respecto a la variable independiente, empleamos
             letras como <InlineMath>{"d"}</InlineMath> para el número de días y{" "}
             <InlineMath>{"t"}</InlineMath> para el tiempo. Y finalmente, en
             cuanto a la variable dependiente, utilizamos{" "}
@@ -35,7 +35,11 @@ const NomenclaturaFunciones = () => {
           </p>
         </Col>
       </Row>
-      
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </Container>
   )
 }

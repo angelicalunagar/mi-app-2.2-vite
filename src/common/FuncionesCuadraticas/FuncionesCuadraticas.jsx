@@ -29,20 +29,20 @@ const FuncionesCuadraticas = () => {
           <br />
           <p>
             ¿Recuerdas el caso del granjero el cuál quería construir un corral?
-            La función que describía el área A(x) del corral en función de uno
-            de sus lados x era:
+            La función que describía el área <InlineMath>A(x)</InlineMath> del corral en función de uno
+            de sus lados <InlineMath>x</InlineMath> era:
             <BlockMath>{"A(x)=150x-x^2"}</BlockMath>
             Con dominio <InlineMath>{"0 \\leq x \\leq 150"}</InlineMath> y rango{" "}
             <InlineMath>{"0 \\leq x \\leq 5625"}</InlineMath>, de acuerdo al
             contexto. Observa que el término <InlineMath>{"-x^2"}</InlineMath>{" "}
             es el término cuadrático en esta función y al cual le debe su nombre
             de función cuadrática. De hecho, las funciones cuadráticas se llaman
-            así porque el mayor exponente de la variable independiente x es 2.
+            así porque el mayor exponente de la variable independiente <InlineMath>x</InlineMath> es <InlineMath>2</InlineMath>.
             <br />
             <br />
             En contraste, en las funciones lineales, como{" "}
-            <InlineMath>{"f(x)=mx+b"}</InlineMath>, el mayor exponente de x es
-            1, lo que resulta en una relación lineal entre la variable
+            <InlineMath>{"f(x)=mx+b"}</InlineMath>, el mayor exponente de <InlineMath>x</InlineMath> es{" "}
+            <InlineMath>1</InlineMath>, lo que resulta en una relación lineal entre la variable
             dependiente y la variable independiente. Entonces, ¿crees que la
             gráfica de <InlineMath>{"A(x)=150x-x^2"}</InlineMath> tiene forma de
             recta?
@@ -181,7 +181,7 @@ const FuncionesCuadraticas = () => {
                 <BlockMath>f(x)=150x-x^2</BlockMath>
                 ¿Cuáles son su dominio y rango máximos? Puedes usar el siguiente
                 botón para graficar la función
-                <InlineMath>f(x)=150x-x^2</InlineMath> en la Ventana gráfica 12
+                <InlineMath>f(x)=150x-x^2</InlineMath> en la <em><b>Ventana gráfica 12</b></em>{" "}
                 y contestar esta pregunta.
                 <br />
               </p>
@@ -197,6 +197,9 @@ const FuncionesCuadraticas = () => {
               </InlineMath>{" "}
               es una curva continua (no se rompe) que se asemeja a la forma de
               un arco; esta forma se conoce como parábola.
+              <br />
+              <br />
+              <br />
               <Quiz20 />
             </Col>
           </GraficaFContextProvider>
@@ -221,7 +224,7 @@ const FuncionesCuadraticas = () => {
                 <br />
                 <br />
                 La parábola, reconocida por su forma distintiva en arco, posee
-                ciertos atributos particulares. Utiliza la ventana gráfica 13
+                ciertos atributos particulares. Utiliza la <em><b>Ventana gráfica 13</b></em>{" "}
                 para explorar algunas de las propiedades fundamentales de la
                 parábola.
               </p>

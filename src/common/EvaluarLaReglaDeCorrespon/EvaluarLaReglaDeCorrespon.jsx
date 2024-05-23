@@ -137,6 +137,8 @@ const EvaluarLaReglaDeCorrespon = () => {
           </ul>
         </Col>
       </Row>
+      <br />
+      <br />
     </Container>
   );
 };

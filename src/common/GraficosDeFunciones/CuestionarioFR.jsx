@@ -1,6 +1,6 @@
 import {React, useState }from 'react'
 import {Form} from "react-bootstrap";
-
+import { BlockMath, InlineMath } from "react-katex";
 
 const CuestionarioFR = () => {
   const [respuestasCFR, setRespuestasCFR] = useState({
@@ -24,8 +24,8 @@ const CuestionarioFR = () => {
   </p>
       <ul className='cuest-fr'>
             <li>
-              ¿Qué punto tiene una coordenada x negativa y de gran magnitud?
-              ¿Cómo es f(x) en este caso?
+              ¿Qué punto tiene una coordenada <InlineMath>x</InlineMath> negativa y de gran magnitud?
+              ¿Cómo es <InlineMath>f(x)</InlineMath> en este caso?
               <Form>
                 <Form.Group>
                   <Form.Check
@@ -51,8 +51,8 @@ const CuestionarioFR = () => {
             </li>
             <br />
             <li>
-              ¿Qué punto tiene una coordenada x negativa y muy cercana a cero?
-              ¿Cómo es f(x)?
+              ¿Qué punto tiene una coordenada <InlineMath>x</InlineMath> negativa y muy cercana a cero?
+              ¿Cómo es <InlineMath>f(x)</InlineMath>?
               <Form>
                 <Form.Group>
                   <Form.Check
@@ -78,8 +78,8 @@ const CuestionarioFR = () => {
             </li>
             <br />
             <li>
-              ¿Qué punto tiene una coordenada x positiva y muy cercana a cero?
-              ¿Cómo es f(x)?
+              ¿Qué punto tiene una coordenada <InlineMath>x</InlineMath> positiva y muy cercana a cero?
+              ¿Cómo es <InlineMath>f(x)</InlineMath>?
               <Form>
                 <Form.Group>
                   <Form.Check
@@ -105,8 +105,8 @@ const CuestionarioFR = () => {
             </li>
             <br />
             <li>
-              ¿Qué punto tiene una coordenada x positiva y de gran magnitud?
-              ¿Cómo es f(x) en este caso?
+              ¿Qué punto tiene una coordenada <InlineMath>x</InlineMath> positiva y de gran magnitud?
+              ¿Cómo es <InlineMath>f(x)</InlineMath> en este caso?
               <Form>
                 <Form.Group>
                   <Form.Check

@@ -1,10 +1,7 @@
 import { useState } from "react";
 import "../../styles/Bloque1_1.css";
-import { 
-  Row,
-  Col,
-  Form,
-} from "react-bootstrap";
+import { BlockMath, InlineMath } from "react-katex";
+import { Row, Col, Form } from "react-bootstrap";
 
 const Act14 = () => {
   const [respuestasAct14, setRespuestasAct14] = useState({
@@ -35,26 +32,6 @@ const Act14 = () => {
     return ((distancia - 30) / 8.5).toFixed(1);
   };
 
-  /* const distanciaViaje1 = generarNumeroAleatorio(5, 15);
-  const distanciaViaje1a = generarNumeroAleatorio(5, 15);
-  const distanciaViaje1b = generarNumeroAleatorio(5, 15);
-
-  const precioViaje2 = generarNumeroAleatorio(150, 300);
-  const precioViaje2a = generarNumeroAleatorio(150, 300);
-  const precioViaje2b = generarNumeroAleatorio(150, 300);
-
-  const distanciaViaje3 = generarNumeroAleatorio(20, 30);
-  const distanciaViaje3a = generarNumeroAleatorio(20, 30);
-  const distanciaViaje3b = generarNumeroAleatorio(20, 30);
-
-  const distanciaViaje4 = generarNumeroAleatorio(-10, 0);
-  const distanciaViaje4a = generarNumeroAleatorio(-10, 0);
-  const distanciaViaje4b = generarNumeroAleatorio(-10, 0);
-
-  const distanciaViaje5 = generarNumeroAleatorio(30.1, 40);
-  const distanciaViaje5a = generarNumeroAleatorio(30.1, 40);
-  const distanciaViaje5b = generarNumeroAleatorio(30.1, 40); */
-
   const [distanciasPrecios, setDistanciasPrecios] = useState({
     distanciaViaje1: generarNumeroAleatorio(5, 15),
     distanciaViaje1a: generarNumeroAleatorio(5, 15),
@@ -65,7 +42,7 @@ const Act14 = () => {
     distanciaViaje3: generarNumeroAleatorio(20, 30),
     distanciaViaje3a: generarNumeroAleatorio(20, 30),
     distanciaViaje3b: generarNumeroAleatorio(20, 30),
-   /*  distanciaViaje4: generarNumeroAleatorio(-10, 0),
+    /*  distanciaViaje4: generarNumeroAleatorio(-10, 0),
     distanciaViaje4a: generarNumeroAleatorio(-10, 0),
     distanciaViaje4b: generarNumeroAleatorio(-10, 0), */
     distanciaViaje5: generarNumeroAleatorio(30.1, 40),
@@ -96,21 +73,26 @@ const Act14 = () => {
       <Row>
         <Col className="actividad" /* sm={12} md={9} xl={6} */>
           <p>
-            <b>Actividad 14:</b> Moviendo el punto M de la ventana gráfica X,
-            contesta las siguientes preguntas sobre el caso del taxista.
+            <b>Actividad 14:</b> Moviendo el{" "}
+            <InlineMath>{"punto \\, M"}</InlineMath> de la{" "}
+            <b>Ventana gráfica 3</b>, contesta las siguientes preguntas sobre el
+            caso del taxista.
             <br />
             <br />
-            Recuerda que el segmento AG de la Actividad 13 representa a la
-            función que describe el precio p(x) de un viaje en taxi en función
-            de la distancia recorrida x:
+            Recuerda que el <InlineMath>{"segmento \\, AG"}</InlineMath>{" "}
+            representa a la función que describe el precio{" "}
+            <InlineMath>p(x)</InlineMath> de un viaje en taxi en función de la
+            distancia recorrida <InlineMath>x</InlineMath>:
             <br />
-            <br />
-            Regla de correspondencia: p(x)=30+8.5x
-            <br />
-            Dominio: 0 ≤ x ≤ 30
-            <br />
-            Rango: 30 ≤ p(x) ≤ 630
           </p>
+          <p style={{ textAlign: "center" }}>
+            Regla de correspondencia:
+            <BlockMath>p(x)=30+8.5x</BlockMath>
+            Dominio: <InlineMath>0 ≤ x ≤ 30</InlineMath>
+            <br />
+            Rango: <InlineMath>30 ≤ p(x) ≤ 630</InlineMath>
+          </p>
+
           <ul>
             <li /* className="liAct-4" */>
               ¿Cuál es el precio de un viaje de {distanciaViaje1} km?
@@ -121,7 +103,7 @@ const Act14 = () => {
                     id="opcionA1"
                     name="opciones1"
                     value="a"
-                    checked=  {respuestasAct14.preg1 === "a"}
+                    checked={respuestasAct14.preg1 === "a"}
                     onChange={(e) => handleRespChangeAct14(e, "preg1")}
                     label={calcularPrecioViaje(distanciaViaje1)}
                   />
@@ -215,7 +197,7 @@ const Act14 = () => {
                 </Form.Group>
               </Form>
             </li>
-         
+
             <li>
               ¿Cuánto cobrará el taxista por un viaje de {distanciaViaje5} km?
               <Form>
@@ -227,7 +209,7 @@ const Act14 = () => {
                     value="a"
                     checked={respuestasAct14.preg5 === "a"}
                     onChange={(e) => handleRespChangeAct14(e, "preg5")}
-                    label='La distancia x está fuera del rango'
+                    label="La distancia x está fuera del rango"
                   />
                   <Form.Check
                     type="checkbox"
@@ -236,7 +218,7 @@ const Act14 = () => {
                     value="b"
                     checked={respuestasAct14.preg5 === "b"}
                     onChange={(e) => handleRespChangeAct14(e, "preg5")}
-                    label='La distancia x está fuera del dominio'
+                    label="La distancia x está fuera del dominio"
                   />
                   <Form.Check
                     type="checkbox"

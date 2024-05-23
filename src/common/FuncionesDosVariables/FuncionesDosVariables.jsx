@@ -119,25 +119,25 @@ const FuncionesDosVariables = () => {
         <Col>
           <p>
             No obstante, el granjero indica que únicamente cuenta con{" "}
-            <InlineMath>{"300m"}</InlineMath> de cerca para construir el corral.
+            <InlineMath>{"300 \\, m"}</InlineMath> de cerca para construir el corral.
             Sabemos entonces que el perímetro del corral es de{" "}
             {"                                   "}
-            <InlineMath>{"300m"}</InlineMath>, lo que significa que:
+            <InlineMath>{"300 \\, m"}</InlineMath>, lo que significa que:
             <br />
             <BlockMath>{"2x+2y=300"}</BlockMath>Es decir:
             <BlockMath>{"x+y=150"}</BlockMath>
-            El corral que se ha dibujado en la <b>ventana gráfica 1</b> cumple
+            El corral que se ha dibujado en la <em><b>Ventana gráfica 1</b></em> cumple
             con la condición de que su perímetro es{" "}
-            <InlineMath>{"300m"}</InlineMath>, o lo que es lo mismo, la suma de
+            <InlineMath>{"300 \\, m"}</InlineMath>, o lo que es lo mismo, la suma de
             los lados <InlineMath>{"x"}</InlineMath> y{" "}
             <InlineMath>{"y"}</InlineMath> es <InlineMath>{"150"}</InlineMath>.
             <br />
             <br />
-            Si el lado x del terreno sólo puede ocupar hasta 40 m, entonces:
+            Si el lado <InlineMath>x</InlineMath> del terreno sólo puede ocupar hasta <InlineMath>{"40 \\, m"}</InlineMath>, entonces:
             <BlockMath>{"0 \\leq x \\leq 40"}</BlockMath>
             podemos determinar el dominio de <InlineMath>{"y"}</InlineMath>{" "}
             deslizando el punto <InlineMath>{"B"}</InlineMath> sobre el eje{" "}
-            <InlineMath>{"x"}</InlineMath> (<b>ventana gráfica 1</b>), empezando
+            <InlineMath>{"x"}</InlineMath> (<em><b>Ventana gráfica 1</b></em>), empezando
             desde cero hasta llegar a <InlineMath>{"40"}</InlineMath>. ¿Qué
             valores adquirió la variable <InlineMath>{"y"}</InlineMath>?{" "}
             <InlineMath>{"y"}</InlineMath> empezó en{" "}
@@ -254,8 +254,8 @@ const FuncionesDosVariables = () => {
               {"A(0)=0"}
             </InlineMath> y <InlineMath>{"A(150)=0"}</InlineMath>, eso no
             significa que el rango sea{" "}
-            <InlineMath>{"0 \\leq A(x) \\leq 0"}</InlineMath>. Utilizando la
-            vista gráfica 2 determina cuál es el rango de la función área y
+            <InlineMath>{"0 \\leq A(x) \\leq 0"}</InlineMath>. Utilizando la{" "}
+            <em><b>Ventana gráfica 2</b></em> determina cuál es el rango de la función área y
             selecciona la respuesta:
           </p>
 
@@ -302,7 +302,7 @@ const FuncionesDosVariables = () => {
         </Col>
       </Row>
 
-      <Row>
+      <Row className="main-row">
         <Col>
           <p>
             Como puedes ver, en muchos casos, cuando se tiene una función de dos
@@ -312,6 +312,9 @@ const FuncionesDosVariables = () => {
           </p>
         </Col>
       </Row>
+      <br />
+      <br />
+      <br />
     </Container>
   );
 };

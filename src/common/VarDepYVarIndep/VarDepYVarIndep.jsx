@@ -1,6 +1,7 @@
 import React from "react";
 import { useState} from "react";
-import { Button, Row, Col, Container, Table} from "react-bootstrap";
+import { Row, Col, Container, Table} from "react-bootstrap";
+import { InlineMath } from "react-katex";
 import car from "../../assets/car.jpg";
 import Act1 from "./Act1";
 import Act2 from "./Act2";
@@ -34,14 +35,14 @@ const VarDepYVarIndep = () => {
       <Row className="row-nuevotema">
         <Col>
           <p>
-            Imagina un automóvil de carreras que se mueve a 2km por cada minuto,
-            es decir, su velocidad es 2km/min. Si han pasado 2 min recorrerá 4
-            km, si pasan 5 min recorrerá 10 km, y así sucesivamente.
+            Imagina un automóvil de carreras que se mueve a <InlineMath>{" 2 \\, km"}</InlineMath> por cada minuto,
+            es decir, su velocidad es <InlineMath>{" 2 \\, km/min"}</InlineMath>. Si han pasado <InlineMath>{" 2 \\, min"}</InlineMath> recorrerá {" "}
+            <InlineMath>{"4 \\, km"}</InlineMath>, si pasan <InlineMath>{" 5 \\, min"}</InlineMath> recorrerá <InlineMath>{" 10 \\, km"}</InlineMath>, y así sucesivamente.
             <br />
             <br />
             Podemos pensar que el movimiento del automóvil se comporta como una
             máquina que para cada tiempo en minutos, devuelve la distancia
-            recorrida en dicho tiempo (en km). <b>Contesta la Actividad 1.</b>
+            recorrida en dicho tiempo (en <InlineMath>km</InlineMath>). Contesta la <b>Actividad 1.</b>
             <br />
             <br />
             En este caso, al tiempo y a la distancia recorrida se les llama
@@ -61,22 +62,19 @@ const VarDepYVarIndep = () => {
               <em>variable dependiente</em>
             </b>{" "}
             es aquella cuyo valor depende de la otra variable, en el ejemplo del
-            automóvil, la{" "}
-            <b>
-              <em>variable dependiente</em>
-            </b>{" "}
-            es la distancia recorrida, ya que esta dependerá de cuánto tiempo ha
+            automóvil, la variable dependiente es la distancia recorrida, ya que esta dependerá de cuánto tiempo ha
             transcurrido. En este caso el tiempo es la{" "}
             <b>
               <em>variable independiente</em>
             </b>
-            .
+            . Contesta la <b>Actividad 2.</b>
             <br />
             <br />
-            <b>Contesta la Actividad 2.</b>
-            <br />
+            
           </p>
         </Col>
+        <br />
+      
         <Act1 />
       </Row>
       <Act2 />
@@ -93,11 +91,14 @@ const VarDepYVarIndep = () => {
             <b>
               <em>es función</em>
             </b>{" "}
-            (o es una función) del tiempo. <b>Contesta la actividad 3.</b>
+            (o es una función) del tiempo. Contesta <b>la actividad 3.</b>
           </p>
         </Col>
       </Row>
       <Act3 />
+      <br />
+      <br />
+      <br />
     </Container>
   );
 };

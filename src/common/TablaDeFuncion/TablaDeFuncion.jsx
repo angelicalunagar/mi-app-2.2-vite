@@ -53,7 +53,7 @@ const TablaDeFuncion = () => {
             columna coloca la variable independiente <InlineMath>x</InlineMath>,
             que denota la distancia recorrida y en la segunda coloca la variable
             dependiente <InlineMath>p(x)</InlineMath>, que denota el precio de
-            un viaje. <b>Contesta la Actividad 11</b>.
+            un viaje. Contesta la <b>Actividad 11</b>.
           </p>
         </Col>
       </Row>
@@ -62,7 +62,7 @@ const TablaDeFuncion = () => {
         <Col>
           <p>
             Piensa en qué casos le sirve la tabla al taxista. ¿Le sirve para
-            saber cuánto cobrar si hace un viaje de 10 km? Sí, porque de la
+            saber cuánto cobrar si hace un viaje de <InlineMath>{"10 \\, km"}</InlineMath>? Sí, porque de la
             tabla podemos leer que cuando la distancia{" "}
             <InlineMath>x</InlineMath> es igual a <InlineMath>10</InlineMath>,
             el precio <InlineMath>p(x)</InlineMath> será{" "}

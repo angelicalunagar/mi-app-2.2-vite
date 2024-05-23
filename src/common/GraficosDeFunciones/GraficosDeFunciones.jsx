@@ -1,13 +1,6 @@
 //GraficosDeFunciones.jsx
 import { useState, useContext } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Table,
-  Form,
-  Image,
-} from "react-bootstrap";
+import { Container, Row, Col, Table, Form, Image } from "react-bootstrap";
 
 import { BlockMath, InlineMath } from "react-katex";
 import "katex/dist/katex.min.css";
@@ -78,24 +71,30 @@ const GraficosDeFunciones = () => {
         <Col md={8}>
           <h4>Gráficos de funciones</h4>
           <p>
-            Una vez que el taxista ha tabulado la función p(x)=30+8.5x con la
-            cuál calcula el precio de sus viajes para ciertas distancias x (ver
-            tabla 5), llegamos a la conclusión de que dicha tabla no le sirve
-            para la mayoría de sus viajes, ya que la distancia podía no ser un
-            múltiplo de 5 precisamente.
+            Una vez que el taxista ha tabulado la función{" "}
+            <InlineMath>p(x)=30+8.5x</InlineMath> con la cuál calcula el precio
+            de sus viajes para ciertas distancias <InlineMath>x</InlineMath>{" "}
+            (ver <b>Tabla 5</b>), llegamos a la conclusión de que dicha tabla no
+            le sirve para la mayoría de sus viajes, ya que la distancia podía no
+            ser un múltiplo de <InlineMath>5</InlineMath> precisamente.
             <br />
             <br />
             Una manera de aprovechar la tabla hecha por el taxista es graficar
             los datos en el plano cartesiano. Para ello, graficamos un punto por
-            cada pareja (x, p(x)) siguiendo la convención para graficar puntos
-            en el plano:
-            <br />
-            • ubicar la variable independiente en el eje x.
-            <br />
-            • ubicar la variable dependiente en el eje y. Debido a esto, a
-            menudo se le suele llamar “y” a la variable dependiente, es decir
-            y=p(x).
-            <br />
+            cada pareja <InlineMath>(x, p(x))</InlineMath> siguiendo la
+            convención para graficar puntos en el plano:
+            <ul className="li-preg-reflex">
+              <li>
+                ubicar la variable independiente en el{" "}
+                <InlineMath>{"eje \\, x"}</InlineMath>.
+              </li>
+              <li>
+                ubicar la variable dependiente en el{" "}
+                <InlineMath>{"eje \\, y"}</InlineMath>. Debido a esto, a menudo
+                se le suele llamar <InlineMath>y</InlineMath> a la variable
+                dependiente, es decir <InlineMath>y=p(x)</InlineMath>.
+              </li>
+            </ul>
           </p>
         </Col>
         <Col md={4} className="mi-col">
@@ -144,22 +143,29 @@ const GraficosDeFunciones = () => {
           </Container>
         </Col>
       </Row>
-      <Row>
+      <Row className="main-row grafica-quiz">
         <Col md={5}>
           <p>
+            Comencemos graficando el punto <InlineMath>(0, p(0))</InlineMath>, o
+            sea el punto <InlineMath>(0, 30)</InlineMath>, para lo cuál ubicamos{" "}
+            <InlineMath>0</InlineMath> en el{" "}
+            <InlineMath>{"eje \\, x"}</InlineMath> y subimos hasta que{" "}
+            <InlineMath>y</InlineMath> valga <InlineMath>30</InlineMath>, tal
+            como se aprecia en el GIF de la derecha (haz click sobre el GIF para
+            expandirlo o contraerlo). Al punto obtenido lo hemos llamado{" "}
+            <InlineMath>A</InlineMath>.
             <br />
-            Comencemos graficando el punto (0, p(0)), o sea el punto (0, 30),
-            para lo cuál ubicamos 0 en el eje x y subimos hasta que y valga 30,
-            tal como se aprecia en el GIF de la derecha (haz click sobre el GIF
-            para expandirlo o contraerlo). Al punto obtenido lo hemos llamado A.
             <br />
-            <br />
-            Del mismo modo graficamos el punto (5, p(5)), o sea el punto B(5,
-            72.5): ubicamos 5 en el eje x y subimos hasta y=72.5.{" "}
-            <b>Contesta las actividades 12 y 13.</b>
+            Del mismo modo graficamos el punto{" "}
+            <InlineMath>(5, p(5))</InlineMath>, o sea el punto{" "}
+            <InlineMath>B=(5, 72.5)</InlineMath>: ubicamos{" "}
+            <InlineMath>5</InlineMath> en el{" "}
+            <InlineMath>{"eje \\, x"}</InlineMath> y subimos hasta{" "}
+            <InlineMath>y=72.5</InlineMath>. Contesta las{" "}
+            <b>Actividades 12 y 13.</b>
           </p>
         </Col>
-        <Col md={7}>
+        <Col md={5}>
           <Image
             src={graficarPuntos}
             alt="GIF graficar"
@@ -169,7 +175,7 @@ const GraficosDeFunciones = () => {
           />
         </Col>
       </Row>
-      <Row>
+      <Row className="main-row">
         <BoardsContextProvider>
           <SegmentContextProvider>
             {/* <RectaAGContextProvider> */}
@@ -178,14 +184,18 @@ const GraficosDeFunciones = () => {
               <Row>
                 <Col>
                   <p>
+                    <br />
+                    <br />
                     Hasta aquí lo que hemos obtenido son solo puntos aislados
-                    que representan exactamente la misma información que la
-                    Tabla 5. Es decir, de estos puntos graficados en el plano
-                    cartesiano es posible leer cuánto cobrará el taxista si
-                    recorre 5 km, 10 km, etc. tan solo con mirar a que altura
-                    (coordenada y) se encuentra cada punto. No obstante, podemos
-                    obtener más información si unimos los puntos. ¿Qué se forma
-                    si unimos los puntos que graficamos?
+                    que representan exactamente la misma información que la{" "}
+                    <b>Tabla 5</b>. Es decir, de estos puntos graficados en el
+                    plano cartesiano es posible leer cuánto cobrará el taxista
+                    si recorre <InlineMath>{"5 \\, km"}</InlineMath>,{" "}
+                    <InlineMath>{"10 \\, km"}</InlineMath>, etc. tan solo con
+                    mirar a que altura (coordenada <InlineMath>y</InlineMath>)
+                    se encuentra cada punto. No obstante, podemos obtener más
+                    información si unimos los puntos. ¿Qué se forma si unimos
+                    los puntos que graficamos?
                   </p>
                   <Form /* className="prueba" */>
                     <Form.Group>
@@ -231,20 +241,26 @@ const GraficosDeFunciones = () => {
                   <p>
                     <br />
                     Ciertamente, cuando unimos los puntos se forma el segmento
-                    de recta AG. Oprime el siguiente botón para trazar el
-                    segmento en la ventana gráfica de la Actividad 13.
+                    de recta <InlineMath>AG</InlineMath>. Oprime el siguiente
+                    botón para trazar el segmento en la ventana gráfica de la{" "}
+                    <b>Actividad 13</b>.
                     <br />
                     <br />
                     <SegmentAGX boardId="board1" />
                     <br />
                     <br />
                     Dicho segmento nos permite aproximar el precio de cualquier
-                    viaje que comprenda una distancia entre 0 y 30 km. Por
-                    ejemplo, si un viaje dura 12.3 km, lo único que tienes que
-                    hacer es buscar 12.3 en el eje x y mirar cuál es la
-                    coordenada y que le corresponde, que en este caso es 134.55
-                    pesos, tal como apreciarás en la vista gráfica X si oprimes
-                    el botón "Dibujar Punto M".
+                    viaje que comprenda una distancia entre{" "}
+                    <InlineMath>0</InlineMath> y{" "}
+                    <InlineMath>{"30 \\, km"}</InlineMath>. Por ejemplo, si un
+                    viaje dura <InlineMath>{"12.3 \\, km"}</InlineMath>, lo
+                    único que tienes que hacer es buscar{" "}
+                    <InlineMath>{"12.3"}</InlineMath> en el{" "}
+                    <InlineMath>{"eje \\, x"}</InlineMath> y mirar cuál es la
+                    coordenada <InlineMath>y</InlineMath> que le corresponde,
+                    que en este caso es <InlineMath>134.55</InlineMath> pesos,
+                    tal como apreciarás en la <b>Ventana gráfica 3</b> si
+                    oprimes el botón "Dibujar Punto M".
                     <br />
                     <br />
                     <PuntoMovibleMX boardId="board1" />
@@ -290,31 +306,36 @@ const GraficosDeFunciones = () => {
       <Row>
         <Col>
           <p>
-            Como has podido observar. La situación contextual del taxista ha
+            Como has podido observar, la situación contextual del taxista ha
             limitado el dominio, y por lo tanto el rango, de la regla de
-            correspondencia p(x)=30+8.5x. Sin embargo, esta misma regla de
-            correspondencia podría tener otro dominio y otro rango en otras
-            circunstancias.
+            correspondencia <InlineMath>p(x)=30+8.5x</InlineMath>. Sin embargo,
+            esta misma regla de correspondencia podría tener otro dominio y otro
+            rango en otras circunstancias.
             <br />
             <br />
             Por ejemplo, supón que un vehículo todoterreno se mueve con una
-            velocidad de 30 km/h y el automóvil en cierta pendiente sólo puede
-            experimentar una aceleración o desaceleración de 8.5 km/h^2. En este
-            contexto, x representa el tiempo (en h) que el vehículo acelera o
-            desacelera, por lo que, si el vehículo acelera, x deberá ser
-            positivo ya que está aumentando la velocidad, mientras que, si el
-            vehículo desacelera, x es negativo porque ahora la velocidad está
-            disminuyendo.
+            velocidad de <InlineMath>{"30 \\, km/h"}</InlineMath> y el automóvil
+            en cierta pendiente sólo puede experimentar una aceleración o
+            desaceleración de <InlineMath>{"8.5 \\, km/h^2"}</InlineMath>. En
+            este contexto, <InlineMath>x</InlineMath> representa el tiempo (en{" "}
+            <InlineMath>h</InlineMath>) que el vehículo acelera o desacelera,
+            por lo que, si el vehículo acelera, <InlineMath>x</InlineMath>{" "}
+            deberá ser positivo ya que está aumentando la velocidad, mientras
+            que, si el vehículo desacelera, <InlineMath>x</InlineMath> es
+            negativo porque ahora la velocidad está disminuyendo.
             <br />
             <br />
             Observa que la regla de correspondencia es exactamente la misma que
-            la del taxista: p(x)=30+8.5x No obstante, para representar mejor la
-            nueva situación, cambiemos p por v ya que ahora la regla nos da la
-            velocidad del vehículo: v(x)=30+8.5x Ahora bien, como recordarás,
+            la del taxista: <InlineMath>p(x)=30+8.5x</InlineMath> No obstante,
+            para representar mejor la nueva situación, cambiemos{" "}
+            <InlineMath>p</InlineMath> por <InlineMath>v</InlineMath> ya que
+            ahora la regla nos da la velocidad del vehículo:{" "}
+            <InlineMath>v(x)=30+8.5x</InlineMath>. Ahora bien, como recordarás,
             una función no solo consta de la regla de correspondencia, también
             es necesario determinar su dominio y rango. Sabiendo que la
-            velocidad máxima que puede alcanzar el vehículo es de 67 km/h, ¿cuál
-            es el rango, es decir, qué valores puede adquirir la velocidad?
+            velocidad máxima que puede alcanzar el vehículo es de{" "}
+            <InlineMath>{"67 \\, km/h"}</InlineMath>, ¿cuál es el rango, es
+            decir, qué valores puede adquirir la velocidad?
             <br />
           </p>
 
@@ -388,34 +409,36 @@ const GraficosDeFunciones = () => {
             </Form.Group>
           </Form>
           <p>
+            <br />
             Una diferencia notable entre las situaciones del taxista y del
             vehículo todoterreno es que, si bien tienen la misma regla de
             correspondencia, sus dominios y rangos son tan diferentes al grado
-            que el dominio en el caso del taxista no acepta valores de x
+            que el dominio en el caso del taxista no acepta valores de{" "}
+            <InlineMath>x</InlineMath>
             negativos, mientras que en el caso del todoterreno sí.
             <br />
             <br />
             Podríamos seguir explorado situaciones en las cuáles la regla de
-            correspondencia p(x)=30+8.5x aplique, y para cada una de esas
-            situaciones encontraríamos un dominio y rango. No obstante, muy a
-            menudo en los cursos de matemáticas encontrarás reglas de
-            correspondencia para las cuáles no se da un contexto. Aún así, es
-            posible encontrar el dominio y el rango para cualquier regla de
-            correspondencia, con la diferencia de que ya no estarán limitados
+            correspondencia <InlineMath>p(x)=30+8.5x</InlineMath> aplique, y
+            para cada una de esas situaciones encontraríamos un dominio y rango.
+            No obstante, muy a menudo en los cursos de matemáticas encontrarás
+            reglas de correspondencia para las cuáles no se da un contexto. Aún
+            así, es posible encontrar el dominio y el rango para cualquier regla
+            de correspondencia, con la diferencia de que ya no estarán limitados
             por la situación contextual, sino por la regla misma. Este dominio,
             se llama dominio máximo.
             <br />
             <br />
             Antes de determinar el dominio y rango máximos de la función
-            p(x)=30+8.5x, dado que ahora no se está describiendo una situación
-            particular, sería más apropiado expresarlo de forma genérica, como
-            se indicó en el apartado de nomenclatura de funciones. Por lo tanto,
-            simplemente sustituiremos p por f, en referencia a que se trata de
-            la regla de correspondencia de una función genérica:
+            <InlineMath>p(x)=30+8.5x</InlineMath>, dado que ahora no se está
+            describiendo una situación particular, sería más apropiado
+            expresarlo de forma genérica, como se indicó en el apartado de
+            nomenclatura de funciones. Por lo tanto, simplemente sustituiremos{" "}
+            <InlineMath>p</InlineMath> por <InlineMath>f</InlineMath>, en
+            referencia a que se trata de la regla de correspondencia de una
+            función genérica:
             <br />
-            <br />
-            f(x)= 30+8.5x
-            <br />
+            <BlockMath>f(x)= 30+8.5x</BlockMath>
             <br />
             Pronto volveremos a esta expresión. Por ahora, veremos casos en los
             que una regla de correspondencia genérica presenta restricciones en
@@ -431,8 +454,8 @@ const GraficosDeFunciones = () => {
             <br />
             Teniendo en cuenta la imposibilidad de la división entre cero,
             determinemos el dominio y el rango de la regla de correspondencia
-            f(x)=2/x. ¿Cuál de los siguientes números no es un valor válido para
-            x?
+            <InlineMath>f(x)=2/x</InlineMath>. ¿Cuál de los siguientes números
+            no es un valor válido para <InlineMath>x</InlineMath>?
           </p>
 
           <Form /* className="prueba" */>
@@ -477,13 +500,16 @@ const GraficosDeFunciones = () => {
           </Form>
           <p>
             Otra manera de estructurar la pregunta es cuestionarnos: ¿es posible
-            dividir 2 entre -99? ¿Es posible dividir 2 entre 0? Etc. Esto nos
-            lleva a recordar que la división entre cero no está definida, y por
-            lo tanto no podemos obtener ningún resultado cuando evaluamos f(0):
+            dividir <InlineMath>2</InlineMath> entre{" "}
+            <InlineMath>-99</InlineMath>? ¿Es posible dividir{" "}
+            <InlineMath>2</InlineMath> entre <InlineMath>0</InlineMath>? Etc.
+            Esto nos lleva a recordar que la división entre cero no está
+            definida, y por lo tanto no podemos obtener ningún resultado cuando
+            evaluamos <InlineMath>f(0)</InlineMath>:
             <BlockMath>{"f(0) = \\frac{2}{0} =!"}</BlockMath>
             Entonces, podemos excluir al cero del dominio de la función y decir
-            que el dominio de f(x)=2/x consiste en todos los reales excepto el
-            cero:
+            que el dominio de <InlineMath>f(x)=2/x</InlineMath> consiste en
+            todos los reales excepto el cero:
             <BlockMath>
               {"-\\infty < x < +\\infty,\\ excepto \\ x = 0"}
             </BlockMath>
@@ -497,23 +523,28 @@ const GraficosDeFunciones = () => {
               <p>
                 Ya que hemos encontrado el dominio, podemos determinar el rango.
                 Para ello es conveniente ver cómo se comportan los valores que
-                adquiere la variable f(x) en distintas situaciones. La Tabla 6
-                muestra los valores de f(x) para distintos valores de x,
-                complétala.
+                adquiere la variable <InlineMath>f(x)</InlineMath> en distintas
+                situaciones. La <b>Tabla 6</b> muestra los valores de{" "}
+                <InlineMath>f(x)</InlineMath> para distintos valores de{" "}
+                <InlineMath>x</InlineMath>, complétala.
               </p>
               <Tabla6 />
               <p>
                 <br />
-                Como se ha visto anteriormente, cada par ordenado (x, f(x)) se
-                puede representar como un punto en el plano. Coloca los puntos
-                amarillos donde les corresponda según la Tabla 6.
+                Como se ha visto anteriormente, cada par ordenado{" "}
+                <InlineMath>(x, f(x))</InlineMath>se puede representar como un
+                punto en el plano. Coloca los puntos amarillos donde les
+                corresponda según la <b>Tabla 6</b>.
                 <br />
                 <br />
-                Los puntos A-H son tan solo algunos de los puntos que forman a
-                la gráfica de la función, pero muestran cómo es su tendencia y
-                dan una idea de su forma. Presiona el siguiente botón para
-                graficar la función f(x)=2/x, la cuál está conformada por todos
-                los pares ordenados (x, 2/x) situados en el plano cartesiano
+                Los puntos <InlineMath>A-H</InlineMath> son tan solo algunos de
+                los puntos que forman a la gráfica de la función, pero muestran
+                cómo es su tendencia y dan una idea de su forma. Presiona el
+                siguiente botón para graficar la función{" "}
+                <InlineMath>f(x)=2/x</InlineMath>, la cuál está conformada por
+                todos los pares ordenados{" "}
+                <InlineMath>{"(x, \\, 2/x)"}</InlineMath> situados en el plano
+                cartesiano
               </p>
 
               <GraficaF boardId="board2" funcionGrafica={(x) => 20 / x} />
@@ -525,17 +556,19 @@ const GraficosDeFunciones = () => {
               <p>
                 Después de analizar las primeras cuatro preguntas y sus
                 respuestas, es hora de profundizar en la comprensión de la
-                función f(x)=2/x mediante una reflexión más detallada. Para
-                ello, te invito a dibujar el punto M y deslizarlo a lo largo de
-                la gráfica de la función.
+                función <InlineMath>f(x)=2/x</InlineMath> mediante una reflexión
+                más detallada. Para ello, te invito a dibujar el punto{" "}
+                <InlineMath>M</InlineMath> y deslizarlo a lo largo de la gráfica
+                de la función.
                 <br />
                 <br />
                 <PuntoMovibleF boardId="board2" initialCoordinates={[5, 4]} />
                 <br />
                 <br />
                 Este ejercicio te ayudará a visualizar mejor el comportamiento
-                de la función en diferentes rangos de valores de x y a
-                relacionarlo con los conceptos discutidos anteriormente.
+                de la función en diferentes rangos de valores de{" "}
+                <InlineMath>x</InlineMath> y a relacionarlo con los conceptos
+                discutidos anteriormente.
                 <br />
                 <br />
                 Mientras realizas esta actividad, considera las siguientes
@@ -544,25 +577,34 @@ const GraficosDeFunciones = () => {
                 <br />
               </p>
               <ul className="li-preg-reflex">
-                <li>¿A cuánto tiende f(x) cuando x es negativo y grande?</li>
                 <li>
-                  ¿Cuál es la tendencia de f(x) cuando x es negativo y muy
-                  pequeño?
+                  ¿A cuánto tiende <InlineMath>f(x)</InlineMath> cuando{" "}
+                  <InlineMath>x</InlineMath> es negativo y grande?
                 </li>
                 <li>
-                  ¿Cuál es la tendencia de f(x) cuando x es positivo y muy
-                  pequeño?
+                  ¿Cuál es la tendencia de <InlineMath>f(x)</InlineMath> cuando{" "}
+                  <InlineMath>x</InlineMath> es negativo y muy pequeño?
                 </li>
                 <li>
-                  ¿A cuánto se aproxima f(x) cuando x es positivo y grande?
+                  ¿Cuál es la tendencia de <InlineMath>f(x)</InlineMath> cuando{" "}
+                  <InlineMath>x</InlineMath> es positivo y muy pequeño?
                 </li>
-                <li>¿Por qué f(x) nunca es igual a cero?</li>
+                <li>
+                  ¿A cuánto se aproxima <InlineMath>f(x)</InlineMath> cuando{" "}
+                  <InlineMath>x</InlineMath> es positivo y grande?
+                </li>
+                <li>
+                  ¿Por qué <InlineMath>f(x)</InlineMath> nunca es igual a cero?
+                </li>
               </ul>
               <p>
                 <br />
                 <br />
-                Observa que en la gráfica de f(x)=2/x, el rango va de -inf a 0
-                por la derecha, sin tocarlo, y de +inf a cero por la izquierda,
+                Observa que en la gráfica de <InlineMath>f(x)=2/x</InlineMath>,
+                el rango va de <InlineMath>{"-\\infty"}</InlineMath> a{" "}
+                <InlineMath>0</InlineMath>
+                por la derecha, sin tocarlo, y de{" "}
+                <InlineMath>{"+\\infty"}</InlineMath> a cero por la izquierda,
                 sin tocarlo. Por lo que se puede concluir que el rango es:
                 <BlockMath>
                   {"-\\infty < f(x) < +\\infty,\\ excepto \\ f(x) = 0"}
@@ -588,7 +630,7 @@ const GraficosDeFunciones = () => {
             una restricción al dominio, pero esta vez en cuanto a la
             imposibilidad de sacar raíz cuadrada de un número negativo. Piensa
             en qué casos no es posible evaluar la siguiente regla:
-            <BlockMath>{"f(x)=√x"}</BlockMath>
+            <BlockMath>{"f(x) = \\sqrt{x}"}</BlockMath>
             Como se mencionó antes, no es posible sacar raíz cuadrada de números
             reales negativos, lo que quiere decir que el dominio consiste sólo
             en números positivos. Pero ¿hasta qué número positivo? En realidad,
@@ -598,9 +640,11 @@ const GraficosDeFunciones = () => {
             los reales positivos y el cero:
             <BlockMath>{"0 <= x < +\\infty"}</BlockMath>
             Por otra parte, para encontrar el rango, graficaremos algunos puntos
-            de la función y observemos la tendencia. Completa la Tabla 7 con los
-            datos que faltan y luego grafica los puntos amarillos donde les
-            corresponde.
+            de la función y observemos la tendencia. Completa la <b>
+              Tabla 7
+            </b>{" "}
+            con los datos que faltan y luego grafica los puntos amarillos donde
+            les corresponde.
             <br />
             <br />
           </p>
@@ -613,23 +657,29 @@ const GraficosDeFunciones = () => {
               <Tabla7 />
               <p>
                 <br />
-                Los puntos A-F son tan solo algunos de los puntos que forman a
-                la gráfica de f(x)=sqrt(x), pero muestran cómo es su tendencia y
-                dan una idea de su forma.
+                Los puntos <InlineMath>A-F</InlineMath> son tan solo algunos de
+                los puntos que forman a la gráfica de{" "}
+                <InlineMath>{"f(x)= \\sqrt(x)"}</InlineMath>, pero muestran cómo
+                es su tendencia y dan una idea de su forma.
                 <br />
                 <br />
                 Presiona el siguiente botón para graficar la función, la cuál
-                está conformada por todos los pares ordenados (x, sqrt(x))
+                está conformada por todos los pares ordenados{" "}
+                <InlineMath>{"(x, \\, \\sqrt(x))"}</InlineMath>
                 situados en el plano cartesiano.
               </p>
               <GraficaF boardId="board3" funcionGrafica={(x) => Math.sqrt(x)} />
               <p>
                 <br />
-                Esta gráfica muestra la tendencia de f(x) a medida que x cambia.
-                Por ejemplo, observa que f(x) se incrementa cuando x se
-                incrementa cada vez más. Para visualizarlo mejor, puedes
-                graficar el punto M y observar el valor de f(x) para distintos
-                valores de x cada vez más grandes.
+                Esta gráfica muestra la tendencia de{" "}
+                <InlineMath>f(x)</InlineMath> a medida que{" "}
+                <InlineMath>x</InlineMath> cambia. Por ejemplo, observa que{" "}
+                <InlineMath>f(x)</InlineMath> se incrementa cuando{" "}
+                <InlineMath>x</InlineMath> se incrementa cada vez más. Para
+                visualizarlo mejor, puedes graficar el{" "}
+                <InlineMath>{"punto \\, M"}</InlineMath> y observar el valor de{" "}
+                <InlineMath>f(x)</InlineMath> para distintos valores de{" "}
+                <InlineMath>x</InlineMath> cada vez más grandes.
                 <br />
               </p>
               <PuntoMovibleF
@@ -641,8 +691,10 @@ const GraficosDeFunciones = () => {
                 "Esta tendencia tiene lógica, ya que al calcular la raíz
                 cuadrada de números cada vez más grandes, los valores
                 resultantes también aumentan. Por lo tanto podemos concluir que
-                el rango máximo de f(x)=sqrt(x) son todos los reales positivos y
-                el cero:
+                el rango máximo de <InlineMath>
+                  {"f(x)=\\sqrt(x)"}
+                </InlineMath>{" "}
+                son todos los reales positivos y el cero:
                 <BlockMath>{"0 <= f(x) < +\\infty"}</BlockMath>
               </p>
             </Col>
@@ -661,7 +713,8 @@ const GraficosDeFunciones = () => {
       <Row>
         <Col>
           <p>
-            Estos dos casos, a saber, f(x)=20/x y f(x)=sqrt(x), son ejemplos de
+            Estos dos casos, a saber, <InlineMath>f(x)=20/x</InlineMath> y{" "}
+            <InlineMath>{"f(x)=\\sqrt(x)"}</InlineMath>, son ejemplos de
             funciones que presentan indeterminaciones para ciertos valores de x,
             por lo que para hallar su dominio basta con excluir aquellos valores
             para los cuáles la expresión se indetermina.
@@ -680,14 +733,15 @@ const GraficosDeFunciones = () => {
             regla misma delimita su dominio.
             <br />
             <br />
-            Volvamos a la regla de correspondencia genérica f(x)=30+8.5x y
-            piensa en si existe algun número en el cuál no podamos evaluar la
-            función. Para ello es necesario recordar que en matemáticas las
-            indeterminaciones suceden cuando se tiene división entre cero o
-            cuando se intenta sacar raíz cuadrada de números negativos. En vista
-            de que f(x)=30+8.5x consiste únicamente en una suma y un producto,
-            no hay nada que restrinja su dominio y en consecuencia su dominio
-            máximo son todos los números reales:
+            Volvamos a la regla de correspondencia genérica{" "}
+            <InlineMath>f(x)=30+8.5x</InlineMath> y piensa en si existe algun
+            número en el cuál no podamos evaluar la función. Para ello es
+            necesario recordar que en matemáticas las indeterminaciones suceden
+            cuando se tiene división entre cero o cuando se intenta sacar raíz
+            cuadrada de números negativos. En vista de que{" "}
+            <InlineMath>f(x)=30+8.5x</InlineMath> consiste únicamente en una
+            suma y un producto, no hay nada que restrinja su dominio y en
+            consecuencia su dominio máximo son todos los números reales:
             <BlockMath>{"-\\infty < x < +\\infty"}</BlockMath>
           </p>
         </Col>
@@ -698,25 +752,33 @@ const GraficosDeFunciones = () => {
             <Col md={5}>
               <p>
                 Ahora, para conocer su rango, analicemos cuál es el
-                comportamiento de f(x) para distintos valores de x. Para ello
-                podemos recordar que ya hemos graficado algunos puntos de la
-                función y que incluso unimos dichos puntos con el segmento AG.
-                Esto nos permite conocer cómo es la función para{" "}
-                <InlineMath>{"0 <= x <= 30"}</InlineMath>.
+                comportamiento de <InlineMath>f(x)</InlineMath> para distintos
+                valores de <InlineMath>x</InlineMath>. Para ello podemos
+                recordar que ya hemos graficado algunos puntos de la función y
+                que incluso unimos dichos puntos con el{" "}
+                <InlineMath>{"segmento \\, AG"}</InlineMath>. Esto nos permite
+                conocer cómo es la función para{" "}
+                <InlineMath>{"0 \\leq x \\leq 30"}</InlineMath>.
                 <br />
                 <br />
-                ¿Qué sucede con f(x) conforme x se hace más grande que 30 y cada
-                vez mayor? Pues si evaluáramos la función en números cada vez
-                más grandes podemos ver cómo f(x) también se va incrementando,
-                esto es, si x crece, f(x) también crece.
+                ¿Qué sucede con <InlineMath>f(x)</InlineMath> conforme{" "}
+                <InlineMath>x</InlineMath> se hace más grande que{" "}
+                <InlineMath>30</InlineMath> y cada vez mayor? Pues si
+                evaluáramos la función en números cada vez más grandes podemos
+                ver cómo <InlineMath>f(x)</InlineMath> también se va
+                incrementando, esto es, si <InlineMath>x</InlineMath> crece,{" "}
+                <InlineMath>f(x)</InlineMath> también crece.
                 <br />
-                <br />Y ¿cómo es f(x) a medida que x es menor que cero y cada
-                vez de mayor magnitud? En este caso f(x) también es negativo y
-                cada vez de mayor magnitud.
+                <br />Y ¿cómo es <InlineMath>f(x)</InlineMath> a medida que{" "}
+                <InlineMath>x</InlineMath> es menor que cero y cada vez de mayor
+                magnitud? En este caso <InlineMath>f(x)</InlineMath> también es
+                negativo y cada vez de mayor magnitud.
                 <br />
                 <br />
-                Para confirmar estas observaciones, grafica f(x)=30+8.5x, luego
-                grafica el punto M y deslizalo sobre la gráfica de la función.
+                Para confirmar estas observaciones, grafica{" "}
+                <InlineMath>f(x)=30+8.5x</InlineMath>, luego grafica el{" "}
+                <InlineMath>{"punto \\, M"}</InlineMath> y deslizalo sobre la
+                gráfica de la función.
               </p>
 
               <GraficaF boardId="board4" funcionGrafica={(x) => 30 + 8.5 * x} />
@@ -724,15 +786,16 @@ const GraficosDeFunciones = () => {
               <PuntoMovibleF boardId="board4" initialCoordinates={[7, 89.5]} />
               <p>
                 <br />
-                Lo anterior quiere decir que f(x) abarca valores negativos y de
-                una magnitud tan grande como se quiera hasta valores positivos
-                tan grandes como se desee, por lo que el rango es:
+                Lo anterior quiere decir que <InlineMath>f(x)</InlineMath>{" "}
+                abarca valores negativos y de una magnitud tan grande como se
+                quiera hasta valores positivos tan grandes como se desee, por lo
+                que el rango es:
                 <BlockMath>{"-\\infty < f(x) < +\\infty"}</BlockMath>
-                Ya que has graficado f(x)= 30+8.5x, usa los botones de zoom para
-                observar que la gráfica tiene un dominio que abarca todos los
-                números reales (de −∞−∞ a +∞+∞) y su rango también son todos los
-                números reales. Como has observado, la gráfica de f(x)=30+8.5x
-                es una línea recta.
+                Ya que has graficado <InlineMath>f(x)= 30+8.5x</InlineMath>, usa
+                los botones de zoom para observar que la gráfica tiene un
+                dominio que abarca todos los números reales (de <InlineMath>{"-\\infty"}</InlineMath> a <InlineMath>{"\\infty"}</InlineMath>) y
+                su rango también son todos los números reales. Como has
+                observado, la gráfica de <InlineMath>f(x)=30+8.5x</InlineMath> es una línea recta.
               </p>
             </Col>
             <Col md={7}>
@@ -772,8 +835,6 @@ const GraficosDeFunciones = () => {
           </FuncLinealContextProvider>
         </BoardsContextProvider>
       </Row>
-
-      
     </Container>
   );
 };

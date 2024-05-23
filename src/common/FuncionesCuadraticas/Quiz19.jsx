@@ -8,11 +8,13 @@ const Quiz19 = () => {
   const activityNumber = "19";
   const instruction = (
     <span>
-      Grafica la función <InlineMath>{"f(x)= 150x-x^2"}</InlineMath> en la
-      Ventana gráfica 11 y responde las siguientes preguntas donde identificarás
-      intervalos del dominio donde <InlineMath>A(x)</InlineMath> se incrementa o
-      disminuye, y puntos donde <InlineMath>A(x)</InlineMath> es máxima o
-      mínima.
+      Grafica la función <InlineMath>{"f(x)= 150x-x^2"}</InlineMath> en la{" "}
+      <em>
+        <b>Ventana gráfica 11</b>
+      </em>{" "}
+      y responde las siguientes preguntas donde identificarás intervalos del
+      dominio donde <InlineMath>A(x)</InlineMath> se incrementa o disminuye, y
+      puntos donde <InlineMath>A(x)</InlineMath> es máxima o mínima.
     </span>
   );
 
@@ -20,7 +22,11 @@ const Quiz19 = () => {
     preg1: {
       preg: (
         <span>
-          Desliza el punto M dentro del intervalo de dominio 35 ≤ x ≤ 65, incrementando <InlineMath>x</InlineMath> (de izquierda a derecha). ¿Cómo varía el área A(x) a medida que el punto M se desplaza?
+          Desliza el <InlineMath>{"punto \\, M"}</InlineMath> dentro del
+          intervalo de dominio <InlineMath>35 ≤ x ≤ 65</InlineMath>,
+          incrementando <InlineMath>x</InlineMath> (de izquierda a derecha).
+          ¿Cómo varía el área <InlineMath>A(x)</InlineMath> a medida que el{" "}
+          <InlineMath>{"punto \\, M"}</InlineMath> se desplaza?
         </span>
       ),
 
@@ -31,7 +37,9 @@ const Quiz19 = () => {
     preg2: {
       preg: (
         <span>
-          ¿Cuál es el intervalo más grande del dominio donde el área <InlineMath>A(x)</InlineMath> va aumentando (cuando te desplazas de izquierda a derecha)?
+          ¿Cuál es el intervalo más grande del dominio donde el área{" "}
+          <InlineMath>A(x)</InlineMath> va aumentando (cuando te desplazas de
+          izquierda a derecha)?
         </span>
       ),
 
@@ -40,14 +48,25 @@ const Quiz19 = () => {
     },
 
     preg3: {
-      preg: <span>¿Cuál es el intervalo más grande del dominio donde el área <InlineMath>A(x)</InlineMath> va disminuyendo (cuando te desplazas de izquierda a derecha)?</span>,
+      preg: (
+        <span>
+          ¿Cuál es el intervalo más grande del dominio donde el área{" "}
+          <InlineMath>A(x)</InlineMath> va disminuyendo (cuando te desplazas de
+          izquierda a derecha)?
+        </span>
+      ),
 
       resps: ["75 ≤ x ≤ 150", "0 ≤ x ≤ 75", "0 ≤ x ≤ 80.5", "90 ≤ x ≤ 120"],
       renderInlineMath: false,
     },
 
     preg4: {
-      preg: <span>¿Cuál es el área máxima <InlineMath>A(x)</InlineMath> que se puede obtener?</span>,
+      preg: (
+        <span>
+          ¿Cuál es el área máxima <InlineMath>A(x)</InlineMath> que se puede
+          obtener?
+        </span>
+      ),
 
       resps: ["5625 \\, m^2", "9657 \\, m^2", "6820 \\, m^2"],
       renderInlineMath: true,
@@ -56,31 +75,38 @@ const Quiz19 = () => {
     preg5: {
       preg: (
         <span>
-          ¿Cuánto debe medir el lado <InlineMath>x</InlineMath> para que el área <InlineMath>A(x)</InlineMath> sea máxima?
+          ¿Cuánto debe medir el lado <InlineMath>x</InlineMath> para que el área{" "}
+          <InlineMath>A(x)</InlineMath> sea máxima?
         </span>
       ),
 
-      resps: [
-        "75 \\, m",
-        "85 \\, m",
-        "65 \\, m",
-      ],
+      resps: ["75 \\, m", "85 \\, m", "65 \\, m"],
       renderInlineMath: true,
     },
 
     preg6: {
       preg: (
         <span>
-          ¿En qué punto de la gráfica se alcanza el área <InlineMath>A(x)</InlineMath> máxima?
+          ¿En qué punto de la gráfica se alcanza el área{" "}
+          <InlineMath>A(x)</InlineMath> máxima?
         </span>
       ),
 
-      resps: ["Punto = (75, 5625)", "Punto = (80, 5600)", "Punto = (110, 4400)"],
+      resps: [
+        "Punto = (75, 5625)",
+        "Punto = (80, 5600)",
+        "Punto = (110, 4400)",
+      ],
       renderInlineMath: false,
     },
 
     preg7: {
-      preg: <span>¿En qué punto de la gráfica se alcanza el área <InlineMath>A(x)</InlineMath> mínima?</span>,
+      preg: (
+        <span>
+          ¿En qué punto de la gráfica se alcanza el área{" "}
+          <InlineMath>A(x)</InlineMath> mínima?
+        </span>
+      ),
 
       resps: ["Punto = (150, 0)", "Punto = (145, 725)", "Punto = (5, 725)"],
       renderInlineMath: false,

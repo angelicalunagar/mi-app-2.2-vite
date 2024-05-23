@@ -1,9 +1,14 @@
 import "../styles/Bloque5.css";
 import "../styles/Bloque1_1.css";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Row, Col } from "react-bootstrap";
 import VariacionFunciones from "./VariacionFunciones";
 import { BoardsContextProvider } from "../contexts/BoardsContext";
+
+//Bloque1
+
+import { BoardContextProvider } from "../contexts/BoardContext";
+import SlideCuestionario from "./SlideCuestionario";
+
 import { GraficaFContextProvider } from "../contexts/GraficaFContext";
 import { FunCuadratContextProvider } from "../contexts/FunCuadratContext";
 import { FunCubicaContextProvider } from "../contexts/FunCubicaContext";
@@ -23,6 +28,15 @@ function Bloque5() {
   return (
     <div className="bloque5-contenedor">
       <h1>Bloque 5</h1>
+      <Row>
+        <SlideCuestionario />
+        <BoardContextProvider>
+          <Row>
+            <Col md={9}>{/* <Board />  */}</Col>
+          </Row>
+        </BoardContextProvider>
+      </Row>
+      
       <BoardsContextProvider>
         <Fun4toGradoContextProvider>
           <Col

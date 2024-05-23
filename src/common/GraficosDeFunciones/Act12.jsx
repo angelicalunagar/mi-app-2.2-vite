@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Row, OverlayTrigger, Popover } from "react-bootstrap";
 import { ImEyePlus, ImEyeMinus } from "react-icons/im";
+import "../../styles/Bloque1_1.css";
 import { InlineMath } from "react-katex";
 
 const Act12 = () => {
@@ -142,59 +143,106 @@ const Act12 = () => {
             </li>
             <li className="liAct-4">
               <InlineMath>{"5"}</InlineMath> y <InlineMath>{"f(5)"}</InlineMath>{" "}
-              se pueden graficar como el punto{" "}
+              se pueden graficar como el punto <br />
+              <span style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}>
               <InlineMath>{"B=(5, 72.5)"}</InlineMath>
+              </span>
+              
             </li>
             <li className="liAct-4">
               <InlineMath>{"10"}</InlineMath> y{" "}
               <InlineMath>{"f(10)"}</InlineMath> se pueden graficar como el
-              punto <InlineMath>{"C=("}</InlineMath>
-              {renderInput("ru3_1")}{" "}
-              ,
-              {renderInput("ru3_2")}{" "}
-              <InlineMath>{")"}</InlineMath>
+              punto
+              <br />
+              <span
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <InlineMath>{"C=("}</InlineMath>
+                {renderInput("ru3_1")} ,{renderInput("ru3_2")}{" "}
+                <InlineMath>{")"}</InlineMath>
+              </span>
             </li>
             <li className="liAct-4">
               <InlineMath>{"15"}</InlineMath> y{" "}
               <InlineMath>{"f(15)"}</InlineMath> se pueden graficar como el
-              punto <InlineMath>{"D=("}</InlineMath>
-              {renderInput("ru4_1")}{" "}
-              ,
-              {renderInput("ru4_2")}{" "}
-              <InlineMath>{")"}</InlineMath>
+              punto
+              <br />
+              <span
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <InlineMath>{"D=("}</InlineMath>
+                {renderInput("ru4_1")} ,{renderInput("ru4_2")}{" "}
+                <InlineMath>{")"}</InlineMath>
+              </span>
             </li>
             <li className="liAct-4">
               <InlineMath>{"20"}</InlineMath> y{" "}
               <InlineMath>{"f(20)"}</InlineMath> se pueden graficar como el
-              punto <InlineMath>{"E=("}</InlineMath>
-              {renderInput("ru5_1")}{" "}
-              ,
-              {renderInput("ru5_2")}{" "}
-              <InlineMath>{")"}</InlineMath>
+              punto
+              <br />
+              <span
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <InlineMath>{"E=("}</InlineMath>
+                {renderInput("ru5_1")} ,{renderInput("ru5_2")}{" "}
+                <InlineMath>{")"}</InlineMath>
+              </span>
             </li>
             <li className="liAct-4">
               <InlineMath>{"25"}</InlineMath> y{" "}
               <InlineMath>{"f(25)"}</InlineMath> se pueden graficar como el
-              punto <InlineMath>{"F=("}</InlineMath>
-              {renderInput("ru6_1")}{" "}
-              ,
-              {renderInput("ru6_2")}{" "}
-              <InlineMath>{")"}</InlineMath>
+              punto
+              <br />
+              <span
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <InlineMath>{"F=("}</InlineMath>
+                {renderInput("ru6_1")} ,{renderInput("ru6_2")}{" "}
+                <InlineMath>{")"}</InlineMath>
+              </span>
             </li>
             <li className="liAct-4">
               <InlineMath>{"30"}</InlineMath> y{" "}
               <InlineMath>{"f(30)"}</InlineMath> se pueden graficar como el
-              punto <InlineMath>{"G=("}</InlineMath>
-              {renderInput("ru7_1")}{" "}
-              ,
-              {renderInput("ru7_2")}{" "}
-              <InlineMath>{")"}</InlineMath>
+              punto
+              <br />
+              <span
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <InlineMath>{"G=("}</InlineMath>
+                {renderInput("ru7_1")} ,{renderInput("ru7_2")}{" "}
+                <InlineMath>{")"}</InlineMath>
+              </span>
             </li>
             y en general:
             <p>
               <br />
               <InlineMath>{"x"}</InlineMath> y <InlineMath>{"f(x)"}</InlineMath>{" "}
-              se puede graficar como el punto{" "}
+              se puede graficar como el punto <br />
               <InlineMath>{"P(x, y)"}</InlineMath>.
             </p>
           </ul>

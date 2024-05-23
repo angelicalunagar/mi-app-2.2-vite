@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
+import { InlineMath } from "react-katex";
 
 const QueEsFuncion = () => {
   return (
@@ -17,18 +18,21 @@ const QueEsFuncion = () => {
             expresión matemática que relaciona una variable independiente con
             una variable dependiente, definamos una función matemática:
             <br />
-            <br />
+          </p>
+
+          <p className="blockquote-custom">
             <em>
               "Una <b>función</b> es simplemente una{" "}
-              <em>regla de correspondencia</em> que relaciona las variables
+              <b>regla de correspondencia</b> que relaciona las variables
               independiente y dependiente. El conjunto de valores que la
               variable independiente puede tomar se llama <b>dominio</b> de la
               función, mientras que el conjunto de valores que la variable
               dependiente puede adquirir se conoce como su <b>imagen</b> o{" "}
               <b>rango</b>."
             </em>
-            <br />
-            <br />
+          </p>
+
+          <p>
             Es importante destacar que el concepto de función está constituido
             por tres elementos básicos: la regla de correspondencia, el dominio
             y el rango. Por lo tanto, definir una función implica conocer no
@@ -58,7 +62,7 @@ const QueEsFuncion = () => {
               <tbody>
                 <tr>
                   <td>Función g</td>
-                  <td>g(x)=5x</td>
+                  <td><InlineMath>g(x)=5x</InlineMath></td>
                   <td>
                     <span>&#123;</span>0, 1, 2, 3, . . . , 199, 200
                     <span>&#125;</span>
@@ -70,7 +74,7 @@ const QueEsFuncion = () => {
                 </tr>
                 <tr>
                   <td>Función d</td>
-                  <td>d(n)=4000-250n</td>
+                  <td><InlineMath>d(n)=4000-250n</InlineMath></td>
                   <td>
                     <span>&#123;</span>0, 1, 2, 3, . . . , 14, 15
                     <span>&#125;</span>
@@ -82,13 +86,13 @@ const QueEsFuncion = () => {
                 </tr>
                 <tr>
                   <td>Función p</td>
-                  <td>p(x)=30+8.50x</td>
+                  <td><InlineMath>p(x)=30+8.50x</InlineMath></td>
                   <td>0 ≤ x ≤ 30</td>
                   <td>30 ≤ p(x) ≤ 630</td>
                 </tr>
                 <tr>
                   <td>Función d</td>
-                  <td>d(t)=2t</td>
+                  <td><InlineMath>d(t)=2t</InlineMath></td>
                   <td>0 ≤ t ≤ 30</td>
                   <td>0 ≤ d(t) ≤ 60</td>
                 </tr>
@@ -97,8 +101,11 @@ const QueEsFuncion = () => {
           </Container>
         </Col>
       </Row>
+      <br />
+      <br />
+      <br />
     </Container>
-  )
-}
+  );
+};
 
-export default QueEsFuncion
+export default QueEsFuncion;

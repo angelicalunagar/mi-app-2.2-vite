@@ -20,7 +20,7 @@ import "../../styles/Bloque1_1.css";
 const FunPolinomiales = () => {
   return (
     <Container>
-      <Row className="row-nuevotema">
+      <Row className="main-row">
         <Col md={12}>
           <h4>Funciones polinomiales</h4>
           <br />
@@ -193,16 +193,16 @@ const FunPolinomiales = () => {
               </p>
               <ul className="li-preg-reflex">
                 <li>
-                  en dónde intersecta la gráfica al eje y cuando modificas el
-                  término independiente e.
+                  en dónde intersecta la gráfica al <InlineMath>{"eje \\, y"}</InlineMath> cuando modificas el
+                  término independiente <InlineMath>e</InlineMath>.
                 </li>
                 <li>
                   qué pasa si la función abre hacia arriba o hacia abajo cuando
-                  modificas el coeficiente de x^4 a
+                  modificas el coeficiente de <InlineMath>x^4</InlineMath> <InlineMath>a</InlineMath>
                 </li>
                 <li>
-                  ¿Qué pasa si modificas el término cúbico b, el término
-                  cuadrático c o el término lineal d?
+                  ¿Qué pasa si modificas el término cúbico <InlineMath>b</InlineMath>, el término
+                  cuadrático <InlineMath>c</InlineMath> o el término lineal <InlineMath>d</InlineMath>?
                 </li>
                 <li>
                   ¿Cuál es el número máximo de raíces que puede tener una
@@ -245,7 +245,9 @@ const FunPolinomiales = () => {
             de grado impar (lineales y cúbicas, etc.) siempre tienen por rango a
             todos los reales, mientras que las funciones de grado par
             (cuadráticas, de grado 4, etc.) tendrán rangos variables dependiendo
-            del valor de sus parámetros a, b, etc.
+            del valor de sus parámetros <InlineMath>a</InlineMath>, <InlineMath>b</InlineMath>, etc.
+          <br />
+          <br />
           </p>
         </Col>
       </Row>

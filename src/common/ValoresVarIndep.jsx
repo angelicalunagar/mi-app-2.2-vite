@@ -11,17 +11,18 @@ import iceCreamMan from "../assets/iceCreamMan.jpg";
 const ValoresVarIndep = () => {
   return (
     <Container>
-        <h4>Valores que adquiere la variable independiente</h4>
+      <h4>Valores que adquiere la variable independiente</h4>
       <Row className="main-row">
         <Col>
           <p>
             Siguiendo con el caso del heladero, cuyas ganancias{" "}
             <InlineMath>{"g(x)"}</InlineMath> están en función del número de
-            helados vendidos x de acuerdo con la regla de correspondencia{" "}
-            <InlineMath>{"g(x)=5x"}</InlineMath>, en la sección anterior
-            tabulamos valores de <InlineMath>{"x"}</InlineMath>, desde{" "}
-            <InlineMath>{"0"}</InlineMath> hasta <InlineMath>{"5"}</InlineMath>,
-            con sus respectivos valores de <InlineMath>{"g(x)"}</InlineMath>.
+            helados vendidos <InlineMath>x</InlineMath> de acuerdo con la regla
+            de correspondencia <InlineMath>{"g(x)=5x"}</InlineMath>, en la
+            sección anterior tabulamos valores de <InlineMath>{"x"}</InlineMath>
+            , desde <InlineMath>{"0"}</InlineMath> hasta{" "}
+            <InlineMath>{"5"}</InlineMath>, con sus respectivos valores de{" "}
+            <InlineMath>{"g(x)"}</InlineMath>.
             <br />
             <br />
             Pero ¿cuál es el valor máximo que <InlineMath>
@@ -50,12 +51,11 @@ const ValoresVarIndep = () => {
           <img src={iceCreamMan} alt="" />
         </Col>
       </Row>
-
-
-
-
+      <br />
+      <br />
+      <br />
     </Container>
-  )
-}
+  );
+};
 
-export default ValoresVarIndep
+export default ValoresVarIndep;

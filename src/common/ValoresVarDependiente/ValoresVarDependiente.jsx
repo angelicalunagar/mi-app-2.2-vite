@@ -82,6 +82,9 @@ const ValoresVarDependiente = () => {
           </p>
         </Col>
       </Row>
+      <br />
+      <br />
+      <br />
     </Container>
   );
 };

@@ -13,6 +13,7 @@ import TablaDeFuncion from "./TablaDeFuncion/TablaDeFuncion";
 import GraficosDeFunciones from "./GraficosDeFunciones/GraficosDeFunciones";
 import FuncLineales from "./FuncionesLineales/FuncLineales";
 import FuncionesCuadraticas from "./FuncionesCuadraticas/FuncionesCuadraticas";
+import FunPolinomiales from "./FuncionesPolinomiales.jsx/FunPolinomiales";
 import "../styles/Sidebar.css";
 
 function Sidebar({ show, close }) {
@@ -51,6 +52,9 @@ function Sidebar({ show, close }) {
         return <FuncLineales />;
       case "FuncionesCuadraticas":
         return <FuncionesCuadraticas />;
+      case "FunPolinomiales":
+        return <FunPolinomiales />;
+
       default:
         return null;
     }
@@ -198,6 +202,16 @@ function Sidebar({ show, close }) {
                 }`}
               >
                 Funciones Cuadráticas
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => setSelectedComponent("FunPolinomiales")}
+                className={`text-nowrap sidebar-button ${
+                  selectedComponent === "FunPolinomiales" ? "selected" : ""
+                }`}
+              >
+                Funciones Polinomiales
               </button>
             </li>
           </ul>

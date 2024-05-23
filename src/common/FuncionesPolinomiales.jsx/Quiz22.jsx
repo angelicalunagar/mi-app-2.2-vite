@@ -8,7 +8,7 @@ const Quiz22 = () => {
   const activityNumber = "22";
   const instruction = (
     <span>
-      Interactúa con la ventana gráfica 15 en donde hemos graficado la función
+      Interactúa con la <em><b>Ventana gráfica 15</b></em> en donde hemos graficado la función
       <InlineMath>f(x)=x^3+5x^2+x-2</InlineMath>. Contesta las siguientes
       preguntas en donde identificarás ciertas características de la gráfica de
       esta función: dominio, rango, intervalos del dominio donde{" "}

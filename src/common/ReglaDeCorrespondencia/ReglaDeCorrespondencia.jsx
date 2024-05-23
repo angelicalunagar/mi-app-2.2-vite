@@ -48,12 +48,12 @@ const ReglaDeCorrespondencia = () => {
       <Row>
         <Col>
           <p>
-            Hasta ahora, en las situaciones de la actividad 2, sólo hemos
+            Hasta ahora, en las situaciones de la <b>Actividad 2</b>, sólo hemos
             identificado cuál es la variable dependiente y cuál es la variable
             independiente, y hemos dicho cómo se relacionan cualitativamente.
             Por ejemplo, en el caso del heladero, sabemos que entre más helados
             vende, más gana. Con esta información, ¿puedes saber cuánto gana si
-            vende 20 helados?
+            vende <InlineMath>20</InlineMath> helados?
           </p>
           <Form /* className="prueba" */>
             <Form.Group>
@@ -81,7 +81,7 @@ const ReglaDeCorrespondencia = () => {
             Definitivamente no. Para responder esto necesitamos información
             cuantitativa (no sólo cualitativa) que relacione el número de
             helados vendidos con la ganancia. Pero si el heladero nos dice que
-            gana 5 pesos por cada helado que vende, podemos calcular su
+            gana <InlineMath>5</InlineMath> pesos por cada helado que vende, podemos calcular su
             ganancia:
             <br />
             <BlockMath>{"\\text{ganancia = 5 (número de helados)}"}</BlockMath>
@@ -137,7 +137,7 @@ const ReglaDeCorrespondencia = () => {
             siempre que nos dan el valor de una de las variables, podemos saber
             el de la otra. Entonces también podríamos saber el número de helados
             vendidos si nos dicen que en total la ganancia del heladero fue de{" "}
-            <InlineMath>{"$85.00"}</InlineMath>, es decir{" "}
+            <InlineMath>{"\\$85.00"}</InlineMath>, es decir{" "}
             <InlineMath>{"g(x)=85"}</InlineMath>. Para resolver esto basta con
             sustituir <InlineMath>{"g(x)"}</InlineMath> por{" "}
             <InlineMath>{"85"}</InlineMath> en la regla de correspondencia y
@@ -146,12 +146,15 @@ const ReglaDeCorrespondencia = () => {
             <BlockMath>{"85 = 5x"}</BlockMath>
             <BlockMath>{"x=85/5"}</BlockMath>
             <BlockMath>{"x=17"}</BlockMath>
-            Esto es, para obtener 85 pesos de ganancia, el heladero tuvo que
-            haber vendido 17 helados.
+            Esto es, para obtener <InlineMath>85</InlineMath> pesos de ganancia, el heladero tuvo que
+            haber vendido <InlineMath>17</InlineMath> helados.
           </p>
         </Col>
       </Row>
       <Act5 />
+      <br />
+      <br />
+      <br />
     </Container>
   )
 }

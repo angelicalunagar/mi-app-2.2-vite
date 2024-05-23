@@ -53,7 +53,7 @@ const QuizSub7 = () => {
           viajes en función de la distancia recorrida{" "}
           <InlineMath>{"x"}</InlineMath> de acuerdo con la expresión{" "}
           <InlineMath>{"p(x)=30+20x"}</InlineMath>. Si el taxi no hace viajes
-          más largos que <InlineMath>{"30km"}</InlineMath>:
+          más largos que <InlineMath>{"30 \\, km"}</InlineMath>:
         </em>
       ),
       subpreguntas: [
@@ -79,7 +79,7 @@ const QuizSub7 = () => {
           La distancia recorrida (en km) de un automóvil de carreras es función
           del tiempo transcurrido (en min) de acuerdo con la expresión{" "}
           <InlineMath>{"d(t)=2t"}</InlineMath>. Sabiendo que el motor solo
-          soporta estar en funcionamiento <InlineMath>{"30 min"}</InlineMath>:
+          soporta estar en funcionamiento <InlineMath>{"30 \\, min"}</InlineMath>:
         </em>
       ),
       subpreguntas: [

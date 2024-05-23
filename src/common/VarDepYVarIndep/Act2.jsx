@@ -110,7 +110,7 @@ const Act2 = () => {
   };
 
   return (
-    <div>
+    <div style= {{marginTop: "3rem"}}>
       <Row className="row-act">
         <Col className="actividad" md={10}>
           <p>

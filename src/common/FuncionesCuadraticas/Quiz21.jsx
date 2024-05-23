@@ -8,7 +8,7 @@ const Quiz21 = () => {
   const activityNumber = "21";
   const instruction = (
     <span>
-      En la ventana gráfica 14 hemos graficado la función{" "}
+      En la <em><b>Ventana gráfica 14</b></em> hemos graficado la función{" "}
       <InlineMath>f(x)=150x-x^2</InlineMath>. Modifica el coeficiente de{" "}
       <InlineMath>x^2</InlineMath>, al cual denotaremos con{" "}
       <InlineMath>a</InlineMath>, el coeficiente del término lineal{" "}
@@ -122,7 +122,7 @@ const Quiz21 = () => {
       preg: (
         <span>
           Mueve el término independiente <InlineMath>c</InlineMath> para que
-          valga -1000. ¿En qué punto la parábola intersecta al{" "}
+          valga <InlineMath>-1000</InlineMath>. ¿En qué punto la parábola intersecta al{" "}
           <InlineMath>{"eje \\, y"}</InlineMath>?
         </span>
       ),
@@ -139,9 +139,9 @@ const Quiz21 = () => {
       ),
 
       resps: [
-        "La coordenada 'y' del punto donde la gráfica intersecta al 'eje y'",
-        "La coordenada 'x' del punto donde la gráfica intersecta al 'eje y'",
-        "El punto donde la gráfica intersecta al 'eje y'",
+        'La coordenada "y" del punto donde la gráfica intersecta al "eje y"',
+        'La coordenada "x" del punto donde la gráfica intersecta al "eje y"',
+        'El punto donde la gráfica intersecta al "eje y"',
       ],
       renderInlineMath: false,
     },
@@ -149,7 +149,7 @@ const Quiz21 = () => {
     preg10: {
       preg: (
         <span>
-          ¿Cuál de las siguientes parábolas pasa por el punto (0, -500)?
+          ¿Cuál de las siguientes parábolas pasa por el punto <InlineMath>(0, -500)</InlineMath>?
         </span>
       ),
 
@@ -176,9 +176,9 @@ const Quiz21 = () => {
       ),
 
       resps: [
-        "El vértice se encuentra sobre el eje 'y'",
-        "El vértice se encuentra sobre el eje 'x'",
-        "El vértice se encuentra en un lugar distinto del eje 'y' y del eje 'x'",
+        'El vértice se encuentra sobre el eje "y"',
+        'El vértice se encuentra sobre el eje "x"',
+        'El vértice se encuentra en un lugar distinto del eje "y" y del eje "x"',
       ],
       renderInlineMath: false,
     },
@@ -254,10 +254,10 @@ const Quiz21 = () => {
     preg6: "f(x)=-2.3x^2+5",
     preg7: "f(x)=10x^2+10",
     preg8: "Punto=(0, -1000)",
-    preg9: "La coordenada 'y' del punto donde la gráfica intersecta al 'eje y'",
+    preg9: 'La coordenada "y" del punto donde la gráfica intersecta al "eje y"',
     preg10: "f(x)=15x^2-500",
     preg11: "f(x)=5x^2-6",
-    preg12: "El vértice se encuentra sobre el eje 'y'",
+    preg12: 'El vértice se encuentra sobre el eje "y"',
     preg13: "f(x) = ax^2 + bx +c",
     preg14: "Dos",
     preg15: "Sí, \\, -\\infty < x < \\infty",
