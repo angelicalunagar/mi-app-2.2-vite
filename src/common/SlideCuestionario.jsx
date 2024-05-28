@@ -10,7 +10,7 @@ const SlideCuestionario = () => {
     <Container>
       <Row>
         <Col>
-          <h2>Bloque 1: Funciones</h2>
+          <h2>Práctica interactiva para caracterizar una función usando la primera y segunda derivadas</h2>
         </Col>
       </Row>
 

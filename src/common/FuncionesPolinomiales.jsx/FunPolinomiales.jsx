@@ -126,11 +126,11 @@ const FunPolinomiales = () => {
                   <InlineMath>c</InlineMath>?
                 </li>
                 <li>
-                  ¿Cuál es el número máximo de raíces que puede tener una
+                  ¿Cuál es el número máximo de raíces reales que puede tener una
                   función cúbica?
                 </li>
                 <li>
-                  ¿Cuál es el número mínimo de raíces que puede tener una
+                  ¿Cuál es el número mínimo de raíces reales que puede tener una
                   función cúbica?
                 </li>
               </ul>

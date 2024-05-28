@@ -1,6 +1,6 @@
 import React from "react";
 import '../styles/Bloque3.css'
-import Bloque1_1 from "./Bloque1_1";
+import TablaDeFuncion from "./TablaDeFuncion/TablaDeFuncion";
 import { Link } from "react-router-dom";
 
 
@@ -9,10 +9,10 @@ function Bloque3(){
     <div className="bloque3-contenedor">
       <div className="h-center">
         <h1>Bloque 3</h1>
-        <h2>Funciones</h2>
+        <h2>Crecimiento, decrecimiento, máximos y mínimos de una función</h2>
       </div>
     
-      <Bloque1_1 />
+      <TablaDeFuncion />
       <Link to="/otra-pagina">
         <button className="boton-cuestionario">Cuestionario</button>
       </Link>

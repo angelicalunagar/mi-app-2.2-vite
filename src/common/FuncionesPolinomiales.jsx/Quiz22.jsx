@@ -61,7 +61,7 @@ const Quiz22 = () => {
         </span>
       ),
 
-      resps: ["x=0.93, \\, -1.45, \\, -4.48", "x=0.80", "x=-1.45", "x=-1.45, \\, -4.48"],
+      resps: ["x=0.93 \\, \\, o \\, \\, x=-1.45 \\, \\, o \\, \\, x=-4.48", "x=0.80", "x=-1.45", "x=-1.45, \\, -4.48"],
       renderInlineMath: true,
     },
 
@@ -106,7 +106,7 @@ const Quiz22 = () => {
       ),
 
       resps: [
-        "-\\infty < x < \\infty, \\, esxcepto \\, -3.23 < x < -0.10",
+        "-\\infty < x < \\infty, \\, excepto \\, -3.23 < x < -0.10",
         "-\\infty < x < \\infty",
         "-\\infty < x < -3.23 ",
         "-0.10 < x < \\infty",
@@ -119,7 +119,7 @@ const Quiz22 = () => {
         <span>
           Máximo relativo es aquella pareja <InlineMath>(x, f(x))</InlineMath>{" "}
           para la cual <InlineMath>f(x)</InlineMath> es el máximo valor posible
-          en su vecindad (intervalo pequeño), aunque no necesariamente en todo
+          en su vecindad (intervalo), aunque no necesariamente en todo
           el dominio. Se encuentra donde <InlineMath>f(x)</InlineMath> cambia de
           ir incrementándose a ir disminuyendo. ¿Cuál de los siguientes puntos
           de la función es un punto máximo relativo?
@@ -228,13 +228,13 @@ const Quiz22 = () => {
     preg13: {
       preg: (
         <span>
-          ¿Qué valores del dominio tienen una imagen positiva{" "}
-          <InlineMath>{"(f(x) > 0 )"}</InlineMath>?
+          Encuentra todos los valores del dominio que tienen una imagen positiva{" "}
+          <InlineMath>{"(f(x) > 0 )"}</InlineMath>:
         </span>
       ),
 
       resps: [
-        "-4.7 < x < -0.82 \\, \\, U \\, \\, 0.52 < x < \\infty",
+        "-4.7 < x < -0.82 \\, \\, y \\, \\, 0.52 < x < \\infty",
         "-4.7 < x < -0.82",
         "0.52 < x < \\infty",
         "-4.7 < x < \\infty",
@@ -244,13 +244,13 @@ const Quiz22 = () => {
     preg14: {
       preg: (
         <span>
-          ¿Qué valores del dominio tienen una imagen negativa{" "}
-          <InlineMath>{"(f(x) < 0 )"}</InlineMath>?
+          Encuentra todos los valores del dominio que tienen una imagen negativa{" "}
+          <InlineMath>{"(f(x) < 0 )"}</InlineMath>:
         </span>
       ),
 
       resps: [
-        "-\\infty < x < -4.7 \\, \\, U \\, \\, -0.82 < x < 0.52",
+        "-\\infty < x < -4.7 \\, \\, y \\, \\, -0.82 < x < 0.52",
         "-\\infty < x < -4.7",
         "-0.82  < x < 0.52",
         "-\\infty < x < 0.52",
@@ -262,7 +262,7 @@ const Quiz22 = () => {
   const correctAnswers = {
     preg1: "-\\infty < x < \\infty",
     preg2: "-\\infty < x < \\infty",
-    preg3: "x=0.93, \\, -1.45, \\, -4.48",
+    preg3: "x=0.93 \\, \\, o \\, \\, x=-1.45 \\, \\, o \\, \\, x=-4.48",
     preg4: "f(6)= 400",
     preg5: "-3.23 < x < -0.10",
     preg6: "-\\infty < x < \\infty, \\, esxcepto \\, -3.23 < x < -0.10",
@@ -272,8 +272,8 @@ const Quiz22 = () => {
     preg10: "-2.05 < f(x) < 28",
     preg11: "-7 < f(x) < 35.05",
     preg12: "f(-2)=8. Es positiva",
-    preg13: "-4.7 < x < -0.82 \\, \\, U \\, \\, 0.52 < x < \\infty",
-    preg14: "-\\infty < x < -4.7 \\, \\, U \\, \\, -0.82 < x < 0.52",
+    preg13: "-4.7 < x < -0.82 \\, \\, y \\, \\, 0.52 < x < \\infty",
+    preg14: "-\\infty < x < -4.7 \\, \\, y \\, \\, -0.82 < x < 0.52",
   };
 
   return (
