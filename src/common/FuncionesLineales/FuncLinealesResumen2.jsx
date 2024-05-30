@@ -6,7 +6,9 @@ import Select from "react-select";
 
 const FuncLinealesResumen2 = ({ md }) => {
   const [selectedOptions, setSelectedOptions] = useState({});
+  const [bloquearInput, setBloquearInput] = useState(false);
   const [showIcons, setShowIcons] = useState(false);
+  const [resetKey, setResetKey] = useState(0);
 
   const correctAnswers = {
     select1: "una línea recta",
@@ -126,6 +128,7 @@ const FuncLinealesResumen2 = ({ md }) => {
 
   const handleOptionChange = (e, selectKey) => {
     /* const { value } = e.target; */
+    if (bloquearInput) return;
     setSelectedOptions((prevOptions) => ({
       ...prevOptions,
       [selectKey]: e.value,
@@ -133,12 +136,15 @@ const FuncLinealesResumen2 = ({ md }) => {
   };
 
   const checkAnswers = () => {
+    setBloquearInput(true);
     setShowIcons(true);
   };
 
   const resetSelection = () => {
+    setBloquearInput(false);
     setSelectedOptions({});
     setShowIcons(false);
+    setResetKey(prevKey => prevKey + 1);
   };
 
   const renderIcon = (selectKey, option) => {
@@ -161,7 +167,7 @@ const FuncLinealesResumen2 = ({ md }) => {
 
   return (
     <>
-      <Row>
+      <Row key={resetKey}>
         <Col style={{ display: "inline-block", alignItems: "center" }} md={md}>
           <span style={{ display: "inline-block" }}>
             Toda función lineal tiene por gráfica a
@@ -178,6 +184,7 @@ const FuncLinealesResumen2 = ({ md }) => {
               className="select1"
               isClearable
               styles={customStyles}
+              isDisabled={bloquearInput}
             />
           </span>
           <span style={{ display: "inline-block" }}>
@@ -198,6 +205,7 @@ const FuncLinealesResumen2 = ({ md }) => {
             className="select2"
             isClearable
             styles={customStyles}
+            isDisabled={bloquearInput}
           />
           </span>
           <span style={{ display: "inline-block" }}>
@@ -218,6 +226,7 @@ const FuncLinealesResumen2 = ({ md }) => {
             className="select3"
             isClearable
             styles={customStyles}
+            isDisabled={bloquearInput}
           />
           </span>
           <span style={{ display: "inline-block" }}>
@@ -238,6 +247,7 @@ const FuncLinealesResumen2 = ({ md }) => {
             className="select4"
             isClearable
             styles={customStyles}
+            isDisabled={bloquearInput}
           />
           </span>
           <span style={{ display: "inline-block" }}>
@@ -264,6 +274,7 @@ const FuncLinealesResumen2 = ({ md }) => {
             className="select5"
             isClearable
             styles={customStyles}
+            isDisabled={bloquearInput}
           />
           </span>
           <span style={{ display: "inline-block" }}>
@@ -287,13 +298,14 @@ const FuncLinealesResumen2 = ({ md }) => {
             className="select6"
             isClearable
             styles={customStyles}
+            isDisabled={bloquearInput}
           />
           </span>
           <span style={{ display: "inline-block" }}>
-          {renderIcon("select6", selectedOptions["select6"])}. Toda función
-          lineal, puesto que consiste en un producto mx y su suma con b, no
-          posee restricciones para x, por lo que su dominio es{" "}
-          </span>
+          {renderIcon("select6", selectedOptions["select6"])}.
+          </span> Toda función lineal, puesto que consiste en un producto <InlineMath>mx</InlineMath> y 
+          su suma con <InlineMath>b</InlineMath>, no posee restricciones para <InlineMath>x</InlineMath>, por lo que su dominio es{" "}
+          
           <span style={{ display: "inline-block" }}>
           <Select
             options={options.select7}
@@ -306,12 +318,13 @@ const FuncLinealesResumen2 = ({ md }) => {
             className="select7"
             isClearable
             styles={customStyles}
+            isDisabled={bloquearInput}
           />
           </span>
-          <span style={{ display: "inline-block" }}>
+          <span style={{ display: "inline-block" }}></span>
           {renderIcon("select7", selectedOptions["select7"])}. Finalmente, el
           rango de las funciones lineales es{" "}
-          </span>
+      
           <span style={{ display: "inline-block" }}>
           <Select
             options={options.select8}
@@ -324,6 +337,7 @@ const FuncLinealesResumen2 = ({ md }) => {
             className="select8"
             isClearable
             styles={customStyles}
+            isDisabled={bloquearInput}
           />
           </span>
           <span style={{ display: "inline-block" }}>
@@ -333,7 +347,7 @@ const FuncLinealesResumen2 = ({ md }) => {
       </Row>
 
       <div className="button-center">
-        {showIcons ? (
+        {bloquearInput ? (
           <Button onClick={resetSelection}>Modificar respuestas</Button>
         ) : (
           <Button onClick={checkAnswers}>Revisar respuestas</Button>

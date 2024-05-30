@@ -21,7 +21,7 @@ const Rectangulo = () => {
         [0, 0],
         [150, 0],
       ],
-      { name: "x" }
+      { name: "x", fixed: true }
     );
     const yAxis = board.create(
       "segment",
@@ -29,7 +29,7 @@ const Rectangulo = () => {
         [0, 0],
         [0, 150],
       ],
-      { name: "y" }
+      { name: "y", fixed: true }
     );
 
     // Definir gliderA y gliderB con valores iniciales
