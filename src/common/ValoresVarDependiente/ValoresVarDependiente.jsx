@@ -1,8 +1,10 @@
 import "katex/dist/katex.min.css";
 import "../../styles/Bloque1_1.css";
 import { React, useState } from "react";
-import { Row, Col, Container, Form }from "react-bootstrap";
+import { Row, Col, Container, Button } from "react-bootstrap";
 import { BlockMath, InlineMath } from "react-katex";
+import { FaRegFilePdf } from "react-icons/fa6";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import QuizSub7 from "./QuizSub7";
 
 const ValoresVarDependiente = () => {
@@ -83,6 +85,20 @@ const ValoresVarDependiente = () => {
         </Col>
       </Row>
       <br />
+      <br />
+      <br />
+      <Row className="justify-content-center">
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="primary" href="" target="_blank">
+            <RiQuestionnaireLine /> ENCUESTA
+          </Button>
+        </Col>
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="secondary" href="https://correobuap-my.sharepoint.com/:f:/g/personal/angelica_lunagar_alumno_buap_mx/Ekh1U8fORutOpTlV4_kQZPUBtj9D5kOzyQIJs76TLC3mlQ?e=yGgRca" target="_blank">
+            <FaRegFilePdf /> SUBE TUS EVIDENCIAS
+          </Button>
+        </Col>
+      </Row>
       <br />
       <br />
     </Container>

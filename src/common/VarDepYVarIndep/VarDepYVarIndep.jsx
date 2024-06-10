@@ -1,7 +1,9 @@
 import React from "react";
 import { useState} from "react";
-import { Row, Col, Container, Table} from "react-bootstrap";
+import { Row, Col, Container, Button} from "react-bootstrap";
 import { InlineMath } from "react-katex";
+import { FaRegFilePdf } from "react-icons/fa6";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import car from "../../assets/car.jpg";
 import Act1 from "./Act1";
 import Act2 from "./Act2";
@@ -97,6 +99,20 @@ const VarDepYVarIndep = () => {
       </Row>
       <Act3 />
       <br />
+      <br />
+      <br />
+      <Row className="justify-content-center">
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="primary" href="https://es.surveymonkey.com/r/X6SJ6XL" target="_blank">
+            <RiQuestionnaireLine /> ENCUESTA
+          </Button>
+        </Col>
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="secondary" href="https://correobuap-my.sharepoint.com/:f:/g/personal/angelica_lunagar_alumno_buap_mx/Epa5o53iuy9PpzzgfRk2mRwBVCAxThuj3nY3-kUxwAtIJg?e=21wTJ8" target="_blank">
+            <FaRegFilePdf /> SUBE TUS EVIDENCIAS
+          </Button>
+        </Col>
+      </Row>
       <br />
       <br />
     </Container>

@@ -1,8 +1,10 @@
 import { React, useState} from "react";
 import "katex/dist/katex.min.css";
 import "../../styles/Bloque1_1.css";
-import {Row, Col, Form} from "react-bootstrap";
+import {Row, Col, Form, Button } from "react-bootstrap";
 import { BlockMath, InlineMath } from "react-katex";
+import { FaRegFilePdf } from "react-icons/fa6";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import Container from "react-bootstrap/Container";
 import Quiz4 from "./Quiz4";
 import Act5 from "./Act5";
@@ -153,6 +155,20 @@ const ReglaDeCorrespondencia = () => {
       </Row>
       <Act5 />
       <br />
+      <br />
+      <br />
+      <Row className="justify-content-center">
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="primary" href="https://es.surveymonkey.com/r/FK2LT36" target="_blank">
+            <RiQuestionnaireLine /> ENCUESTA
+          </Button>
+        </Col>
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="secondary" href="https://correobuap-my.sharepoint.com/:f:/g/personal/angelica_lunagar_alumno_buap_mx/EkiOtFRqbi1Mtu3g6GvH1RkBWgl4-4KNdidjrZqZniD9YA" target="_blank">
+            <FaRegFilePdf /> SUBE TUS EVIDENCIAS
+          </Button>
+        </Col>
+      </Row>
       <br />
       <br />
     </Container>

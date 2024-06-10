@@ -2,12 +2,10 @@ import React from "react";
 import "katex/dist/katex.min.css";
 import "../../styles/Bloque1_1.css";
 import { useState } from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Row, Col, Container, Button } from "react-bootstrap";
 import { BlockMath, InlineMath } from "react-katex";
-import Container from "react-bootstrap/Container";
-import Table from "react-bootstrap/Table";
-import { Button } from "react-bootstrap";
+import { FaRegFilePdf } from "react-icons/fa6";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import Act6 from "./Act6";
 
 const EvaluarLaReglaDeCorrespon = () => {
@@ -135,6 +133,20 @@ const EvaluarLaReglaDeCorrespon = () => {
               <InlineMath>{"g(x)=25"}</InlineMath>.
             </li>
           </ul>
+        </Col>
+      </Row>
+      <br />
+      <br />
+      <Row className="justify-content-center">
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="primary" href="" target="_blank">
+            <RiQuestionnaireLine /> ENCUESTA
+          </Button>
+        </Col>
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="secondary" href="https://correobuap-my.sharepoint.com/:f:/g/personal/angelica_lunagar_alumno_buap_mx/EoeBE9kvV9pFlzX5vTxM1HsBPSJww2XqW5CNtjMTF0q1AA?e=PqWgbO" target="_blank">
+            <FaRegFilePdf /> SUBE TUS EVIDENCIAS
+          </Button>
         </Col>
       </Row>
       <br />
