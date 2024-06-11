@@ -139,7 +139,7 @@ const EvaluarLaReglaDeCorrespon = () => {
       <br />
       <Row className="justify-content-center">
         <Col xs="auto" className="d-flex justify-content-center">
-          <Button variant="primary" href="" target="_blank">
+          <Button variant="primary" href="https://es.surveymonkey.com/r/PSX2BWV" target="_blank">
             <RiQuestionnaireLine /> ENCUESTA
           </Button>
         </Col>

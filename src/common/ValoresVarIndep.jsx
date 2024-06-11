@@ -55,7 +55,7 @@ const ValoresVarIndep = () => {
       <br />
       <Row className="justify-content-center">
         <Col xs="auto" className="d-flex justify-content-center">
-          <Button variant="primary" href="" target="_blank">
+          <Button variant="primary" href="https://es.surveymonkey.com/r/Y8L9RPG" target="_blank">
             <RiQuestionnaireLine /> ENCUESTA
           </Button>
         </Col>

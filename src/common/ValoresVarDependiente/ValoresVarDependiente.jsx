@@ -89,7 +89,7 @@ const ValoresVarDependiente = () => {
       <br />
       <Row className="justify-content-center">
         <Col xs="auto" className="d-flex justify-content-center">
-          <Button variant="primary" href="" target="_blank">
+          <Button variant="primary" href="https://es.surveymonkey.com/r/698RQ2M" target="_blank">
             <RiQuestionnaireLine /> ENCUESTA
           </Button>
         </Col>
