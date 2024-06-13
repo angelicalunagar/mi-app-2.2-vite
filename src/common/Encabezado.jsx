@@ -1,5 +1,6 @@
 //Encabezado.jsx
 import React from 'react';
+import { useEffect } from 'react';
 import "../styles/Encabezado.css"
 import {Link, useNavigate} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,7 +8,14 @@ import {Container, Nav, Navbar} from 'react-bootstrap'
 import logo1 from '../assets/logo_cinves.png';
 import logo2 from '../assets/logo_matedu.png';
 
-const Encabezado = ()=> {
+const Encabezado = ( {esInicio} )=> {
+useEffect (() =>{
+  if (esInicio.current){
+    esInicio.current = false;
+    navigateToInicio();
+  };
+});
+
   const navigate = useNavigate(); // Obtiene el objeto de navegación
 
     // Función para navegar a la ruta raíz "/"

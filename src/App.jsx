@@ -1,5 +1,5 @@
 import './App.css'
-import React from 'react';
+import { useRef } from 'react';
 import Encabezado from './common/Encabezado'; // Importa el componente
 import Aprende from './pages/Aprende';
 import Inicio from './pages/Inicio';
@@ -11,10 +11,13 @@ import Bloque4 from './common/Bloque4';
 import Bloque5 from './common/Bloque5';
 
 function App() {
+    let esInicio = useRef(true);
+
   return (
     <div className='App'>
+
         
-        <Encabezado />
+        <Encabezado esInicio={esInicio}/>
         <div className='contenido-pagina'>
         <Routes >
             <Route path='/' element={<Inicio />}/>
