@@ -2,9 +2,11 @@ import React from "react";
 import {
   Container,
   Row,
-  Col
+  Col,
+  Button
 } from "react-bootstrap";
-
+import { FaRegFilePdf } from "react-icons/fa6";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import { BlockMath } from "react-katex";
 import BoardXX from "../Utilerias/BoardXX";
 import TextoFuncion from "../GraficosDeFunciones/TextoFuncion";
@@ -52,6 +54,23 @@ const FuncLineales = () => {
           <FuncLinealesResumen2 md={12}/> 
         </Col>
       </Row>
+      <br />
+      <br />
+      <Row className="justify-content-center">
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="primary" href="https://es.surveymonkey.com/r/7MTRMVY" target="_blank">
+            <RiQuestionnaireLine /> ENCUESTA
+          </Button>
+        </Col>
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="secondary" href="https://correobuap-my.sharepoint.com/:f:/g/personal/angelica_lunagar_alumno_buap_mx/Eh0vaHVAddlDtT5STFL3LS0BdaGZRUXC0RFKM4e0wBqrQg?e=WOYqF9" target="_blank">
+            <FaRegFilePdf /> SUBE TUS EVIDENCIAS
+          </Button>
+        </Col>
+      </Row>
+      <br />
+      <br />
+      <br />
     </Container>
   );
 };

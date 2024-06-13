@@ -1,9 +1,11 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { BlockMath, InlineMath } from "react-katex";
 import { BoardsContextProvider } from "../../contexts/BoardsContext";
 import { FunCuadratContextProvider } from "../../contexts/FunCuadratContext";
 import { GraficaFContextProvider } from "../../contexts/GraficaFContext";
+import { FaRegFilePdf } from "react-icons/fa6";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import FuncionCuadrat from "./FuncionCuadrat";
 import BoardXX from "../Utilerias/BoardXX";
 import GraficaF from "../GraficosDeFunciones/GraficaF";
@@ -267,6 +269,23 @@ const FuncionesCuadraticas = () => {
           </FunCuadratContextProvider>
         </BoardsContextProvider>
       </Row>
+      <br />
+      <br />
+      <Row className="justify-content-center">
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="primary" href="https://es.surveymonkey.com/r/RGR9Q5J" target="_blank">
+            <RiQuestionnaireLine /> ENCUESTA
+          </Button>
+        </Col>
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="secondary" href="https://correobuap-my.sharepoint.com/:f:/g/personal/angelica_lunagar_alumno_buap_mx/EqtqfmSXCc9Ni8Anm7jvYm8B7Xhmst13tyGwfS8OX_V4Iw?e=reWcFF" target="_blank">
+            <FaRegFilePdf /> SUBE TUS EVIDENCIAS
+          </Button>
+        </Col>
+      </Row>
+      <br />
+      <br />
+      <br />
     </Container>
   );
 };

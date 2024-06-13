@@ -14,6 +14,8 @@ import GraficosDeFunciones from "./GraficosDeFunciones/GraficosDeFunciones";
 import FuncLineales from "./FuncionesLineales/FuncLineales";
 import FuncionesCuadraticas from "./FuncionesCuadraticas/FuncionesCuadraticas";
 import FunPolinomiales from "./FuncionesPolinomiales.jsx/FunPolinomiales";
+import { Col, Button } from "react-bootstrap";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import "../styles/Sidebar.css";
 
 function Sidebar({ show, close }) {
@@ -54,7 +56,8 @@ function Sidebar({ show, close }) {
         return <FuncionesCuadraticas />;
       case "FunPolinomiales":
         return <FunPolinomiales />;
-
+      /* case "EncuestaFinal":
+        return null; */
       default:
         return null;
     }
@@ -79,7 +82,7 @@ function Sidebar({ show, close }) {
                   selectedComponent === "VarDepYVarIndep" ? "selected" : ""
                 }`}
               >
-                Variable dependiente y variable independiente
+                1. Variable dependiente y variable independiente
               </button>
             </li>
             <li>
@@ -91,7 +94,7 @@ function Sidebar({ show, close }) {
                     : ""
                 }`}
               >
-                Regla de correspondencia
+                2. Regla de correspondencia
               </button>
             </li>
             <li>
@@ -105,7 +108,7 @@ function Sidebar({ show, close }) {
                     : ""
                 }`}
               >
-                Evaluar la regla de correspondencia
+                3. Evaluar la regla de correspondencia
               </button>
             </li>
             <li>
@@ -115,7 +118,7 @@ function Sidebar({ show, close }) {
                   selectedComponent === "ValoresVarIndep" ? "selected" : ""
                 }`}
               >
-                Valores que adquiere la variable independiente
+                4. Valores que adquiere la variable independiente
               </button>
             </li>
             <li>
@@ -127,7 +130,7 @@ function Sidebar({ show, close }) {
                     : ""
                 }`}
               >
-                Valores que adquiere la variable dependiente
+                5. Valores que adquiere la variable dependiente
               </button>
             </li>
             <li>
@@ -137,7 +140,7 @@ function Sidebar({ show, close }) {
                   selectedComponent === "QueEsFuncion" ? "selected" : ""
                 }`}
               >
-                ¿Qué es una función?
+                6. ¿Qué es una función?
               </button>
             </li>
             <li>
@@ -149,7 +152,7 @@ function Sidebar({ show, close }) {
                     : ""
                 }`}
               >
-                Nomenclatura de las funciones
+                7. Nomenclatura de las funciones
               </button>
             </li>
             <li>
@@ -161,7 +164,7 @@ function Sidebar({ show, close }) {
                     : ""
                 }`}
               >
-                Funciones de dos variables
+                8. Funciones de dos variables
               </button>
             </li>
             <li>
@@ -171,7 +174,7 @@ function Sidebar({ show, close }) {
                   selectedComponent === "TablaDeFuncion" ? "selected" : ""
                 }`}
               >
-                Tabla de una función
+                9. Tabla de una función
               </button>
             </li>
             <li>
@@ -181,7 +184,7 @@ function Sidebar({ show, close }) {
                   selectedComponent === "GraficosDeFunciones" ? "selected" : ""
                 }`}
               >
-                Gráficos de Funciones
+                10. Gráficos de Funciones
               </button>
             </li>
             <li>
@@ -191,7 +194,7 @@ function Sidebar({ show, close }) {
                   selectedComponent === "FuncLineales" ? "selected" : ""
                 }`}
               >
-                Funciones Lineales
+                11. Funciones Lineales
               </button>
             </li>
             <li>
@@ -201,7 +204,7 @@ function Sidebar({ show, close }) {
                   selectedComponent === "FuncionesCuadraticas" ? "selected" : ""
                 }`}
               >
-                Funciones Cuadráticas
+                12. Funciones Cuadráticas
               </button>
             </li>
             <li>
@@ -211,8 +214,19 @@ function Sidebar({ show, close }) {
                   selectedComponent === "FunPolinomiales" ? "selected" : ""
                 }`}
               >
-                Funciones Polinomiales
+                13. Funciones Polinomiales
               </button>
+            </li>
+            <li>
+              <Col xs="auto" className="d-flex justify-content-center">
+                <Button
+                  variant="secondary"
+                  href="https://es.surveymonkey.com/r/7XZ76JC"
+                  target="_blank"
+                >
+                  <RiQuestionnaireLine /> ENCUESTA FINAL
+                </Button>
+              </Col>
             </li>
           </ul>
         </Offcanvas.Body>

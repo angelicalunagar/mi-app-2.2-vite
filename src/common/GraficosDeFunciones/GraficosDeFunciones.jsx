@@ -1,7 +1,16 @@
 //GraficosDeFunciones.jsx
-import { useState, useContext } from "react";
-import { Container, Row, Col, Table, Form, Image } from "react-bootstrap";
-
+import { useState } from "react";
+import {
+  Container,
+  Row,
+  Col,
+  Table,
+  Form,
+  Image,
+  Button,
+} from "react-bootstrap";
+import { FaRegFilePdf } from "react-icons/fa6";
+import { RiQuestionnaireLine } from "react-icons/ri";
 import { BlockMath, InlineMath } from "react-katex";
 import "katex/dist/katex.min.css";
 import "../../styles/Bloque1_1.css";
@@ -793,9 +802,11 @@ const GraficosDeFunciones = () => {
                 <BlockMath>{"-\\infty < f(x) < +\\infty"}</BlockMath>
                 Ya que has graficado <InlineMath>f(x)= 30+8.5x</InlineMath>, usa
                 los botones de zoom para observar que la gráfica tiene un
-                dominio que abarca todos los números reales (de <InlineMath>{"-\\infty"}</InlineMath> a <InlineMath>{"\\infty"}</InlineMath>) y
-                su rango también son todos los números reales. Como has
-                observado, la gráfica de <InlineMath>f(x)=30+8.5x</InlineMath> es una línea recta.
+                dominio que abarca todos los números reales (de{" "}
+                <InlineMath>{"-\\infty"}</InlineMath> a{" "}
+                <InlineMath>{"\\infty"}</InlineMath>) y su rango también son
+                todos los números reales. Como has observado, la gráfica de{" "}
+                <InlineMath>f(x)=30+8.5x</InlineMath> es una línea recta.
               </p>
             </Col>
             <Col md={7}>
@@ -835,6 +846,27 @@ const GraficosDeFunciones = () => {
           </FuncLinealContextProvider>
         </BoardsContextProvider>
       </Row>
+      <br />
+      <br />
+      <Row className="justify-content-center">
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button variant="primary" href="https://es.surveymonkey.com/r/RM2FK5S" target="_blank">
+            <RiQuestionnaireLine /> ENCUESTA
+          </Button>
+        </Col>
+        <Col xs="auto" className="d-flex justify-content-center">
+          <Button
+            variant="secondary"
+            href="https://correobuap-my.sharepoint.com/:f:/g/personal/angelica_lunagar_alumno_buap_mx/EufOoR4ShnhCubAlwSxXTwMBMQiUB8-Vq_v3i9_4nK6WgA?e=M03wJs"
+            target="_blank"
+          >
+            <FaRegFilePdf /> SUBE TUS EVIDENCIAS
+          </Button>
+        </Col>
+      </Row>
+      <br />
+      <br />
+      <br />
     </Container>
   );
 };
