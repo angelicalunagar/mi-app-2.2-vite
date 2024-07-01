@@ -45,9 +45,9 @@ const FuncLineales = () => {
           <p>
             Como pudiste observar, la gráfica de la función: 
             <BlockMath>f(x)=8.5x+30 </BlockMath> 
-            y todas las demás funciones que graficaste en la Ventana gráfica 7 son
+            y todas las demás funciones que graficaste en la <b>Ventana gráfica 7</b> son
             líneas rectas, por lo que se dice que son <b>funciones lineales</b>.
-            Completa el siguiente resumen sobre las funciones lineales:
+            Completa el siguiente resumen sobre las funciones lineales usando la <b>Ventana gráfica 8</b>:
           </p>
           <br />
           <p style={{fontSize: '21px'}}><b>Resumen</b></p>

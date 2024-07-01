@@ -12,8 +12,8 @@ const Quiz18 = () => {
       lado <InlineMath>{"x=50 \\, m"}</InlineMath>, donde ha metido a sus gallinas, pero
       se da cuenta de que le falta colocar adentro una mini bodega para guardar
       alimento y utensilios, la cual requiere al menos{" "}
-      <InlineMath>{"200 \\, m^2"}</InlineMath>. A partir de esta situación,
-      responde las siguientes preguntas.
+      <InlineMath>{"200 \\, m^2"}</InlineMath>. A partir de esta situación y usando la {" "}
+      <b>Ventana gráfica 10</b> responde las siguientes preguntas.
     </span>
   );
 

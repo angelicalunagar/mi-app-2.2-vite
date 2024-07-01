@@ -39,7 +39,7 @@ const ValoresVarDependiente = () => {
             que <InlineMath>{"x"}</InlineMath> puede valer desde{" "}
             <InlineMath>{"0"}</InlineMath> hasta{" "}
             <InlineMath>{"200"}</InlineMath>. Entonces, la{" "}
-            <b>mínima ganancia</b> sucede caundo el heladero vende{" "}
+            <b>mínima ganancia</b> sucede cuando el heladero vende{" "}
             <InlineMath>{"0"}</InlineMath> helados:
             <BlockMath>{"g(0)=5(0)=0"}</BlockMath>Y la <b>máxima ganancia</b>{" "}
             sucede cuando el heladero vende <InlineMath>{"200"}</InlineMath>{" "}

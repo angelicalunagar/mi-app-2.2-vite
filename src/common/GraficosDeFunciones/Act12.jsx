@@ -243,7 +243,7 @@ const Act12 = () => {
               <br />
               <InlineMath>{"x"}</InlineMath> y <InlineMath>{"f(x)"}</InlineMath>{" "}
               se puede graficar como el punto <br />
-              <InlineMath>{"P(x, y)"}</InlineMath>.
+              <InlineMath>{"P=(x, f(x))=(x, y)"}</InlineMath>.
             </p>
           </ul>
           <div className="button-center">

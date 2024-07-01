@@ -111,9 +111,9 @@ const FuncionesDosVariables = () => {
             <br />
             ¿Cuál es el dominio de <InlineMath>{"x"}</InlineMath> y cuál es el
             dominio de <InlineMath>{"y"}</InlineMath>? hasta ahora tanto{" "}
-            <InlineMath>{"x"}</InlineMath> como y podrían valer cualquier número
+            <InlineMath>{"x"}</InlineMath> como <InlineMath>y</InlineMath> podrían valer cualquier número
             positivo porque el granjero no ha mencionado limitaciones del
-            terreno en el cuál construirá su corral ni limitaciones económicas.
+            terreno en el cual construirá su corral ni limitaciones económicas.
           </p>
         </Col>
       </Row>
@@ -135,9 +135,9 @@ const FuncionesDosVariables = () => {
             <InlineMath>{"y"}</InlineMath> es <InlineMath>{"150"}</InlineMath>.
             <br />
             <br />
-            Si el lado <InlineMath>x</InlineMath> del terreno sólo puede ocupar hasta <InlineMath>{"40 \\, m"}</InlineMath>, entonces:
+            Si el lado <InlineMath>x</InlineMath> del terreno sólo puede ocupar hasta <InlineMath>{"40 \\, m"}</InlineMath>:
             <BlockMath>{"0 \\leq x \\leq 40"}</BlockMath>
-            podemos determinar el dominio de <InlineMath>{"y"}</InlineMath>{" "}
+            entonces podemos determinar el dominio de <InlineMath>{"y"}</InlineMath>{" "}
             deslizando el punto <InlineMath>{"B"}</InlineMath> sobre el eje{" "}
             <InlineMath>{"x"}</InlineMath> (<em><b>Ventana gráfica 1</b></em>), empezando
             desde cero hasta llegar a <InlineMath>{"40"}</InlineMath>. ¿Qué

@@ -156,7 +156,7 @@ const GraficosDeFunciones = () => {
         <Col md={5}>
           <p>
             Comencemos graficando el punto <InlineMath>(0, p(0))</InlineMath>, o
-            sea el punto <InlineMath>(0, 30)</InlineMath>, para lo cuál ubicamos{" "}
+            sea el punto <InlineMath>(0, 30)</InlineMath>, para lo cual ubicamos{" "}
             <InlineMath>0</InlineMath> en el{" "}
             <InlineMath>{"eje \\, x"}</InlineMath> y subimos hasta que{" "}
             <InlineMath>y</InlineMath> valga <InlineMath>30</InlineMath>, tal
@@ -335,7 +335,7 @@ const GraficosDeFunciones = () => {
             <br />
             <br />
             Observa que la regla de correspondencia es exactamente la misma que
-            la del taxista: <InlineMath>p(x)=30+8.5x</InlineMath> No obstante,
+            la del taxista: <InlineMath>p(x)=30+8.5x</InlineMath>. No obstante,
             para representar mejor la nueva situación, cambiemos{" "}
             <InlineMath>p</InlineMath> por <InlineMath>v</InlineMath> ya que
             ahora la regla nos da la velocidad del vehículo:{" "}
@@ -431,17 +431,17 @@ const GraficosDeFunciones = () => {
             correspondencia <InlineMath>p(x)=30+8.5x</InlineMath> aplique, y
             para cada una de esas situaciones encontraríamos un dominio y rango.
             No obstante, muy a menudo en los cursos de matemáticas encontrarás
-            reglas de correspondencia para las cuáles no se da un contexto. Aún
+            reglas de correspondencia para las cuáles no se da un contexto. Aun
             así, es posible encontrar el dominio y el rango para cualquier regla
             de correspondencia, con la diferencia de que ya no estarán limitados
             por la situación contextual, sino por la regla misma. Este dominio,
-            se llama dominio máximo.
+            se llama <b>dominio máximo</b>.
             <br />
             <br />
-            Antes de determinar el dominio y rango máximos de la función
+            Antes de determinar el dominio y rango máximos de la función {" "}
             <InlineMath>p(x)=30+8.5x</InlineMath>, dado que ahora no se está
             describiendo una situación particular, sería más apropiado
-            expresarlo de forma genérica, como se indicó en el apartado de
+            expresarlo de <b>forma genérica</b>, como se indicó en el apartado de
             nomenclatura de funciones. Por lo tanto, simplemente sustituiremos{" "}
             <InlineMath>p</InlineMath> por <InlineMath>f</InlineMath>, en
             referencia a que se trata de la regla de correspondencia de una
@@ -450,8 +450,8 @@ const GraficosDeFunciones = () => {
             <BlockMath>f(x)= 30+8.5x</BlockMath>
             <br />
             Pronto volveremos a esta expresión. Por ahora, veremos casos en los
-            que una regla de correspondencia genérica presenta restricciones en
-            cuanto a su dominio, y por lo tanto, también en cuanto a su rango.
+            que una regla de correspondencia genérica presenta <b>restricciones en
+            cuanto a su dominio</b>, y por lo tanto, también en cuanto a su rango.
             <br />
             <br />
             Como recordarás de tus cursos de aritmética y álgebra, no es posible
@@ -541,8 +541,8 @@ const GraficosDeFunciones = () => {
               <p>
                 <br />
                 Como se ha visto anteriormente, cada par ordenado{" "}
-                <InlineMath>(x, f(x))</InlineMath>se puede representar como un
-                punto en el plano. Coloca los puntos amarillos donde les
+                <InlineMath>(x, f(x))</InlineMath> se puede representar como un
+                punto en el plano. En la <b>Ventana gráfica 4</b> coloca los puntos amarillos donde les
                 corresponda según la <b>Tabla 6</b>.
                 <br />
                 <br />
@@ -559,6 +559,7 @@ const GraficosDeFunciones = () => {
               <GraficaF boardId="board2" funcionGrafica={(x) => 20 / x} />
 
               {/* <SegmentFR boardId="board2" /> */}
+              <br />
               <br />
               <CuestionarioFR />
 
@@ -611,8 +612,7 @@ const GraficosDeFunciones = () => {
                 <br />
                 Observa que en la gráfica de <InlineMath>f(x)=2/x</InlineMath>,
                 el rango va de <InlineMath>{"-\\infty"}</InlineMath> a{" "}
-                <InlineMath>0</InlineMath>
-                por la derecha, sin tocarlo, y de{" "}
+                cero por la derecha, sin tocarlo, y de{" "}
                 <InlineMath>{"+\\infty"}</InlineMath> a cero por la izquierda,
                 sin tocarlo. Por lo que se puede concluir que el rango es:
                 <BlockMath>
@@ -784,13 +784,14 @@ const GraficosDeFunciones = () => {
                 negativo y cada vez de mayor magnitud.
                 <br />
                 <br />
-                Para confirmar estas observaciones, grafica{" "}
-                <InlineMath>f(x)=30+8.5x</InlineMath>, luego grafica el{" "}
+                Para confirmar estas observaciones, en la <b>Ventana gráfica 6</b> grafica{" "}
+                <InlineMath>f(x)=30+8.5x</InlineMath>, luego dibuja el{" "}
                 <InlineMath>{"punto \\, M"}</InlineMath> y deslizalo sobre la
                 gráfica de la función.
               </p>
 
               <GraficaF boardId="board4" funcionGrafica={(x) => 30 + 8.5 * x} />
+              <br />
               <br />
               <PuntoMovibleF boardId="board4" initialCoordinates={[7, 89.5]} />
               <p>

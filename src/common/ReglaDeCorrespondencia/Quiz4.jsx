@@ -16,7 +16,7 @@ const Quiz4 = () => {
     preg1: {
       preg: (
         <span>
-          Cristina gana 4000 pesos quincenales, de los cuáles gasta 250 pesos diarios. La función que describe que el dinero restante depende del número de días que han trascurrido desde el pago de la quincena es:
+          Cristina gana 4000 pesos quincenales, de los cuáles gasta 250 pesos diarios. La regla de correspondencia que describe que el dinero restante depende del número de días que han trascurrido desde el pago de la quincena es:
         </span>
       ),
       resps: ["d(n)=2000-125n", "d(n)=4000-250n", "d(n)=250n+4000"],
@@ -26,7 +26,7 @@ const Quiz4 = () => {
    preg2: {
       preg: (
         <span>
-          Un Uber cobra una cuota fija por contratación de $30.00 y adicionalmente $8.50 por km recorrido. La función que describe que el
+          Un Uber cobra una cuota fija por contratación de $30.00 y adicionalmente $8.50 por km recorrido. La regla de correspondencia que describe que el
           precio <InlineMath>p</InlineMath> de un viaje en Uber depende de la distancia recorrida <InlineMath>x</InlineMath> (en km) es:
         </span>
       ),
@@ -37,7 +37,7 @@ const Quiz4 = () => {
     preg3: {
       preg: (
         <span>
-         Un automóvil de carreras avanza 2 km por cada minuto, por lo que la distancia recorrida es función de tiempo transcurrido. ¿Cuál es la función correcta?
+         Un automóvil de carreras avanza 2 km por cada minuto, por lo que la distancia recorrida es función de tiempo transcurrido. ¿Cuál es la regla de correspondencia correcta?
         </span>
       ),
       resps: [

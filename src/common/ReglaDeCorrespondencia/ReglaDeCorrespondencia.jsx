@@ -102,9 +102,8 @@ const ReglaDeCorrespondencia = () => {
             <BlockMath>{"g (x) = 5x"}</BlockMath>
             <br />
             Esta última expresión es una <b>regla de correspondencia</b> porque
-            establece una correspondencia entre <InlineMath>{"2"}</InlineMath>{" "}
-            variables (relación entre <InlineMath>{"2"}</InlineMath> variables),
-            a saber, la ganancia <InlineMath>{"g(x)"}</InlineMath> y el número
+            establece una correspondencia o relación entre <InlineMath>{"2"}</InlineMath>{" "}
+            variables, a saber, la ganancia <InlineMath>{"g(x)"}</InlineMath> y el número
             de helados <InlineMath>{"x"}</InlineMath>. La expresión{" "}
             <InlineMath>{"g(x)= 5x"}</InlineMath> nos dice que a cada valor que
             le asignemos a <InlineMath>{"x"}</InlineMath> le corresponde un
@@ -117,7 +116,7 @@ const ReglaDeCorrespondencia = () => {
       <Row className="main-row">
         <Col>
           <p>
-            La regla de correspondencia nos permiten calcular el valor de una
+            La regla de correspondencia nos permite calcular el valor de una
             variable cuando conocemos el valor de la otra. Siguiendo con el
             ejemplo del heladero, ahora que conocemos la relación{" "}
             <InlineMath>{"g(x)=5x"}</InlineMath>, podemos responder a la

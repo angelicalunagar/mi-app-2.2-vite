@@ -233,7 +233,7 @@ const FuncLinealesResumen2 = ({ md }) => {
           {renderIcon("select3", selectedOptions["select3"])} y{" "}
           </span>
           <span style={{ display: "inline-block" }}>
-          <InlineMath>x</InlineMath> representa a la variable{" "}
+          <InlineMath>{"\\, x"}</InlineMath> representa a la variable{" "}
           </span>
           <span style={{ display: "inline-block" }}>
           <Select
@@ -259,7 +259,7 @@ const FuncLinealesResumen2 = ({ md }) => {
            Por su parte,{" "}
            </span>
            <span style={{ display: "inline-block" }}>
-          <InlineMath>m</InlineMath> es el coeficiente de{" "}
+          <InlineMath>{"\\, m"}</InlineMath> es el coeficiente de{" "}
           <InlineMath>x</InlineMath> e indica{" "}
           </span>
           <span style={{ display: "inline-block" }}>
@@ -346,7 +346,7 @@ const FuncLinealesResumen2 = ({ md }) => {
         </Col>
       </Row>
 
-      <div className="button-center">
+      <div className="button-center" style={{marginTop:"30px"}}>
         {bloquearInput ? (
           <Button onClick={resetSelection}>Modificar respuestas</Button>
         ) : (

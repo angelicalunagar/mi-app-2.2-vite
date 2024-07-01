@@ -131,7 +131,7 @@ const Act10 = () => {
       <Row className="row-act">
       <Col className="actividad" md={10}>
           <p>
-            <b>Actividad 10:</b>. El taxista se encuentra evaluando la función{" "}
+            <b>Actividad 10:</b> El taxista se encuentra evaluando la función{" "}
             <InlineMath>{"p(x)=30 + 8.5x"}</InlineMath> en{" "}
             <InlineMath>{"x=0, 5, 10, 15, 20, 25, 30"}</InlineMath>. Completa
             los cálculos que le faltan.

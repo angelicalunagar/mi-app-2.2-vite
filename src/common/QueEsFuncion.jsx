@@ -38,7 +38,7 @@ const QueEsFuncion = () => {
             solo la regla de correspondencia, sino también el dominio y el
             rango. Aunque a menudo se hace referencia a la regla de
             correspondencia como "función", es fundamental reconocer que la
-            función está completamente definida solo cuando se conocen la regla
+            función está completamente definida solo cuando se conocen la regla,
             el dominio y el rango.
             <br />
             <br />A continuación, se muestra un resumen de las funciones que
