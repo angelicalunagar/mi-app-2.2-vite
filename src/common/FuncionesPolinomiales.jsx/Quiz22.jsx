@@ -265,7 +265,7 @@ const Quiz22 = () => {
     preg3: "x=0.93 \\, \\, o \\, \\, x=-1.45 \\, \\, o \\, \\, x=-4.48",
     preg4: "f(6)= 400",
     preg5: "-3.23 < x < -0.10",
-    preg6: "-\\infty < x < \\infty, \\, esxcepto \\, -3.23 < x < -0.10",
+    preg6: "-\\infty < x < \\infty, \\, excepto \\, -3.23 < x < -0.10",
     preg7: "Punto = (-3.23, 13.24)",
     preg8: "Punto = (-0.10, -2.05)",
     preg9: "-2 < f(x) < 28",

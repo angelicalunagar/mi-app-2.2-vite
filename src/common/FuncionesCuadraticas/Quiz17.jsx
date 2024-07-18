@@ -8,7 +8,7 @@ const Quiz17 = () => {
   const activityNumber = "17";
   const instruction = (
     <span>
-      Grafica la función <InlineMath>{"f(x)= 150x-x^2"}</InlineMath> en la
+      Grafica la función <InlineMath>{"A(x)= 150x-x^2"}</InlineMath> en la
       <em>
         <b>Ventana gráfica 9</b>
       </em>{" "}

@@ -30,7 +30,7 @@ const FuncionesCuadraticas = () => {
           <h4>Funciones cuadráticas</h4>
           <br />
           <p>
-            ¿Recuerdas el caso del granjero el cuál quería construir un corral?
+            ¿Recuerdas el caso del granjero el cuál quería construir un corral (Tema 8)?
             La función que describía el área <InlineMath>A(x)</InlineMath> del corral en función de uno
             de sus lados <InlineMath>x</InlineMath> era:
             <BlockMath>{"A(x)=150x-x^2"}</BlockMath>

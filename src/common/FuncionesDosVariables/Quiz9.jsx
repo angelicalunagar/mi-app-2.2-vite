@@ -87,8 +87,8 @@ const Quiz9 = () => {
         </span>
       ),
       resps: [
-        "624≤A(x)≤1750",
-        "644≤A(x)≤1100",
+        "644≤A(x)≤1750",
+        "624≤A(x)≤1100",
         "700≤A(x)≤1750",
       ],
       renderInlineMath: true,
@@ -100,7 +100,7 @@ const Quiz9 = () => {
     preg2: "1000 = 2x^2y",
     preg3: "A(x) = 4x^2 + 3000/x",
     preg4: "A(y)=\\frac{2000}{y}+60\\sqrt{5} \\sqrt{y}",
-    preg5: "644≤A(x)≤1100",
+    preg5: "624≤A(x)≤1100",
   };
 
   return (

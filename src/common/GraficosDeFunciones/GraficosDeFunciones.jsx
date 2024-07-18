@@ -463,7 +463,7 @@ const GraficosDeFunciones = () => {
             <br />
             Teniendo en cuenta la imposibilidad de la división entre cero,
             determinemos el dominio y el rango de la regla de correspondencia
-            <InlineMath>f(x)=2/x</InlineMath>. ¿Cuál de los siguientes números
+            <InlineMath>f(x)=20/x</InlineMath>. ¿Cuál de los siguientes números
             no es un valor válido para <InlineMath>x</InlineMath>?
           </p>
 
@@ -509,15 +509,15 @@ const GraficosDeFunciones = () => {
           </Form>
           <p>
             Otra manera de estructurar la pregunta es cuestionarnos: ¿es posible
-            dividir <InlineMath>2</InlineMath> entre{" "}
+            dividir <InlineMath>20</InlineMath> entre{" "}
             <InlineMath>-99</InlineMath>? ¿Es posible dividir{" "}
-            <InlineMath>2</InlineMath> entre <InlineMath>0</InlineMath>? Etc.
+            <InlineMath>20</InlineMath> entre <InlineMath>0</InlineMath>? Etc.
             Esto nos lleva a recordar que la división entre cero no está
             definida, y por lo tanto no podemos obtener ningún resultado cuando
             evaluamos <InlineMath>f(0)</InlineMath>:
-            <BlockMath>{"f(0) = \\frac{2}{0} =!"}</BlockMath>
+            <BlockMath>{"f(0) = \\frac{20}{0} =!"}</BlockMath>
             Entonces, podemos excluir al cero del dominio de la función y decir
-            que el dominio de <InlineMath>f(x)=2/x</InlineMath> consiste en
+            que el dominio de <InlineMath>f(x)=20/x</InlineMath> consiste en
             todos los reales excepto el cero:
             <BlockMath>
               {"-\\infty < x < +\\infty,\\ excepto \\ x = 0"}
@@ -550,9 +550,9 @@ const GraficosDeFunciones = () => {
                 los puntos que forman a la gráfica de la función, pero muestran
                 cómo es su tendencia y dan una idea de su forma. Presiona el
                 siguiente botón para graficar la función{" "}
-                <InlineMath>f(x)=2/x</InlineMath>, la cuál está conformada por
+                <InlineMath>f(x)=20/x</InlineMath>, la cuál está conformada por
                 todos los pares ordenados{" "}
-                <InlineMath>{"(x, \\, 2/x)"}</InlineMath> situados en el plano
+                <InlineMath>{"(x, \\, 20/x)"}</InlineMath> situados en el plano
                 cartesiano
               </p>
 
@@ -566,7 +566,7 @@ const GraficosDeFunciones = () => {
               <p>
                 Después de analizar las primeras cuatro preguntas y sus
                 respuestas, es hora de profundizar en la comprensión de la
-                función <InlineMath>f(x)=2/x</InlineMath> mediante una reflexión
+                función <InlineMath>f(x)=20/x</InlineMath> mediante una reflexión
                 más detallada. Para ello, te invito a dibujar el punto{" "}
                 <InlineMath>M</InlineMath> y deslizarlo a lo largo de la gráfica
                 de la función.
@@ -610,7 +610,7 @@ const GraficosDeFunciones = () => {
               <p>
                 <br />
                 <br />
-                Observa que en la gráfica de <InlineMath>f(x)=2/x</InlineMath>,
+                Observa que en la gráfica de <InlineMath>f(x)=20/x</InlineMath>,
                 el rango va de <InlineMath>{"-\\infty"}</InlineMath> a{" "}
                 cero por la derecha, sin tocarlo, y de{" "}
                 <InlineMath>{"+\\infty"}</InlineMath> a cero por la izquierda,
